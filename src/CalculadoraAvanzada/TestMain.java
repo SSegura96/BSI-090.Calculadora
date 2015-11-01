@@ -517,9 +517,7 @@ public class TestMain {
                 }//fin case JOptionPane.CLOSED_OPTION
 
             }//fin switch menuCalcu
-
         }//fin while
-
         System.exit(0);
     }//fin main
 }//fin class TestMain
