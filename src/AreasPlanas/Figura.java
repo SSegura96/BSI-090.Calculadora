@@ -3,8 +3,7 @@ package AreasPlanas;
 import javax.swing.ImageIcon;
 
 /**
- *
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public abstract class Figura implements IFigura
 {

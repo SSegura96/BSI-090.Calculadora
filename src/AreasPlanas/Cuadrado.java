@@ -1,7 +1,7 @@
 package AreasPlanas;
 
 /**
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
 public class Cuadrado extends Figura
