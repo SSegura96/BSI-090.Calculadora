@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
  */
 public class TestMain {
     
-    
     public static void main(String[] args) {
         boolean salir = false;
         while (!salir) {
