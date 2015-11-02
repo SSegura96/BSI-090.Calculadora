@@ -7,13 +7,14 @@ import javax.swing.JOptionPane;
  * @author Javier Fernandez & Sergio Segura
  */
 public class TestMain {
-
+    
+    
     public static void main(String[] args) {
         boolean salir = false;
         while (!salir) {
             //Variable para alamacenar el indice del vector con la respuesta del JOption
             int indice = 0;
-
+            
             Object[] botonesMenuCalcu = {"Áreas de figuras planas(2D).",
                 "Perímetros de figuras planas (2D).", "Estadística.",
                 "Probabilidades y combinaciones.", "Superficies.", "Volúmenes.",
