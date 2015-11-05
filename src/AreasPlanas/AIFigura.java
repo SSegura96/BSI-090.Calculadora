@@ -4,7 +4,7 @@ package AreasPlanas;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public interface IFigura 
+public interface AIFigura 
 {
     public void calcArea ();
-}//fin clase IFigura
+}//fin clase AIFigura

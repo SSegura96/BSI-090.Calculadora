@@ -4,7 +4,7 @@ package AreasPlanas;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class ATriangulo extends Figura
+public class ATriangulo extends AFigura
 {
     private double medidaLado;
 

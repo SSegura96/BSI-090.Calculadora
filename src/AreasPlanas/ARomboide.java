@@ -4,7 +4,7 @@ package AreasPlanas;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class ARomboide extends Figura
+public class ARomboide extends AFigura
 {
     double base;
     double altura;

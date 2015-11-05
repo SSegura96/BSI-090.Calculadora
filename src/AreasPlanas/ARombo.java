@@ -4,7 +4,7 @@ package AreasPlanas;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class ARombo extends Figura 
+public class ARombo extends AFigura 
 {
     double diagMayor;
     double diagMenor;

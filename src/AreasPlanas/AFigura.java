@@ -3,12 +3,12 @@ package AreasPlanas;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public abstract class Figura implements IFigura
+public abstract class AFigura implements AIFigura
 {
    protected double area;
    protected String ubicacion;
 
-    public Figura() 
+    public AFigura() 
     {
        area = 0;
        ubicacion = "";
@@ -31,4 +31,4 @@ public abstract class Figura implements IFigura
         this.ubicacion = ubicacion;
     }
    
-}//fin clase Abstracta Figura
+}//fin clase Abstracta AFigura

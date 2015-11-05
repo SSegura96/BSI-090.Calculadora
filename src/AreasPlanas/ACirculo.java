@@ -2,7 +2,7 @@ package AreasPlanas;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class ACirculo extends Figura
+public class ACirculo extends AFigura
 {
     private double radio;
 

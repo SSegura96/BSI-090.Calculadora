@@ -4,7 +4,7 @@ package AreasPlanas;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class ACuadrado extends Figura
+public class ACuadrado extends AFigura
 {
     double valorLado;
 
