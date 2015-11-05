@@ -79,7 +79,7 @@ public class TestMain {
                         //Cuadrado
                         case 2: 
                             ACuadrado cua = new ACuadrado();
-                            cua.mostrarImagen("Cuadadrado");
+                            cua.mostrarImagen("Cuadrado");
                             cua.pedirDatos();
                             cua.calcArea();
                             cua.resultado();
