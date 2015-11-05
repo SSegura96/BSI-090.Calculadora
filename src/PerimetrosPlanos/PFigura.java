@@ -6,7 +6,7 @@ package PerimetrosPlanos;
 
 public abstract class PFigura implements PIFigura
 {
-    protected double perimetro;
+    public double perimetro;
     protected String ubicacion;
 
     public PFigura() 

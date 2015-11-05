@@ -2,6 +2,7 @@ package AreasPlanas;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import PerimetrosPlanos.PPoligonoRegular;
 
 /**
  *
@@ -11,7 +12,7 @@ public class APoligonoRegular extends AFigura
 {
     private int numeroLados;
     private int medidaLado;
-
+    
     public APoligonoRegular() 
     {
         this.numeroLados = 0;
@@ -34,7 +35,6 @@ public class APoligonoRegular extends AFigura
         this.medidaLado = medidaLado;
     }
     
-    /**
     private double calcularApotema()
     {
         double angRadianes;
@@ -49,14 +49,10 @@ public class APoligonoRegular extends AFigura
     }//fin calcularApotema()
     
     @Override
-    protected double calcArea()
+    public void calcArea()
     {
-        //variable para guardar el valor del area
-        double a;
-        a = (calcularPerimetro()*calcularApotema())/2;//no vale
-        return a;
+        //area = (perimetro*calcularApotema())/2;
     }//fin calcularArea()
-    */
     
     @Override
     public void cargarImagen()
