@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,15 +41,15 @@ public class ARombo extends AFigura
     @Override
     public void calcArea ()
     {
-        area = (diagMayor*diagMenor)/2;
+        setArea((diagMayor*diagMenor)/2);
     }//fin metodo calcArea ()
 
     @Override
     public void pedirDatos()
     {
-       diagMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor"));
+        setDiagMayor(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor")));
                
-       diagMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor"));
+        setDiagMenor(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor")));
     }//fin clase pedirDatos
     
 }//fin clase ARombo

@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,12 +28,12 @@ public class ACuadrado extends AFigura
     @Override
     public void calcArea ()
     {
-        area = valorLado * valorLado;
+        setArea(valorLado * valorLado);
     }//fin calcArea ()
     
     @Override
     public void pedirDatos()
     {
-        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del lado"));
+        setValorLado(Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del lado")));
     }//fin clase pedirDatos
 }//fin clase ACuadrado

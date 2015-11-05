@@ -28,14 +28,12 @@ public class ATriangulo extends AFigura
     @Override
     public void calcArea() 
     {
-        //variable para guardar el valor del area
-        double a;
-        a = ((Math.sqrt(3))*Math.pow(medidaLado, 2))/4;
+        setArea(((Math.sqrt(3))*Math.pow(medidaLado, 2))/4);
     }//fin metodo calcArea()
     
     @Override
     public void pedirDatos()
     {
-        medidaLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado"));
+        setMedidaLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado")));
     }//fin clase pedirDatos
 }//fin clase ATriangulo

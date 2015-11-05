@@ -26,13 +26,14 @@ public class ACirculo extends AFigura
     @Override
     public void calcArea ()
     {
-        area = Math.PI*Math.pow(radio, 2);
+        setArea(Math.PI*Math.pow(radio, 2));
     }//fin metodo calcArea ()
     
     
+    @Override
     public void pedirDatos()
     {
-        radio = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del radio"));
+        setRadio(Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del radio")));
     }//fin clase pedirDatos
     
 }//fin clase ACirculo

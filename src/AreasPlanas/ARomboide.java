@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,14 +40,14 @@ public class ARomboide extends AFigura
     @Override
     public void calcArea ()
     {
-       area = base * altura; 
+        setArea(base * altura); 
     }//fin metodo calcArea ()
     
     @Override
     public void pedirDatos()
     {
-       base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base"));
+        setBase(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base")));
                
-       altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura"));
+        setAltura(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura")));
     }//fin clase pedirDatos
 }//fin clase ARomboide

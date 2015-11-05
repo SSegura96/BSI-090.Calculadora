@@ -14,8 +14,8 @@ public class APoligonoRegular extends AFigura
     
     public APoligonoRegular() 
     {
-        numeroLados = 0;
-        medidaLado = 0;
+        numeroLados = 0.0;
+        medidaLado = 0.0;
     }//fin constructor
 
     public double getNumeroLados() 
@@ -23,7 +23,7 @@ public class APoligonoRegular extends AFigura
         return numeroLados;
     }
 
-    public void setNumeroLados(int numeroLados) 
+    public void setNumeroLados(double numeroLados) 
     {
         this.numeroLados = numeroLados;
     }
@@ -33,7 +33,7 @@ public class APoligonoRegular extends AFigura
         return medidaLado;
     }
 
-    public void setMedidaLado(int medidaLado) 
+    public void setMedidaLado(double medidaLado) 
     {
         this.medidaLado = medidaLado;
     }
@@ -62,8 +62,8 @@ public class APoligonoRegular extends AFigura
     @Override
     public void pedirDatos()
     {
-        numeroLados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados"));
+        setNumeroLados(Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados")));
         
-        medidaLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado"));
+        setMedidaLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado")));
     }//fin metodo pedirDatos
 }//fin clase APoligonoRegular
