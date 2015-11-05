@@ -1,26 +1,23 @@
 package AreasPlanas;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
 public class ARombo extends AFigura 
 {
-    double diagMayor;
-    double diagMenor;
+    private double diagMayor;
+    private double diagMenor;
 
     public ARombo() 
     {
         diagMayor = 0;
         diagMenor = 0;
     }//fin constructor
-
-    @Override
-    public void calcArea ()
-    {
-        area = (diagMayor*diagMenor)/2;
-    }//fin metodo calcArea ()
-
+    
     public double getDiagMayor() 
     {
         return diagMayor;
@@ -40,5 +37,19 @@ public class ARombo extends AFigura
     {
         this.diagMenor = diagMenor;
     }
+    
+    
+    @Override
+    public void calcArea ()
+    {
+        area = (diagMayor*diagMenor)/2;
+    }//fin metodo calcArea ()
+
+    @Override
+    public void cargarImagen()
+    {
+        JOptionPane.showMessageDialog(null,"", "Rombo", JOptionPane.INFORMATION_MESSAGE, 
+                new ImageIcon("RUTA DE LA IMAGEN"));
+    }//fin clase cargarImagen
     
 }//fin clase ARombo

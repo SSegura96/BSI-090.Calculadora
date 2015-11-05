@@ -7,4 +7,5 @@ package AreasPlanas;
 public interface AIFigura 
 {
     public void calcArea ();
+    public void cargarImagen();
 }//fin clase AIFigura

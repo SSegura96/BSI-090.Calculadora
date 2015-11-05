@@ -6,12 +6,10 @@ package AreasPlanas;
 public abstract class AFigura implements AIFigura
 {
    protected double area;
-   protected String ubicacion;
 
     public AFigura() 
     {
        area = 0;
-       ubicacion = "";
     }//fin constructor
 
     public double getArea() {
@@ -21,14 +19,17 @@ public abstract class AFigura implements AIFigura
     public void setArea(double area) {
         this.area = area;
     }
-
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) 
+    
+   @Override
+    public void calcArea()
     {
-        this.ubicacion = ubicacion;
-    }
+        
+    }//fin metodo calcArea()
+    
+   @Override
+    public void cargarImagen()
+    {
+        
+    }//fin metodo cargarImagen()
    
 }//fin clase Abstracta AFigura

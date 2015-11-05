@@ -1,10 +1,13 @@
 package AreasPlanas;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class APoligonoRegular 
+public class APoligonoRegular extends AFigura
 {
     private int numeroLados;
     private int medidaLado;
@@ -54,4 +57,11 @@ public class APoligonoRegular
         return a;
     }//fin calcularArea()
     */
+    
+    @Override
+    public void cargarImagen()
+    {
+        JOptionPane.showMessageDialog(null,"", "Poligono Regular", JOptionPane.INFORMATION_MESSAGE, 
+                new ImageIcon("RUTA DE LA IMAGEN"));
+    }//fin metodo cargarImagen
 }//fin clase APoligonoRegular
