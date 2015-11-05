@@ -4,11 +4,11 @@ package AreasPlanas;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class Cuadrado extends Figura
+public class ACuadrado extends Figura
 {
     double valorLado;
 
-    public Cuadrado() 
+    public ACuadrado() 
     {
        valorLado = 0;
     }//fin constructor
@@ -28,4 +28,4 @@ public class Cuadrado extends Figura
     {
         this.valorLado = valorLado;
     }
-}//fin clase Cuadrado
+}//fin clase ACuadrado

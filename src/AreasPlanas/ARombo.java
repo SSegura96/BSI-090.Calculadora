@@ -4,12 +4,12 @@ package AreasPlanas;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class Rombo extends Figura 
+public class ARombo extends Figura 
 {
     double diagMayor;
     double diagMenor;
 
-    public Rombo() 
+    public ARombo() 
     {
         diagMayor = 0;
         diagMenor = 0;
@@ -41,4 +41,4 @@ public class Rombo extends Figura
         this.diagMenor = diagMenor;
     }
     
-}//fin clase Rombo
+}//fin clase ARombo

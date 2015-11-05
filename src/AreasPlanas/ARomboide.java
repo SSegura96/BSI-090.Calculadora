@@ -4,12 +4,12 @@ package AreasPlanas;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class Romboide extends Figura
+public class ARomboide extends Figura
 {
     double base;
     double altura;
 
-    public Romboide() 
+    public ARomboide() 
     {
         base = 0;
         altura = 0;
@@ -42,4 +42,4 @@ public class Romboide extends Figura
     }
     
     
-}//fin clase Romboide
+}//fin clase ARomboide

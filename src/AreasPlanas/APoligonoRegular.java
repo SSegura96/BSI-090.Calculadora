@@ -4,12 +4,12 @@ package AreasPlanas;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class PoligonoRegular 
+public class APoligonoRegular 
 {
     private int numeroLados;
     private int medidaLado;
 
-    public PoligonoRegular() 
+    public APoligonoRegular() 
     {
         this.numeroLados = 0;
         this.medidaLado = 0;
@@ -54,4 +54,4 @@ public class PoligonoRegular
         return a;
     }//fin calcularArea()
     */
-}//fin clase PoligonoRegular
+}//fin clase APoligonoRegular

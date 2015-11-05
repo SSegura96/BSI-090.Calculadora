@@ -2,11 +2,11 @@ package AreasPlanas;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Circulo extends Figura
+public class ACirculo extends Figura
 {
     private double radio;
 
-    public Circulo() 
+    public ACirculo() 
     {
         radio = 0;
     }//fin constructor
@@ -16,4 +16,4 @@ public class Circulo extends Figura
     {
         area = Math.PI*Math.pow(radio, 2);
     }//fin metodo calcArea ()
-}//fin clase Circulo
+}//fin clase ACirculo

@@ -4,11 +4,11 @@ package AreasPlanas;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Triangulo extends Figura
+public class ATriangulo extends Figura
 {
     private double medidaLado;
 
-    public Triangulo() 
+    public ATriangulo() 
     {
         this.medidaLado = medidaLado;
     }
@@ -31,4 +31,4 @@ public class Triangulo extends Figura
         a = ((Math.sqrt(3))*Math.pow(medidaLado, 2))/4;
     }//fin metodo calcArea()
     
-}//fin clase Triangulo
+}//fin clase ATriangulo
