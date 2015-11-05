@@ -13,11 +13,11 @@ public class Romboide extends Figura
     {
         base = 0;
         altura = 0;
-    }
+    }//fin constructor
     
     @Override
     public void calcArea ()
     {
        area = base * altura; 
-    }
-}
+    }//fin metodo calcArea ()
+}//fin clase Romboide

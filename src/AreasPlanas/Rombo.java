@@ -13,11 +13,12 @@ public class Rombo extends Figura
     {
         diagMayor = 0;
         diagMenor = 0;
-    }
+    }//fin constructor
+    
     
     @Override
     public void calcArea ()
     {
         area = (diagMayor*diagMenor)/2;
-    }
-}
+    }//fin metodo calcArea ()
+}//fin clase Rombo

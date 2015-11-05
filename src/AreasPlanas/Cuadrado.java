@@ -11,11 +11,11 @@ public class Cuadrado extends Figura
     public Cuadrado() 
     {
        valorLado = 0;
-    }
+    }//fin constructor
     
     @Override
     public void calcArea ()
     {
         area = valorLado * valorLado;
-    }
-}
+    }//fin calcArea ()
+}//fin clase Cuadrado
