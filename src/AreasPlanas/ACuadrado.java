@@ -26,7 +26,6 @@ public class ACuadrado extends AFigura
         this.valorLado = valorLado;
     }
     
-    
     @Override
     public void calcArea ()
     {
@@ -34,9 +33,8 @@ public class ACuadrado extends AFigura
     }//fin calcArea ()
     
     @Override
-    public void cargarImagen()
+    public void pedirDatos()
     {
-        JOptionPane.showMessageDialog(null,"", "Cuadrado", JOptionPane.INFORMATION_MESSAGE, 
-                new ImageIcon("RUTA DE LA IMAGEN"));
-    }//fin clase cargarImagen
+        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del lado"));
+    }//fin clase pedirDatos
 }//fin clase ACuadrado

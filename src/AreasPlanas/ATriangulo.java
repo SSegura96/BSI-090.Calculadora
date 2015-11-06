@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,9 +34,8 @@ public class ATriangulo extends AFigura
     }//fin metodo calcArea()
     
     @Override
-    public void cargarImagen()
+    public void pedirDatos()
     {
-        JOptionPane.showMessageDialog(null,"", "Triangulo", JOptionPane.INFORMATION_MESSAGE, 
-                new ImageIcon("RUTA DE LA IMAGEN"));
-    }//fin clase cargarImagen
+        medidaLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado"));
+    }//fin clase pedirDatos
 }//fin clase ATriangulo

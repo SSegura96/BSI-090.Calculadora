@@ -29,10 +29,10 @@ public class ACirculo extends AFigura
         area = Math.PI*Math.pow(radio, 2);
     }//fin metodo calcArea ()
     
-    @Override
-    public void cargarImagen()
+    
+    public void pedirDatos()
     {
-        JOptionPane.showMessageDialog(null,"", "Circulo", JOptionPane.INFORMATION_MESSAGE, 
-                new ImageIcon("RUTA DE LA IMAGEN"));
-    }//fin clase cargarImagen
+        radio = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del radio"));
+    }//fin clase pedirDatos
+    
 }//fin clase ACirculo

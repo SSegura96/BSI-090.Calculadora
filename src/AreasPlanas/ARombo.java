@@ -46,10 +46,11 @@ public class ARombo extends AFigura
     }//fin metodo calcArea ()
 
     @Override
-    public void cargarImagen()
+    public void pedirDatos()
     {
-        JOptionPane.showMessageDialog(null,"", "Rombo", JOptionPane.INFORMATION_MESSAGE, 
-                new ImageIcon("RUTA DE LA IMAGEN"));
-    }//fin clase cargarImagen
+       diagMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor"));
+               
+       diagMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor"));
+    }//fin clase pedirDatos
     
 }//fin clase ARombo

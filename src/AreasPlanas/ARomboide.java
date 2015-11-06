@@ -45,9 +45,10 @@ public class ARomboide extends AFigura
     }//fin metodo calcArea ()
     
     @Override
-    public void cargarImagen()
+    public void pedirDatos()
     {
-        JOptionPane.showMessageDialog(null,"", "Romboide", JOptionPane.INFORMATION_MESSAGE, 
-                new ImageIcon("RUTA DE LA IMAGEN"));
-    }//fin clase cargarImagen
+       base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base"));
+               
+       altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura"));
+    }//fin clase pedirDatos
 }//fin clase ARomboide

@@ -1,5 +1,8 @@
 package AreasPlanas;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
@@ -11,25 +14,21 @@ public abstract class AFigura implements AIFigura
     {
        area = 0;
     }//fin constructor
-
-    public double getArea() {
+    
+    public void mostrarImagen (String Figura,String ubicacion)
+    {
+        JOptionPane.showMessageDialog(null,"", Figura,
+        JOptionPane.INFORMATION_MESSAGE, new ImageIcon(ubicacion));
+    }
+    
+    public double getArea() 
+    {
         return area;
     }
 
-    public void setArea(double area) {
+    public void setArea(double area) 
+    {
         this.area = area;
     }
-    
-   @Override
-    public void calcArea()
-    {
-        
-    }//fin metodo calcArea()
-    
-   @Override
-    public void cargarImagen()
-    {
-        
-    }//fin metodo cargarImagen()
    
 }//fin clase Abstracta AFigura

@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import PerimetrosPlanos.PPoligonoRegular;
 
@@ -10,28 +9,32 @@ import PerimetrosPlanos.PPoligonoRegular;
  */
 public class APoligonoRegular extends AFigura
 {
-    private int numeroLados;
-    private int medidaLado;
+    private double numeroLados;
+    private double medidaLado;
     
     public APoligonoRegular() 
     {
-        this.numeroLados = 0;
-        this.medidaLado = 0;
+        numeroLados = 0;
+        medidaLado = 0;
     }//fin constructor
 
-    public int getNumeroLados() {
+    public double getNumeroLados() 
+    {
         return numeroLados;
     }
 
-    public void setNumeroLados(int numeroLados) {
+    public void setNumeroLados(int numeroLados) 
+    {
         this.numeroLados = numeroLados;
     }
 
-    public int getMedidaLado() {
+    public double getMedidaLado() 
+    {
         return medidaLado;
     }
 
-    public void setMedidaLado(int medidaLado) {
+    public void setMedidaLado(int medidaLado) 
+    {
         this.medidaLado = medidaLado;
     }
     
@@ -51,13 +54,16 @@ public class APoligonoRegular extends AFigura
     @Override
     public void calcArea()
     {
-        //area = (perimetro*calcularApotema())/2;
+        PPoligonoRegular pp = new PPoligonoRegular();
+        
+        area = (pp.perimetro*calcularApotema())/2;
     }//fin calcularArea()
     
     @Override
-    public void cargarImagen()
+    public void pedirDatos()
     {
-        JOptionPane.showMessageDialog(null,"", "Poligono Regular", JOptionPane.INFORMATION_MESSAGE, 
-                new ImageIcon("RUTA DE LA IMAGEN"));
-    }//fin metodo cargarImagen
+        numeroLados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados"));
+        
+        medidaLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado"));
+    }//fin metodo pedirDatos
 }//fin clase APoligonoRegular

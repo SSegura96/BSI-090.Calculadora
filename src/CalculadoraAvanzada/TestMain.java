@@ -1,6 +1,8 @@
 package CalculadoraAvanzada;
 
 import javax.swing.JOptionPane;
+import AreasPlanas.*;
+import PerimetrosPlanos.*;
 
 /**
  *
@@ -54,41 +56,43 @@ public class TestMain {
                     }//fin for
 
                     //Switch para el sudmenu
-                    switch (indice) {
-                        case 0: {
+                    switch (indice)
+                    {
+                        case 0: 
+                           ACirculo cir = new ACirculo ();
+                           cir.calcArea();
+                        break;
+                        
 
-                            break;
-                        }//fin segundo case 0
+                        case 1: 
 
-                        case 1: {
+                        break;
+                       
 
-                            break;
-                        }//fin segundo case 1
+                        case 2: 
 
-                        case 2: {
+                        break;
+                       
 
-                            break;
-                        }//fin segundo case 2
+                        case 3: 
 
-                        case 3: {
+                        break;
+                       
 
-                            break;
-                        }//fin segundo case 3
+                        case 4: 
 
-                        case 4: {
+                        break;
+                       
 
-                            break;
-                        }//fin segundo case 4
+                        case 5:
 
-                        case 5: {
+                        break;
+                      
 
-                            break;
-                        }//fin segundo case 5
+                        case 6:
 
-                        case 6: {
-
-                            break;
-                        }//fin segundo case 6
+                        break;
+                      
 
                         case JOptionPane.CLOSED_OPTION: {
                             salir = true;
