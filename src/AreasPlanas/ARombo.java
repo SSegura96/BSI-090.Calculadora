@@ -42,6 +42,11 @@ public class ARombo extends AFigura
     public void calcArea ()
     {
         setArea((diagMayor*diagMenor)/2);
+        
+        mensaje = "La diagonal mayor es: "+diagMayor+"\n"
+                + "La diagonal menor es: "+diagMenor+"\n"
+                + "El Area es: "+area;
+        
     }//fin metodo calcArea ()
 
     @Override

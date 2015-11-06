@@ -16,10 +16,10 @@ public abstract class AFigura implements AIFigura
        area = 0;
     }//fin constructor
     
-    public void mostrarImagen (String Figura,String ubicacion)
+    public void mostrarImagen (String Figura)
     {
         JOptionPane.showMessageDialog(null,"", Figura,
-        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+ubicacion));
+        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+Figura+".png"));
     }
     
     public void resultado ()

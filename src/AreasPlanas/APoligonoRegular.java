@@ -57,6 +57,10 @@ public class APoligonoRegular extends AFigura
         PPoligonoRegular pp = new PPoligonoRegular();
         
         area = (pp.perimetro*calcularApotema())/2;
+        
+        mensaje = "Tiene: "+numeroLados+" lados \n"
+                + "Sus lados miden: "+medidaLado+"\n"
+                + "El Area es: "+area;
     }//fin calcularArea()
     
     @Override

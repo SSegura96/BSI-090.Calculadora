@@ -29,6 +29,9 @@ public class ACuadrado extends AFigura
     public void calcArea ()
     {
         setArea(valorLado * valorLado);
+        
+        mensaje = "El valor del lado es: "+valorLado+"\n"
+                + "El area es: "+area;
     }//fin calcArea ()
     
     @Override

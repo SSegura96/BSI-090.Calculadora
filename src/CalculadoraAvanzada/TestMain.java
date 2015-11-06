@@ -58,45 +58,80 @@ public class TestMain {
                     //Switch para el sudmenu
                     switch (indice)
                     {
+                        //Circulo
                         case 0: 
                            ACirculo cir = new ACirculo ();
-                           cir.mostrarImagen("Circulo", "Circulo.png");
+                           cir.mostrarImagen("Circulo");
                            cir.pedirDatos();
                            cir.calcArea();
                            cir.resultado();
                         break;
                         
-
+                        //Triangulo
                         case 1: 
                             ATriangulo tri = new ATriangulo();
+                            tri.mostrarImagen("Triangulo");
+                            tri.pedirDatos();
+                            tri.calcArea();
+                            tri.resultado();
                         break;
                        
-
+                        //Cuadrado
                         case 2: 
-
+                            ACuadrado cua = new ACuadrado();
+                            cua.mostrarImagen("Cuadadrado");
+                            cua.pedirDatos();
+                            cua.calcArea();
+                            cua.resultado();
                         break;
                        
-
+                        //Rectangulo
                         case 3: 
-
+                            ARombo rob1 = new ARombo();
+                            rob1.mostrarImagen("Rectangulo");
+                            rob1.pedirDatos();
+                            rob1.calcArea();
+                            rob1.resultado();
                         break;
                        
-
+                        //Rombo
                         case 4: 
-
+                            ARombo rob = new ARombo();
+                            rob.mostrarImagen("Cuadadrado");
+                            rob.pedirDatos();
+                            rob.calcArea();
+                            rob.resultado(); 
                         break;
                        
-
+                        //Trapecio
                         case 5:
-
+                        /*
+                            ATrapecio trap = new ATrapecio();
+                            trap.mostrarImagen("Cuadadrado");
+                            trap.pedirDatos();
+                            trap.calcArea();
+                            trap.resultado();
+                        */
                         break;
                       
-
+                        //Romboide    
                         case 6:
-
+                            ARomboide romb = new ARomboide();
+                            romb.mostrarImagen("Romboide");
+                            romb.pedirDatos();
+                            romb.calcArea();
+                            romb.resultado();
                         break;
                       
-
+                        //Poligono regular
+                        case 7:
+                            APoligonoRegular pr = new APoligonoRegular();
+                            pr.mostrarImagen("Romboide");
+                            pr.pedirDatos();
+                            pr.calcArea();
+                            pr.resultado(); 
+                        break;
+                            
                         case JOptionPane.CLOSED_OPTION: {
                             salir = true;
                             break;

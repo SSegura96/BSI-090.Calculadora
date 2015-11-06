@@ -29,6 +29,9 @@ public class ATriangulo extends AFigura
     public void calcArea() 
     {
         setArea(((Math.sqrt(3))*Math.pow(medidaLado, 2))/4);
+        
+        mensaje = "La media del lado es: "+medidaLado+"\n"
+                + "El area es: "+area;
     }//fin metodo calcArea()
     
     @Override

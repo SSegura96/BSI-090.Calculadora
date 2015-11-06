@@ -40,7 +40,12 @@ public class ARomboide extends AFigura
     @Override
     public void calcArea ()
     {
-        setArea(base * altura); 
+        setArea(base * altura);
+        
+        mensaje = "Tiene una base: "+base+"\n"
+                + "Tiene una altura: "+altura+"\n"
+                + "El Area es: "+area;
+        
     }//fin metodo calcArea ()
     
     @Override
