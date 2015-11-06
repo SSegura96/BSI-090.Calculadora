@@ -4,9 +4,9 @@ package PerimatrosPlanos;
  * @author Sergio Segura Vidal
  */
 
-public class PCirculo extends PForma
+public class PCirculo extends PFigura
 {
-    double radio;
+    protected double radio;
     
     @Override
     public void calcPerimetro ()
