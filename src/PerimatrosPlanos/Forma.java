@@ -4,7 +4,7 @@ package PerimatrosPlanos;
  * @author Sergio Segura Vidal
  */
 
-public class Forma 
+public abstract class Forma implements IForma
 {
     double perimetro;
     String ubicacion;

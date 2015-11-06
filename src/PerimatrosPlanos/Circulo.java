@@ -7,13 +7,14 @@ package PerimatrosPlanos;
 
 //te paras github de mierda
 
-public class Circulo
+public class Circulo extends Forma
 {
     double radio;
     
-    public void CalcPerimetro ()
+    @Override
+    public void calcPerimetro ()
     {
-        radio=0; 
+        perimetro = (2*Math.PI)*radio; 
     }
 
     public double getRadio() 
