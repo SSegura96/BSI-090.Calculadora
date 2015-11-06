@@ -18,4 +18,14 @@ public class Cuadrado extends Figura
     {
         area = valorLado * valorLado;
     }//fin calcArea ()
+
+    public double getValorLado() 
+    {
+        return valorLado;
+    }
+
+    public void setValorLado(double valorLado) 
+    {
+        this.valorLado = valorLado;
+    }
 }//fin clase Cuadrado

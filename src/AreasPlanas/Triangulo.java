@@ -13,14 +13,15 @@ public class Triangulo extends Figura
         this.medidaLado = medidaLado;
     }
 
-    public double getMedidaLado() {
+    public double getMedidaLado() 
+    {
         return medidaLado;
     }
 
-    public void setMedidaLado(double medidaLado) {
+    public void setMedidaLado(double medidaLado) 
+    {
         this.medidaLado = medidaLado;
     }
-    
     
     @Override
     public void calcArea() 
