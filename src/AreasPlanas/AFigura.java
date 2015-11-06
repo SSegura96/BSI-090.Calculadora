@@ -18,7 +18,7 @@ public abstract class AFigura implements AIFigura
     public void mostrarImagen (String Figura,String ubicacion)
     {
         JOptionPane.showMessageDialog(null,"", Figura,
-        JOptionPane.INFORMATION_MESSAGE, new ImageIcon(ubicacion));
+        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+ubicacion));
     }
     
     public double getArea() 

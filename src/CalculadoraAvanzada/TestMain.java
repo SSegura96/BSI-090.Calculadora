@@ -61,6 +61,7 @@ public class TestMain {
                         case 0: 
                            ACirculo cir = new ACirculo ();
                            cir.calcArea();
+                           cir.mostrarImagen("Circulo", "Circulo.png");
                         break;
                         
 
