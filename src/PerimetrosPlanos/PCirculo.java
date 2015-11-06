@@ -1,4 +1,4 @@
-package PerimatrosPlanos;
+package PerimetrosPlanos;
 
 /**
  * @author Sergio Segura Vidal
