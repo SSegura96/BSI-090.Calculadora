@@ -4,12 +4,12 @@ package PerimatrosPlanos;
  * @author Sergio Segura Vidal
  */
 
-public abstract class Forma implements IForma
+public abstract class PForma implements PIFigura
 {
     double perimetro;
     String ubicacion;
 
-    public Forma() 
+    public PForma() 
     {
        perimetro = 0;
        ubicacion = "";

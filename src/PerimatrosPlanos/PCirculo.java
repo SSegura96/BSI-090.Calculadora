@@ -4,10 +4,7 @@ package PerimatrosPlanos;
  * @author Sergio Segura Vidal
  */
 
-
-//te paras github de mierda
-
-public class Circulo extends Forma
+public class PCirculo extends PForma
 {
     double radio;
     
