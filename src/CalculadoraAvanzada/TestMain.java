@@ -60,13 +60,15 @@ public class TestMain {
                     {
                         case 0: 
                            ACirculo cir = new ACirculo ();
-                           cir.calcArea();
                            cir.mostrarImagen("Circulo", "Circulo.png");
+                           cir.pedirDatos();
+                           cir.calcArea();
+                           cir.resultado();
                         break;
                         
 
                         case 1: 
-
+                            ATriangulo tri = new ATriangulo();
                         break;
                        
 

@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 public abstract class AFigura implements AIFigura
 {
    protected double area;
+   protected String mensaje; 
 
     public AFigura() 
     {
@@ -19,6 +20,11 @@ public abstract class AFigura implements AIFigura
     {
         JOptionPane.showMessageDialog(null,"", Figura,
         JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+ubicacion));
+    }
+    
+    public void resultado ()
+    {
+        JOptionPane.showMessageDialog(null, mensaje);
     }
     
     public double getArea() 
