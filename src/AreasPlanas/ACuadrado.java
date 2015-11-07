@@ -30,7 +30,7 @@ public class ACuadrado extends AFigura
     public void calcArea ()
     {
         setArea(valorLado * valorLado);
-        DecimalFormat df = new DecimalFormat("0.000");
+        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "El valor del lado es: "+valorLado+"\n"
                 + "El area es: "+df.format(area);

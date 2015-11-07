@@ -1,5 +1,6 @@
 package AreasPlanas;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -40,11 +41,12 @@ public class ARomboide extends AFigura
     @Override
     public void calcArea ()
     {
-        setArea(base * altura);
+        area = base * altura;
+        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Tiene una base: "+base+"\n"
                 + "Tiene una altura: "+altura+"\n"
-                + "El Area es: "+area;
+                + "El Area es: "+df.format(area);
         
     }//fin metodo calcArea ()
     

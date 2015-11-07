@@ -27,7 +27,7 @@ public class ACirculo extends AFigura
     public void calcArea ()
     {
         area = Math.PI*Math.pow(radio, 2);
-        DecimalFormat df = new DecimalFormat("0.000");
+        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "El radio es: "+radio+"\n"
                   +"El area es: "+df.format(area);

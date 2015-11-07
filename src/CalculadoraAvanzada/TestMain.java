@@ -86,17 +86,17 @@ public class TestMain {
                        
                         //Rectangulo
                         case 3: 
-                            ARombo rob1 = new ARombo();
-                            rob1.mostrarImagen("Rectangulo");
-                            rob1.pedirDatos();
-                            rob1.calcArea();
-                            rob1.resultado();
+                            ARectangulo rec1 = new ARectangulo();
+                            rec1.mostrarImagen("Rectangulo");
+                            rec1.pedirDatos();
+                            rec1.calcArea();
+                            rec1.resultado();
                         break;
                        
                         //Rombo
                         case 4: 
                             ARombo rob = new ARombo();
-                            rob.mostrarImagen("Cuadadrado");
+                            rob.mostrarImagen("Rombo");
                             rob.pedirDatos();
                             rob.calcArea();
                             rob.resultado(); 
@@ -104,13 +104,13 @@ public class TestMain {
                        
                         //Trapecio
                         case 5:
-                        /*
+                        
                             ATrapecio trap = new ATrapecio();
-                            trap.mostrarImagen("Cuadadrado");
+                            trap.mostrarImagen("Trapecio");
                             trap.pedirDatos();
                             trap.calcArea();
                             trap.resultado();
-                        */
+                        
                         break;
                       
                         //Romboide    
@@ -125,7 +125,7 @@ public class TestMain {
                         //Poligono regular
                         case 7:
                             APoligonoRegular pr = new APoligonoRegular();
-                            pr.mostrarImagen("Romboide");
+                            pr.mostrarImagen("PoligonoRegular");
                             pr.pedirDatos();
                             pr.calcArea();
                             pr.resultado(); 

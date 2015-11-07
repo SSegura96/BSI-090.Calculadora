@@ -20,6 +20,7 @@ public class PPoligonoRegular extends PFigura
         return numlados;
     }
     
+    @Override
     public void calcPerimetro()
     {
         perimetro = numlados * valorlado;

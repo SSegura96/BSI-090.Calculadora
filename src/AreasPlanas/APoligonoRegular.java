@@ -1,7 +1,7 @@
 package AreasPlanas;
 
 import javax.swing.JOptionPane;
-import PerimetrosPlanos.PPoligonoRegular;
+import PerimetrosPlanos.*;
 
 /**
  *
@@ -51,10 +51,15 @@ public class APoligonoRegular extends AFigura
         return apotema;
     }//fin calcularApotema()
     
+    
     @Override
     public void calcArea()
     {
+        //Se invoca la clase PPoligonoRegular para calcular el area del poligono y poder usarlo en la formula del area
         PPoligonoRegular pp = new PPoligonoRegular();
+        pp.setNumlados(numeroLados);
+        pp.setValorlado(medidaLado);
+        pp.calcPerimetro();
         
         area = (pp.perimetro*calcularApotema())/2;
         
