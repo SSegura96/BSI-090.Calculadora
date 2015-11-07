@@ -66,8 +66,8 @@ public class APoligonoRegular extends AFigura
     @Override
     public void pedirDatos()
     {
-        setNumeroLados(Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados")));
+        setNumeroLados(Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:")));
         
-        setMedidaLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado")));
+        setMedidaLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:")));
     }//fin metodo pedirDatos
 }//fin clase APoligonoRegular

@@ -1,5 +1,6 @@
 package AreasPlanas;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,14 +30,15 @@ public class ACuadrado extends AFigura
     public void calcArea ()
     {
         setArea(valorLado * valorLado);
+        DecimalFormat df = new DecimalFormat("0.000");
         
         mensaje = "El valor del lado es: "+valorLado+"\n"
-                + "El area es: "+area;
+                + "El area es: "+df.format(area);
     }//fin calcArea ()
     
     @Override
     public void pedirDatos()
     {
-        setValorLado(Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del lado")));
+        setValorLado(Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del lado:")));
     }//fin clase pedirDatos
 }//fin clase ACuadrado

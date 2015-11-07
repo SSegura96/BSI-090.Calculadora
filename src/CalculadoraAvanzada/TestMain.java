@@ -2,7 +2,6 @@ package CalculadoraAvanzada;
 
 import javax.swing.JOptionPane;
 import AreasPlanas.*;
-import PerimetrosPlanos.*;
 
 /**
  *
