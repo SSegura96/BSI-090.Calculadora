@@ -9,8 +9,13 @@ import javax.swing.JTextArea;
  */
 public class Sumatoria 
 {
-    //ArrayList <Double> valores = new ArrayList();
     
+    /**
+     * En esste metodo se preguntan los datos y estos se va agregando a un 
+     * ArrayList llamado valores
+     * @param valores
+     * @param area 
+     */
     public void obtenerDatos (ArrayList <Double> valores,JTextArea area)
     {
         int i = 0;
@@ -28,7 +33,7 @@ public class Sumatoria
             
             valores.add(dato);
             
-            
+            //menu continuar si no
             int resp = JOptionPane.showOptionDialog(null,
                     "¿Desea registrar otro numero?",
                     "Agregar Numeros", JOptionPane.YES_NO_OPTION,
@@ -36,34 +41,30 @@ public class Sumatoria
             
             if (resp == 1)
             {
-                seguir = false;
-                
-            }
-            else
-            {
-                
+                area.setText(mensaje.substring(0, mensaje.length()-2));
+                seguir = false;   
             }
             
             i++;
         }
     }
     
-    public String juntarDatos(ArrayList <Double> valores)
+    /**
+     * Este metodo realiza la sumatoria
+     * @param valores
+     * @return 
+     */
+    public double calcularSumatoria (ArrayList <Double> valores)
     {
-        String listo = "";
+        double resultado = 0.0;
         
-        for (int i = 0; i < 10; i++) 
+        for (int i = 0; i < valores.size(); i++) 
         {
-            listo += valores.get(i)+" + ";
+            resultado += valores.get(i);
         }
         
-        return listo;
+        return resultado;
     }
     
-    public int calcularSumatoria ()
-    {
-        int suma = 0;
-        
-        return suma;
-    }
+    
 }
