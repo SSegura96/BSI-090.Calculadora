@@ -1,7 +1,9 @@
 package PerimetrosPlanos;
 
+import javax.swing.JOptionPane;
+
 /**
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez & Sergio Segura
  */
 
 public class PPoligonoRegular extends PFigura
@@ -24,6 +26,16 @@ public class PPoligonoRegular extends PFigura
     public void calcPerimetro()
     {
         perimetro = numlados * valorlado;
+        
+        mensaje = "Numero de lados: "+numlados+"\n"
+                + "Valor del lado: "+valorlado+"\n"
+                + "Perimetro: "+perimetro;
+    }
+    
+    @Override
+    public void pedirDatos()
+    {
+        numlados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados"));
     }
     
     public void setNumlados(double numlados) 

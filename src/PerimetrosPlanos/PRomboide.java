@@ -5,10 +5,12 @@
  */
 package PerimetrosPlanos;
 
+import javax.swing.JOptionPane;
+
 /**
- *
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez & Sergio Segura
  */
+
 public class PRomboide extends PFigura 
 {
     protected double base;
@@ -20,9 +22,21 @@ public class PRomboide extends PFigura
         altura = 0;
     }
 
+    @Override
     public void calcPerimetro ()
     {
         perimetro = (2*base)+(2*altura);
+        
+        mensaje = "Base: "+base+"\n"
+                + "Altura: "+altura+"\n"
+                + "Perimetro: "+perimetro;
+    }
+    
+    @Override
+    public void pedirDatos ()
+    {
+        base = Double.parseDouble(JOptionPane.showInputDialog("Digite la base"));
+        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite la altura"));
     }
     
     public double getBase() 

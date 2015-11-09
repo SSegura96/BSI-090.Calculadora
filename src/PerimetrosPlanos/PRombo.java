@@ -5,32 +5,42 @@
  */
 package PerimetrosPlanos;
 
+import javax.swing.JOptionPane;
+
 /**
- *
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez & Sergio Segura
  */
+
 public class PRombo extends PFigura
 {
-    protected double valorlado;
+    protected double valorLado;
 
     public PRombo()
     {
-        valorlado = 0;
+        valorLado = 0;
     }
     
     @Override
     public void calcPerimetro ()
     {
-        perimetro = valorlado*4;
+        perimetro = valorLado*4;
+        
+        mensaje = "Valor del lado: "+valorLado+"\n"
+                + "Perimetro: "+perimetro;
+    }
+    
+    public void pedirDatos ()
+    {
+        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado"));
     }
     
     public double getValorlado() 
     {
-        return valorlado;
+        return valorLado;
     }
 
     public void setValorlado(double valorlado) 
     {
-        this.valorlado = valorlado;
+        this.valorLado = valorlado;
     }
 }

@@ -61,7 +61,7 @@ public class ATrapecio extends AFigura
     {
        baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor de la base mayor:"));
        baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor de la base menor:"));
-       altura = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor de la base:"));
+       altura = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor de la altura:"));
     }//fin metodo pedirDatos()
     
 }//fin clase Atrapecio

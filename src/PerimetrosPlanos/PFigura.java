@@ -1,20 +1,28 @@
 package PerimetrosPlanos;
 
+import javax.swing.JOptionPane;
+
 /**
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez & Sergio Segura
  */
 
 public abstract class PFigura implements PIFigura
 {
     public double perimetro;
     protected String ubicacion;
+    protected String mensaje;
 
     public PFigura() 
     {
        perimetro = 0;
        ubicacion = "";
     }
-
+    
+    public void resulatado ()
+    {
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+    
     public double getPerimetro() 
     {
         return perimetro;
