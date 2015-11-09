@@ -53,8 +53,8 @@ public class ARomboide extends AFigura
     @Override
     public void pedirDatos()
     {
-        setBase(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:")));
+        base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
                
-        setAltura(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:")));
+        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
     }//fin clase pedirDatos
 }//fin clase ARomboide

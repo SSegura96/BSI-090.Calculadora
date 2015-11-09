@@ -1,5 +1,6 @@
 package PerimetrosPlanos;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -8,49 +9,52 @@ import javax.swing.JOptionPane;
 
 public class PPoligonoRegular extends PFigura
 {
-    protected double numlados;
-    protected double valorlado;
+    protected double numLados;
+    protected double valorLado;
 
     public PPoligonoRegular()
     {
-        numlados = 0;
-        valorlado = 0;
+        numLados = 0;
+        valorLado = 0;
     }
 
-    public double getNumlados() 
+    public double getNumLados() 
     {
-        return numlados;
+        return numLados;
     }
+    
+    public void setNumLados(double numLados) 
+    {
+        this.numLados = numLados;
+    }
+
+    public double getValorLado() 
+    {
+        return valorLado;
+    }
+
+    public void setValorLado(double valorLado) 
+    {
+        this.valorLado = valorLado;
+    }
+    
     
     @Override
     public void calcPerimetro()
     {
-        perimetro = numlados * valorlado;
+        perimetro = numLados * valorLado;
+        DecimalFormat df = new DecimalFormat("0.00");
         
-        mensaje = "Numero de lados: "+numlados+"\n"
-                + "Valor del lado: "+valorlado+"\n"
-                + "Perimetro: "+perimetro;
-    }
+        mensaje = "Numero de lados: "+numLados+"\n"
+                + "Valor del lado: "+valorLado+"\n"
+                + "Perimetro: "+df.format(perimetro);
+    }//fin metodo calcPerimetro()
     
     @Override
     public void pedirDatos()
     {
-        numlados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados"));
-    }
+        numLados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:"));
+        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+    }//fin metodo pedirDatos()
     
-    public void setNumlados(double numlados) 
-    {
-        this.numlados = numlados;
-    }
-
-    public double getValorlado() 
-    {
-        return valorlado;
-    }
-
-    public void setValorlado(double valorlado) 
-    {
-        this.valorlado = valorlado;
-    }
-    
-}
+}//fin clase PPoligonoRegular

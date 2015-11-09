@@ -11,10 +11,23 @@ public abstract class AFigura implements AIFigura
    protected double area;
    protected String mensaje; 
 
+   
     public AFigura() 
     {
        area = 0;
+       mensaje = "";
     }//fin constructor
+    
+    public double getArea() 
+    {
+        return area;
+    }
+
+    public void setArea(double area) 
+    {
+        this.area = area;
+    }
+    
     
     public void mostrarImagen (String Figura)
     {
@@ -25,16 +38,6 @@ public abstract class AFigura implements AIFigura
     public void resultado ()
     {
         JOptionPane.showMessageDialog(null, mensaje);
-    }
-    
-    public double getArea() 
-    {
-        return area;
-    }
-
-    public void setArea(double area) 
-    {
-        this.area = area;
     }
    
 }//fin clase Abstracta AFigura

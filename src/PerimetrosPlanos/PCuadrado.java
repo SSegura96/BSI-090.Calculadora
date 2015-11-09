@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package PerimetrosPlanos;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -24,9 +20,10 @@ public class PCuadrado extends PFigura
     public void calcPerimetro ()
     {
         perimetro = valorlado*4;
+        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Valor del lado: "+valorlado+"\n"
-                + "Perimetro: "+perimetro;
+                + "Perimetro: "+df.format(perimetro);
     }
     
     @Override

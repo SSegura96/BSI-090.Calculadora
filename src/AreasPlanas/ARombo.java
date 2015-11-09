@@ -1,5 +1,6 @@
 package AreasPlanas;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -41,11 +42,12 @@ public class ARombo extends AFigura
     @Override
     public void calcArea ()
     {
-        setArea((diagMayor*diagMenor)/2);
+        area = (diagMayor*diagMenor)/2;
+        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "La diagonal mayor es: "+diagMayor+"\n"
                 + "La diagonal menor es: "+diagMenor+"\n"
-                + "El Area es: "+area;
+                + "El Area es: "+df.format(area);
         
     }//fin metodo calcArea ()
 

@@ -1,5 +1,6 @@
 package PerimetrosPlanos;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,9 +15,10 @@ public class PCirculo extends PFigura
     public void calcPerimetro ()
     {
         perimetro = (2*Math.PI)*radio;
+        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Radio: "+radio+"\n"
-                + "Perimetro: "+perimetro;
+                + "Perimetro: "+df.format(perimetro);
     }
 
     @Override
