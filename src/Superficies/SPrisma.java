@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 public class SPrisma extends SFigura
 {
     private double altura;
+    private double numLadosBase;
+    private double valorLado;
     private double perimBase;
     private double areaBase;
     private double superficieLateral;
@@ -17,6 +19,8 @@ public class SPrisma extends SFigura
     public SPrisma() 
     {
         altura = 0.0;
+        numLadosBase = 0.0;
+        valorLado = 0.0;
         perimBase = 0.0;
         areaBase = 0.0;
         superficieLateral = 0.0;
@@ -28,6 +32,22 @@ public class SPrisma extends SFigura
 
     public void setAltura(double altura) {
         this.altura = altura;
+    }
+
+    public double getNumLadosBase() {
+        return numLadosBase;
+    }
+
+    public void setNumLadosBase(double numLadosBase) {
+        this.numLadosBase = numLadosBase;
+    }
+
+    public double getValorLado() {
+        return valorLado;
+    }
+
+    public void setValorLado(double valorLado) {
+        this.valorLado = valorLado;
     }
 
     public double getPerimBase() {
@@ -58,14 +78,19 @@ public class SPrisma extends SFigura
     @Override
     public void pedirDatos() 
     {
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
-        perimBase = Double.parseDouble(JOptionPane.showInputDialog("Digite el perimetro de la base:"));
-        areaBase = Double.parseDouble(JOptionPane.showInputDialog("Digite el area de la base:"));
+        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite la altura:"));
+        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+        numLadosBase = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados de la base:"));
     }//fin metodo pedirDatos()
 
     @Override
     public void calcSuperficie() 
     {
+        //DESPICHE AL CALCULAR EL AREA DE LA BASE
+        
+        /**
+        perimBase = numLadosBase * valorLado;
+        
         superficieLateral = perimBase*altura;
         
         superficie = superficieLateral+(2*areaBase);
@@ -77,6 +102,7 @@ public class SPrisma extends SFigura
                 + "Area de la Base: "+areaBase+"\n"
                 + "Superficie Lateral: "+df.format(superficieLateral)+"\n"
                 + "Superficie Total: "+df.format(superficie);
+        */
     }//fin metodo calcSuperficie()
     
 }//fin clase SPrisma

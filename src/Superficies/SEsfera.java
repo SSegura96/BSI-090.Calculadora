@@ -7,11 +7,11 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Esfera extends SFigura
+public class SEsfera extends SFigura
 {
     private double radio;
 
-    public Esfera() 
+    public SEsfera() 
     {
         radio = 0.0;
     }//fin constructor
@@ -41,4 +41,4 @@ public class Esfera extends SFigura
                 + "Superficie: "+df.format(superficie);
     }//fin metodo calcSuperficie()
     
-}//fin clase Esfera
+}//fin clase SEsfera
