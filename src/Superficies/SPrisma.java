@@ -13,6 +13,7 @@ public class SPrisma extends SFigura
     private double numLadosBase;
     private double valorLado;
     private double perimBase;
+    private double apotemaBase;
     private double areaBase;
     private double superficieLateral;
     
@@ -22,6 +23,7 @@ public class SPrisma extends SFigura
         numLadosBase = 0.0;
         valorLado = 0.0;
         perimBase = 0.0;
+        apotemaBase = 0.0;
         areaBase = 0.0;
         superficieLateral = 0.0;
     }//fin constructor
@@ -58,6 +60,14 @@ public class SPrisma extends SFigura
         this.perimBase = perimBase;
     }
 
+    public double getApotemaBase() {
+        return apotemaBase;
+    }
+
+    public void setApotemaBase(double apotemaBase) {
+        this.apotemaBase = apotemaBase;
+    }
+
     public double getAreaBase() {
         return areaBase;
     }
@@ -82,16 +92,27 @@ public class SPrisma extends SFigura
         valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
         numLadosBase = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados de la base:"));
     }//fin metodo pedirDatos()
-
+    
+    private void calcularApotema()
+    {
+        double angRadianes;
+        double angCentral;
+        //se saca el algulo central y lo convertimos a radianes para poder sacar la tangencia.
+        angCentral = 360/numLadosBase;
+        angRadianes = Math.toRadians(angCentral);
+        //Se saca el apotema: Lado/2*tan(angRadianes/2)
+        apotemaBase = numLadosBase/(2*Math.tan(angRadianes/2));
+    }//fin calcularApotema()
+    
     @Override
     public void calcSuperficie() 
     {
-        //DESPICHE AL CALCULAR EL AREA DE LA BASE
         
-        /**
         perimBase = numLadosBase * valorLado;
         
         superficieLateral = perimBase*altura;
+        
+        areaBase = (perimBase * apotemaBase)/2;
         
         superficie = superficieLateral+(2*areaBase);
         
@@ -99,10 +120,9 @@ public class SPrisma extends SFigura
         
         mensaje = "Altura: "+altura+"\n"
                 + "Perimetro de la Base: "+perimBase+"\n"
-                + "Area de la Base: "+areaBase+"\n"
+                + "Area de la Base: "+df.format(areaBase)+"\n"
                 + "Superficie Lateral: "+df.format(superficieLateral)+"\n"
                 + "Superficie Total: "+df.format(superficie);
-        */
     }//fin metodo calcSuperficie()
     
 }//fin clase SPrisma
