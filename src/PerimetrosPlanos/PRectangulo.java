@@ -14,8 +14,9 @@ public class PRectangulo extends PFigura
 
     public PRectangulo() 
     {
-        this.base = 0.0;
-        this.altura = 0.0;
+        base = 0.0;
+        altura = 0.0;
+        figura = "Rectángulo";
     }//fin constructor
 
     public double getBase() {

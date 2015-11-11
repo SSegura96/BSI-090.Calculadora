@@ -60,7 +60,7 @@ public class TestMain {
                         //Circulo
                         case 0: 
                            ACirculo cir = new ACirculo ();
-                           cir.mostrarImagen("Circulo");
+                           cir.mostrarImagen();
                            cir.pedirDatos();
                            cir.calcArea();
                            cir.resultado();
@@ -69,7 +69,7 @@ public class TestMain {
                         //Triangulo
                         case 1: 
                             ATriangulo tri = new ATriangulo();
-                            tri.mostrarImagen("Triangulo");
+                            tri.mostrarImagen();
                             tri.pedirDatos();
                             tri.calcArea();
                             tri.resultado();
@@ -78,7 +78,7 @@ public class TestMain {
                         //Cuadrado
                         case 2: 
                             ACuadrado cua = new ACuadrado();
-                            cua.mostrarImagen("Cuadrado");
+                            cua.mostrarImagen();
                             cua.pedirDatos();
                             cua.calcArea();
                             cua.resultado();
@@ -87,7 +87,7 @@ public class TestMain {
                         //Rectangulo
                         case 3: 
                             ARectangulo rec1 = new ARectangulo();
-                            rec1.mostrarImagen("Rectangulo");
+                            rec1.mostrarImagen();
                             rec1.pedirDatos();
                             rec1.calcArea();
                             rec1.resultado();
@@ -96,7 +96,7 @@ public class TestMain {
                         //Rombo
                         case 4: 
                             ARombo rob = new ARombo();
-                            rob.mostrarImagen("Rombo");
+                            rob.mostrarImagen();
                             rob.pedirDatos();
                             rob.calcArea();
                             rob.resultado(); 
@@ -106,7 +106,7 @@ public class TestMain {
                         case 5:
                         
                             ATrapecio trap = new ATrapecio();
-                            trap.mostrarImagen("Trapecio");
+                            trap.mostrarImagen();
                             trap.pedirDatos();
                             trap.calcArea();
                             trap.resultado();
@@ -116,7 +116,7 @@ public class TestMain {
                         //Romboide    
                         case 6:
                             ARomboide romb = new ARomboide();
-                            romb.mostrarImagen("Romboide");
+                            romb.mostrarImagen();
                             romb.pedirDatos();
                             romb.calcArea();
                             romb.resultado();
@@ -125,7 +125,7 @@ public class TestMain {
                         //Poligono regular
                         case 7:
                             APoligonoRegular pr = new APoligonoRegular();
-                            pr.mostrarImagen("PoligonoRegular");
+                            pr.mostrarImagen();
                             pr.pedirDatos();
                             pr.calcArea();
                             pr.resultado(); 

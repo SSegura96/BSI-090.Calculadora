@@ -13,7 +13,8 @@ public class ATriangulo extends AFigura
 
     public ATriangulo() 
     {
-        this.medidaLado = 0.0;
+        medidaLado = 0.0;
+        figura = "Triángulo";
     }
 
     public double getMedidaLado() 

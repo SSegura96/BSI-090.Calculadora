@@ -14,6 +14,7 @@ public class PRombo extends PFigura
     public PRombo()
     {
         valorLado = 0;
+        figura = "Rombo";
     }
     
     @Override

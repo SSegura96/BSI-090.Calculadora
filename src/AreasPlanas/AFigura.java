@@ -8,8 +8,9 @@ import javax.swing.JOptionPane;
  */
 public abstract class AFigura implements AIFigura
 {
-   protected double area;
-   protected String mensaje; 
+    protected double area;
+    protected String figura;
+    protected String mensaje; 
 
    
     public AFigura() 
@@ -29,10 +30,10 @@ public abstract class AFigura implements AIFigura
     }
     
     
-    public void mostrarImagen (String Figura)
+    public void mostrarImagen ()
     {
-        JOptionPane.showMessageDialog(null,"", Figura,
-        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+Figura+".png"));
+        JOptionPane.showMessageDialog(null,"", figura,
+        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
     }
     
     public void resultado ()

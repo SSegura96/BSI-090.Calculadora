@@ -14,8 +14,9 @@ public class ARectangulo extends AFigura
 
     public ARectangulo() 
     {
-        this.base = 0.0;
-        this.altura = 0.0;
+        base = 0.0;
+        altura = 0.0;
+        figura = "Retángulo";
     }//fin constructor
 
     public double getBase() {

@@ -13,33 +13,41 @@ public class ATrapecio extends AFigura
     private double baseMenor;
     private double altura;
 
-    public ATrapecio() {
-        this.baseMayor = 0.0;
-        this.baseMenor = 0.0;
-        this.altura = 0.0;
+    public ATrapecio() 
+    {
+        baseMayor = 0.0;
+        baseMenor = 0.0;
+        altura = 0.0;
+        figura = "Trapecio";
     }
 
-    public double getBaseMayor() {
+    public double getBaseMayor() 
+    {
         return baseMayor;
     }
 
-    public void setBaseMayor(double baseMayor) {
+    public void setBaseMayor(double baseMayor) 
+    {
         this.baseMayor = baseMayor;
     }
 
-    public double getBaseMenor() {
+    public double getBaseMenor() 
+    {
         return baseMenor;
     }
 
-    public void setBaseMenor(double baseMenor) {
+    public void setBaseMenor(double baseMenor) 
+    {
         this.baseMenor = baseMenor;
     }
 
-    public double getAltura() {
+    public double getAltura() 
+    {
         return altura;
     }
 
-    public void setAltura(double altura) {
+    public void setAltura(double altura) 
+    {
         this.altura = altura;
     }
     

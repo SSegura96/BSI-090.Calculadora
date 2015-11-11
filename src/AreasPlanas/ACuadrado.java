@@ -14,6 +14,7 @@ public class ACuadrado extends AFigura
     public ACuadrado() 
     {
        valorLado = 0;
+       figura = "Cuadrado";
     }//fin constructor
 
     public double getValorLado() 

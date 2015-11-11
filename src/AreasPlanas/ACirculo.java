@@ -13,6 +13,7 @@ public class ACirculo extends AFigura
     public ACirculo()
     {
         radio = 0;
+        figura = "Circulo";
     }//fin constructor
 
     public double getRadio() {

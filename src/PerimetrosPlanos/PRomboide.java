@@ -16,6 +16,7 @@ public class PRomboide extends PFigura
     {
         base = 0;
         altura = 0;
+        figura = "Romboide";
     }
 
     @Override

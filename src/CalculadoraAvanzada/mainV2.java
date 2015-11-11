@@ -126,7 +126,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Circulo
                     case 0:
                         ACirculo aCir = new ACirculo();
-                        aCir.mostrarImagen("Circulo");
+                        aCir.mostrarImagen();
                         aCir.pedirDatos();
                         aCir.calcArea();
                         aCir.resultado();
@@ -135,7 +135,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Triangulo
                     case 1:
                         ATriangulo aTri = new ATriangulo();
-                        aTri.mostrarImagen("Triangulo");
+                        aTri.mostrarImagen();
                         aTri.pedirDatos();
                         aTri.calcArea();
                         aTri.resultado();
@@ -144,7 +144,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Cuadrado
                     case 2:
                         ACuadrado aCua = new ACuadrado();
-                        aCua.mostrarImagen("Cuadrado");
+                        aCua.mostrarImagen();
                         aCua.pedirDatos();
                         aCua.calcArea();
                         aCua.resultado();
@@ -153,7 +153,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Rectangulo
                     case 3:
                         ARectangulo aRec = new ARectangulo();
-                        aRec.mostrarImagen("Rectangulo");
+                        aRec.mostrarImagen();
                         aRec.pedirDatos();
                         aRec.calcArea();
                         aRec.resultado();
@@ -162,7 +162,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Rombo
                     case 4:
                         ARombo aRob = new ARombo();
-                        aRob.mostrarImagen("Rombo");
+                        aRob.mostrarImagen();
                         aRob.pedirDatos();
                         aRob.calcArea();
                         aRob.resultado();
@@ -171,7 +171,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Trapecio
                     case 5:
                         ATrapecio trap = new ATrapecio();
-                        trap.mostrarImagen("Trapecio");
+                        trap.mostrarImagen();
                         trap.pedirDatos();
                         trap.calcArea();
                         trap.resultado();
@@ -180,7 +180,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Romboide
                     case 6:
                         ARomboide romb = new ARomboide();
-                        romb.mostrarImagen("Romboide");
+                        romb.mostrarImagen();
                         romb.pedirDatos();
                         romb.calcArea();
                         romb.resultado();
@@ -189,7 +189,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Poigonos Regulares
                     case 7:
                         APoligonoRegular pr = new APoligonoRegular();
-                        pr.mostrarImagen("PoligonoRegular");
+                        pr.mostrarImagen();
                         pr.pedirDatos();
                         pr.calcArea();
                         pr.resultado();
@@ -205,6 +205,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Circulo
                     case 0:
                         PCirculo pCir = new PCirculo();
+                        pCir.mostrarImagen();
                         pCir.pedirDatos();
                         pCir.calcPerimetro();
                         pCir.resulatado();
@@ -218,6 +219,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Cuadrado    
                     case 2:
                         PCuadrado pCua = new PCuadrado();
+                        pCua.mostrarImagen();
                         pCua.pedirDatos();
                         pCua.calcPerimetro();
                         pCua.resulatado();
@@ -226,6 +228,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Rectangulo    
                     case 3:
                         PRomboide pRec = new PRomboide();
+                        pRec.mostrarImagen();
                         pRec.pedirDatos();
                         pRec.calcPerimetro();
                         pRec.resulatado();
@@ -234,6 +237,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Rombo    
                     case 4:
                         PRombo pRom = new PRombo();
+                        pRom.mostrarImagen();
                         pRom.pedirDatos();
                         pRom.calcPerimetro();
                         pRom.resulatado();
@@ -241,12 +245,17 @@ public class mainV2 extends javax.swing.JFrame
                         
                     //Trapecio    
                     case 5:
-                        
+                       PTrapecio pTra = new PTrapecio();
+                       pTra.mostrarImagen();
+                       pTra.pedirDatos();
+                       pTra.calcPerimetro();
+                       pTra.resulatado();
                     break;
                     
                     //Romboide    
                     case 6:
                         PRomboide pRim = new PRomboide();
+                        pRim.mostrarImagen();
                         pRim.pedirDatos();
                         pRim.calcPerimetro();
                         pRim.resulatado();
@@ -255,6 +264,7 @@ public class mainV2 extends javax.swing.JFrame
                     //Poligono Regular    
                     case 7:
                         PPoligonoRegular pp = new PPoligonoRegular();
+                        pp.mostrarImagen();
                         pp.pedirDatos();
                         pp.calcPerimetro();
                         pp.resulatado();

@@ -16,6 +16,7 @@ public class ARombo extends AFigura
     {
         diagMayor = 0;
         diagMenor = 0;
+        figura = "Rombo";
     }//fin constructor
     
     public double getDiagMayor() 

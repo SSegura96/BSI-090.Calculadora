@@ -14,11 +14,13 @@ public class PTrapecio extends PFigura
     private double lado1;
     private double lado2;
 
-    public PTrapecio() {
-        this.baseMayor = 0.0;
-        this.baseMenor = 0.0;
-        this.lado1 = 0.0;
-        this.lado2 = 0.0;
+    public PTrapecio() 
+    {
+        baseMayor = 0.0;
+        baseMenor = 0.0;
+        lado1 = 0.0;
+        lado2 = 0.0;
+        figura = "Trapecio";
     }
 
     public double getBaseMayor() {

@@ -15,9 +15,10 @@ public class PTriangulo extends PFigura
 
     public PTriangulo() 
     {
-        this.lado1 = 0.0;
-        this.lado2 = 0.0;
-        this.lado3 = 0.0;
+        lado1 = 0.0;
+        lado2 = 0.0;
+        lado3 = 0.0;
+        figura = "Triangulo";
     }//fin constructor
 
     public double getLado1() {

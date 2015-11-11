@@ -10,6 +10,22 @@ import javax.swing.JOptionPane;
 public class PCirculo extends PFigura
 {
     protected double radio;
+
+    public PCirculo()
+    {
+        radio = 0;
+        figura = "Circulo";
+    }
+    
+    public double getRadio() 
+    {
+        return radio;
+    }
+
+    public void setRadio(double radio) 
+    {
+        this.radio = radio;
+    }
     
     @Override
     public void calcPerimetro ()
@@ -26,15 +42,4 @@ public class PCirculo extends PFigura
     {
         radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio"));
     }
-    
-    public double getRadio() 
-    {
-        return radio;
-    }
-
-    public void setRadio(double radio) 
-    {
-        this.radio = radio;
-    }
-    
 }

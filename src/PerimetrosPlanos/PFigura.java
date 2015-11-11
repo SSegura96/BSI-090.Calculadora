@@ -1,5 +1,6 @@
 package PerimetrosPlanos;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -9,18 +10,13 @@ import javax.swing.JOptionPane;
 public abstract class PFigura implements PIFigura
 {
     public double perimetro;
-    protected String ubicacion;
+    protected String figura;
     protected String mensaje;
 
     public PFigura() 
     {
        perimetro = 0;
-       ubicacion = "";
-    }
-    
-    public void resulatado ()
-    {
-        JOptionPane.showMessageDialog(null, mensaje);
+       figura = "";
     }
     
     public double getPerimetro() 
@@ -35,12 +31,22 @@ public abstract class PFigura implements PIFigura
 
     public String getUbicacion() 
     {
-        return ubicacion;
+        return figura;
     }
 
     public void setUbicacion(String ubicacion) 
     {
-        this.ubicacion = ubicacion;
+        this.figura = ubicacion;
     }
     
+    public void mostrarImagen ()
+    {
+        JOptionPane.showMessageDialog(null,"", figura,
+        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
+    }
+    
+    public void resulatado ()
+    {
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
 }

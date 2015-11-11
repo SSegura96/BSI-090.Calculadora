@@ -14,6 +14,7 @@ public class PCuadrado extends PFigura
     public PCuadrado()
     {
         valorlado = 0;
+        figura = "Cuadrado";
     }
     
     @Override

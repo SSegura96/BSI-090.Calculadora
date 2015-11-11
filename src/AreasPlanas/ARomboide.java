@@ -16,6 +16,7 @@ public class ARomboide extends AFigura
     {
         base = 0;
         altura = 0;
+        figura = "Romboide";
     }//fin constructor
     
     public double getBase() 
