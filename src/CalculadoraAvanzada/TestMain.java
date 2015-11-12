@@ -2,7 +2,7 @@ package CalculadoraAvanzada;
 
 import javax.swing.JOptionPane;
 import AreasPlanas.*;
-
+import ArreglosUnidimensionales.*;
 /**
  *
  * @author Javier Fernandez & Sergio Segura
@@ -451,8 +451,9 @@ public class TestMain {
                     }//fin for
 
                     switch (indice) {
-                        case 0: {
-
+                        case 0: 
+                        {
+                            ArregloUnidimensional ud = new EscalarVectorial();
                             break;
                         }//fin segundo case 0
 

@@ -1,4 +1,4 @@
-package Vectores;
+package ArreglosUnidimensionales;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -7,32 +7,32 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class VVector {
+public class ArregloUnidimensional {
 
-    protected int[] vector;
-    protected int[] vector2;
+    protected double[] vector;
+    protected double[] vector2;
     protected int tamanno;
     protected String mensaje;
 
-    public VVector() {
+    public ArregloUnidimensional() {
         tamanno = 0;
-        vector = new int[0];
-        vector2 = new int[0];
+        vector = new double[0];
+        vector2 = new double[0];
     }//fin constructor
 
-    public int[] getVector() {
+    public double[] getVector() {
         return vector;
     }
 
-    public void setVector(int[] vector) {
+    public void setVector(double[] vector) {
         this.vector = vector;
     }
 
-    public int[] getVector2() {
+    public double[] getVector2() {
         return vector2;
     }
 
-    public void setVector2(int[] vector2) {
+    public void setVector2(double[] vector2) {
         this.vector2 = vector2;
     }
 
@@ -44,6 +44,7 @@ public class VVector {
         this.tamanno = tamanno;
     }
 
+    
     public void pedirDatos() {
         JOptionPane.showInputDialog(null, "Pedir datos necesarios al usario.");
     }//fin metodo pedirDatos()
@@ -60,6 +61,18 @@ public class VVector {
         }//fin segundo for
     }//fin metodo llenarVector()
 
+    public String recorrerVector(double[] vector1)
+    {
+        String dato = "";
+        for (int i = 0; i < vector1.length; i++) 
+        {
+            dato = ""+vector1[i]+", ";
+        }//foin primer for
+        
+        return dato;
+        
+    }//fin metodo recorrerVector
+            
     public void mostrarImagen(String vector) {
         JOptionPane.showMessageDialog(null, "", vector,
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + vector + ".png"));
@@ -69,4 +82,4 @@ public class VVector {
         JOptionPane.showMessageDialog(null, mensaje);
     }//fin metodo resultado()
 
-}//fin clase VVector
+}//fin clase ArregloUnidimensional
