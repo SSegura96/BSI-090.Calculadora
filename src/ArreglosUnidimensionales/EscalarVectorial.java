@@ -10,6 +10,7 @@ public class EscalarVectorial extends ArregloUnidimensional
 {
     private double []escalarV;
     private double escalar;
+    
     public EscalarVectorial() 
     {
         escalarV = new double[0];
@@ -36,10 +37,10 @@ public class EscalarVectorial extends ArregloUnidimensional
     @Override
     public void llenarVector() 
     {
-        JOptionPane.showMessageDialog(null, "Llenar el primer vector vector[ ]");
+        JOptionPane.showMessageDialog(null, "Llenar el vector: vector[ ]");
         for (int i = 0; i < vector.length; i++) 
         {
-            vector[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato vector[" + i + "]"));
+            vector[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese dato de: vector[" + i + "]"));
         }//fin primer for
         
     }//fin metodo llenarVector()

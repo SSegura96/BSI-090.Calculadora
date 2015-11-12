@@ -27,16 +27,16 @@ public class ProductoVectorial extends ArregloUnidimensional
     @Override
     public void llenarVector() 
     {
-        JOptionPane.showMessageDialog(null, "Llenar el primer vector vector[ ]");
+        JOptionPane.showMessageDialog(null, "Llenar el primer vector: vector[ ]");
         for (int i = 0; i < vector.length; i++) 
         {
-            vector[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato vector[" + i + "]"));
+            vector[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese dato de: vector[" + i + "]"));
         }//fin primer for
 
-        JOptionPane.showMessageDialog(null, "Llenar vector vector2[ ]");
+        JOptionPane.showMessageDialog(null, "Llenar vector segundo: vector2[ ]");
         for (int j = 0; j < vector2.length; j++) 
         {
-            vector2[j] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato vector2[" + j + "]"));
+            vector2[j] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato de: vector2[" + j + "]"));
         }//fin segundo for
     }//fin metodo llenarVector()
     
