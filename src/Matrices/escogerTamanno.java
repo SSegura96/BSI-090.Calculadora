@@ -26,12 +26,12 @@ public class escogerTamanno extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-    public void colocarTamaño(int num1,int num2)
+    public void colocarTamanno(int num1,int num2)
     {
         numFilas = num1;
         numColumnas = num2;
         
-        setVisible(false);
+        this.setVisible(false);
     }
     
     public void colocarNombreMatriz (String nombre)
@@ -211,43 +211,43 @@ public class escogerTamanno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jB3X2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X2ActionPerformed
-        colocarTamaño(3, 2);
+        colocarTamanno(3, 2);
     }//GEN-LAST:event_jB3X2ActionPerformed
 
     private void jB2X2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2X2ActionPerformed
-        colocarTamaño(2, 2);
+        colocarTamanno(2, 2);
     }//GEN-LAST:event_jB2X2ActionPerformed
 
     private void jB4X2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X2ActionPerformed
-       colocarTamaño(4, 2);
+       colocarTamanno(4, 2);
     }//GEN-LAST:event_jB4X2ActionPerformed
 
     private void jB2X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2X3ActionPerformed
-        colocarTamaño(2, 3);
+        colocarTamanno(2, 3);
     }//GEN-LAST:event_jB2X3ActionPerformed
 
     private void jB3X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X3ActionPerformed
-       colocarTamaño(3, 3);
+       colocarTamanno(3, 3);
     }//GEN-LAST:event_jB3X3ActionPerformed
 
     private void jB4X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X3ActionPerformed
-        colocarTamaño(4, 3);
+        colocarTamanno(4, 3);
     }//GEN-LAST:event_jB4X3ActionPerformed
 
     private void jB2X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2X4ActionPerformed
-       colocarTamaño(2, 4);
+       colocarTamanno(2, 4);
     }//GEN-LAST:event_jB2X4ActionPerformed
 
     private void jB3X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X4ActionPerformed
-        colocarTamaño(3, 4);
+        colocarTamanno(3, 4);
     }//GEN-LAST:event_jB3X4ActionPerformed
 
     private void jB4X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X4ActionPerformed
-        colocarTamaño(4, 4);
+        colocarTamanno(4, 4);
     }//GEN-LAST:event_jB4X4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       colocarTamaño(Integer.parseInt(JOptionPane.showInputDialog(null,
+       colocarTamanno(Integer.parseInt(JOptionPane.showInputDialog(null,
         "Digite el numero de filas")),
         Integer.parseInt(JOptionPane.showInputDialog(null,
         "Digite el numero de Columnas")));

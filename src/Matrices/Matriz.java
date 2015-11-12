@@ -49,7 +49,7 @@ public class Matriz
     
     public void pedirDatos (int tipo)
     {
-        if (tipo == 1)
+        if (tipo == 0)
         {
             escalar = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del escalar"));
             

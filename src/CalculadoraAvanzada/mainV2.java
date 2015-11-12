@@ -4,6 +4,7 @@ import javax.swing.DefaultComboBoxModel;
 import AreasPlanas.*;
 import PerimetrosPlanos.*;
 import Estadistica.*;
+import Matrices.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -318,7 +319,28 @@ public class mainV2 extends javax.swing.JFrame
             break;
 
             case 7:
-
+                Matriz mat = new Matriz();
+                
+                switch (indiceSub)
+                {
+                    //escalar
+                    case 0:
+                        mat.inicializarMatrices(0);
+                        mat.pedirDatos(0);
+                        mat.sumarEscalar();
+                        mat.mostrarResultado();
+                    break;
+                    
+                    //escalar
+                    case 1:
+                        
+                    break;
+                    
+                    //escalar
+                    case 2:
+                        
+                    break;
+                }
             break;
         }
     }
