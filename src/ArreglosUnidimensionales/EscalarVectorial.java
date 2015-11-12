@@ -47,7 +47,7 @@ public class EscalarVectorial extends ArregloUnidimensional
     @Override
     public void pedirDatos()
     {
-        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del primer vector:"));
+        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del vector:"));
         vector = new double[tamanno];
         
         escalar = Double.parseDouble(JOptionPane.showInputDialog("Digite el escalar:"));
@@ -61,7 +61,7 @@ public class EscalarVectorial extends ArregloUnidimensional
         String dato = "";
         for (int i = 0; i < vector1.length; i++) 
         {
-            dato = ""+vector1[i]+", ";
+            dato += ""+vector1[i]+", ";
         }//foin primer for
         
         return dato;
@@ -70,13 +70,15 @@ public class EscalarVectorial extends ArregloUnidimensional
     
     public void calcProductoV()
     {
+        escalarV = new double[vector.length];
+        
         for (int i = 0; i < vector.length; i++) 
         {
             escalarV[i] = vector[i]*escalar;
         }//fin primer for
         
         mensaje = "Vector[ "+vector.length+" ]\n"
-                + "Vector2[ "+vector2.length+" ]\n \n"
+                + "Escalar: "+escalar+"\n"
                 + "Escalar de las posiciones:\n"+recorrerVector(escalarV);
     }//fin metodo caclProductoV
 }//fin clase EscalarVectorial

@@ -58,7 +58,7 @@ public class ProductoVectorial extends ArregloUnidimensional
         String dato = "";
         for (int i = 0; i < vector1.length; i++) 
         {
-            dato = ""+vector1[i]+", ";
+            dato += ""+vector1[i]+", ";
         }//foin primer for
         
         return dato;
@@ -67,13 +67,14 @@ public class ProductoVectorial extends ArregloUnidimensional
     
     public void calcProductoV()
     {
+        productoV = new double[vector.length];
         for (int i = 0; i < vector.length; i++) 
         {
             productoV[i] = vector[i]*vector2[i];
         }//fin primer for
         
         mensaje = "Vector[ "+vector.length+" ]\n"
-                + "Vector2[ "+vector2.length+" ]\n \n"
+                + "Vector2[ "+vector2.length+" ]\n "
                 + "Productos de las posiciones:\n"+recorrerVector(productoV);
     }//fin metodo caclProductoV
     

@@ -16,6 +16,7 @@ public class SCilindro extends SFigura
     {
         altura = 0.0;
         radio = 0.0;
+        figura = "Cilindro";
     }//fin constructor
 
     public double getAltura() {

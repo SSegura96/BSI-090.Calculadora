@@ -13,11 +13,13 @@ public class ArregloUnidimensional {
     protected double[] vector2;
     protected int tamanno;
     protected String mensaje;
+    protected String imagenV;
 
     public ArregloUnidimensional() {
         tamanno = 0;
         vector = new double[0];
         vector2 = new double[0];
+        imagenV = "Vector";
     }//fin constructor
 
     public double[] getVector() {
@@ -73,9 +75,9 @@ public class ArregloUnidimensional {
         
     }//fin metodo recorrerVector
             
-    public void mostrarImagen(String vector) {
-        JOptionPane.showMessageDialog(null, "", vector,
-                JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + vector + ".png"));
+    public void mostrarImagen() {
+        JOptionPane.showMessageDialog(null, "", imagenV,
+                JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + imagenV + ".png"));
     }//fin metodo mostrarImagen
 
     public void resultado() {

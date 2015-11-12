@@ -16,7 +16,7 @@ public class ARectangulo extends AFigura
     {
         base = 0.0;
         altura = 0.0;
-        figura = "Retángulo";
+        figura = "Retangulo";
     }//fin constructor
 
     public double getBase() {

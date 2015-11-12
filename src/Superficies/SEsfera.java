@@ -14,6 +14,7 @@ public class SEsfera extends SFigura
     public SEsfera() 
     {
         radio = 0.0;
+        figura = "Esfera";
     }//fin constructor
 
     public double getRadio() {

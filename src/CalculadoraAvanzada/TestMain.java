@@ -5,7 +5,7 @@ import AreasPlanas.*;
 import ArreglosUnidimensionales.*;
 /**
  *
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public class TestMain {
     
@@ -453,12 +453,18 @@ public class TestMain {
                     switch (indice) {
                         case 0: 
                         {
-                            ArregloUnidimensional ud = new EscalarVectorial();
+                            EscalarVectorial ev = new EscalarVectorial();
+                            ev.mostrarImagen();
+                            ev.pedirDatos();
+                            ev.calcProductoV();
+                            ev.resultado();
                             break;
                         }//fin segundo case 0
 
-                        case 1: {
-
+                        case 1: 
+                        {
+                            SumaVectorial sv = new SumaVectorial();
+                            
                             break;
                         }//fin segundo case 1
 

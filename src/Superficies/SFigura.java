@@ -10,12 +10,14 @@ import javax.swing.JOptionPane;
 public abstract class SFigura implements SIFigura
 {
     protected double superficie;
+    protected String figura;
     protected String mensaje;
 
     public SFigura() 
     {
         superficie = 0.0;
         mensaje = "";
+        figura = "";
     }//fin constructor
 
     public double getSuperficie() {
@@ -33,16 +35,24 @@ public abstract class SFigura implements SIFigura
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
+
+    public String getFigura() {
+        return figura;
+    }
+
+    public void setFigura(String figura) {
+        this.figura = figura;
+    }
     
     
-    public void mostrarImagen (String Figura)
+    public void mostrarImagen ()
     {
-        JOptionPane.showMessageDialog(null,"", Figura,
-        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+Figura+".png"));
+        JOptionPane.showMessageDialog(null,"", figura,
+        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
     }//fin metodo mostrarImagen
     
     public void resultado ()
     {
         JOptionPane.showMessageDialog(null, mensaje);
-    }
+    }//fin metodo resultado()
 }//fin clase SFigura

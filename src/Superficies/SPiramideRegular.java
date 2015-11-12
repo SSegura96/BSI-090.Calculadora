@@ -26,6 +26,7 @@ public class SPiramideRegular extends SFigura
         perimBase = 0.0;
         superficieLateral = 0.0;
         areaBase = 0.0;
+        figura = "PiramideRegular";
     }//fin constructor
 
     public double getArista() {

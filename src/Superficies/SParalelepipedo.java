@@ -18,6 +18,7 @@ public class SParalelepipedo extends SFigura
         ancho = 0.0;
         largo = 0.0;
         altura = 0.0;
+        figura = "Paralelepipedo";
     }//fin constructor
 
     public double getAncho() {

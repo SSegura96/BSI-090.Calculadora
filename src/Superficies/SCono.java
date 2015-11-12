@@ -20,6 +20,7 @@ public class SCono extends SFigura
         radio = 0.0;
         superficieLateral = 0.0;
         generatriz = 0.0;
+        figura = "Cono";
     }//fin constructor
 
     public double getAltura() {
