@@ -8,7 +8,7 @@ package CalculadoraAvanzada;
 import javax.swing.DefaultComboBoxModel;
 import AreasPlanas.*;
 import PerimetrosPlanos.*;
-import Estadistica.JFSumatoria;
+import Estadistica.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -276,10 +276,32 @@ public class mainV2 extends javax.swing.JFrame
             case 2:
                 switch (indiceSub)
                 {
+                    //Sumatoria
                     case 0:
                         JFSumatoria jfSumatoria = new JFSumatoria();
                         jfSumatoria.setVisible(true);
                         this.setVisible(false);
+                    break;
+                    
+                    //promedio    
+                    case 2:
+                        Promedio prom = new Promedio ();
+                        prom.pedirDatos();
+                        prom.calcPromedio();
+                        prom.mostarDatos();
+                    break;
+                        
+                    //varianza
+                    case 4:
+                        Varianza var = new Varianza();
+                        var.calcVarianza();
+                        var.mostrarDatos();
+                    break;
+                        
+                    case 5: 
+                        DesviacionEstandar des = new DesviacionEstandar();
+                        des.calcDesviacionEstandar();
+                        des.mostarDatos();
                     break;
                 }
             break;
