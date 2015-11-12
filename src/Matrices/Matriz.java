@@ -19,31 +19,27 @@ public class Matriz
     double[][] matrizB;
     double[][] matrizT;
     
+    public Matriz ()
+    {
+        escalar = 0;
+    }
+    
     public void inicializarMatrices (int tipo)
     {
-        escogerTamanno et = new escogerTamanno ();
-        et.setVisible(true);
-        matrizA = new double [et.numFilas][et.numColumnas];
+        escogerTamanno mA = new escogerTamanno(new javax.swing.JFrame(), true);
+        escogerTamanno mB = new escogerTamanno (new javax.swing.JFrame(), true);
         
+        mA.setNombreMatriz("A");
+        mA.setVisible(true);
+        matrizA = new double [mA.numFilas][mA.numColumnas];
+        
+        matrizT = new double [mA.numFilas][mA.numColumnas];
         
         if (tipo == 1)
         {
-            escogerTamanno es = new escogerTamanno ();
-            es.setVisible(true);
-            matrizB = new double [es.numFilas][es.numColumnas];
-
-            matrizT = new double [et.numFilas][et.numColumnas];
-        }
-    }
-    
-    public void llenarMatriz (double[][] m)
-    {
-        for (int fila = 0;fila<m.length;fila++)
-        {
-            for (int columna = 0;columna<m[fila].length;columna++)
-            {
-                m[fila][columna] = Double.parseDouble(JOptionPane.showInputDialog("digite el numero de la posicion ["+fila+"]["+columna+"]"));
-            }
+            mB.setNombreMatriz("B");
+            mB.setVisible(true);
+            matrizB = new double [mB.numFilas][mB.numColumnas];
         }
     }
     
@@ -54,40 +50,60 @@ public class Matriz
             escalar = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del escalar"));
             
             llenarMatriz(matrizA);
+            mostrarMatriz(matrizA, "Los datos son:");
         }
         else
         {  
             llenarMatriz(matrizA);
+            mostrarMatriz(matrizA, "Los datos de la matriz A son:");
+            
             llenarMatriz(matrizB);
+            mostrarMatriz(matrizB, "Los datos de la matriz B son:");
         }
     }
     
-    public void sumarEscalar ()
+    public void llenarMatriz (double[][] m)
+    {
+        System.out.println("Entro");
+        
+        for (int fila = 0;fila<m.length;fila++)
+        {
+            for (int columna = 0;columna<m[fila].length;columna++)
+            {
+                m[fila][columna] = Double.parseDouble(JOptionPane.showInputDialog("digite el numero de la posicion ["+fila+"]["+columna+"]"));
+            }
+        }
+    }
+    
+    public void productoEscalar ()
     {
         for (int fila = 0; fila < matrizA.length; fila++) 
         {
             for (int columna = 0; columna < matrizA[fila].length; columna++) 
             {
-                matrizA[fila][columna] += escalar;
+                matrizT [fila][columna] = matrizA[fila][columna] * escalar;
             }
         }
+        
+        mostrarMatriz(matrizT, "El resultado de multiplicar \n"+escalar+" por la matriz A es:");
     }
     
     public void sumarMatrices ()
     {
-       if (matrizA.length == matrizB[0].length)
+       if (matrizA.length == matrizB.length)
         {
             for (int fila = 0; fila < matrizA.length; fila++) 
             {
                 for (int columna = 0; columna < matrizA[fila].length; columna++) 
                 {
-                    matrizT[fila][columna] = matrizA[fila][columna] + matrizB[columna][fila];
+                    matrizT[fila][columna] = matrizA[fila][columna] + matrizB[fila][columna];
                 }
-            } 
+            }
+            mostrarMatriz(matrizT, "El resultado es:");
         }
         else 
         {
-            JOptionPane.showMessageDialog(null, "No se puede realizar la multiplicacion \n "
+            JOptionPane.showMessageDialog(null, "No se puede realizar la suma \n "
                                                 + "ya que los tamaños no son iguales");
         }
     }
@@ -96,13 +112,17 @@ public class Matriz
     {
        if (matrizA.length == matrizB[0].length)
         {
-            for (int fila = 0; fila < matrizA.length; fila++) 
+            for (int fila=0; fila < matrizT.length; fila++) 
             {
-                for (int columna = 0; columna < matrizA[fila].length; columna++) 
+                for (int columna=0; columna < matrizT[fila].length; columna++) 
                 {
-                    matrizT[fila][columna] = matrizA[fila][columna] + matrizB[columna][fila];
+                  for (int i=0; i<matrizA.length; i++) 
+                  {
+                    matrizT[fila][columna] += matrizA[fila][i]*matrizB[i][columna]; 
+                  }
                 }
             } 
+            mostrarMatriz(matrizT, "El resultado es:");
         }
         else 
         {
@@ -111,22 +131,21 @@ public class Matriz
         }
     }
     
-    public void mostrarResultado()
+    public void mostrarMatriz(double[][] m ,String mensaje)
     {
        
         String listo = "|";
        
-        for (int fila = 0; fila < matrizT.length; fila++) 
+        for (int fila = 0; fila < m.length; fila++) 
         {
-            for (int columna = 0; columna < matrizT[fila].length; columna++) 
+            for (int columna = 0; columna < m[fila].length; columna++) 
             {
-                listo += matrizT[fila][columna]+"|";
+                listo += m[fila][columna]+"|";
             }
             
-            listo +="\n";
+            listo +="\n|";
         }
-        
-        JOptionPane.showMessageDialog(null, listo);
+        JOptionPane.showMessageDialog(null, mensaje+"\n"+listo.substring(0, (listo.length()-1)));
     }
     
 }

@@ -327,18 +327,21 @@ public class mainV2 extends javax.swing.JFrame
                     case 0:
                         mat.inicializarMatrices(0);
                         mat.pedirDatos(0);
-                        mat.sumarEscalar();
-                        mat.mostrarResultado();
+                        mat.productoEscalar();
                     break;
                     
-                    //escalar
+                    //Suma matrices
                     case 1:
-                        
+                        mat.inicializarMatrices(1);
+                        mat.pedirDatos(1);
+                        mat.sumarMatrices();
                     break;
                     
-                    //escalar
+                    //Producto Matrices
                     case 2:
-                        
+                        mat.inicializarMatrices(1);
+                        mat.pedirDatos(1);
+                        mat.productoMatrices();
                     break;
                 }
             break;

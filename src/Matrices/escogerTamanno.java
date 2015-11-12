@@ -11,30 +11,33 @@ import javax.swing.JOptionPane;
  *
  * @author Sergio Segura Vidal
  */
-public class escogerTamanno extends javax.swing.JFrame {
+public class escogerTamanno extends javax.swing.JDialog {
 
     /**
-     * Creates new form Matrices
+     * Creates new form escogerTamanno
      */
     
     public static int numFilas;
     public static int numColumnas;
     
-    public escogerTamanno() 
+    public escogerTamanno(java.awt.Frame parent, boolean modal) 
     {
+        super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
     }
-
+    
     public void colocarTamanno(int num1,int num2)
     {
         numFilas = num1;
         numColumnas = num2;
         
         this.setVisible(false);
+        
+        Matriz mat = new Matriz();
     }
     
-    public void colocarNombreMatriz (String nombre)
+    public void setNombreMatriz (String nombre)
     {
         jLabel1.setText("Seleccione el tamaño de la matriz "+nombre);
     }
@@ -49,52 +52,44 @@ public class escogerTamanno extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jB2X2 = new javax.swing.JButton();
-        jB3X2 = new javax.swing.JButton();
-        jB4X2 = new javax.swing.JButton();
-        jB4X3 = new javax.swing.JButton();
-        jB3X3 = new javax.swing.JButton();
-        jB2X3 = new javax.swing.JButton();
         jB4X4 = new javax.swing.JButton();
         jB3X4 = new javax.swing.JButton();
         jB2X4 = new javax.swing.JButton();
+        jB4X3 = new javax.swing.JButton();
+        jB3X3 = new javax.swing.JButton();
+        jB2X3 = new javax.swing.JButton();
+        jB4X2 = new javax.swing.JButton();
+        jB3X2 = new javax.swing.JButton();
+        jB2X2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Seleccione el tamaño de la matriz A");
 
-        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jButton1.setText("Personalizado");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jB4X4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jB4X4.setText("4X4");
+        jB4X4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jB4X4ActionPerformed(evt);
             }
         });
 
-        jB2X2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jB2X2.setText("2X2");
-        jB2X2.addActionListener(new java.awt.event.ActionListener() {
+        jB3X4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jB3X4.setText("3X4");
+        jB3X4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB2X2ActionPerformed(evt);
+                jB3X4ActionPerformed(evt);
             }
         });
 
-        jB3X2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jB3X2.setText("3X2");
-        jB3X2.addActionListener(new java.awt.event.ActionListener() {
+        jB2X4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jB2X4.setText("2X4");
+        jB2X4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB3X2ActionPerformed(evt);
-            }
-        });
-
-        jB4X2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jB4X2.setText("4X2");
-        jB4X2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB4X2ActionPerformed(evt);
+                jB2X4ActionPerformed(evt);
             }
         });
 
@@ -122,27 +117,35 @@ public class escogerTamanno extends javax.swing.JFrame {
             }
         });
 
-        jB4X4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jB4X4.setText("4X4");
-        jB4X4.addActionListener(new java.awt.event.ActionListener() {
+        jB4X2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jB4X2.setText("4X2");
+        jB4X2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB4X4ActionPerformed(evt);
+                jB4X2ActionPerformed(evt);
             }
         });
 
-        jB3X4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jB3X4.setText("3X4");
-        jB3X4.addActionListener(new java.awt.event.ActionListener() {
+        jB3X2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jB3X2.setText("3X2");
+        jB3X2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB3X4ActionPerformed(evt);
+                jB3X2ActionPerformed(evt);
             }
         });
 
-        jB2X4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jB2X4.setText("2X4");
-        jB2X4.addActionListener(new java.awt.event.ActionListener() {
+        jB2X2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jB2X2.setText("2X2");
+        jB2X2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB2X4ActionPerformed(evt);
+                jB2X2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton1.setText("Personalizado");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -151,35 +154,34 @@ public class escogerTamanno extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jB4X4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jB3X4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jB2X4))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jB4X3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jB3X3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jB2X3))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jB4X2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jB3X2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jB2X2))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jButton1)
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jB4X3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jB3X3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jB2X3))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jB4X2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jB3X2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jB2X2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jB4X4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jB3X4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jB2X4))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -192,7 +194,7 @@ public class escogerTamanno extends javax.swing.JFrame {
                     .addComponent(jB2X4)
                     .addComponent(jB3X4)
                     .addComponent(jB4X4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB2X3)
                     .addComponent(jB3X3)
@@ -204,11 +206,39 @@ public class escogerTamanno extends javax.swing.JFrame {
                     .addComponent(jB4X2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jB4X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X4ActionPerformed
+        colocarTamanno(4, 4);
+    }//GEN-LAST:event_jB4X4ActionPerformed
+
+    private void jB3X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X4ActionPerformed
+        colocarTamanno(3, 4);
+    }//GEN-LAST:event_jB3X4ActionPerformed
+
+    private void jB2X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2X4ActionPerformed
+        colocarTamanno(2, 4);
+    }//GEN-LAST:event_jB2X4ActionPerformed
+
+    private void jB4X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X3ActionPerformed
+        colocarTamanno(4, 3);
+    }//GEN-LAST:event_jB4X3ActionPerformed
+
+    private void jB3X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X3ActionPerformed
+        colocarTamanno(3, 3);
+    }//GEN-LAST:event_jB3X3ActionPerformed
+
+    private void jB2X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2X3ActionPerformed
+        colocarTamanno(2, 3);
+    }//GEN-LAST:event_jB2X3ActionPerformed
+
+    private void jB4X2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X2ActionPerformed
+        colocarTamanno(4, 2);
+    }//GEN-LAST:event_jB4X2ActionPerformed
 
     private void jB3X2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X2ActionPerformed
         colocarTamanno(3, 2);
@@ -218,38 +248,10 @@ public class escogerTamanno extends javax.swing.JFrame {
         colocarTamanno(2, 2);
     }//GEN-LAST:event_jB2X2ActionPerformed
 
-    private void jB4X2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X2ActionPerformed
-       colocarTamanno(4, 2);
-    }//GEN-LAST:event_jB4X2ActionPerformed
-
-    private void jB2X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2X3ActionPerformed
-        colocarTamanno(2, 3);
-    }//GEN-LAST:event_jB2X3ActionPerformed
-
-    private void jB3X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X3ActionPerformed
-       colocarTamanno(3, 3);
-    }//GEN-LAST:event_jB3X3ActionPerformed
-
-    private void jB4X3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X3ActionPerformed
-        colocarTamanno(4, 3);
-    }//GEN-LAST:event_jB4X3ActionPerformed
-
-    private void jB2X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB2X4ActionPerformed
-       colocarTamanno(2, 4);
-    }//GEN-LAST:event_jB2X4ActionPerformed
-
-    private void jB3X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB3X4ActionPerformed
-        colocarTamanno(3, 4);
-    }//GEN-LAST:event_jB3X4ActionPerformed
-
-    private void jB4X4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB4X4ActionPerformed
-        colocarTamanno(4, 4);
-    }//GEN-LAST:event_jB4X4ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       colocarTamanno(Integer.parseInt(JOptionPane.showInputDialog(null,
-        "Digite el numero de filas")),
-        Integer.parseInt(JOptionPane.showInputDialog(null,
+        colocarTamanno(Integer.parseInt(JOptionPane.showInputDialog(null,
+            "Digite el numero de filas")),
+    Integer.parseInt(JOptionPane.showInputDialog(null,
         "Digite el numero de Columnas")));
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -281,10 +283,17 @@ public class escogerTamanno extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new escogerTamanno().setVisible(true);
+                escogerTamanno dialog = new escogerTamanno(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
