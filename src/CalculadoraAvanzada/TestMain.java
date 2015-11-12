@@ -3,6 +3,7 @@ package CalculadoraAvanzada;
 import javax.swing.JOptionPane;
 import AreasPlanas.*;
 import ArreglosUnidimensionales.*;
+import Estadistica.*;
 /**
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -225,27 +226,41 @@ public class TestMain {
 
                             break;
                         }//fin segundo case 0
-
+                        
+                        //Moda
                         case 1: {
-
+                            Moda mod = new Moda();
+                            mod.mostrarImagen();
+                            mod.pedirDatos();
+                            mod.calcModa();
+                            mod.resultado();
                             break;
                         }//fin segundo case 1
-
+                        
+                        //Promedio
                         case 2: {
-
+                            
                             break;
                         }//fin segundo case 2
-
-                        case 3: {
-
+                        
+                        //Mediana
+                        case 3: 
+                        {
+                            Mediana med = new Mediana();
+                            med.mostrarImagen();
+                            med.pedirDatos();
+                            med.calcMediana();
+                            med.resultado();
                             break;
                         }//fin segundo case 3
-
+                        
+                        //Varianza
                         case 4: {
-
+                            
                             break;
                         }//fin segundo case 4
-
+                        
+                        //Desviacion Estandar
                         case 5: {
 
                             break;

@@ -1,5 +1,6 @@
 package AreasPlanas;
 
+import Estadistica.Mediana;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 

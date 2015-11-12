@@ -83,7 +83,7 @@ public class Moda {
         String dato = "";
         for (int i = 0; i < vector1.length; i++) 
         {
-            dato = ""+vector1[i]+", ";
+            dato += ""+vector1[i]+", ";
         }//foin primer for
         
         return dato;
