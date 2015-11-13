@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public class PRectangulo extends PFigura
 {
@@ -16,7 +16,7 @@ public class PRectangulo extends PFigura
     {
         base = 0.0;
         altura = 0.0;
-        figura = "Rectángulo";
+        figura = "Rectangulo";
     }//fin constructor
 
     public double getBase() {
@@ -35,6 +35,15 @@ public class PRectangulo extends PFigura
         this.altura = altura;
     }
 
+    
+    @Override
+    public void pedirDatos() 
+    {
+        base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
+        
+        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
+    }//fin metodo pedirDatos()
+    
     @Override
     public void calcPerimetro()
     {
@@ -45,13 +54,5 @@ public class PRectangulo extends PFigura
                 + "Altura: "+altura+"\n"
                 + "Perimetro: "+df.format(perimetro);
     }//fin metodo calcPerimetro()
-
-    @Override
-    public void pedirDatos() 
-    {
-        base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
-    }//fin metodo pedirDatos()
-    
     
 }//fin clase PRectangulo

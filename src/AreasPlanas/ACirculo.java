@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import Estadistica.Mediana;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -25,21 +24,21 @@ public class ACirculo extends AFigura
         this.radio = radio;
     }
     
+    
+    @Override
+    public void pedirDatos()
+    {
+        radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
+    }//fin clase pedirDatos
+    
     @Override
     public void calcArea ()
     {
         area = Math.PI*Math.pow(radio, 2);
         DecimalFormat df = new DecimalFormat("0.00");
         
-        mensaje = "El radio es: "+radio+"\n"
-                  +"El area es: "+df.format(area);
+        mensaje = "Radio: "+radio+"\n"
+                  +"Area: "+df.format(area);
     }//fin metodo calcArea ()
-    
-    
-    @Override
-    public void pedirDatos()
-    {
-        radio = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del radio:"));
-    }//fin clase pedirDatos
     
 }//fin clase ACirculo

@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
 public class PRombo extends PFigura
@@ -15,7 +15,22 @@ public class PRombo extends PFigura
     {
         valorLado = 0;
         figura = "Rombo";
+    }//fin constructor
+
+    public double getValorLado() {
+        return valorLado;
     }
+
+    public void setValorLado(double valorLado) {
+        this.valorLado = valorLado;
+    }
+    
+    
+    @Override
+    public void pedirDatos ()
+    {
+        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+    }//fin metodo pedirDatos()
     
     @Override
     public void calcPerimetro ()
@@ -23,23 +38,8 @@ public class PRombo extends PFigura
         perimetro = valorLado*4;
         DecimalFormat df = new DecimalFormat("0.00");
         
-        mensaje = "Valor del lado: "+valorLado+"\n"
+        mensaje = "Lado: "+valorLado+"\n"
                 + "Perimetro: "+df.format(perimetro);
-    }
+    }//fin metodo calcPerimetro()
     
-    @Override
-    public void pedirDatos ()
-    {
-        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado"));
-    }
-    
-    public double getValorlado() 
-    {
-        return valorLado;
-    }
-
-    public void setValorlado(double valorlado) 
-    {
-        this.valorLado = valorlado;
-    }
-}
+}//fin clase PRombo

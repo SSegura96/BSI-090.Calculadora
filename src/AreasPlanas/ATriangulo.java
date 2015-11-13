@@ -14,7 +14,7 @@ public class ATriangulo extends AFigura
     public ATriangulo() 
     {
         medidaLado = 0.0;
-        figura = "Triángulo";
+        figura = "Triangulo";
     }
 
     public double getMedidaLado() 
@@ -27,6 +27,7 @@ public class ATriangulo extends AFigura
         this.medidaLado = medidaLado;
     }
     
+    
     @Override
     public void pedirDatos()
     {
@@ -36,6 +37,7 @@ public class ATriangulo extends AFigura
     @Override
     public void calcArea() 
     {
+        //Formula utilizada: 
         area = ((Math.sqrt(3))*Math.pow(medidaLado, 2))/4;
         DecimalFormat df = new DecimalFormat("0.00");
         

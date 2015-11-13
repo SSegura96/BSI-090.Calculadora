@@ -27,19 +27,21 @@ public class ACuadrado extends AFigura
         this.valorLado = valorLado;
     }
     
+    
+    @Override
+    public void pedirDatos()
+    {
+        setValorLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el lado:")));
+    }//fin clase pedirDatos
+    
     @Override
     public void calcArea ()
     {
         setArea(valorLado * valorLado);
         DecimalFormat df = new DecimalFormat("0.00");
         
-        mensaje = "El valor del lado es: "+valorLado+"\n"
-                + "El area es: "+df.format(area);
+        mensaje = "Lado: "+valorLado+"\n"
+                + "Area: "+df.format(area);
     }//fin calcArea ()
     
-    @Override
-    public void pedirDatos()
-    {
-        setValorLado(Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor del lado:")));
-    }//fin clase pedirDatos
 }//fin clase ACuadrado

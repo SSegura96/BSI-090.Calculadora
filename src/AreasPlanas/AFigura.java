@@ -28,17 +28,33 @@ public abstract class AFigura implements AIFigura
     {
         this.area = area;
     }
+
+    public String getFigura() {
+        return figura;
+    }
+
+    public void setFigura(String figura) {
+        this.figura = figura;
+    }
+
+    public String getMensaje() {
+        return mensaje;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
     
     
-    public void mostrarImagen ()
+    public void mostrarImagen()
     {
         JOptionPane.showMessageDialog(null,"", figura,
         JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
-    }
+    }//fin metodo mostrarImagen()
     
-    public void resultado ()
+    public void resultado()
     {
         JOptionPane.showMessageDialog(null, mensaje);
-    }
+    }//fin metodo resultado()
    
 }//fin clase Abstracta AFigura

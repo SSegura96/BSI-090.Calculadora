@@ -4,8 +4,7 @@ import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public class PTrapecio extends PFigura
 {
@@ -21,7 +20,7 @@ public class PTrapecio extends PFigura
         lado1 = 0.0;
         lado2 = 0.0;
         figura = "Trapecio";
-    }
+    }//fin constructor
 
     public double getBaseMayor() {
         return baseMayor;
@@ -55,6 +54,18 @@ public class PTrapecio extends PFigura
         this.lado2 = lado2;
     }
 
+    @Override
+    public void pedirDatos() 
+    {
+       baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base mayor:"));
+       
+       baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base menor:"));
+       
+       lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
+       
+       lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
+       
+    }//fin metodo pedirDatos()
     
     @Override
     public void calcPerimetro() 
@@ -68,15 +79,5 @@ public class PTrapecio extends PFigura
                 + "Segundo lado: "+lado2+"\n"
                 + "Perimetro: "+df.format(perimetro);
     }//fin metodo calcPerimetro()
-
-    @Override
-    public void pedirDatos() 
-    {
-       baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base mayor:"));
-       baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base menor:"));
-       lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
-       baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
-       
-    }//fin metodo pedirDatos()
     
 }//fin clase PTrapecio

@@ -41,23 +41,23 @@ public class ARombo extends AFigura
     
     
     @Override
+    public void pedirDatos()
+    {
+        diagMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor:"));
+               
+        diagMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor:"));
+    }//fin clase pedirDatos
+    
+    @Override
     public void calcArea ()
     {
         area = (diagMayor*diagMenor)/2;
         DecimalFormat df = new DecimalFormat("0.00");
         
-        mensaje = "La diagonal mayor es: "+diagMayor+"\n"
-                + "La diagonal menor es: "+diagMenor+"\n"
-                + "El Area es: "+df.format(area);
+        mensaje = "Diagonal Mayor: "+diagMayor+"\n"
+                + "Diagonal Menor: "+diagMenor+"\n"
+                + "Area: "+df.format(area);
         
     }//fin metodo calcArea ()
-
-    @Override
-    public void pedirDatos()
-    {
-        setDiagMayor(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor:")));
-               
-        setDiagMenor(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor:")));
-    }//fin clase pedirDatos
     
 }//fin clase ARombo

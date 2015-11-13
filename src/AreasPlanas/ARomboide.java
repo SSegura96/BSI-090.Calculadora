@@ -39,17 +39,6 @@ public class ARomboide extends AFigura
         this.altura = altura;
     }
     
-    @Override
-    public void calcArea ()
-    {
-        area = base * altura;
-        DecimalFormat df = new DecimalFormat("0.00");
-        
-        mensaje = "Tiene una base: "+base+"\n"
-                + "Tiene una altura: "+altura+"\n"
-                + "El Area es: "+df.format(area);
-        
-    }//fin metodo calcArea ()
     
     @Override
     public void pedirDatos()
@@ -58,4 +47,16 @@ public class ARomboide extends AFigura
                
         altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
     }//fin clase pedirDatos
+    
+    @Override
+    public void calcArea ()
+    {
+        area = base * altura;
+        DecimalFormat df = new DecimalFormat("0.00");
+        
+        mensaje = "Base: "+base+"\n"
+                + "Altura: "+altura+"\n"
+                + "Area: "+df.format(area);
+    }//fin metodo calcArea ()
+    
 }//fin clase ARomboide

@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
 public class PCirculo extends PFigura
@@ -15,17 +15,21 @@ public class PCirculo extends PFigura
     {
         radio = 0;
         figura = "Circulo";
-    }
-    
-    public double getRadio() 
-    {
+    }//fin constructor
+
+    public double getRadio() {
         return radio;
     }
 
-    public void setRadio(double radio) 
-    {
+    public void setRadio(double radio) {
         this.radio = radio;
     }
+    
+    @Override
+    public void pedirDatos ()
+    {
+        radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
+    }//fin metodo pedirDatos ()
     
     @Override
     public void calcPerimetro ()
@@ -35,11 +39,6 @@ public class PCirculo extends PFigura
         
         mensaje = "Radio: "+radio+"\n"
                 + "Perimetro: "+df.format(perimetro);
-    }
+    }//fin metodo calcPerimetro ()
 
-    @Override
-    public void pedirDatos ()
-    {
-        radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio"));
-    }
-}
+}//fin clase PCirculo

@@ -17,6 +17,7 @@ public class APoligonoRegular extends AFigura
     {
         numeroLados = 0.0;
         medidaLado = 0.0;
+        figura = "PoligonoRegular";
     }//fin constructor
 
     public double getNumeroLados() 
@@ -39,6 +40,15 @@ public class APoligonoRegular extends AFigura
         this.medidaLado = medidaLado;
     }
     
+    
+    @Override
+    public void pedirDatos()
+    {
+        setNumeroLados(Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:")));
+        
+        setMedidaLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:")));
+    }//fin metodo pedirDatos
+    
     private double calcularApotema()
     {
         double angRadianes;
@@ -49,6 +59,7 @@ public class APoligonoRegular extends AFigura
         angRadianes = Math.toRadians(angCentral);
         //Se saca el apotema: Lado/2*tan(angRadianes/2)
         apotema = medidaLado/(2*Math.tan(angRadianes/2));
+        
         return apotema;
     }//fin calcularApotema()
     
@@ -56,13 +67,13 @@ public class APoligonoRegular extends AFigura
     @Override
     public void calcArea()
     {
-        //Se invoca la clase PPoligonoRegular para calcular el area del poligono y poder usarlo en la formula del area
+        //Se invoca la clase PPoligonoRegular para calcular el perimetro del poligono y poder usarlo en la formula del area
         PPoligonoRegular pp = new PPoligonoRegular();
         pp.setNumLados(numeroLados);
         pp.setValorLado(medidaLado);
         pp.calcPerimetro();
         
-        area = (pp.perimetro*calcularApotema())/2;
+        area = (pp.getPerimetro()*calcularApotema())/2;
         
         DecimalFormat df = new DecimalFormat("0.00");
         
@@ -71,11 +82,4 @@ public class APoligonoRegular extends AFigura
                 + "El Area es: "+df.format(area);
     }//fin calcularArea()
     
-    @Override
-    public void pedirDatos()
-    {
-        setNumeroLados(Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:")));
-        
-        setMedidaLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:")));
-    }//fin metodo pedirDatos
 }//fin clase APoligonoRegular

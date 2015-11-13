@@ -35,6 +35,14 @@ public class ARectangulo extends AFigura
         this.altura = altura;
     }
     
+    
+    @Override
+    public void pedirDatos() 
+    {
+        base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
+        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
+    }//fin metodo pedirDatos()
+    
     @Override
     public void calcArea() 
     {
@@ -45,11 +53,5 @@ public class ARectangulo extends AFigura
                 + "Altura: "+altura+"\n"
                 + "Area: "+df.format(area);
     }//fin metodo calcArea()
-
-    @Override
-    public void pedirDatos() {
-        base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
-    }//fin metodo pedirDatos()
     
 }//fin clase ARectangulo

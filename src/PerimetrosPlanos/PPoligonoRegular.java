@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
 public class PPoligonoRegular extends PFigura
@@ -16,7 +16,7 @@ public class PPoligonoRegular extends PFigura
     {
         numLados = 0;
         valorLado = 0;
-    }
+    }//fin constructor
 
     public double getNumLados() 
     {
@@ -40,21 +40,22 @@ public class PPoligonoRegular extends PFigura
     
     
     @Override
+    public void pedirDatos()
+    {
+        numLados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:"));
+        
+        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+    }//fin metodo pedirDatos()
+    
+    @Override
     public void calcPerimetro()
     {
         perimetro = numLados * valorLado;
         DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Numero de lados: "+numLados+"\n"
-                + "Valor del lado: "+valorLado+"\n"
+                + "Medida del lado: "+valorLado+"\n"
                 + "Perimetro: "+df.format(perimetro);
     }//fin metodo calcPerimetro()
-    
-    @Override
-    public void pedirDatos()
-    {
-        numLados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:"));
-        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
-    }//fin metodo pedirDatos()
     
 }//fin clase PPoligonoRegular

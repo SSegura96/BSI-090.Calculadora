@@ -53,6 +53,16 @@ public class ATrapecio extends AFigura
     
     
     @Override
+    public void pedirDatos() 
+    {
+       baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base mayor:"));
+       
+       baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base menor:"));
+       
+       altura = Double.parseDouble(JOptionPane.showInputDialog("Digitie el valor de la altura:"));
+    }//fin metodo pedirDatos()
+    
+    @Override
     public void calcArea() 
     {
         area = ((baseMayor + baseMenor)*altura)/2;
@@ -63,13 +73,5 @@ public class ATrapecio extends AFigura
                 + "Altura: "+altura+"\n"
                 + "Area: "+df.format(area);
     }//fin metodo calcArea()
-
-    @Override
-    public void pedirDatos() 
-    {
-       baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor de la base mayor:"));
-       baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor de la base menor:"));
-       altura = Double.parseDouble(JOptionPane.showInputDialog("Introduzca el valor de la altura:"));
-    }//fin metodo pedirDatos()
     
 }//fin clase Atrapecio

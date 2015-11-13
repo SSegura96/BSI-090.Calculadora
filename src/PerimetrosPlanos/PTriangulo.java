@@ -4,8 +4,7 @@ import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public class PTriangulo extends PFigura
 {
@@ -46,11 +45,23 @@ public class PTriangulo extends PFigura
     }
     
     
+     @Override
+    public void pedirDatos() 
+    {
+        lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
+        
+        lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
+        
+        lado3 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del tercer lado:"));
+        
+    }//fin metodo pedirDtos
+    
     @Override
     public void calcPerimetro() 
     {
         DecimalFormat df = new DecimalFormat("0.00");
         
+        //Traingulo Equilatero
         if(lado1 == lado2 && lado2 == lado3)
         {
             perimetro = lado1*3;
@@ -92,9 +103,8 @@ public class PTriangulo extends PFigura
                     + "Perimetro: "+df.format(perimetro);
         }//fin cuarto if
         
-        if(lado1 != lado2 && 
-                lado1 != lado3 && 
-                lado2 != lado3)
+        //Traingulo Escaleno
+        if(lado1 != lado2 && lado1 != lado3 && lado2 != lado3)
         {
             perimetro = lado1 + lado2 + lado3;
             
@@ -106,14 +116,5 @@ public class PTriangulo extends PFigura
         }//fin quinto if
         
     }//fin metodo calcPerimetro()
-
-    @Override
-    public void pedirDatos() 
-    {
-        lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
-        lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
-        lado3 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del tercer lado:"));
-        
-    }//fin metodo pedirDtos
     
 }//Fin clase PTriangulo
