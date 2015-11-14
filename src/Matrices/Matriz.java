@@ -15,9 +15,9 @@ public class Matriz
 {
     private double escalar;
     
-    double[][] matrizA;
-    double[][] matrizB;
-    double[][] matrizT;
+    public double[][] matrizA;
+    public double[][] matrizB;
+    public double[][] matrizT;
     
     public Matriz ()
     {
@@ -63,9 +63,7 @@ public class Matriz
     }
     
     public void llenarMatriz (double[][] m)
-    {
-        System.out.println("Entro");
-        
+    {   
         for (int fila = 0;fila<m.length;fila++)
         {
             for (int columna = 0;columna<m[fila].length;columna++)
@@ -90,7 +88,7 @@ public class Matriz
     
     public void sumarMatrices ()
     {
-       if (matrizA.length == matrizB.length)
+       if (matrizA.length == matrizB[0].length)
         {
             for (int fila = 0; fila < matrizA.length; fila++) 
             {
