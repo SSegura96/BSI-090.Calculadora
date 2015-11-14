@@ -1,5 +1,4 @@
 package ProbabilidadYCombinaciones;
-
 /**
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
