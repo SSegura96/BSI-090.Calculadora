@@ -15,7 +15,7 @@ public class Ulmann extends AbCalculo
     {
         numeroIngresado = 0;
         resultado = 0;
-        datos = "";
+        mensaje = "";
     }
     
     @Override
@@ -27,7 +27,7 @@ public class Ulmann extends AbCalculo
     public void calcUlmann()
     {        
         resultado = numeroIngresado;
-        datos = "El resultado es: \n"+numeroIngresado+"";
+        mensaje = "El resultado es: \n"+numeroIngresado+"";
         while (resultado != 1)
         {
             if ((resultado%2)==0)
@@ -39,7 +39,7 @@ public class Ulmann extends AbCalculo
                 resultado = (resultado*3)+1;
             }
             
-            datos += "\n"+resultado;
+            mensaje += "\n"+resultado;
         }
     }
     

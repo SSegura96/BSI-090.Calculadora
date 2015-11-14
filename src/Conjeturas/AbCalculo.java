@@ -13,15 +13,15 @@ import javax.swing.JOptionPane;
  */
 public abstract class AbCalculo implements ICalculo
 {
-    String datos;
+    String mensaje;
     
     public AbCalculo ()
     {
-        datos = "";
+        mensaje = "";
     }
     
     public void mostarDatos()
     {
-        JOptionPane.showMessageDialog(null, datos);
+        JOptionPane.showMessageDialog(null, mensaje);
     }
 }
