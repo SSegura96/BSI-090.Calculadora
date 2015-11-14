@@ -5,6 +5,7 @@ import AreasPlanas.*;
 import PerimetrosPlanos.*;
 import Estadistica.*;
 import Matrices.*;
+import Conjeturas.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -49,7 +50,8 @@ public class mainV2 extends javax.swing.JFrame
     String[] vectores = {"Escalar.", "Suma.",
         "Producto."};
     String[] matrices = {"Escalar.", "Suma.",
-        "Producto."};
+        "Producto"};
+    String[] conjeturas = {"Ulmann.","Gillbreath."};
 
     public void inicializarComboBox() 
     {
@@ -93,6 +95,10 @@ public class mainV2 extends javax.swing.JFrame
 
             case 7:
                 jCSubmenu.setModel(new DefaultComboBoxModel(matrices));
+                break;
+            
+            case 8:
+                jCSubmenu.setModel(new DefaultComboBoxModel(conjeturas));
                 break;
         }
     }
@@ -342,6 +348,19 @@ public class mainV2 extends javax.swing.JFrame
                         mat.inicializarMatrices(1);
                         mat.pedirDatos(1);
                         mat.productoMatrices();
+                    break;
+                }
+            break;
+                
+            case 8:
+                switch (indiceSub)
+                {
+                    //Ulmann
+                    case 0:
+                        Ulmann ul = new Ulmann();
+                        ul.pedirDatos();
+                        ul.calcUlmann();
+                        ul.mostarDatos();
                     break;
                 }
             break;
