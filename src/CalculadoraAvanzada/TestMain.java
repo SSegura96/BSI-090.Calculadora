@@ -3,6 +3,7 @@ package CalculadoraAvanzada;
 import javax.swing.JOptionPane;
 import AreasPlanas.*;
 import ArreglosUnidimensionales.*;
+import Conjeturas.Gilbreath;
 import Estadistica.*;
 /**
  *
@@ -539,7 +540,7 @@ public class TestMain {
                 }//fin case 7
 
                 case 8: {
-                    Object[] botonesMenuConjeturas = {"Ulmann.", "Pene."};
+                    Object[] botonesMenuConjeturas = {"Ulmann.", "Gilbreath."};
 
                     String menuConjeturas = JOptionPane.showInputDialog(null,
                             "Seleccione la formula deseada:\n", "Conjeturas",
@@ -561,8 +562,13 @@ public class TestMain {
                             break;
                         }//fin segundo case 0
 
-                        case 1: {
-
+                        //Gilbreath
+                        case 1: 
+                        {
+                            Gilbreath g = new Gilbreath();
+                            g.pedirDatos();
+                            g.calcGilbreath();
+                            g.mostarDatos();
                             break;
                         }//fin segundo case 1
 
