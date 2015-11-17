@@ -1,6 +1,7 @@
 package ProbabilidadYCombinaciones;
 
 import javax.swing.JOptionPane;
+import CalculadoraAvanzada.Error;
 
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -17,26 +18,60 @@ public class Factorial extends ProbabilidadSimple
     }
     
     @Override
-    public void pedirDatos ()
+    public void pedirDatos () throws NumberFormatException
     {
-        numero = Integer.parseInt(JOptionPane.showInputDialog(
-                "Digite el numero al cual le decea calcular el factorial"));
+        boolean todoBien = true;
+        int numError = 0;
+        
+        do
+        {
+            try
+            {
+                numero = Integer.parseInt(JOptionPane.showInputDialog(
+                    "Digite el numero al cual le decea calcular el factorial",
+                    "Digite un numero entero"));
+                
+                if (numero < 0)
+                {
+                    numError = 1; 
+                    throw new NumberFormatException();
+                }
+                
+                todoBien = true;
+            }
+            catch (NumberFormatException e)
+            {
+                todoBien = false;
+                Error error = new Error ();
+                JOptionPane.showMessageDialog(null,error.seleccionarMensaje(numError));
+            }
+        }while (!todoBien);
     }
     
     public void calcFactorial ()
     {
-        int numeroTemp = numero;
-        factorial = 1;
-        mensaje = "El resultado es: \n";
+        mensaje = "El resultado de "+numero+"! es: \n";
         
-        while (numeroTemp != 0)
+        if (numero != 0)
         {
-            mensaje += numeroTemp+" X ";
+            int numeroTemp = numero;
             
-            factorial *= numeroTemp;
-            numeroTemp--;
+            factorial = 1;
+        
+            while (numeroTemp != 0)
+            {
+                mensaje += numeroTemp+" X ";
+
+                factorial *= numeroTemp;
+                numeroTemp--;
+            }
+            mensaje = mensaje.substring(0,mensaje.length()-3);
+            mensaje += " = "+factorial;
         }
-        mensaje = mensaje.substring(0,mensaje.length()-3);
-        mensaje += " = "+factorial;
+        else
+        {
+           mensaje += "1 X 1 = 1";
+        }
+        
     }
 }
