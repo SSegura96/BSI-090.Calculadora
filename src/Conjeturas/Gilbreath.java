@@ -9,119 +9,302 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Gilbreath extends AbCalculo
-{
-    private LinkedList <Integer> primos = new LinkedList();
-    private LinkedList <Integer> renglon3 = new LinkedList();
-    private LinkedList <Integer> renglon4 = new LinkedList();
-    private LinkedList <Integer> renglon5 = new LinkedList();
-    private LinkedList <Integer> renglon6 = new LinkedList();
-    private LinkedList <Integer> renglon7 = new LinkedList();
-    private LinkedList <Integer> renglon8 = new LinkedList();
-    private LinkedList <Integer> renglon9 = new LinkedList();
-    
-    private int contadorPrimos;
+public class Gilbreath extends AbCalculo {
 
-    public Gilbreath() 
-    {
-        contadorPrimos = 11;
+    //LinkedList para controlar los primos ingresados por el usario
+    private LinkedList<Integer> primos = new LinkedList();
+    //Estas siguientes son para mostrar los renglones de la formula en un metodo mas abajo
+    private LinkedList<Integer> renglon2 = new LinkedList();
+    private LinkedList<Integer> renglon3 = new LinkedList();
+    private LinkedList<Integer> renglon4 = new LinkedList();
+    private LinkedList<Integer> renglon5 = new LinkedList();
+    private LinkedList<Integer> renglon6 = new LinkedList();
+    private LinkedList<Integer> renglon7 = new LinkedList();
+    private LinkedList<Integer> renglon8 = new LinkedList();
+    private LinkedList<Integer> renglon9 = new LinkedList();
+    private LinkedList<Integer> renglonFantasma = new LinkedList();
+    //Cantidad de numeros de la LinkedList
+    private int tamannoLinkedList;
+
+    public Gilbreath() {
+        this.tamannoLinkedList = 0;
     }//fin constructor
 
-    public int getContadorPrimos() {
-        return contadorPrimos;
+    public LinkedList<Integer> getPrimos() {
+        return primos;
     }
 
-    public void setContadorPrimos(int contadorPrimos) {
-        this.contadorPrimos = contadorPrimos;
+    public void setPrimos(LinkedList<Integer> primos) {
+        this.primos = primos;
     }
-    
-    
+
+    public LinkedList<Integer> getRenglon2() {
+        return renglon2;
+    }
+
+    public void setRenglon2(LinkedList<Integer> renglon2) {
+        this.renglon2 = renglon2;
+    }
+
+    public LinkedList<Integer> getRenglon3() {
+        return renglon3;
+    }
+
+    public void setRenglon3(LinkedList<Integer> renglon3) {
+        this.renglon3 = renglon3;
+    }
+
+    public LinkedList<Integer> getRenglon4() {
+        return renglon4;
+    }
+
+    public void setRenglon4(LinkedList<Integer> renglon4) {
+        this.renglon4 = renglon4;
+    }
+
+    public LinkedList<Integer> getRenglon5() {
+        return renglon5;
+    }
+
+    public void setRenglon5(LinkedList<Integer> renglon5) {
+        this.renglon5 = renglon5;
+    }
+
+    public LinkedList<Integer> getRenglon6() {
+        return renglon6;
+    }
+
+    public void setRenglon6(LinkedList<Integer> renglon6) {
+        this.renglon6 = renglon6;
+    }
+
+    public LinkedList<Integer> getRenglon7() {
+        return renglon7;
+    }
+
+    public void setRenglon7(LinkedList<Integer> renglon7) {
+        this.renglon7 = renglon7;
+    }
+
+    public LinkedList<Integer> getRenglon8() {
+        return renglon8;
+    }
+
+    public void setRenglon8(LinkedList<Integer> renglon8) {
+        this.renglon8 = renglon8;
+    }
+
+    public LinkedList<Integer> getRenglon9() {
+        return renglon9;
+    }
+
+    public void setRenglon9(LinkedList<Integer> renglon9) {
+        this.renglon9 = renglon9;
+    }
+
+    public LinkedList<Integer> getRenglonFantasma() {
+        return renglonFantasma;
+    }
+
+    public void setRenglonFantasma(LinkedList<Integer> renglonFantasma) {
+        this.renglonFantasma = renglonFantasma;
+    }
+
+    public int getTamannoLinkedList() {
+        return tamannoLinkedList;
+    }
+
+    public void setTamannoLinkedList(int tamannoLinkedList) {
+        this.tamannoLinkedList = tamannoLinkedList;
+    }
+
     @Override
-    public void pedirDatos() 
-    {
+    public void pedirDatos() {
+        int contador = 0;//solo lleva la cuenta en el msj a pantalla
+        int contadorPrimos = 0;//lleva la cuenta de los valores para unsar la variable de clase tamannoLinkedList
         int num = 0;//almacena temporalmente el numero a evaluar
-        int salir = 0;//controla la entrada y salida del while
 
-        //Se alamacenan los 10 numeros primos en la LinkedList
-        do 
+        do
         {
-            num = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero primo, "
-                    + "(el siguiente numero tiene que ser consecutivo al digitado actualmente): \n"
-                    + "\t \t Valor #"+ (salir+1) +" de 10"));
+            tamannoLinkedList = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de numeros que va a ingresar:"));
+        contadorPrimos = tamannoLinkedList;
+        
+        //se valida que el tamaño no sea invalido
+        if (tamannoLinkedList == 0 || tamannoLinkedList == 1 || tamannoLinkedList > 10)
+        {
+            JOptionPane.showMessageDialog(null, "Solo se pueden digitar numeros enteros en el intervalo de 2 a 10");
+        }//fin if
+        
+        }while (tamannoLinkedList == 0 || tamannoLinkedList == 1 || tamannoLinkedList > 10);
+        
+        //Se alamacenan los numeros primos en la LinkedList
+        
+        do {
+            num = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero primo:\n"
+                    + "\t \t Valor #" + (contador + 1) + " de " + tamannoLinkedList));
 
             //se evalua que el numero sea primo
-            if (num % 2 != 0 || num == 2) 
-            {
+            if (num % 2 != 0 || num == 2) {
                 primos.addLast(num);
-                salir++;
+                contadorPrimos--;
+                contador++;
             }//fin if 
-            else
-            {
+            else {
                 JOptionPane.showMessageDialog(null, "Digite solo numeros primos.");
             }//fin else
 
-        } while (salir < 10);//fin do-while
+        } while (contadorPrimos > 0);//fin do-while
 
     }//fin metodo pedirDatos()
-    
-    public String cargarNumeros(LinkedList <Integer> lista)
-    {
-        ArrayList lista2 = new ArrayList (lista);
-        
+
+    public String cargarNumeros(LinkedList<Integer> lista) {
+        ArrayList lista2 = new ArrayList(lista);
+
         Iterator it = lista2.iterator();
-        
+
         String renglon = "";
-        
-        while (it.hasNext())
-        {
-            renglon += it.next()+" - ";
+
+        while (it.hasNext()) {
+            renglon += it.next() + " - ";
         }//fin while
-        
-        renglon = renglon.substring(0, renglon.length()-2);
-        
+
+        renglon = renglon.substring(0, renglon.length() - 2);
+
         return renglon;
     }//fin metodo cargarNumeros(LinkedList <Integer> lista)
-    
-    public String cargarRenglon2 (LinkedList <Integer> lista, LinkedList <Integer> lista2)
-    {
-        
+
+    public String cargarRenglones(LinkedList<Integer> lista, LinkedList<Integer> lista2) {
+
         String renglon = "";
         int resultado;
-        int indice = 0;
-        boolean salir = true;
-        
-        while (salir)
+
+        for (int indice = 0; indice < lista.size() - 1; indice++) 
         {
-            if (lista.get(indice+1) != lista.getLast())
-            {
-                resultado = (lista.get(indice) - lista.get(indice+1));
-                lista2.addLast(resultado);
-                resultado = Math.abs(resultado);
-                renglon += resultado+" - ";
-                indice++;
-                
-            }//fin else
-            else
-            {
-                resultado = lista.get(lista.size()-2) - lista.get(lista.size()-1);
-                
-                resultado = Math.abs(resultado);
-                
-                renglon += resultado;
-                salir = false;
-            }//fin if
-            
-        }//fin while
-        
+            resultado = (lista.get(indice) - lista.get(indice + 1));
+            resultado = Math.abs(resultado);
+            lista2.addLast(resultado);
+            renglon += resultado + " - ";
+        }//fin for
+
+        renglon = renglon.substring(0, renglon.length() - 2);
+
         return renglon;
     }//fin metodo cargarReglon()
-    
-    public void calcGilbreath()
-    {
-        mensaje = ""+cargarNumeros(primos)+"\n"
-                + "----------------------------------------------------- \n"
-                + ""+cargarRenglon2(primos,renglon3)+"\n"
-                + ""+cargarRenglon2(renglon3,renglon4);
+
+    public void calcGilbreath() {
+        //Depende del tamaño que se digite entra en el switch
+        switch (tamannoLinkedList) {
+            //si solo se digitan dos numeros
+            case 2: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2);
+                break;
+            }//fin case 2
+
+            //si solo se digitan 3
+            case 3: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3);
+                break;
+            }//fin case 3
+
+            //si solo se digitan 4
+            case 4: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3) + "\n"
+                        + "" + cargarRenglones(renglon3, renglon4);
+                break;
+            }//fin case 4
+
+            //si solo se digitan 5
+            case 5: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3) + "\n"
+                        + "" + cargarRenglones(renglon3, renglon4) + "\n"
+                        + "" + cargarRenglones(renglon4, renglon5);
+                break;
+            }//fin case 5
+
+            //si solo se digitan 6
+            case 6: {
+
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3) + "\n"
+                        + "" + cargarRenglones(renglon3, renglon4) + "\n"
+                        + "" + cargarRenglones(renglon4, renglon5) + "\n"
+                        + "" + cargarRenglones(renglon5, renglon6);
+                break;
+            }//fin case 6
+
+            //si solo se digitan 7
+            case 7: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3) + "\n"
+                        + "" + cargarRenglones(renglon3, renglon4) + "\n"
+                        + "" + cargarRenglones(renglon4, renglon5) + "\n"
+                        + "" + cargarRenglones(renglon5, renglon6) + "\n"
+                        + "" + cargarRenglones(renglon6, renglon7);
+                break;
+            }//fin case 7
+
+            //si solo se digitan 8
+            case 8: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3) + "\n"
+                        + "" + cargarRenglones(renglon3, renglon4) + "\n"
+                        + "" + cargarRenglones(renglon4, renglon5) + "\n"
+                        + "" + cargarRenglones(renglon5, renglon6) + "\n"
+                        + "" + cargarRenglones(renglon6, renglon7) + "\n"
+                        + "" + cargarRenglones(renglon7, renglon8);
+                break;
+            }//fin case 8
+
+            //si solo se digitan 9
+            case 9: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3) + "\n"
+                        + "" + cargarRenglones(renglon3, renglon4) + "\n"
+                        + "" + cargarRenglones(renglon4, renglon5) + "\n"
+                        + "" + cargarRenglones(renglon5, renglon6) + "\n"
+                        + "" + cargarRenglones(renglon6, renglon7) + "\n"
+                        + "" + cargarRenglones(renglon7, renglon8) + "\n"
+                        + "" + cargarRenglones(renglon8, renglon9);
+                break;
+            }//fin case 9
+
+            //si solo se digitan 10
+            case 10: {
+                mensaje = "" + cargarNumeros(primos) + "\n"
+                        + "----------------------------------------------------- \n"
+                        + "" + cargarRenglones(primos, renglon2) + "\n"
+                        + "" + cargarRenglones(renglon2, renglon3) + "\n"
+                        + "" + cargarRenglones(renglon3, renglon4) + "\n"
+                        + "" + cargarRenglones(renglon4, renglon5) + "\n"
+                        + "" + cargarRenglones(renglon5, renglon6) + "\n"
+                        + "" + cargarRenglones(renglon6, renglon7) + "\n"
+                        + "" + cargarRenglones(renglon7, renglon8) + "\n"
+                        + "" + cargarRenglones(renglon8, renglon9) + "\n"
+                       + "" + cargarRenglones(renglon9, renglonFantasma) + "\n";
+                break;
+            }//fin case 10
+
+        }//fin switch
+        
     }//fin metodo calcGilbreath()
-    
+
 }//fin clase Gilbreath
