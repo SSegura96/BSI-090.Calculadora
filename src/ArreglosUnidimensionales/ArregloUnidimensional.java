@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class ArregloUnidimensional {
+public abstract class ArregloUnidimensional implements IArreglosUnidimensionales{
 
     protected double[] vector;
     protected double[] vector2;
@@ -15,7 +15,8 @@ public class ArregloUnidimensional {
     protected String mensaje;
     protected String imagenV;
 
-    public ArregloUnidimensional() {
+    public ArregloUnidimensional() 
+    {
         tamanno = 0;
         vector = new double[0];
         vector2 = new double[0];
@@ -46,10 +47,6 @@ public class ArregloUnidimensional {
         this.tamanno = tamanno;
     }
 
-    
-    public void pedirDatos() {
-        JOptionPane.showInputDialog(null, "Pedir datos necesarios al usario.");
-    }//fin metodo pedirDatos()
 
     public void llenarVector() {
         JOptionPane.showMessageDialog(null, "Llenar el primer vector: vector[ ]");

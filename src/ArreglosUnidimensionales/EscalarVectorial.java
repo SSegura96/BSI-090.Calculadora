@@ -15,6 +15,7 @@ public class EscalarVectorial extends ArregloUnidimensional
     {
         escalarV = new double[0];
         escalar = 0.0;
+        imagenV = "EscalarVectorial";
     }//fin constructor
 
     public double[] getEscalarV() {

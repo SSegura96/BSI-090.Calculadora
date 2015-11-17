@@ -13,6 +13,7 @@ public class SumaVectorial extends ArregloUnidimensional
     public SumaVectorial() 
     {
         sumaV = new double[0];
+        imagenV = "SumaVectorial";
     }//fin constructor
 
     public double[] getSumaV() {

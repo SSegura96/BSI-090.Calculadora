@@ -13,6 +13,7 @@ public class ProductoVectorial extends ArregloUnidimensional
     public ProductoVectorial() 
     {
         productoV = new double [0];
+        imagenV = "ProductoVectorial";
     }//fin constructor
 
     public double[] getProductoV() {
