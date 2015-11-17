@@ -77,7 +77,7 @@ public class ProbabilidadSimple
          
          mensaje = "Cantidad total de elementos: "+cantidadElementos+"\n"
                  + "Cantidad de posibles elemntos: "+posibilidadEscoger+"\n"
-                 + "Probabilidad Simple: "+df.format(probabilidad);
+                 + "Probabilidad Simple: "+df.format(probabilidad)+"%";
      }//fin metodo calcProbabilidadSimple()
      
      public void resultado()
