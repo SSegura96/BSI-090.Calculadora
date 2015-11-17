@@ -10,13 +10,15 @@ import javax.swing.JOptionPane;
  */
 public class ProbabilidadSimple extends ProbabilidadYCombinaciones
 {
-    private int posibilidadEscoger;//posibilidades de escoger un elemento
-    private double probabilidad;//probabilidad simple
+    protected int posibilidadEscoger;//posibilidades de escoger un elemento
+    protected double probabilidad;//probabilidad simple
+    protected int factorial;
 
     public ProbabilidadSimple() 
     {
         posibilidadEscoger = 0;
         probabilidad = 0.0;
+        factorial = 0;
     }//fin constructor
 
     public int getPosibilidadEscoger() {

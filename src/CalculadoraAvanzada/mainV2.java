@@ -6,6 +6,7 @@ import PerimetrosPlanos.*;
 import Estadistica.*;
 import Matrices.*;
 import Conjeturas.*;
+import ProbabilidadYCombinaciones.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -307,9 +308,19 @@ public class mainV2 extends javax.swing.JFrame
                     break;
                 }
             break;
-
+            
+            //Probabilidad y Combinaciones    
             case 3:
-
+                switch (indiceSub)
+                {
+                    //Factorial
+                    case 0:
+                        Factorial fac = new Factorial ();
+                        fac.pedirDatos();
+                        fac.calcFactorial();
+                        fac.resultado();
+                    break;
+                }
             break;
 
             case 4:
