@@ -35,46 +35,30 @@ public class Permutacion extends ProbabilidadYCombinaciones
         this.permutacion = permutacion;
     }
     
-    
-    @Override
-    public void mostrarImagen() 
-    {
-        JOptionPane.showMessageDialog(null, "", "Permutacion",
-                JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/Permutacion.png"));
-    }//fin metodo mostrarImagen
-    
     @Override
     public void pedirDatos()
     {
-        cantidadElementos = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad totoal de elementos:"));
+        cantidadElementos = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad total de elementos:"));
         
         grupoElementos = Integer.parseInt(JOptionPane.showInputDialog("Digite en grupos de cuanto quiere agrupar los elementos:"));
         
     }//fin metodo pedirDatos()
-    
-    private int Factorial(int numero)
-    {
-        while(numero > 1)
-        {
-            numero = numero * (numero-1);
-        }//fin while
-        return numero;
-    }//fin metodo calcFactorial
+
     
     public void calcPermutacion()
     {
-         permutacion = Factorial(cantidadElementos)/Factorial((cantidadElementos-grupoElementos));
+        Factorial facNumElementos = new Factorial();
+        facNumElementos.setNumero(cantidadElementos);
+        
+        Factorial facOperacion = new Factorial();
+        facOperacion.setNumero(cantidadElementos - grupoElementos);
+        
+        permutacion = facNumElementos.calcFactorial() / facOperacion.calcFactorial();
          
-         mensaje = "Cantidad de Elementos: "+cantidadElementos+"\n"
-                 + "Grupos de elementos: "+grupoElementos+"\n"
-                 + "Permutacion: "+permutacion;
+        mensaje = "Cantidad de Elementos: "+cantidadElementos+"\n"
+                + "Grupos de elementos: "+grupoElementos+"\n"
+                + "Permutacion: "+permutacion;
          
     }//fin metodo calcPermutacion()
-    
-    @Override
-    public void resultado()
-    {
-        JOptionPane.showMessageDialog(null, mensaje);
-    }//fin metodo resultado()
     
 }//fin clase Permutacion

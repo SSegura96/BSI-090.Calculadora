@@ -9,12 +9,23 @@ import CalculadoraAvanzada.Error;
 
 public class Factorial extends ProbabilidadSimple
 {
-    int numero;
+    private int numero;
 
     public Factorial()
     {
         numero = 0;
+        factorial = 0;
         mensaje = "";
+    }
+
+    public int getNumero() 
+    {
+        return numero;
+    }
+
+    public void setNumero(int numero) 
+    {
+        this.numero = numero;
     }
     
     @Override
@@ -48,7 +59,7 @@ public class Factorial extends ProbabilidadSimple
         }while (!todoBien);
     }
     
-    public void calcFactorial ()
+    public int calcFactorial ()
     {
         mensaje = "El resultado de "+numero+"! es: \n";
         
@@ -71,7 +82,9 @@ public class Factorial extends ProbabilidadSimple
         else
         {
            mensaje += "1 X 1 = 1";
+           factorial = 1;
         }
         
+        return factorial;
     }
 }

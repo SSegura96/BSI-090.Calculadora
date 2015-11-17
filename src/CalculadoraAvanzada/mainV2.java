@@ -318,7 +318,23 @@ public class mainV2 extends javax.swing.JFrame
                         Factorial fac = new Factorial ();
                         fac.pedirDatos();
                         fac.calcFactorial();
-                        fac.resultado();
+                        fac.mostrarResultado();
+                    break;
+                        
+                    //permutacion
+                    case 1:
+                      Permutacion per = new Permutacion();
+                      per.pedirDatos();
+                      per.calcPermutacion();
+                      per.mostrarResultado();
+                    break;
+                        
+                    //Combinatoria
+                    case 2:
+                        Combinatoria comb = new Combinatoria();
+                        comb.pedirDatos();
+                        comb.calcCombinatoria();
+                        comb.mostrarResultado();
                     break;
                 }
             break;

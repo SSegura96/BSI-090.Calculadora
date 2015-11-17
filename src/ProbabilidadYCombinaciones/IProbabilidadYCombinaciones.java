@@ -7,6 +7,4 @@ package ProbabilidadYCombinaciones;
 public interface IProbabilidadYCombinaciones 
 {
     public void pedirDatos();
-    public void resultado();
-    public void mostrarImagen();
 }//fin clase IProbabilidadYCombinaciones
