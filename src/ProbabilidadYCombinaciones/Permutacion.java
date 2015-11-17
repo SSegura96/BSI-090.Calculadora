@@ -7,28 +7,17 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Permutacion 
+public class Permutacion extends ProbabilidadYCombinaciones
 {
-    private int cantidadElementos;
+    
     private int grupoElementos;
     private int permutacion;
-    private String mensaje;
 
     public Permutacion() 
     {
-        cantidadElementos = 0;
         grupoElementos = 0;
         permutacion = 0;
-        mensaje = "";
     }//fin constructor
-
-    public int getCantidadElementos() {
-        return cantidadElementos;
-    }
-
-    public void setCantidadElementos(int cantidadElementos) {
-        this.cantidadElementos = cantidadElementos;
-    }
 
     public int getGrupoElementos() {
         return grupoElementos;
@@ -45,22 +34,16 @@ public class Permutacion
     public void setPermutacion(int permutacion) {
         this.permutacion = permutacion;
     }
-
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
     
     
+    @Override
     public void mostrarImagen() 
     {
         JOptionPane.showMessageDialog(null, "", "Permutacion",
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/Permutacion.png"));
     }//fin metodo mostrarImagen
     
+    @Override
     public void pedirDatos()
     {
         cantidadElementos = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad totoal de elementos:"));
@@ -88,6 +71,7 @@ public class Permutacion
          
     }//fin metodo calcPermutacion()
     
+    @Override
     public void resultado()
     {
         JOptionPane.showMessageDialog(null, mensaje);
