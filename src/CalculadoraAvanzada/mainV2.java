@@ -131,16 +131,21 @@ public class mainV2 extends javax.swing.JFrame
                     case 0:
                         ACirculo aCir = new ACirculo();
                         aCir.mostrarImagen();
+                        boolean salir = false;
+                        do
+                        {
                         try
                            {
                                 aCir.pedirDatos();
                                 aCir.calcArea();
                                 aCir.resultado();
+                                salir = true;
                            }//fin try
                            catch (NumberFormatException e)
                            {
                                JOptionPane.showMessageDialog(null, "Se digito un valor no numerico.", "Error", JOptionPane.ERROR_MESSAGE);
                            }//fin catch
+                        }while(!salir);
                     break;
 
                     //Triangulo

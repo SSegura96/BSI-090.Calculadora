@@ -46,6 +46,7 @@ public class Promedio
         this.mensaje = mensaje;
     }
     
+    
     public void pedirDatos ()
     {
         boolean seguir = true;
