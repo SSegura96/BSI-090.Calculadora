@@ -1,5 +1,6 @@
 package AreasPlanas;
 
+import java.awt.HeadlessException;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -28,7 +29,18 @@ public class ACirculo extends AFigura
     @Override
     public void pedirDatos()
     {
-        radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
+        do
+        {
+            radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
+        
+            //se valida el valor del radio
+            if (radio <= 0)
+            {
+                JOptionPane.showMessageDialog(null, "El radio no puede ser cero o un valor negativo.",
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+            }//fin if
+            
+        }while (radio <= 0);//fin do-while
     }//fin clase pedirDatos
     
     @Override

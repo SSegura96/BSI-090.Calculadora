@@ -10,6 +10,7 @@ import ProbabilidadYCombinaciones.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  * @author Javier Fernandez & Sergio Segura
@@ -130,9 +131,16 @@ public class mainV2 extends javax.swing.JFrame
                     case 0:
                         ACirculo aCir = new ACirculo();
                         aCir.mostrarImagen();
-                        aCir.pedirDatos();
-                        aCir.calcArea();
-                        aCir.resultado();
+                        try
+                           {
+                                aCir.pedirDatos();
+                                aCir.calcArea();
+                                aCir.resultado();
+                           }//fin try
+                           catch (NumberFormatException e)
+                           {
+                               JOptionPane.showMessageDialog(null, "Se digito un valor no numerico.", "Error", JOptionPane.ERROR_MESSAGE);
+                           }//fin catch
                     break;
 
                     //Triangulo

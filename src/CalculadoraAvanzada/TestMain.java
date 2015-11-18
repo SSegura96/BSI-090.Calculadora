@@ -63,9 +63,16 @@ public class TestMain {
                         case 0: 
                            ACirculo cir = new ACirculo ();
                            cir.mostrarImagen();
-                           cir.pedirDatos();
-                           cir.calcArea();
-                           cir.resultado();
+                           try
+                           {
+                                cir.pedirDatos();
+                                cir.calcArea();
+                                cir.resultado();
+                           }
+                           catch (NumberFormatException e)
+                           {
+                               JOptionPane.showMessageDialog(null, "Se digito un valor no numerico.", "Error", JOptionPane.ERROR_MESSAGE);
+                           }
                         break;
                         
                         //Triangulo
