@@ -54,8 +54,6 @@ public class mainV2 extends javax.swing.JFrame
         "Producto"};
     String[] conjeturas = {"Ulmann.","Gillbreath."};
     
-    boolean salir = false;//este boolean controla los ciclos implementados en los menus
-    
     public void inicializarComboBox() 
     {
         jCOperaciones.setModel(new DefaultComboBoxModel(menuPrincipal));
