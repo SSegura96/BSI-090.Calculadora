@@ -42,11 +42,28 @@ public class APoligonoRegular extends AFigura
     
     
     @Override
-    public void pedirDatos()
+    public void pedirDatos() 
     {
-        setNumeroLados(Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:")));
+        do 
+        {
+            numeroLados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:"));
+
+            if (numeroLados <= 0) 
+            {
+                JOptionPane.showMessageDialog(null, "El valor del lado no puede ser cero o un valor negativo.",
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+            }//fin primer if de validacion
+
+            medidaLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+            
+            if (medidaLado <= 0) 
+            {
+                JOptionPane.showMessageDialog(null, "El valor del lado no puede ser cero o un valor negativo.",
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+            }//fin segundo if de validacion
+
+        } while (numeroLados <= 0 || medidaLado <= 0);
         
-        setMedidaLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:")));
     }//fin metodo pedirDatos
     
     private double calcularApotema()

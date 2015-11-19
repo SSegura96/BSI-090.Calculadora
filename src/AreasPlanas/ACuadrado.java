@@ -29,15 +29,24 @@ public class ACuadrado extends AFigura
     
     
     @Override
-    public void pedirDatos()
+    public void pedirDatos() 
     {
-        setValorLado(Double.parseDouble(JOptionPane.showInputDialog("Digite el lado:")));
+        do {
+            valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el lado:"));
+
+            if (valorLado <= 0) 
+            {
+                JOptionPane.showMessageDialog(null, "El valor del lado no puede ser cero o un valor negativo.",
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+            }//fin if
+        } while (valorLado <= 0);
+
     }//fin clase pedirDatos
     
     @Override
     public void calcArea ()
     {
-        setArea(valorLado * valorLado);
+        area = valorLado * valorLado;
         DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Lado: "+valorLado+"\n"

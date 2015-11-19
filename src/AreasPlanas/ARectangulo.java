@@ -39,8 +39,26 @@ public class ARectangulo extends AFigura
     @Override
     public void pedirDatos() 
     {
-        base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
+        do 
+        {
+            base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
+
+            if (base <= 0) 
+            {
+                JOptionPane.showMessageDialog(null, "El valor de la base no puede ser cero o un valor negativo.",
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+            }//fin primer if de validacion
+
+            altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
+
+            if (base <= 0) 
+            {
+                JOptionPane.showMessageDialog(null, "El valor de la altura no puede ser cero o un valor negativo.",
+                        "Aviso", JOptionPane.WARNING_MESSAGE);
+            }//fin segundo if de validacion
+
+        } while (base <= 0 || altura <= 0);
+
     }//fin metodo pedirDatos()
     
     @Override
