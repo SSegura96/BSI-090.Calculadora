@@ -35,7 +35,7 @@ public class ATriangulo extends AFigura
     }//fin clase pedirDatos@Override
     
     @Override
-    public void calcArea() 
+    public double calcArea() 
     {
         //Formula utilizada: 
         area = ((Math.sqrt(3))*Math.pow(medidaLado, 2))/4;
@@ -43,6 +43,7 @@ public class ATriangulo extends AFigura
         
         mensaje = "La media del lado es: "+medidaLado+"\n"
                 + "El area es: "+df.format(area);
+    return area;
     }//fin metodo calcArea()
     
 }//fin clase ATriangulo
