@@ -129,7 +129,7 @@ public class mainV2 extends javax.swing.JFrame
         {
             //Áreas de figuras planas(2D)
             case 0:
-                
+
                 switch (indiceSub) 
                 {
                     //Circulo
@@ -149,9 +149,9 @@ public class mainV2 extends javax.swing.JFrame
                             {
                                 salir = true;
                             }//fin primer catch
-
                         } while (!salir);
-                    break;
+
+                        break;
 
                     //Triangulo
                     case 1:

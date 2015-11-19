@@ -31,14 +31,20 @@ public class ACirculo extends AFigura
     {
         do 
         {
-            radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
-
-            //se valida el valor del radio
-            if (radio <= 0) 
+            try 
             {
-                fallo.seleccionarMensaje(0, "Aviso", 2);
-            }//fin if
+                radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
 
+                //se valida el valor del radio
+                if (radio <= 0) 
+                {
+                    fallo.seleccionarMensaje(0, "Aviso", 2);
+                }//fin if
+            }//fin try
+            catch (NumberFormatException e) 
+            {
+                fallo.seleccionarMensaje(1, "Error", 0);
+            }//fin catch
         } while (radio <= 0);
     }//fin clase pedirDatos
 
