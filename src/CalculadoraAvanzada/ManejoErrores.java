@@ -25,7 +25,7 @@ public class ManejoErrores
     {
         String[] mensajesError = {
         "El valor no puede ser 0 o un numero negativo.",
-        "Usted no digito valores."};
+        "No se digitaron valores validos."};
         
         JOptionPane.showMessageDialog(null, mensajesError[indice],titulo,logo);
     }
