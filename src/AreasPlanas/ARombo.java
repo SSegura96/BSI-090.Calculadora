@@ -41,11 +41,26 @@ public class ARombo extends AFigura
     
     
     @Override
-    public void pedirDatos()
+    public void pedirDatos() 
     {
-        diagMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor:"));
-               
-        diagMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor:"));
+        do 
+        {
+            diagMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor:"));
+
+            if (diagMayor <= 0) 
+            {
+                fallo.seleccionarMensaje(0, "Aviso", 2);
+            }//fin primer if de validacion
+
+            diagMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor:"));
+
+            if (diagMenor <= 0) 
+            {
+                fallo.seleccionarMensaje(0, "Aviso", 2);
+            }//fin segundo if de validacion
+
+        } while (diagMayor <= 0 || diagMenor <= 0);
+
     }//fin clase pedirDatos
     
     @Override

@@ -55,11 +55,18 @@ public class ATrapecio extends AFigura
     @Override
     public void pedirDatos() 
     {
+        do
+        {
        baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base mayor:"));
-       
+       if(baseMayor <= 0)
+       {
+           
+       }
        baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base menor:"));
        
        altura = Double.parseDouble(JOptionPane.showInputDialog("Digitie el valor de la altura:"));
+       
+        }while(baseMayor <= 0 || baseMenor <= 0 || altura <= 0);
     }//fin metodo pedirDatos()
     
     @Override

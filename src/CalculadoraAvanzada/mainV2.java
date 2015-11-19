@@ -10,7 +10,6 @@ import ProbabilidadYCombinaciones.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.swing.JOptionPane;
 
 /**
  * @author Javier Fernandez & Sergio Segura
@@ -54,7 +53,9 @@ public class mainV2 extends javax.swing.JFrame
     String[] matrices = {"Escalar.", "Suma.",
         "Producto"};
     String[] conjeturas = {"Ulmann.","Gillbreath."};
-
+    
+    boolean salir = false;//este boolean controla los ciclos implementados en los menus
+    
     public void inicializarComboBox() 
     {
         jCOperaciones.setModel(new DefaultComboBoxModel(menuPrincipal));
@@ -121,31 +122,35 @@ public class mainV2 extends javax.swing.JFrame
     {
         int indiceOp = jCOperaciones.getSelectedIndex();
         int indiceSub = jCSubmenu.getSelectedIndex();
-
-        switch (indiceOp) {
+        
+        salir = false;
+        
+        switch (indiceOp) 
+        {
             //Áreas de figuras planas(2D)
             case 0:
-
-                switch (indiceSub) {
+                
+                switch (indiceSub) 
+                {
                     //Circulo
                     case 0:
                         ACirculo aCir = new ACirculo();
                         aCir.mostrarImagen();
-                        boolean salir = false;
-                        do
+                        do 
                         {
-                        try
-                           {
+                            try 
+                            {
                                 aCir.pedirDatos();
                                 aCir.calcArea();
                                 aCir.resultado();
                                 salir = true;
-                           }//fin try
-                           catch (NumberFormatException e)
-                           {
-                               JOptionPane.showMessageDialog(null, "Se digito un valor no numerico.", "Error", JOptionPane.ERROR_MESSAGE);
-                           }//fin catch
-                        }while(!salir);
+                            }//fin try
+                            catch (NullPointerException e) 
+                            {
+                                salir = true;
+                            }//fin primer catch
+
+                        } while (!salir);
                     break;
 
                     //Triangulo
@@ -216,6 +221,7 @@ public class mainV2 extends javax.swing.JFrame
 
             //Perímetros de figuras planas (2D)
             case 1:
+                
                 switch (indiceSub) 
                 {
                     //Circulo
