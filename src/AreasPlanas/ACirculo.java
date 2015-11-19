@@ -36,8 +36,7 @@ public class ACirculo extends AFigura
             //se valida el valor del radio
             if (radio <= 0) 
             {
-                JOptionPane.showMessageDialog(null, "El radio no puede ser cero o un valor negativo.",
-                        "Aviso", JOptionPane.WARNING_MESSAGE);
+                fallo.seleccionarMensaje(0, "Aviso", 2);
             }//fin if
 
         } while (radio <= 0);

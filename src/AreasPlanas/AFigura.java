@@ -1,5 +1,6 @@
 package AreasPlanas;
 
+import CalculadoraAvanzada.ManejoErrores;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -10,8 +11,9 @@ public abstract class AFigura implements AIFigura
 {
     protected double area;
     protected String figura;
-    protected String mensaje; 
-
+    protected String mensaje;
+    //Se utiliza esta clase generica para llamar a los errores personalizados; revisar calse ManejoErrores.
+    protected ManejoErrores fallo = new ManejoErrores();
    
     public AFigura() 
     {

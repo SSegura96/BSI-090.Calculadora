@@ -36,8 +36,7 @@ public class ACuadrado extends AFigura
 
             if (valorLado <= 0) 
             {
-                JOptionPane.showMessageDialog(null, "El valor del lado no puede ser cero o un valor negativo.",
-                        "Aviso", JOptionPane.WARNING_MESSAGE);
+                fallo.seleccionarMensaje(0, "Aviso", 2);
             }//fin if
         } while (valorLado <= 0);
 
