@@ -29,23 +29,47 @@ public class ACirculo extends AFigura
     @Override
     public void pedirDatos() 
     {
-        do 
+        todoBien = true;//se limpia la variable
+        
+        //Se pide el valor del radio y se valida
+        do
         {
-            try 
+            try
             {
-                radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
-
-                //se valida el valor del radio
-                if (radio <= 0) 
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " del radio:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
                 {
-                    fallo.seleccionarMensaje(0, "Aviso", 2);
-                }//fin if
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                radio = Double.parseDouble(valor);
+                
+                if (radio <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
             }//fin try
-            catch (NumberFormatException e) 
+            
+            catch (NumberFormatException e)
             {
-                fallo.seleccionarMensaje(1, "Error", 0);
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
             }//fin catch
-        } while (radio <= 0);
+            
+        }while (!todoBien);
+        
     }//fin clase pedirDatos
 
     @Override

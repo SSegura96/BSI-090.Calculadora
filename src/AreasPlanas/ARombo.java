@@ -43,24 +43,85 @@ public class ARombo extends AFigura
     @Override
     public void pedirDatos() 
     {
-        do 
+        todoBien = true;//se limpia la variable
+        
+        //Se pide el valor de la diagonal mayor y se valida
+        do
         {
-            diagMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal mayor:"));
-
-            if (diagMayor <= 0) 
+            try
             {
-                fallo.seleccionarMensaje(0, "Aviso", 2);
-            }//fin primer if de validacion
-
-            diagMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la diagonal menor:"));
-
-            if (diagMenor <= 0) 
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la Diagonal Mayor:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                diagMayor = Double.parseDouble(valor);
+                
+                if (diagMayor <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
             {
-                fallo.seleccionarMensaje(0, "Aviso", 2);
-            }//fin segundo if de validacion
-
-        } while (diagMayor <= 0 || diagMenor <= 0);
-
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide el valor de la diagonal menor y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la Diagonal Menor:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                diagMenor = Double.parseDouble(valor);
+                
+                if (diagMenor <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
     }//fin clase pedirDatos
     
     @Override

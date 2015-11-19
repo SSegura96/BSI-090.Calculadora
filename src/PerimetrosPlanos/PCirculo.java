@@ -25,11 +25,12 @@ public class PCirculo extends PFigura
         this.radio = radio;
     }
     
+    
     @Override
     public void pedirDatos () throws NumberFormatException
     {
         boolean todoBien = true;
-        String titulo;
+        String titulo = "";
         int tipoError = 0;
         int imgError = 0;
         
@@ -46,7 +47,7 @@ public class PCirculo extends PFigura
                    imgError = 0;
                    tipoError = 1;
                    throw new NumberFormatException();
-                }
+                }//fin primer if de validacion
                 
                 radio = Double.parseDouble(valor);
                 
@@ -56,15 +57,15 @@ public class PCirculo extends PFigura
                     imgError = 2;
                     tipoError = 0;
                     throw new NumberFormatException();
-                }
+                }//fin segundo if de validacion
                 
                 todoBien = true;
-            }
+            }//fin try
             catch (NumberFormatException e)
             {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                fallo.seleccionarMensaje(tipoError, titulo, imgError);
                 todoBien = false;
-            }
+            }//fin catch
     
          }while (!todoBien);
         

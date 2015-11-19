@@ -31,14 +31,46 @@ public class ACuadrado extends AFigura
     @Override
     public void pedirDatos() 
     {
-        do {
-            valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el lado:"));
-
-            if (valorLado <= 0) 
+        todoBien = true;//se limpia la variable
+        
+        //Se pide el valor del lado y se valida
+        do
+        {
+            try
             {
-                fallo.seleccionarMensaje(0, "Aviso", 2);
-            }//fin if
-        } while (valorLado <= 0);
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " del lado:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                valorLado = Double.parseDouble(valor);
+                
+                if (valorLado <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
 
     }//fin clase pedirDatos
     

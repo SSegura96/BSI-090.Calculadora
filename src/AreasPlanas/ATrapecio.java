@@ -55,18 +55,124 @@ public class ATrapecio extends AFigura
     @Override
     public void pedirDatos() 
     {
+        todoBien = true;//se limpia la variable
+        
+        //Se pide el valor de la base mayor y se valida
         do
         {
-       baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base mayor:"));
-       if(baseMayor <= 0)
-       {
-           
-       }
-       baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base menor:"));
-       
-       altura = Double.parseDouble(JOptionPane.showInputDialog("Digitie el valor de la altura:"));
-       
-        }while(baseMayor <= 0 || baseMenor <= 0 || altura <= 0);
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la Base Mayor:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                baseMayor = Double.parseDouble(valor);
+                
+                if (baseMayor <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide el valor de base menor y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la Base Menor:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                baseMenor = Double.parseDouble(valor);
+                
+                if (baseMenor <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide el valor de altura y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la altura:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                altura = Double.parseDouble(valor);
+                
+                if (altura <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
     }//fin metodo pedirDatos()
     
     @Override
