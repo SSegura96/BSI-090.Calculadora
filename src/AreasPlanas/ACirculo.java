@@ -44,13 +44,14 @@ public class ACirculo extends AFigura
     }//fin clase pedirDatos
 
     @Override
-    public void calcArea() 
+    public double calcArea() 
     {
         area = Math.PI * Math.pow(radio, 2);
         DecimalFormat df = new DecimalFormat("0.00");
 
         mensaje = "Radio: " + radio + "\n"
                 + "Area: " + df.format(area);
+    return area;
     }//fin metodo calcArea ()
 
 }//fin clase ACirculo

@@ -63,7 +63,7 @@ public class ATrapecio extends AFigura
     }//fin metodo pedirDatos()
     
     @Override
-    public void calcArea() 
+    public double calcArea() 
     {
         area = ((baseMayor + baseMenor)*altura)/2;
         DecimalFormat df = new DecimalFormat("0.00");
@@ -72,6 +72,7 @@ public class ATrapecio extends AFigura
                 + "Base Menor: "+baseMenor+"\n"
                 + "Altura: "+altura+"\n"
                 + "Area: "+df.format(area);
+    return area;
     }//fin metodo calcArea()
     
 }//fin clase Atrapecio

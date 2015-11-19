@@ -49,7 +49,7 @@ public class ARombo extends AFigura
     }//fin clase pedirDatos
     
     @Override
-    public void calcArea ()
+    public double calcArea ()
     {
         area = (diagMayor*diagMenor)/2;
         DecimalFormat df = new DecimalFormat("0.00");
@@ -58,6 +58,7 @@ public class ARombo extends AFigura
                 + "Diagonal Menor: "+diagMenor+"\n"
                 + "Area: "+df.format(area);
         
+    return area;
     }//fin metodo calcArea ()
     
 }//fin clase ARombo

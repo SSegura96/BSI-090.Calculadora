@@ -28,7 +28,21 @@ public class PCirculo extends PFigura
     @Override
     public void pedirDatos ()
     {
-        radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
+        boolean todoBien = true;
+        
+        try
+        {
+            do
+            { 
+                radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el radio:"));
+            }while (!todoBien);
+                
+        }
+        catch (NumberFormatException e)
+        {
+            
+        }
+    
     }//fin metodo pedirDatos ()
     
     @Override

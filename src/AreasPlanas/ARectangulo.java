@@ -62,7 +62,7 @@ public class ARectangulo extends AFigura
     }//fin metodo pedirDatos()
     
     @Override
-    public void calcArea() 
+    public double calcArea() 
     {
         area = base*altura;
         DecimalFormat df = new DecimalFormat("0.00");
@@ -70,6 +70,7 @@ public class ARectangulo extends AFigura
         mensaje = "Base: "+base+"\n"
                 + "Altura: "+altura+"\n"
                 + "Area: "+df.format(area);
+    return area;
     }//fin metodo calcArea()
     
 }//fin clase ARectangulo

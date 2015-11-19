@@ -82,7 +82,7 @@ public class APoligonoRegular extends AFigura
     
     
     @Override
-    public void calcArea()
+    public double calcArea()
     {
         //Se invoca la clase PPoligonoRegular para calcular el perimetro del poligono y poder usarlo en la formula del area
         PPoligonoRegular pp = new PPoligonoRegular();
@@ -97,6 +97,7 @@ public class APoligonoRegular extends AFigura
         mensaje = "Tiene: "+numeroLados+" lados \n"
                 + "Sus lados miden: "+medidaLado+"\n"
                 + "El Area es: "+df.format(area);
+    return area;
     }//fin calcularArea()
     
 }//fin clase APoligonoRegular
