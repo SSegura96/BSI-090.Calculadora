@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  * Logo :
  * 
  *      0: Logo de "Error" 
- *      1: Logo de "Warning"
+ *      2: Logo de "Warning"
  * 
  * Indice :
  *
@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 
 public class ManejoErrores 
 {
+    //Indice = mensaje en el vector, titulo = titulo de la ventana, logo = Error o Warning descrito arriba.
     public void seleccionarMensaje (int indice,String titulo, int logo)
     {
         String[] mensajesError = {
