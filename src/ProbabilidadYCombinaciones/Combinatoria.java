@@ -1,6 +1,6 @@
 package ProbabilidadYCombinaciones;
 
-import CalculadoraAvanzada.Error;
+import CalculadoraAvanzada.ManejoErrores;
 import javax.swing.JOptionPane;
 
 /**
@@ -82,7 +82,7 @@ public class Combinatoria extends ProbabilidadYCombinaciones
         }
         catch (NumberFormatException e)
         {
-            Error error = new Error ();
+            ManejoErrores me = new ManejoErrores ();
             
             if (tipo == 0)
             {
@@ -93,7 +93,7 @@ public class Combinatoria extends ProbabilidadYCombinaciones
                 todoBienSubgrupos = false;
             }
             
-            error.seleccionarMensaje(numError);
+            me.seleccionarMensaje(1,"error",1);
         }
     }
     

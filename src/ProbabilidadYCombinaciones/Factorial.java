@@ -1,7 +1,7 @@
 package ProbabilidadYCombinaciones;
 
 import javax.swing.JOptionPane;
-import CalculadoraAvanzada.Error;
+import CalculadoraAvanzada.ManejoErrores;
 
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -53,8 +53,10 @@ public class Factorial extends ProbabilidadSimple
             catch (NumberFormatException e)
             {
                 todoBien = false;
-                Error error = new Error ();
-                JOptionPane.showMessageDialog(null,error.seleccionarMensaje(numError));
+                ManejoErrores me = new ManejoErrores ();
+                
+                me.seleccionarMensaje(1,"error",1);
+                
             }
         }while (!todoBien);
     }
