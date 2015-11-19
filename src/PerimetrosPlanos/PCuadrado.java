@@ -9,35 +9,73 @@ import javax.swing.JOptionPane;
 
 public class PCuadrado extends PFigura 
 {
-    protected double valorlado;
+    protected double valorLado;
 
     public PCuadrado()
     {
-        valorlado = 0;
+        valorLado = 0;
         figura = "Cuadrado";
     }//fin constructor
 
     public double getValorlado() {
-        return valorlado;
+        return valorLado;
     }
 
     public void setValorlado(double valorlado) {
-        this.valorlado = valorlado;
+        this.valorLado = valorlado;
     }
     
     @Override
-    public void pedirDatos ()
+    public void pedirDatos () throws NumberFormatException
     {
-        valorlado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+        boolean todoBien = true;
+        String titulo = "";
+        int tipoError = 0;
+        int imgError = 0;
+        
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog("Digite el valor del lado:");
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    titulo = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }
+                
+                valorLado = Double.parseDouble(valor);
+                
+                if (valorLado <= 0)
+                {
+                    titulo = "Aviso";
+                    tipoError = 0;
+                    imgError = 1;
+                    throw new NumberFormatException();
+                }
+                
+                todoBien = true;
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, titulo, imgError);
+                todoBien = false;
+            }
+        }while (!todoBien);
+                
     }//fin metodo pedirDatos()
     
     @Override
     public void calcPerimetro ()
     {
-        perimetro = valorlado*4;
+        perimetro = valorLado*4;
         DecimalFormat df = new DecimalFormat("0.00");
         
-        mensaje = "Lado: "+valorlado+"\n"
+        mensaje = "Lado: "+valorLado+"\n"
                 + "Perimetro: "+df.format(perimetro);
     }//fin metodo calcPerimetro ()
     

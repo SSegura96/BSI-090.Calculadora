@@ -11,15 +11,16 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import AreasPlanas.*;
 import static org.junit.Assert.*;
 
 /**
  *
  * @author Sergio Segura Vidal
  */
-public class PuebasAutomatizadas {
+public class TestAreas {
     
-    public PuebasAutomatizadas() {
+    public TestAreas() {
     }
     
     @BeforeClass
@@ -38,9 +39,13 @@ public class PuebasAutomatizadas {
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+    
+    @Test
+    public void TestCirculo()
+    {
+        double valorEsperado = 0;
+        double valorDado = 0;
+        
+        //ACirculo 
+    }
 }

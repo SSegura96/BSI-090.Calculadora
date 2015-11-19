@@ -40,11 +40,81 @@ public class PPoligonoRegular extends PFigura
     
     
     @Override
-    public void pedirDatos()
+    public void pedirDatos() throws NumberFormatException
     {
-        numLados = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados:"));
+        boolean todoBienNumLados = true;
+        boolean todoBienValorLado = true;
+        String titulo = "";
+        int tipoError = 0;
+        int imgError = 0;
         
-        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+        do 
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog("Digite el numero de lados:");
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    titulo = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                numLados = Double.parseDouble(valor);
+                
+                if (numLados <= 0)
+                {
+                    titulo = "Aviso";
+                    tipoError = 1;
+                    imgError = 2;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienNumLados = true;
+                
+            }
+            catch (NumberFormatException e)
+            {
+                todoBienNumLados = false;
+                fallo.seleccionarMensaje(tipoError, titulo, imgError);
+            }
+        }while (!todoBienNumLados);
+        
+        do
+        {
+            try
+            {
+            
+                String valor = JOptionPane.showInputDialog("Digite el valor del lado:");
+
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    titulo = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                } 
+
+                valorLado = Double.parseDouble(valor);
+
+                if (valorLado <= 0)
+                {
+                    titulo = "aviso";
+                    tipoError = 1;
+                    imgError = 2;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienValorLado = true;
+                
+            }catch (NumberFormatException e)
+            {
+                todoBienValorLado = false;
+                fallo.seleccionarMensaje(tipoError, titulo, imgError);
+            }
+        }while(!todoBienValorLado);
     }//fin metodo pedirDatos()
     
     @Override
