@@ -123,8 +123,6 @@ public class mainV2 extends javax.swing.JFrame
         int indiceOp = jCOperaciones.getSelectedIndex();
         int indiceSub = jCSubmenu.getSelectedIndex();
         
-        salir = false;
-        
         switch (indiceOp) 
         {
             //Áreas de figuras planas(2D)
@@ -136,20 +134,17 @@ public class mainV2 extends javax.swing.JFrame
                     case 0:
                         ACirculo aCir = new ACirculo();
                         aCir.mostrarImagen();
-                        do 
-                        {
                             try 
                             {
                                 aCir.pedirDatos();
                                 aCir.calcArea();
                                 aCir.resultado();
-                                salir = true;
+                                
                             }//fin try
                             catch (NullPointerException e) 
                             {
-                                salir = true;
+                                //Solo controla el error al cerrar la ventana por eso esta vacio
                             }//fin primer catch
-                        } while (!salir);
 
                         break;
 

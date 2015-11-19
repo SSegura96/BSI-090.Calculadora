@@ -7,8 +7,9 @@ import javax.swing.JOptionPane;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public abstract class AFigura implements AIFigura
+public abstract class AFigura implements AIFigura 
 {
+
     protected double area;
     protected String figura;
     protected String mensaje;
@@ -18,26 +19,23 @@ public abstract class AFigura implements AIFigura
     int tipoError;
     int imgError;
     //Se utiliza esta clase generica para llamar a los errores personalizados.
-    //(revisar calse ManejoErrores).
     protected ManejoErrores fallo = new ManejoErrores();
-   
+
     public AFigura() 
     {
-       area = 0;
-       mensaje = "";
-       todoBien = true;
-       tituloError = "";
-       tipoError = 0;
-       imgError = 0;
+        area = 0;
+        mensaje = "";
+        todoBien = true;
+        tituloError = "";
+        tipoError = 0;
+        imgError = 0;
     }//fin constructor
-    
-    public double getArea() 
-    {
+
+    public double getArea() {
         return area;
     }
 
-    public void setArea(double area) 
-    {
+    public void setArea(double area) {
         this.area = area;
     }
 
@@ -96,17 +94,17 @@ public abstract class AFigura implements AIFigura
     public void setFallo(ManejoErrores fallo) {
         this.fallo = fallo;
     }
+
     
-    
-    public void mostrarImagen()
+    public void mostrarImagen() 
     {
-        JOptionPane.showMessageDialog(null,"", figura,
-        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
+        JOptionPane.showMessageDialog(null, "", figura,
+                JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + figura + ".png"));
     }//fin metodo mostrarImagen()
-    
-    public void resultado()
+
+    public void resultado() 
     {
         JOptionPane.showMessageDialog(null, mensaje, figura, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo resultado()
-   
+
 }//fin clase Abstracta AFigura

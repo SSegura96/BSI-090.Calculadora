@@ -30,7 +30,46 @@ public class SHexaedroRegular extends SFigura
     @Override
     public void pedirDatos() 
     {
-        lado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+        todoBien = true;//se limpia la variable
+        
+        //Se pide la medida del lado y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " del lado:", "Hexaedro Regular", JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                lado = Double.parseDouble(valor);
+                
+                if (lado <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
     }//fin metodo pedirDator()
 
     @Override

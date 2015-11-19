@@ -89,9 +89,124 @@ public class SPiramideRegular extends SFigura
     @Override
     public void pedirDatos() 
     {
-        arista = Double.parseDouble(JOptionPane.showInputDialog("Digite la arista:"));
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite la altura:"));
-        numLadosBase = Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de lados de la base:"));
+        todoBien = true;//se limpia la variable.
+        
+        //Se pide el valor de la arista y se valida.
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la arista:", "Piramide Regular", JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                arista = Double.parseDouble(valor);
+                
+                if (arista <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide valor de la altura y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la altura:", "Piramide Regular", JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                altura = Double.parseDouble(valor);
+                
+                if (altura <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide la cantidad de lados de la base y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el numero"
+                        + " de lados que posee la base:", "Piramide Regular", JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                numLadosBase = Integer.parseInt(valor);
+                
+                if (numLadosBase <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
     }//fin metodo pedirDatos()
 
     @Override

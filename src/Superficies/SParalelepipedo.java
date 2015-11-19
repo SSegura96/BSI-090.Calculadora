@@ -49,10 +49,124 @@ public class SParalelepipedo extends SFigura
     @Override
     public void pedirDatos() 
     {
-        ancho = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del ancho:"));
-        largo = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del largo:"));
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
+        todoBien = true;//se limpia la variable
         
+        //Se pide el valor del ancho y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " del ancho:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                ancho = Double.parseDouble(valor);
+                
+                if (ancho <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide valor del largo y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " del radio:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                largo = Double.parseDouble(valor);
+                
+                if (largo <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide la medida de la altura y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la altura:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                altura = Double.parseDouble(valor);
+                
+                if (altura <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
     }//fin metodo pedirDatos()
 
     @Override

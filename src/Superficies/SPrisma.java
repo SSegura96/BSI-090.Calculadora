@@ -89,9 +89,124 @@ public class SPrisma extends SFigura
     @Override
     public void pedirDatos() 
     {
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite la altura:"));
-        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
-        numLadosBase = Double.parseDouble(JOptionPane.showInputDialog("Digite el numero de lados de la base:"));
+        todoBien = true;//se limpia la variable.
+        
+        //Se pide el valor de la altura y se valida.
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " de la altura:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                altura = Double.parseDouble(valor);
+                
+                if (altura <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide valor del lado y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
+                        + " del lado:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                valorLado = Double.parseDouble(valor);
+                
+                if (valorLado <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
+        
+        //Se pide la cantidad de lados de la base y se valida
+        do
+        {
+            try
+            {
+                String valor = JOptionPane.showInputDialog(null, "Digite el numero"
+                        + " de lados que posee la base:", figura, JOptionPane.INFORMATION_MESSAGE);
+                
+                if (valor.equals("") || valor.equals(" "))
+                {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+                    
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+                
+                numLadosBase = Integer.parseInt(valor);
+                
+                if (numLadosBase <= 0)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                todoBien = true;
+            }//fin try
+            
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+            
+        }while (!todoBien);
     }//fin metodo pedirDatos()
     
     private void calcularApotema()
@@ -99,16 +214,15 @@ public class SPrisma extends SFigura
         double angRadianes;
         double angCentral;
         //se saca el algulo central y lo convertimos a radianes para poder sacar la tangencia.
-        angCentral = 360/numLadosBase;
+        angCentral = 360 / numLadosBase;
         angRadianes = Math.toRadians(angCentral);
         //Se saca el apotema: Lado/2*tan(angRadianes/2)
-        apotemaBase = numLadosBase/(2*Math.tan(angRadianes/2));
+        apotemaBase = numLadosBase / (2 * Math.tan(angRadianes / 2));
     }//fin calcularApotema()
     
     @Override
     public void calcSuperficie() 
     {
-        
         perimBase = numLadosBase * valorLado;
         
         superficieLateral = perimBase*altura;
