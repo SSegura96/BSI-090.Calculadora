@@ -130,15 +130,15 @@ public class mainV2 extends javax.swing.JFrame
                 {
                     //Circulo
                     case 0:
-                        ACirculo aCir = new ACirculo();
-                        aCir.mostrarImagen();
+                        ACirculo aCirculo = new ACirculo();
+                        aCirculo.mostrarImagen();
                             try 
                             {
-                                aCir.pedirDatos();
-                                aCir.calcArea();
-                                aCir.mostarDatos();
+                                aCirculo.pedirDatos();
+                                aCirculo.calcArea();
+                                aCirculo.mostarDatos();
                                 
-                            }//fin try
+                            }//fin try//fin try
                             catch (NullPointerException e) 
                             {
                                 //Solo controla el error al cerrar la ventana por eso esta vacio
@@ -148,38 +148,38 @@ public class mainV2 extends javax.swing.JFrame
 
                     //Triangulo
                     case 1:
-                        ATriangulo aTri = new ATriangulo();
-                        aTri.mostrarImagen();
-                        aTri.pedirDatos();
-                        aTri.calcArea();
-                        aTri.mostarDatos();
+                        ATriangulo aTriangulo = new ATriangulo();
+                        aTriangulo.mostrarImagen();
+                        aTriangulo.pedirDatos();
+                        aTriangulo.calcArea();
+                        aTriangulo.mostarDatos();
                     break;
 
                     //Cuadrado
                     case 2:
-                        ACuadrado aCua = new ACuadrado();
-                        aCua.mostrarImagen();
-                        aCua.pedirDatos();
-                        aCua.calcArea();
-                        aCua.mostarDatos();
+                        ACuadrado aCuadrado = new ACuadrado();
+                        aCuadrado.mostrarImagen();
+                        aCuadrado.pedirDatos();
+                        aCuadrado.calcArea();
+                        aCuadrado.mostarDatos();
                     break;
 
                     //Rectangulo
                     case 3:
-                        ARectangulo aRec = new ARectangulo();
-                        aRec.mostrarImagen();
-                        aRec.pedirDatos();
-                        aRec.calcArea();
-                        aRec.mostarDatos();
+                        ARectangulo aRectangulo = new ARectangulo();
+                        aRectangulo.mostrarImagen();
+                        aRectangulo.pedirDatos();
+                        aRectangulo.calcArea();
+                        aRectangulo.mostarDatos();
                     break;
 
                     //Rombo
                     case 4:
-                        ARombo aRob = new ARombo();
-                        aRob.mostrarImagen();
-                        aRob.pedirDatos();
-                        aRob.calcArea();
-                        aRob.mostarDatos();
+                        ARombo aRombo = new ARombo();
+                        aRombo.mostrarImagen();
+                        aRombo.pedirDatos();
+                        aRombo.calcArea();
+                        aRombo.mostarDatos();
                     break;
 
                     //Trapecio
@@ -193,22 +193,22 @@ public class mainV2 extends javax.swing.JFrame
 
                     //Romboide
                     case 6:
-                        ARomboide romb = new ARomboide();
-                        romb.mostrarImagen();
-                        romb.pedirDatos();
-                        romb.calcArea();
-                        romb.mostarDatos();
+                        ARomboide aRomboide = new ARomboide();
+                        aRomboide.mostrarImagen();
+                        aRomboide.pedirDatos();
+                        aRomboide.calcArea();
+                        aRomboide.mostarDatos();
                     break;
 
                     //Poigonos Regulares
                     case 7:
-                        APoligonoRegular pr = new APoligonoRegular();
-                        pr.mostrarImagen();
-                        pr.pedirDatos();
-                        pr.calcArea();
-                        pr.mostarDatos();
+                        APoligonoRegular aPoligonoRegular = new APoligonoRegular();
+                        aPoligonoRegular.mostrarImagen();
+                        aPoligonoRegular.pedirDatos();
+                        aPoligonoRegular.calcArea();
+                        aPoligonoRegular.mostarDatos();
                     break;
-                }
+                }//fin swtich de Areas
 
                 break;
 
@@ -219,11 +219,11 @@ public class mainV2 extends javax.swing.JFrame
                 {
                     //Circulo
                     case 0:
-                        PCirculo pCir = new PCirculo();
-                        pCir.mostrarImagen();
-                        pCir.pedirDatos();
-                        pCir.calcPerimetro();
-                        pCir.mostrarDatos();
+                        PCirculo pCirculo = new PCirculo();
+                        pCirculo.mostrarImagen();
+                        pCirculo.pedirDatos();
+                        pCirculo.calcPerimetro();
+                        pCirculo.mostrarDatos();
                     break;
                     
                     //Triangulo
