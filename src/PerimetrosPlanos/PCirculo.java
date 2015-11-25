@@ -17,11 +17,13 @@ public class PCirculo extends PFigura
         figura = "Circulo";
     }//fin constructor
 
-    public double getRadio() {
+    public double getRadio() 
+    {
         return radio;
     }
 
-    public void setRadio(double radio) {
+    public void setRadio(double radio) 
+    {
         this.radio = radio;
     }
     
@@ -29,21 +31,17 @@ public class PCirculo extends PFigura
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        boolean todoBien = true;
-        String titulo = "";
-        int tipoError = 0;
-        int imgError = 0;
+        boolean todoBienRadio = true;
         
         do
-        { 
-            
+        {
             try
             {
                 String valor  = JOptionPane.showInputDialog("Digite el radio:");
                 
                 if (valor.equals("") || valor.equals(" "))
                 {
-                   titulo = "Error";
+                   tituloError = "Error";
                    imgError = 0;
                    tipoError = 1;
                    throw new NumberFormatException();
@@ -53,21 +51,21 @@ public class PCirculo extends PFigura
                 
                 if (radio <= 0)
                 {
-                    titulo = "Aviso";
+                    tituloError = "Aviso";
                     imgError = 2;
                     tipoError = 0;
                     throw new NumberFormatException();
                 }//fin segundo if de validacion
                 
-                todoBien = true;
+                todoBienRadio = true;
             }//fin try
             catch (NumberFormatException e)
             {
-                fallo.seleccionarMensaje(tipoError, titulo, imgError);
-                todoBien = false;
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBienRadio = false;
             }//fin catch
     
-         }while (!todoBien);
+         }while (!todoBienRadio);
         
     }//fin metodo pedirDatos ()
     
