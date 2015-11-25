@@ -48,11 +48,94 @@ public class PTriangulo extends PFigura
      @Override
     public void pedirDatos() 
     {
-        lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
         
-        lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
+        boolean todoBienLado1 = true;
+        boolean todoBienLado2 = true;
+        boolean todoBienLado3 = true;
         
-        lado3 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del tercer lado:"));
+        do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+               lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
+                
+                if (lado1 <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienLado1 = true;
+                
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienLado1 = false;
+            }
+        }while (!todoBienLado1);
+
+        do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+               lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
+                
+                if (lado2 <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienLado2 = true;
+                
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienLado2 = false;
+            }
+        }while (!todoBienLado2);
+        
+        do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+               lado3 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del tercer lado:"));
+                
+                if (lado3 <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienLado3 = true;
+                
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienLado3 = false;
+            }
+        }while (!todoBienLado3);
         
     }//fin metodo pedirDtos
     

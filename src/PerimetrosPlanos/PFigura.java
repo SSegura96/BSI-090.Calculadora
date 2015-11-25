@@ -63,7 +63,7 @@ public abstract class PFigura implements PIFigura
         JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
     }//fin metodo mostrarImagen
     
-    public void resulatado ()
+    public void mostrarDatos ()
     {
         JOptionPane.showMessageDialog(null, mensaje);
     }//fin metodo resultado()

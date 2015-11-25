@@ -102,9 +102,9 @@ public abstract class AFigura implements AIFigura
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + figura + ".png"));
     }//fin metodo mostrarImagen()
 
-    public void resultado() 
+    public void mostarDatos() 
     {
         JOptionPane.showMessageDialog(null, mensaje, figura, JOptionPane.INFORMATION_MESSAGE);
-    }//fin metodo resultado()
+    }//fin metodo mostarDatos()
 
 }//fin clase Abstracta AFigura

@@ -57,13 +57,120 @@ public class PTrapecio extends PFigura
     @Override
     public void pedirDatos() 
     {
-       baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base mayor:"));
+        boolean todoBienBaseMayor = true;
+        boolean todoBienBaseMenor = true;
+        boolean todoBienLado1 = true;
+        boolean todoBienLado2 = true;
+        
+        do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+               baseMayor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base mayor:"));
+                
+                if (baseMayor <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienBaseMayor = true;
+                
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienBaseMayor = false;
+            }
+        }while (!todoBienBaseMayor);
+        
+        do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+               baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base menor:"));
+                
+                if (baseMenor <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienBaseMenor = true;
+                
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienBaseMenor = false;
+            }
+        }while (!todoBienBaseMenor);
+        
+       do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+               lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
+                
+                if (lado1 <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienLado1 = true;
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienLado1 = false;
+            }
+        }while (!todoBienLado1);
        
-       baseMenor = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base menor:"));
-       
-       lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
-       
-       lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
+       do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+                lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
+                
+                if (lado2 <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienLado2 = true;
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienLado2 = false;
+            }
+        }while (!todoBienLado2);
        
     }//fin metodo pedirDatos()
     

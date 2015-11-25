@@ -136,7 +136,7 @@ public class mainV2 extends javax.swing.JFrame
                             {
                                 aCir.pedirDatos();
                                 aCir.calcArea();
-                                aCir.resultado();
+                                aCir.mostarDatos();
                                 
                             }//fin try
                             catch (NullPointerException e) 
@@ -152,7 +152,7 @@ public class mainV2 extends javax.swing.JFrame
                         aTri.mostrarImagen();
                         aTri.pedirDatos();
                         aTri.calcArea();
-                        aTri.resultado();
+                        aTri.mostarDatos();
                     break;
 
                     //Cuadrado
@@ -161,7 +161,7 @@ public class mainV2 extends javax.swing.JFrame
                         aCua.mostrarImagen();
                         aCua.pedirDatos();
                         aCua.calcArea();
-                        aCua.resultado();
+                        aCua.mostarDatos();
                     break;
 
                     //Rectangulo
@@ -170,7 +170,7 @@ public class mainV2 extends javax.swing.JFrame
                         aRec.mostrarImagen();
                         aRec.pedirDatos();
                         aRec.calcArea();
-                        aRec.resultado();
+                        aRec.mostarDatos();
                     break;
 
                     //Rombo
@@ -179,7 +179,7 @@ public class mainV2 extends javax.swing.JFrame
                         aRob.mostrarImagen();
                         aRob.pedirDatos();
                         aRob.calcArea();
-                        aRob.resultado();
+                        aRob.mostarDatos();
                     break;
 
                     //Trapecio
@@ -188,7 +188,7 @@ public class mainV2 extends javax.swing.JFrame
                         trap.mostrarImagen();
                         trap.pedirDatos();
                         trap.calcArea();
-                        trap.resultado();
+                        trap.mostarDatos();
                     break;
 
                     //Romboide
@@ -197,7 +197,7 @@ public class mainV2 extends javax.swing.JFrame
                         romb.mostrarImagen();
                         romb.pedirDatos();
                         romb.calcArea();
-                        romb.resultado();
+                        romb.mostarDatos();
                     break;
 
                     //Poigonos Regulares
@@ -206,7 +206,7 @@ public class mainV2 extends javax.swing.JFrame
                         pr.mostrarImagen();
                         pr.pedirDatos();
                         pr.calcArea();
-                        pr.resultado();
+                        pr.mostarDatos();
                     break;
                 }
 
@@ -223,12 +223,16 @@ public class mainV2 extends javax.swing.JFrame
                         pCir.mostrarImagen();
                         pCir.pedirDatos();
                         pCir.calcPerimetro();
-                        pCir.resulatado();
+                        pCir.mostrarDatos();
                     break;
                     
                     //Triangulo
                     case 1:
-                        
+                        PTriangulo pTri = new PTriangulo();
+                        pTri.mostrarImagen();
+                        pTri.pedirDatos();
+                        pTri.calcPerimetro();
+                        pTri.mostrarDatos();
                     break;
                         
                     //Cuadrado    
@@ -237,16 +241,16 @@ public class mainV2 extends javax.swing.JFrame
                         pCua.mostrarImagen();
                         pCua.pedirDatos();
                         pCua.calcPerimetro();
-                        pCua.resulatado();
+                        pCua.mostrarDatos();
                     break;
                     
                     //Rectangulo    
                     case 3:
-                        PRomboide pRec = new PRomboide();
+                        PRectangulo pRec = new PRectangulo();
                         pRec.mostrarImagen();
                         pRec.pedirDatos();
                         pRec.calcPerimetro();
-                        pRec.resulatado();
+                        pRec.mostrarDatos();
                     break;
                     
                     //Rombo    
@@ -255,7 +259,7 @@ public class mainV2 extends javax.swing.JFrame
                         pRom.mostrarImagen();
                         pRom.pedirDatos();
                         pRom.calcPerimetro();
-                        pRom.resulatado();
+                        pRom.mostrarDatos();
                     break;
                         
                     //Trapecio    
@@ -264,16 +268,16 @@ public class mainV2 extends javax.swing.JFrame
                        pTra.mostrarImagen();
                        pTra.pedirDatos();
                        pTra.calcPerimetro();
-                       pTra.resulatado();
+                       pTra.mostrarDatos();
                     break;
                     
                     //Romboide    
                     case 6:
-                        PRomboide pRim = new PRomboide();
-                        pRim.mostrarImagen();
-                        pRim.pedirDatos();
-                        pRim.calcPerimetro();
-                        pRim.resulatado();
+                        PRectangulo pRoi = new PRectangulo();
+                        pRoi.mostrarImagen();
+                        pRoi.pedirDatos();
+                        pRoi.calcPerimetro();
+                        pRoi.mostrarDatos();
                     break;
                         
                     //Poligono Regular    
@@ -282,7 +286,7 @@ public class mainV2 extends javax.swing.JFrame
                         pp.mostrarImagen();
                         pp.pedirDatos();
                         pp.calcPerimetro();
-                        pp.resulatado();
+                        pp.mostrarDatos();
                     break;
                 }
             break;

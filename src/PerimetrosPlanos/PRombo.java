@@ -27,9 +27,39 @@ public class PRombo extends PFigura
     
     
     @Override
-    public void pedirDatos ()
+    public void pedirDatos () throws NumberFormatException
     {
-        valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+        boolean todoBienValorLado = true;
+        
+        do 
+        {
+            try
+            {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
+                valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
+                
+                if (valorLado <= 0)
+                {
+                    tituloError = "Error";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+                
+                todoBienValorLado = true;
+                
+            }
+            catch (NumberFormatException e)
+            {
+                fallo.seleccionarMensaje(tipoError, figura, imgError);
+                todoBienValorLado = false;
+            }
+        }while (!todoBienValorLado);
+
+        
     }//fin metodo pedirDatos()
     
     @Override

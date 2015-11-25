@@ -67,7 +67,7 @@ public class TestMain {
                            {
                                 cir.pedirDatos();
                                 cir.calcArea();
-                                cir.resultado();
+                                cir.mostarDatos();
                            }
                            catch (NumberFormatException e)
                            {
@@ -81,7 +81,7 @@ public class TestMain {
                             tri.mostrarImagen();
                             tri.pedirDatos();
                             tri.calcArea();
-                            tri.resultado();
+                            tri.mostarDatos();
                         break;
                        
                         //Cuadrado
@@ -90,7 +90,7 @@ public class TestMain {
                             cua.mostrarImagen();
                             cua.pedirDatos();
                             cua.calcArea();
-                            cua.resultado();
+                            cua.mostarDatos();
                         break;
                        
                         //Rectangulo
@@ -99,7 +99,7 @@ public class TestMain {
                             rec1.mostrarImagen();
                             rec1.pedirDatos();
                             rec1.calcArea();
-                            rec1.resultado();
+                            rec1.mostarDatos();
                         break;
                        
                         //Rombo
@@ -108,7 +108,7 @@ public class TestMain {
                             rob.mostrarImagen();
                             rob.pedirDatos();
                             rob.calcArea();
-                            rob.resultado(); 
+                            rob.mostarDatos(); 
                         break;
                        
                         //Trapecio
@@ -118,7 +118,7 @@ public class TestMain {
                             trap.mostrarImagen();
                             trap.pedirDatos();
                             trap.calcArea();
-                            trap.resultado();
+                            trap.mostarDatos();
                         
                         break;
                       
@@ -128,7 +128,7 @@ public class TestMain {
                             romb.mostrarImagen();
                             romb.pedirDatos();
                             romb.calcArea();
-                            romb.resultado();
+                            romb.mostarDatos();
                         break;
                       
                         //Poligono regular
@@ -137,7 +137,7 @@ public class TestMain {
                             pr.mostrarImagen();
                             pr.pedirDatos();
                             pr.calcArea();
-                            pr.resultado(); 
+                            pr.mostarDatos(); 
                         break;
                             
                         case JOptionPane.CLOSED_OPTION: {
