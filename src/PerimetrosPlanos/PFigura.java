@@ -15,10 +15,21 @@ public abstract class PFigura implements PIFigura
     protected String figura;
     protected String mensaje;
 
+    //Variables de uso exclusivo para la validaciones en el codigo
+    boolean todoBien;
+    String tituloError;
+    int tipoError;
+    int imgError;
+    //Se utiliza esta clase generica para llamar a los errores personalizados.
+    
     public PFigura() 
     {
-       perimetro = 0;
-       figura = "";
+        perimetro = 0;
+        figura = "";
+        todoBien = true;
+        tituloError = "";
+        tipoError = 1;
+        imgError = 0;
     }//fin constrcutor
 
     public double getPerimetro() {
