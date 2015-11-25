@@ -118,6 +118,21 @@ public class Gilbreath extends AbCalculo {
         this.tamannoLinkedList = tamannoLinkedList;
     }
 
+    
+    public boolean esPrimo(int numero) 
+    {
+        int aux;
+        for (int cont = 2; cont < numero; cont++) 
+        {
+            aux = numero % cont;
+            if (aux == 0) 
+            {
+                return false;
+            }//fin if
+        }//fin for
+        return true;
+    }//fin metodo esPrimo(int numero)
+ 
     @Override
     public void pedirDatos() {
         int contador = 0;//solo lleva la cuenta en el msj a pantalla
@@ -144,12 +159,14 @@ public class Gilbreath extends AbCalculo {
                     + "\t \t Valor #" + (contador + 1) + " de " + tamannoLinkedList));
 
             //se evalua que el numero sea primo
-            if (num % 2 != 0 || num == 2) {
+            if (esPrimo(num)) 
+            {
                 primos.addLast(num);
                 contadorPrimos--;
                 contador++;
             }//fin if 
-            else {
+            else 
+            {
                 JOptionPane.showMessageDialog(null, "Digite solo numeros primos.");
             }//fin else
 
