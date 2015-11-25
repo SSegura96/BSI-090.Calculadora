@@ -60,7 +60,7 @@ public abstract class PFigura implements PIFigura
     public void mostrarImagen ()
     {
         JOptionPane.showMessageDialog(null,"", figura,
-        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
+        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/P"+figura+".png"));
     }//fin metodo mostrarImagen
     
     public void mostrarDatos ()
