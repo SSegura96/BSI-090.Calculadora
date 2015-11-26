@@ -28,46 +28,9 @@ public class PCuadrado extends PFigura
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        boolean todoBienLado = true;
+       
+        valorLado = fallo.doubleValidarExcepciones(valorLado, "Digite el valor del lado");
         
-        do
-        {
-            try
-            {
-                tituloError = "Advertencia";
-                tipoError = 1;
-                imgError = 2;
-                
-                String valor = JOptionPane.showInputDialog("Digite el valor del lado:");
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 0;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }
-                
-                valorLado = Double.parseDouble(valor);
-                
-                if (valorLado <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 1;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienLado = true;
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBienLado = false;
-            }
-        }while (!todoBienLado);
-                
     }//fin metodo pedirDatos()
     
     @Override

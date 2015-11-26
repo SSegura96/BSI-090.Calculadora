@@ -56,6 +56,8 @@ public class ManejoErrores
                     imgError = 0;
                     throw new NumberFormatException();
                 }
+                
+                todoBien = true;
             }
             catch (NumberFormatException e)
             {
@@ -63,7 +65,7 @@ public class ManejoErrores
                 seleccionarMensaje(tipoError, mensaje, imgError);
             }
             
-        }while (todoBien);
+        }while (!todoBien);
         
         return valor;
     }
