@@ -66,7 +66,7 @@ public class ProductoVectorial extends ArregloUnidimensional
             } while (!todoBien);
         }//fin primer for
         
-        JOptionPane.showMessageDialog(null, "Llenar el segundo vector: vector[ ]",
+        JOptionPane.showMessageDialog(null, "Llenar el segundo vector: vector2[ ]",
                 "Producto Vectorial", JOptionPane.INFORMATION_MESSAGE);
         for (int j = 0; j < vector2.length; j++) {
             
@@ -172,9 +172,13 @@ public class ProductoVectorial extends ArregloUnidimensional
                 }//fin segundo if de validacion
                 
                 
-                if (tamanno != vector.length-1)
+                if (tamanno != vector.length)
                 {
+                    tituloError = "Aviso";
+                    tipoError = 4;
+                    imgError = 2;
                     
+                    throw new NumberFormatException();
                 }//fin tercer if de validacion
                 
                 todoBien = true;
@@ -200,6 +204,7 @@ public class ProductoVectorial extends ArregloUnidimensional
             dato += ""+vector1[i]+", ";
         }//foin primer for
         
+        dato = dato.substring(0, dato.length()-2);
         return dato;
         
     }//fin metodo recorrerVector
