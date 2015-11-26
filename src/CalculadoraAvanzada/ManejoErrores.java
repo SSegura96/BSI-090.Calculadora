@@ -20,6 +20,11 @@ import javax.swing.JOptionPane;
 
 public class ManejoErrores 
 {
+    
+    private String tituloError = "";
+    int tipoError = 1;
+    int imgError = 2;
+    
     //Indice = mensaje en el vector, titulo = titulo de la ventana, logo = Error o Warning descrito arriba.
     public void seleccionarMensaje (int indice, String titulo, int logo)
     {
@@ -32,6 +37,64 @@ public class ManejoErrores
         };
         
         JOptionPane.showMessageDialog(null, mensajesError[indice],titulo,logo);
+    }
+    
+    public double doubleValidarExcepciones (double valor, String mensaje) throws NumberFormatException 
+    {
+        boolean todoBien = true; 
+        
+        do
+        {
+            try
+            {
+                valor = Double.parseDouble(JOptionPane.showInputDialog(mensaje));
+                
+                if (valor <= 0)
+                {
+                    tituloError = "Advertencia";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+            }
+            catch (NumberFormatException e)
+            {
+                todoBien = false;
+                seleccionarMensaje(tipoError, mensaje, imgError);
+            }
+            
+        }while (todoBien);
+        
+        return valor;
+    }
+    
+    public double intValidarExcepciones (int valor, String mensaje) throws NumberFormatException 
+    {
+        boolean todoBien = true; 
+        
+        do
+        {
+            try
+            {
+                valor = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
+                
+                if (valor <= 0)
+                {
+                    tituloError = "Advertencia";
+                    tipoError = 0;
+                    imgError = 0;
+                    throw new NumberFormatException();
+                }
+            }
+            catch (NumberFormatException e)
+            {
+                todoBien = false;
+                seleccionarMensaje(tipoError, mensaje, imgError);
+            }
+            
+        }while (todoBien);
+        
+        return valor;
     }
 }
 
