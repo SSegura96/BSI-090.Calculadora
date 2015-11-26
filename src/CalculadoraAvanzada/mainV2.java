@@ -374,6 +374,18 @@ public class mainV2 extends javax.swing.JFrame
                         escalarVectorial.pedirDatos();
                         escalarVectorial.calcProductoV();
                         escalarVectorial.mostrarDatos();
+                        break;
+                    //Suma
+                    case 1:
+                        break;
+                    //Producto
+                    case 2:
+                        ProductoVectorial productoVectorial = new ProductoVectorial();
+                        productoVectorial.mostrarImagen();
+                        productoVectorial.pedirDatos();
+                        productoVectorial.calcProductoV();
+                        productoVectorial.mostrarDatos();
+                        break;
                 }//fin swicth case 6
             break;
 

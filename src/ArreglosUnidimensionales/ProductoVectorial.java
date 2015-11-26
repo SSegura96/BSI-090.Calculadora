@@ -27,17 +27,85 @@ public class ProductoVectorial extends ArregloUnidimensional
     @Override
     public void llenarVector() 
     {
-        JOptionPane.showMessageDialog(null, "Llenar el primer vector: vector[ ]");
-        for (int i = 0; i < vector.length; i++) 
-        {
-            vector[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese dato de: vector[" + i + "]"));
-        }//fin primer for
+        JOptionPane.showMessageDialog(null, "Llenar el primer vector: vector[ ]",
+                "Producto Vectorial", JOptionPane.INFORMATION_MESSAGE);
+        for (int i = 0; i < vector.length; i++) {
+            
+            todoBien = true;//se limpia la variable
 
-        JOptionPane.showMessageDialog(null, "Llenar vector segundo: vector2[ ]");
-        for (int j = 0; j < vector2.length; j++) 
-        {
-            vector2[j] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato de: vector2[" + j + "]"));
+            //Se pide el primer vector
+            do {
+                try {
+                    String valor = JOptionPane.showInputDialog(null,
+                            "Ingrese dato de: vector[" + (i+1) + "]", "Producto Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                    if (valor.equals("") || valor.equals(" ")) {
+                        tituloError = "Error";
+                        tipoError = 1;
+                        imgError = 0;
+
+                        throw new NumberFormatException();
+                    }//fin primer if de validacion
+
+                    vector[i] = Double.parseDouble(valor);
+
+                    if (vector[i] <= 0) {
+                        tituloError = "Aviso";
+                        tipoError = 0;
+                        imgError = 2;
+
+                        throw new NumberFormatException();
+                    }//fin segundo if de validacion
+
+                    todoBien = true;
+                }//fin try
+                catch (NumberFormatException e) {
+                    fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                    todoBien = false;
+                }//fin catch
+
+            } while (!todoBien);
+        }//fin primer for
+        
+        JOptionPane.showMessageDialog(null, "Llenar el segundo vector: vector[ ]",
+                "Producto Vectorial", JOptionPane.INFORMATION_MESSAGE);
+        for (int j = 0; j < vector2.length; j++) {
+            
+            todoBien = true;//se limpia la variable
+
+            //Se pide el primer vector
+            do {
+                try {
+                    String valor2 = JOptionPane.showInputDialog(null,
+                            "Ingrese dato de: vector2[" + (j+1) + "]", "Producto Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                    if (valor2.equals("") || valor2.equals(" ")) {
+                        tituloError = "Error";
+                        tipoError = 1;
+                        imgError = 0;
+
+                        throw new NumberFormatException();
+                    }//fin primer if de validacion
+
+                    vector2[j] = Double.parseDouble(valor2);
+
+                    if (vector2[j] <= 0) 
+                    {
+                        tituloError = "Aviso";
+                        tipoError = 0;
+                        imgError = 2;
+
+                        throw new NumberFormatException();
+                    }//fin segundo if de validacion
+
+                    todoBien = true;
+                }//fin try
+                catch (NumberFormatException e) {
+                    fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                    todoBien = false;
+                }//fin catch
+
+            } while (!todoBien);
         }//fin segundo for
+        
     }//fin metodo llenarVector()
     
     @Override
@@ -94,14 +162,21 @@ public class ProductoVectorial extends ArregloUnidimensional
 
                 tamanno = Integer.parseInt(valorV2);
 
-                if (tamanno <= 0) {
+                if (tamanno <= 0) 
+                {
                     tituloError = "Aviso";
                     tipoError = 0;
                     imgError = 2;
 
                     throw new NumberFormatException();
                 }//fin segundo if de validacion
-
+                
+                
+                if (tamanno != vector.length-1)
+                {
+                    
+                }//fin tercer if de validacion
+                
                 todoBien = true;
             }//fin try
             catch (NumberFormatException e) {

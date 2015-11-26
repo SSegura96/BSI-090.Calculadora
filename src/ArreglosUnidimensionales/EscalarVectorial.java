@@ -39,7 +39,7 @@ public class EscalarVectorial extends ArregloUnidimensional {
         for (int i = 0; i < vector.length; i++) {
             todoBien = true;//se limpia la variable
 
-            //Se pide el tamanno del vector
+            //Se pide llenar el vector
             do {
                 try {
                     String valor = JOptionPane.showInputDialog(null,
@@ -54,7 +54,7 @@ public class EscalarVectorial extends ArregloUnidimensional {
 
                     vector[i] = Double.parseDouble(valor);
 
-                    if (tamanno <= 0) {
+                    if (vector[i] <= 0) {
                         tituloError = "Aviso";
                         tipoError = 0;
                         imgError = 2;
