@@ -14,7 +14,6 @@ public class EscalarVectorial extends ArregloUnidimensional {
     public EscalarVectorial() {
         escalarV = new double[0];
         escalar = 0.0;
-        imagenV = "EscalarVectorial";
     }//fin constructor
 
     public double[] getEscalarV() {
@@ -44,7 +43,7 @@ public class EscalarVectorial extends ArregloUnidimensional {
             do {
                 try {
                     String valor = JOptionPane.showInputDialog(null,
-                            "Ingrese dato de: vector[" + i + "]", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                            "Ingrese dato de: vector[" + (i+1) + "]", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
                     if (valor.equals("") || valor.equals(" ")) {
                         tituloError = "Error";
                         tipoError = 1;
@@ -152,10 +151,12 @@ public class EscalarVectorial extends ArregloUnidimensional {
     @Override
     public String recorrerVector(double[] vector1) {
         String dato = "";
-        for (int i = 0; i < vector1.length; i++) {
+        for (int i = 0; i < vector1.length; i++) 
+        {
             dato += "" + vector1[i] + ", ";
         }//foin primer for
-
+        
+        dato = dato.substring(0, dato.length()-2);
         return dato;
 
     }//fin metodo recorrerVector

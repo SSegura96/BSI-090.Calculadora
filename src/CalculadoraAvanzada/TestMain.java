@@ -480,7 +480,7 @@ public class TestMain {
                             ev.mostrarImagen();
                             ev.pedirDatos();
                             ev.calcProductoV();
-                            ev.resultado();
+                            ev.mostrarDatos();
                             break;
                         }//fin segundo case 0
 

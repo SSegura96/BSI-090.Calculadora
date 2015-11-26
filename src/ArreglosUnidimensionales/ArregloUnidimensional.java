@@ -121,8 +121,8 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + imagenV + ".png"));
     }//fin metodo mostrarImagen
 
-    public void resultado() {
+    public void mostrarDatos() {
         JOptionPane.showMessageDialog(null, mensaje, imagenV, JOptionPane.INFORMATION_MESSAGE);
-    }//fin metodo resultado()
+    }//fin metodo mostrarDatos()
 
 }//fin clase ArregloUnidimensional

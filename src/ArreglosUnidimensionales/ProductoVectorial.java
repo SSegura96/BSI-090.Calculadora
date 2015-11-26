@@ -13,7 +13,6 @@ public class ProductoVectorial extends ArregloUnidimensional
     public ProductoVectorial() 
     {
         productoV = new double [0];
-        imagenV = "ProductoVectorial";
     }//fin constructor
 
     public double[] getProductoV() {
@@ -44,10 +43,74 @@ public class ProductoVectorial extends ArregloUnidimensional
     @Override
     public void pedirDatos()
     {
-        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del primer vector:"));
+        todoBien = true;//se limpia la variable
+
+        //Se pide el tamanno del primer vector
+        do {
+            try {
+                String valorV1 = JOptionPane.showInputDialog(null, "Digite el "
+                        + "tamaño del primer vector:", "Producto Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                if (valorV1.equals("") || valorV1.equals(" ")) {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+
+                tamanno = Integer.parseInt(valorV1);
+
+                if (tamanno <= 0) {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+
+                todoBien = true;
+            }//fin try
+            catch (NumberFormatException e) {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+
+        } while (!todoBien);
+        
         vector = new double[tamanno];
         
-        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del segundo vector:"));
+        //Se pide el tamanno del segundo vector
+        do {
+            try {
+                String valorV2 = JOptionPane.showInputDialog(null, "Digite el "
+                        + "tamaño del segundo vector:", "Producto Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                if (valorV2.equals("") || valorV2.equals(" ")) {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+
+                tamanno = Integer.parseInt(valorV2);
+
+                if (tamanno <= 0) {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+
+                todoBien = true;
+            }//fin try
+            catch (NumberFormatException e) {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+
+        } while (!todoBien);
+        
         vector2 = new double[tamanno];
         
         llenarVector();

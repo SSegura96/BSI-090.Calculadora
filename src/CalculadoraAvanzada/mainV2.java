@@ -4,6 +4,7 @@ import javax.swing.DefaultComboBoxModel;
 import AreasPlanas.*;
 import PerimetrosPlanos.*;
 import Estadistica.*;
+import ArreglosUnidimensionales.*;
 import Matrices.*;
 import Conjeturas.*;
 import ProbabilidadYCombinaciones.*;
@@ -362,9 +363,18 @@ public class mainV2 extends javax.swing.JFrame
             case 5:
 
             break;
-
+                //Vectores
             case 6:
-
+                switch (indiceSub)
+                {
+                    //Escalar
+                    case 0:
+                        EscalarVectorial escalarVectorial = new EscalarVectorial();
+                        escalarVectorial.mostrarImagen();
+                        escalarVectorial.pedirDatos();
+                        escalarVectorial.calcProductoV();
+                        escalarVectorial.mostrarDatos();
+                }//fin swicth case 6
             break;
 
             case 7:
