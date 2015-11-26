@@ -40,85 +40,10 @@ public class ARectangulo extends AFigura
     @Override
     public void pedirDatos() 
     {
-        todoBien = true;//se limpia la variable
+       
+        altura = fallo.doubleValidarExcepciones(altura, "Digite el valor de la altura");
+        base = fallo.doubleValidarExcepciones(base, "Digite le valor de la base");
         
-        //Se pide el valor de la base y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " de la base:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                base = Double.parseDouble(valor);
-                
-                if (base <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
-        
-        //Se pide el valor de altura y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " de la altura:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                altura = Double.parseDouble(valor);
-                
-                if (altura <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
     }//fin metodo pedirDatos()
     
     @Override

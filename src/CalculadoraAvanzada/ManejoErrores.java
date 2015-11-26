@@ -39,6 +39,11 @@ public class ManejoErrores
         JOptionPane.showMessageDialog(null, mensajesError[indice],titulo,logo);
     }
     
+    /**
+     * Este metodo muestra un mensaje en caso de que lo digtado se menor que cero
+     * o no sea un numero el se encicla y vuelve a mostar el mensaje hasta que el
+     * valor sea correcto
+     */
     public double doubleValidarExcepciones (double valor, String mensaje) throws NumberFormatException 
     {
         boolean todoBien = true; 
@@ -62,7 +67,7 @@ public class ManejoErrores
             catch (NumberFormatException e)
             {
                 todoBien = false;
-                seleccionarMensaje(tipoError, mensaje, imgError);
+                seleccionarMensaje(tipoError, tituloError, imgError);
             }
             
         }while (!todoBien);
@@ -91,7 +96,7 @@ public class ManejoErrores
             catch (NumberFormatException e)
             {
                 todoBien = false;
-                seleccionarMensaje(tipoError, mensaje, imgError);
+                seleccionarMensaje(tipoError, tituloError, imgError);
             }
             
         }while (todoBien);
