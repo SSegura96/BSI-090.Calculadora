@@ -37,8 +37,8 @@ public class VCilindro extends VFigura
     @Override
     public void pedirDatos ()
     {
-        radio = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del radio"));
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura"));
+        radio = fallo.doubleValidarExcepciones("Digite el valor del radio");
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
     }
     
     @Override

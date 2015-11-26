@@ -81,11 +81,11 @@ public class ManejoErrores
         return valor;
     }
     
-    public double intValidarExcepciones (String mensaje) throws NumberFormatException 
+    public int intValidarExcepciones (String mensaje) throws NumberFormatException 
     {
         boolean todoBien = true; 
         
-        double valor = 0;
+        int valor = 0;
         
         do
         {

@@ -47,9 +47,9 @@ public class VParalelepipedo extends VFigura
     @Override
     public void pedirDatos ()
     {
-        largo = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del largo"));
-        ancho = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del ancho"));
-        altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura"));
+        largo = fallo.doubleValidarExcepciones("Digite el valor del largo");
+        ancho = fallo.doubleValidarExcepciones("Digite el valor del ancho");
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
     }
     
     @Override

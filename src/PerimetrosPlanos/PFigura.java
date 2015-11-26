@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 public abstract class PFigura implements PIFigura
 {
     public double perimetro;
-    public ManejoErrores fallo = new ManejoErrores ();
+    protected ManejoErrores fallo = new ManejoErrores ();
     protected String figura;
     protected String mensaje;
 

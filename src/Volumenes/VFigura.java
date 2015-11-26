@@ -1,5 +1,6 @@
 package Volumenes;
 
+import CalculadoraAvanzada.ManejoErrores;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -8,6 +9,7 @@ import javax.swing.JOptionPane;
  */
 public abstract class VFigura implements VIFigura
 {
+    protected ManejoErrores fallo = new ManejoErrores ();
     protected String mensaje;
     protected String figura;
     protected double volumen;

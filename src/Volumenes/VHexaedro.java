@@ -27,7 +27,7 @@ public class VHexaedro extends VFigura
     @Override
     public void pedirDatos ()
     {
-        lado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado"));
+        lado = fallo.doubleValidarExcepciones("Digite el valor del lado");
     }
     
     @Override

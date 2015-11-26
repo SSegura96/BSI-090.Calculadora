@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Mediana 
+public class Mediana extends abEstadistica
 {
     private double [] vectorValoresMediana;
     private int tamanno;
@@ -81,7 +81,7 @@ public class Mediana
     
     public void pedirDatos()
     {
-        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite la cantidad de numeros que va a ingresar:"));
+        tamanno = fallo.intValidarExcepciones("Digite la cantidad de numeros que va a ingresar:");
         vectorValoresMediana = new double[tamanno];
         
         llenarVector();
