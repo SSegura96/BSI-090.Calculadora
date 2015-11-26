@@ -81,7 +81,40 @@ public class Mediana extends abEstadistica
     
     public void pedirDatos()
     {
-        tamanno = fallo.intValidarExcepciones("Digite la cantidad de numeros que va a ingresar:");
+        todoBien = true;//se limpia la variable
+
+        //Se pide el tamanno del vector
+        do {
+            try {
+                String valor = JOptionPane.showInputDialog(null, "Digite el "
+                        + "tamaño del vector:", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                if (valor.equals("") || valor.equals(" ")) {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+
+                tamanno = Integer.parseInt(valor);
+
+                if (tamanno <= 0) {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+
+                todoBien = true;
+            }//fin try
+            catch (NumberFormatException e) {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+
+        } while (!todoBien);
+        
         vectorValoresMediana = new double[tamanno];
         
         llenarVector();
