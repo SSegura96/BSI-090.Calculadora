@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class Promedio 
+public class Promedio extends abEstadistica
 {
     ArrayList <Double> valores = new ArrayList ();
     
@@ -54,8 +54,7 @@ public class Promedio
         
         while (seguir)
         {
-            valores.add(Double.parseDouble(JOptionPane.showInputDialog(mensaje,
-            "Digite un número entero positivo")));
+            valores.add(fallo.doubleValidarExcepciones(mensaje));
             mensaje =  "Digite el "+i+"º número";
             i++;
             

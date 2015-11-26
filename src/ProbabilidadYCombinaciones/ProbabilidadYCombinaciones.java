@@ -1,5 +1,6 @@
 package ProbabilidadYCombinaciones;
 
+import CalculadoraAvanzada.ManejoErrores;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -9,6 +10,7 @@ import javax.swing.JOptionPane;
  */
 public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombinaciones
 {
+    protected ManejoErrores fallo = new ManejoErrores();
     protected String mensaje;
     protected String nombre;
     protected int cantidadElementos;

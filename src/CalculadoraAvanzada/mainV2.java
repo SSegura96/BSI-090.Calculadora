@@ -7,6 +7,7 @@ import Estadistica.*;
 import ArreglosUnidimensionales.*;
 import Matrices.*;
 import Conjeturas.*;
+import Volumenes.*;
 import ProbabilidadYCombinaciones.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -360,10 +361,69 @@ public class mainV2 extends javax.swing.JFrame
 
             break;
 
+            //volumenes
             case 5:
-
+                switch (indiceSub)
+                {
+                    //Esfera
+                    case 0:
+                        VEsfera vEsfera = new VEsfera ();
+                        vEsfera.mostrarImagen();
+                        vEsfera.pedirDatos();
+                        vEsfera.calcVolumen();
+                        vEsfera.mostarDatos();
+                    break;
+                    
+                    //Cono
+                    case 1:
+                        VCono vcono = new VCono ();
+                        vcono.mostrarImagen();
+                        vcono.pedirDatos();
+                        vcono.calcVolumen();
+                        vcono.mostarDatos();
+                    break;   
+                    
+                    //Hexaedro
+                    case 2:
+                        VHexaedro vhexaedro = new VHexaedro ();
+                        vhexaedro.mostrarImagen();
+                        vhexaedro.pedirDatos();
+                        vhexaedro.calcVolumen();
+                        vhexaedro.mostarDatos();
+                    break;   
+                    
+                    //Prisma
+                    case 3:
+                        VPrisma vprisma = new VPrisma ();
+                        vprisma.mostrarImagen();
+                        vprisma.pedirDatos();
+                        vprisma.calcVolumen();
+                        vprisma.mostarDatos();
+                    break;   
+                    
+                    //Paralelepipedo
+                    case 4:
+                        VParalelepipedo vparalelepipedo = new VParalelepipedo();
+                        vparalelepipedo.mostrarImagen();
+                        vparalelepipedo.pedirDatos();
+                        vparalelepipedo.calcVolumen();
+                        vparalelepipedo.mostarDatos();
+                    break;   
+                    
+                    //Cilindro
+                    case 5:
+                        VPiramide vpiramide = new VPiramide ();
+                        vpiramide.mostrarImagen();
+                        vpiramide.pedirDatos();
+                        vpiramide.calcVolumen();
+                        vpiramide.mostarDatos();
+                    break;   
+                    
+                        
+                }
             break;
-                //Vectores
+                
+            //Vectores
             case 6:
                 switch (indiceSub)
                 {
@@ -393,7 +453,8 @@ public class mainV2 extends javax.swing.JFrame
                         break;
                 }//fin swicth case 6
             break;
-
+                
+            //Matrices
             case 7:
                 Matriz mat = new Matriz();
                 

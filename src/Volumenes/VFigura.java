@@ -46,7 +46,7 @@ public abstract class VFigura implements VIFigura
         JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+figura+".png"));
     }
     
-    public void resultado ()
+    public void mostarDatos ()
     {
         JOptionPane.showMessageDialog(null, mensaje);
     }

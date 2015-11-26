@@ -10,7 +10,7 @@ public class Permutacion extends ProbabilidadYCombinaciones
 {
     
     private int grupoElementos;
-    private int permutacion;
+    private double permutacion;
 
     public Permutacion() 
     {
@@ -26,7 +26,7 @@ public class Permutacion extends ProbabilidadYCombinaciones
         this.grupoElementos = grupoElementos;
     }
 
-    public int getPermutacion() {
+    public double getPermutacion() {
         return permutacion;
     }
 

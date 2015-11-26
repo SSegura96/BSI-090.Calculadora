@@ -11,7 +11,7 @@ public class Combinatoria extends ProbabilidadYCombinaciones
 {
     private int numElementos;
     private int numSubgrupo;
-    private int combinatora;
+    private double combinatora;
     
     public Combinatoria ()
     {
@@ -43,61 +43,14 @@ public class Combinatoria extends ProbabilidadYCombinaciones
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        boolean todoBienElementsos = true;
-        boolean todoBienSubgrupos = true;
-        int numError = 0;
-        int tipo = 0;
-        
-        try
-        {
-            do 
-            {
-                numElementos = Integer.parseInt(JOptionPane.showInputDialog(
-                "Digite el numero de elementos"));
+       numElementos = fallo.intValidarExcepciones
+        ("Digite el numero de elementos");
                 
-                if (numElementos <= 0)
-                {
-                    numError = 2;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienElementsos = true;
-                
-            }while (!todoBienElementsos);
-            
-            do 
-            {
-                numSubgrupo = Integer.parseInt(JOptionPane.showInputDialog(
-                "Digite el elemetos en el subgrupo"));
-                
-                if (numSubgrupo <= 0)
-                {
-                    numError = 2;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienSubgrupos = true;
-                
-            }while (!todoBienElementsos); 
-        }
-        catch (NumberFormatException e)
-        {
-            ManejoErrores me = new ManejoErrores ();
-            
-            if (tipo == 0)
-            {
-                todoBienElementsos = false;
-            }
-            else
-            { 
-                todoBienSubgrupos = false;
-            }
-            
-            me.seleccionarMensaje(1,"error",1);
-        }
+        numSubgrupo = fallo.intValidarExcepciones
+        ("Digite el elemetos en el subgrupo");
     }
     
-    public int calcCombinatoria ()
+    public double calcCombinatoria ()
     {
         int operacion = 1;
         int numTemp = numElementos;

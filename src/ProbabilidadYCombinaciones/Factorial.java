@@ -1,15 +1,15 @@
 package ProbabilidadYCombinaciones;
 
-import javax.swing.JOptionPane;
 import CalculadoraAvanzada.ManejoErrores;
 
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 
-public class Factorial extends ProbabilidadSimple
+public class Factorial extends ProbabilidadYCombinaciones
 {
-    private int numero;
+    private double numero;
+    private double factorial;
 
     public Factorial()
     {
@@ -18,7 +18,7 @@ public class Factorial extends ProbabilidadSimple
         mensaje = "";
     }
 
-    public int getNumero() 
+    public double getNumero() 
     {
         return numero;
     }
@@ -31,43 +31,16 @@ public class Factorial extends ProbabilidadSimple
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        boolean todoBien = true;
-        int numError = 0;
-        
-        do
-        {
-            try
-            {
-                numero = Integer.parseInt(JOptionPane.showInputDialog(
-                    "Digite el numero al cual le decea calcular el factorial",
-                    "Digite un numero entero"));
-                
-                if (numero < 0)
-                {
-                    numError = 1; 
-                    throw new NumberFormatException();
-                }
-                
-                todoBien = true;
-            }
-            catch (NumberFormatException e)
-            {
-                todoBien = false;
-                ManejoErrores me = new ManejoErrores ();
-                
-                me.seleccionarMensaje(1,"error",1);
-                
-            }
-        }while (!todoBien);
+        numero = fallo.doubleValidarExcepciones("Digite el numero al cual le decea calcular el factorial");
     }
     
-    public int calcFactorial ()
+    public double calcFactorial ()
     {
         mensaje = "El resultado de "+numero+"! es: \n";
         
         if (numero != 0)
         {
-            int numeroTemp = numero;
+            double numeroTemp = numero;
             
             factorial = 1;
         

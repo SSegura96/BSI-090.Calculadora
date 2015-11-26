@@ -7,7 +7,7 @@ import javax.swing.JTextArea;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Sumatoria 
+public class Sumatoria extends abEstadistica
 {
     
     /**
@@ -16,7 +16,7 @@ public class Sumatoria
      * @param valores
      * @param area 
      */
-    public void obtenerDatos (ArrayList <Double> valores,JTextArea area)
+    public void pedirDatos (ArrayList <Double> valores,JTextArea area)
     {
         int i = 0;
         boolean seguir = true;
@@ -25,7 +25,7 @@ public class Sumatoria
         while (seguir)
         {
             
-            double dato = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor #"+(i+1)));
+            double dato = fallo.doubleValidarExcepciones("Digite el valor #"+(i+1));
             
             mensaje += dato+" + ";
             

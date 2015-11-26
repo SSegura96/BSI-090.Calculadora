@@ -152,7 +152,7 @@ public class JFSumatoria extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBIntroducirDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIntroducirDatosActionPerformed
-        suma.obtenerDatos(valores,jTAVisualizar);
+        suma.pedirDatos(valores,jTAVisualizar);
     }//GEN-LAST:event_jBIntroducirDatosActionPerformed
 
     private void jBCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCalcularActionPerformed
