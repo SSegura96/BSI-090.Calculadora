@@ -19,11 +19,16 @@ public abstract class AbCalculo implements ICalculo
     int imgError;
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
-    
-    public AbCalculo ()
+
+    public AbCalculo() 
     {
+        figura = "";
         mensaje = "";
-    }//fin constructor
+        todoBien = true;
+        tituloError = "";
+        tipoError = 0;
+        imgError = 0;
+    }
 
     public String getFigura() {
         return figura;
