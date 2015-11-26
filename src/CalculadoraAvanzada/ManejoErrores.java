@@ -52,11 +52,15 @@ public class ManejoErrores
         {
             try
             {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
                 valor = Double.parseDouble(JOptionPane.showInputDialog(mensaje));
                 
                 if (valor <= 0)
                 {
-                    tituloError = "Advertencia";
+                    tituloError = "Error";
                     tipoError = 0;
                     imgError = 0;
                     throw new NumberFormatException();
@@ -83,15 +87,21 @@ public class ManejoErrores
         {
             try
             {
+                tituloError = "Advertencia";
+                tipoError = 1;
+                imgError = 2;
+                
                 valor = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
                 
                 if (valor <= 0)
                 {
-                    tituloError = "Advertencia";
+                    tituloError = "Error";
                     tipoError = 0;
                     imgError = 0;
                     throw new NumberFormatException();
                 }
+                
+                todoBien = true;
             }
             catch (NumberFormatException e)
             {
@@ -99,10 +109,15 @@ public class ManejoErrores
                 seleccionarMensaje(tipoError, tituloError, imgError);
             }
             
-        }while (todoBien);
+        }while (!todoBien);
         
         return valor;
     }
+    
+   
+        
+        
+    
 }
 
 

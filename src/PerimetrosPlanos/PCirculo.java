@@ -31,42 +31,7 @@ public class PCirculo extends PFigura
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        boolean todoBienRadio = true;
-        
-        do
-        {
-            try
-            {
-                String valor  = JOptionPane.showInputDialog("Digite el radio:");
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                   tituloError = "Error";
-                   imgError = 0;
-                   tipoError = 1;
-                   throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                radio = Double.parseDouble(valor);
-                
-                if (radio <= 0)
-                {
-                    tituloError = "Aviso";
-                    imgError = 2;
-                    tipoError = 0;
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBienRadio = true;
-            }//fin try
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBienRadio = false;
-            }//fin catch
-    
-         }while (!todoBienRadio);
-        
+        fallo.doubleValidarExcepciones(radio,"Digite el radio:");
     }//fin metodo pedirDatos ()
     
     @Override
