@@ -1,7 +1,6 @@
 package PerimetrosPlanos;
 
 import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
 
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal

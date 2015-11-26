@@ -1,7 +1,6 @@
 package PerimetrosPlanos;
 
 import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
 
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -48,95 +47,9 @@ public class PTriangulo extends PFigura
      @Override
     public void pedirDatos() 
     {
-        
-        boolean todoBienLado1 = true;
-        boolean todoBienLado2 = true;
-        boolean todoBienLado3 = true;
-        
-        do 
-        {
-            try
-            {
-                tituloError = "Advertencia";
-                tipoError = 1;
-                imgError = 2;
-                
-               lado1 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del primer lado:"));
-                
-                if (lado1 <= 0)
-                {
-                    tituloError = "Error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienLado1 = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienLado1 = false;
-            }
-        }while (!todoBienLado1);
-
-        do 
-        {
-            try
-            {
-                tituloError = "Advertencia";
-                tipoError = 1;
-                imgError = 2;
-                
-               lado2 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del segundo lado:"));
-                
-                if (lado2 <= 0)
-                {
-                    tituloError = "Error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienLado2 = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienLado2 = false;
-            }
-        }while (!todoBienLado2);
-        
-        do 
-        {
-            try
-            {
-                tituloError = "Advertencia";
-                tipoError = 1;
-                imgError = 2;
-                
-               lado3 = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del tercer lado:"));
-                
-                if (lado3 <= 0)
-                {
-                    tituloError = "Error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienLado3 = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienLado3 = false;
-            }
-        }while (!todoBienLado3);
-        
+        lado1 = fallo.doubleValidarExcepciones("Digite el valor del lado 1");
+        lado2 = fallo.doubleValidarExcepciones("Digite el valor del lado 2");
+        lado3 = fallo.doubleValidarExcepciones("Digite el valor del lado 3");
     }//fin metodo pedirDtos
     
     @Override

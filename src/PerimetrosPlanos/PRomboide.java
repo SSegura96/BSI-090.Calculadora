@@ -1,7 +1,6 @@
 package PerimetrosPlanos;
 
 import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
 
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -39,65 +38,8 @@ public class PRomboide extends PFigura
     @Override
     public void pedirDatos ()
     {
-        boolean todoBienBase = true;
-        boolean todoBienAltura = true;
-        
-        do 
-        {
-            try
-            {
-                tituloError = "Advertencia";
-                tipoError = 1;
-                imgError = 2;
-                
-                base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
-                
-                if (base <= 0)
-                {
-                    tituloError = "Error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienBase = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienBase = false;
-            }
-        }while (!todoBienBase);
-        
-         do 
-        {
-            try
-            {
-                tituloError = "Advertencia";
-                tipoError = 1;
-                imgError = 2;
-                
-                altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
-                
-                if (altura <= 0)
-                {
-                    tituloError = "Error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienAltura = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienAltura = false;
-            }
-        }while (!todoBienAltura);
-         
+        base = fallo.doubleValidarExcepciones("Digite el valor de la base");
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
     }//fin metodo pedirDatos()
 
     @Override

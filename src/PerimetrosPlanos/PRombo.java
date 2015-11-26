@@ -1,7 +1,6 @@
 package PerimetrosPlanos;
 
 import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
 
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -29,37 +28,7 @@ public class PRombo extends PFigura
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        boolean todoBienValorLado = true;
-        
-        do 
-        {
-            try
-            {
-                tituloError = "Advertencia";
-                tipoError = 1;
-                imgError = 2;
-                
-                valorLado = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del lado:"));
-                
-                if (valorLado <= 0)
-                {
-                    tituloError = "Error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienValorLado = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienValorLado = false;
-            }
-        }while (!todoBienValorLado);
-
-        
+        valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado");
     }//fin metodo pedirDatos()
     
     @Override
