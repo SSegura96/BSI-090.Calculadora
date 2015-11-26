@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -76,10 +75,9 @@ public class ATriangulo extends AFigura
     {
         //Formula utilizada: 
         area = ((Math.sqrt(3))*Math.pow(medidaLado, 2))/4;
-        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "La media del lado es: "+medidaLado+"\n"
-                + "El area es: "+df.format(area);
+                + "El area es: "+decimalFomrat.format(area);
     return area;
     }//fin metodo calcArea()
     

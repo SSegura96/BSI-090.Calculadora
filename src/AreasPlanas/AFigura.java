@@ -1,6 +1,7 @@
 package AreasPlanas;
 
 import CalculadoraAvanzada.ManejoErrores;
+import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -20,7 +21,9 @@ public abstract class AFigura implements AIFigura
     int imgError;
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
-
+    //Enmascarar Decimales
+    DecimalFormat decimalFomrat = new DecimalFormat("0.00");
+    
     public AFigura() 
     {
         area = 0;
@@ -95,6 +98,14 @@ public abstract class AFigura implements AIFigura
         this.fallo = fallo;
     }
 
+    public DecimalFormat getDecimalFomrat() {
+        return decimalFomrat;
+    }
+
+    public void setDecimalFomrat(DecimalFormat decimalFomrat) {
+        this.decimalFomrat = decimalFomrat;
+    }
+    
     
     public void mostrarImagen() 
     {

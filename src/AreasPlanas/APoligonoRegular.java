@@ -2,7 +2,6 @@ package AreasPlanas;
 
 import javax.swing.JOptionPane;
 import PerimetrosPlanos.*;
-import java.text.DecimalFormat;
 
 /**
  *
@@ -153,11 +152,9 @@ public class APoligonoRegular extends AFigura
         
         area = (pp.getPerimetro()*calcularApotema())/2;
         
-        DecimalFormat df = new DecimalFormat("0.00");
-        
         mensaje = "Tiene: "+numeroLados+" lados \n"
                 + "Sus lados miden: "+medidaLado+"\n"
-                + "El Area es: "+df.format(area);
+                + "El Area es: "+decimalFomrat.format(area);
     return area;
     }//fin calcularArea()
     

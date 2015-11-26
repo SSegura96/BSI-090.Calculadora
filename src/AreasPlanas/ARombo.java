@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -128,11 +127,10 @@ public class ARombo extends AFigura
     public double calcArea ()
     {
         area = (diagMayor*diagMenor)/2;
-        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Diagonal Mayor: "+diagMayor+"\n"
                 + "Diagonal Menor: "+diagMenor+"\n"
-                + "Area: "+df.format(area);
+                + "Area: "+decimalFomrat.format(area);
         
     return area;
     }//fin metodo calcArea ()

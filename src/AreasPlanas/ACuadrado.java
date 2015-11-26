@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -78,10 +77,9 @@ public class ACuadrado extends AFigura
     public double calcArea ()
     {
         area = valorLado * valorLado;
-        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Lado: "+valorLado+"\n"
-                + "Area: "+df.format(area);
+                + "Area: "+decimalFomrat.format(area);
     return area;
     }//fin calcArea ()
     

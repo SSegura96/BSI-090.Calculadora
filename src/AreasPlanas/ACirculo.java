@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -76,10 +75,9 @@ public class ACirculo extends AFigura
     public double calcArea() 
     {
         area = Math.PI * Math.pow(radio, 2);
-        DecimalFormat df = new DecimalFormat("0.00");
 
         mensaje = "Radio: " + radio + "\n"
-                + "Area: " + df.format(area);
+                + "Area: " + decimalFomrat.format(area);
     return area;
     }//fin metodo calcArea ()
 

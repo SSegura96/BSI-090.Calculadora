@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -179,12 +178,11 @@ public class ATrapecio extends AFigura
     public double calcArea() 
     {
         area = ((baseMayor + baseMenor)*altura)/2;
-        DecimalFormat df = new DecimalFormat("0.00");
         
         mensaje = "Base Mayor: "+baseMayor+"\n"
                 + "Base Menor: "+baseMenor+"\n"
                 + "Altura: "+altura+"\n"
-                + "Area: "+df.format(area);
+                + "Area: "+decimalFomrat.format(area);
     return area;
     }//fin metodo calcArea()
     
