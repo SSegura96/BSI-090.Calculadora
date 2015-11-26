@@ -1,6 +1,5 @@
 package Estadistica;
 
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +13,6 @@ public class Mediana extends abEstadistica
     private int tamanno;
     private double mediana;
     private double mediana2;
-    private String mensaje;
     
     public Mediana() 
     {
@@ -56,20 +54,6 @@ public class Mediana extends abEstadistica
     public void setMediana2(double mediana2) {
         this.mediana2 = mediana2;
     }
-
-    public String getMensaje() {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
-    
-    
-    public void mostrarImagen() {
-        JOptionPane.showMessageDialog(null, "", "Mediana",
-                JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/Mediana.png"));
-    }//fin metodo mostrarImagen
     
     public void llenarVector() 
     {
@@ -87,8 +71,8 @@ public class Mediana extends abEstadistica
         //Se pide el tamanno del vector
         do {
             try {
-                String valor = JOptionPane.showInputDialog(null, "Digite el "
-                        + "tamaño del vector:", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                String valor = JOptionPane.showInputDialog(null, "Digite la "
+                        + "cantidad de elementos que va a ingresar", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
                 if (valor.equals("") || valor.equals(" ")) {
                     tituloError = "Error";
                     tipoError = 1;
@@ -133,10 +117,6 @@ public class Mediana extends abEstadistica
             return false;
         }//fin else
     }//fin metodo esPar(int numero)
-    
-    public void resultado() {
-        JOptionPane.showMessageDialog(null, mensaje);
-    }//fin metodo resultado()
     
     public String ordenarNumeros(double[] vector1)
     {
