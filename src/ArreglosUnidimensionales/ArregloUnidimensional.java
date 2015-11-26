@@ -1,5 +1,6 @@
 package ArreglosUnidimensionales;
 
+import CalculadoraAvanzada.ManejoErrores;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -14,13 +15,24 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
     protected int tamanno;
     protected String mensaje;
     protected String imagenV;
-
+    //Variables de uso exclusivo para la validaciones en el codigo
+    boolean todoBien;
+    String tituloError;
+    int tipoError;
+    int imgError;
+    //Se utiliza esta clase generica para llamar a los errores personalizados.
+    protected ManejoErrores fallo = new ManejoErrores();
+    
     public ArregloUnidimensional() 
     {
         tamanno = 0;
         vector = new double[0];
         vector2 = new double[0];
         imagenV = "Vector";
+        todoBien = true;
+        tituloError = "";
+        tipoError = 0;
+        imgError = 0;
     }//fin constructor
 
     public double[] getVector() {
@@ -47,30 +59,62 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
         this.tamanno = tamanno;
     }
 
+    public String getMensaje() {
+        return mensaje;
+    }
 
-    public void llenarVector() {
-        JOptionPane.showMessageDialog(null, "Llenar el primer vector: vector[ ]");
-        for (int i = 0; i < vector.length; i++) {
-            vector[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato de: vector[" + i + "]"));
-        }//fin primer for
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
+    }
 
-        JOptionPane.showMessageDialog(null, "Llenar el segundo vector: vector2[ ]");
-        for (int j = 0; j < vector2.length; j++) {
-            vector2[j] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato de: vector2[" + j + "]"));
-        }//fin segundo for
-    }//fin metodo llenarVector()
+    public String getImagenV() {
+        return imagenV;
+    }
 
-    public String recorrerVector(double[] vector1)
-    {
-        String dato = "";
-        for (int i = 0; i < vector1.length; i++) 
-        {
-            dato = ""+vector1[i]+", ";
-        }//foin primer for
-        
-        return dato;
-        
-    }//fin metodo recorrerVector
+    public void setImagenV(String imagenV) {
+        this.imagenV = imagenV;
+    }
+
+    public boolean isTodoBien() {
+        return todoBien;
+    }
+
+    public void setTodoBien(boolean todoBien) {
+        this.todoBien = todoBien;
+    }
+
+    public String getTituloError() {
+        return tituloError;
+    }
+
+    public void setTituloError(String tituloError) {
+        this.tituloError = tituloError;
+    }
+
+    public int getTipoError() {
+        return tipoError;
+    }
+
+    public void setTipoError(int tipoError) {
+        this.tipoError = tipoError;
+    }
+
+    public int getImgError() {
+        return imgError;
+    }
+
+    public void setImgError(int imgError) {
+        this.imgError = imgError;
+    }
+
+    public ManejoErrores getFallo() {
+        return fallo;
+    }
+
+    public void setFallo(ManejoErrores fallo) {
+        this.fallo = fallo;
+    }
+    
             
     public void mostrarImagen() {
         JOptionPane.showMessageDialog(null, "", imagenV,
@@ -78,7 +122,7 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
     }//fin metodo mostrarImagen
 
     public void resultado() {
-        JOptionPane.showMessageDialog(null, mensaje);
+        JOptionPane.showMessageDialog(null, mensaje, imagenV, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo resultado()
 
 }//fin clase ArregloUnidimensional

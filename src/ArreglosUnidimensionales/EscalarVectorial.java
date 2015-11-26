@@ -6,13 +6,12 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class EscalarVectorial extends ArregloUnidimensional
-{
-    private double []escalarV;
+public class EscalarVectorial extends ArregloUnidimensional {
+
+    private double[] escalarV;
     private double escalar;
-    
-    public EscalarVectorial() 
-    {
+
+    public EscalarVectorial() {
         escalarV = new double[0];
         escalar = 0.0;
         imagenV = "EscalarVectorial";
@@ -34,53 +33,142 @@ public class EscalarVectorial extends ArregloUnidimensional
         this.escalar = escalar;
     }
 
-    
     @Override
-    public void llenarVector() 
-    {
-        JOptionPane.showMessageDialog(null, "Llenar el vector: vector[ ]");
-        for (int i = 0; i < vector.length; i++) 
-        {
-            vector[i] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese dato de: vector[" + i + "]"));
+    public void llenarVector() {
+        JOptionPane.showMessageDialog(null, "Llenar el vector: vector[ ]",
+                "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
+        for (int i = 0; i < vector.length; i++) {
+            todoBien = true;//se limpia la variable
+
+            //Se pide el tamanno del vector
+            do {
+                try {
+                    String valor = JOptionPane.showInputDialog(null,
+                            "Ingrese dato de: vector[" + i + "]", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                    if (valor.equals("") || valor.equals(" ")) {
+                        tituloError = "Error";
+                        tipoError = 1;
+                        imgError = 0;
+
+                        throw new NumberFormatException();
+                    }//fin primer if de validacion
+
+                    vector[i] = Double.parseDouble(valor);
+
+                    if (tamanno <= 0) {
+                        tituloError = "Aviso";
+                        tipoError = 0;
+                        imgError = 2;
+
+                        throw new NumberFormatException();
+                    }//fin segundo if de validacion
+
+                    todoBien = true;
+                }//fin try
+                catch (NumberFormatException e) {
+                    fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                    todoBien = false;
+                }//fin catch
+
+            } while (!todoBien);
         }//fin primer for
-        
+
     }//fin metodo llenarVector()
-    
+
     @Override
-    public void pedirDatos()
-    {
-        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del vector:"));
+    public void pedirDatos() {
+
+        todoBien = true;//se limpia la variable
+
+        //Se pide el tamanno del vector
+        do {
+            try {
+                String valor = JOptionPane.showInputDialog(null, "Digite el "
+                        + "tamaño del vector:", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                if (valor.equals("") || valor.equals(" ")) {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+
+                tamanno = Integer.parseInt(valor);
+
+                if (tamanno <= 0) {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+
+                todoBien = true;
+            }//fin try
+            catch (NumberFormatException e) {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+
+        } while (!todoBien);
+
         vector = new double[tamanno];
-        
-        escalar = Double.parseDouble(JOptionPane.showInputDialog("Digite el escalar:"));
-        
+
+        //Se pide el escalar
+        do {
+            try {
+                String valorEscalar = JOptionPane.showInputDialog(null, "Digite "
+                        + "el escalar:", "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                if (valorEscalar.equals("") || valorEscalar.equals(" ")) {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+
+                escalar = Double.parseDouble(valorEscalar);
+
+                if (escalar <= 0) {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+
+                todoBien = true;
+            }//fin try
+            catch (NumberFormatException e) {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+
+        } while (!todoBien);
+
         llenarVector();
     }//fin metodo pedirDatos()
-    
+
     @Override
-    public String recorrerVector(double[] vector1)
-    {
+    public String recorrerVector(double[] vector1) {
         String dato = "";
-        for (int i = 0; i < vector1.length; i++) 
-        {
-            dato += ""+vector1[i]+", ";
+        for (int i = 0; i < vector1.length; i++) {
+            dato += "" + vector1[i] + ", ";
         }//foin primer for
-        
+
         return dato;
-        
+
     }//fin metodo recorrerVector
-    
-    public void calcProductoV()
-    {
+
+    public void calcProductoV() {
         escalarV = new double[vector.length];
-        
-        for (int i = 0; i < vector.length; i++) 
-        {
-            escalarV[i] = vector[i]*escalar;
+
+        for (int i = 0; i < vector.length; i++) {
+            escalarV[i] = vector[i] * escalar;
         }//fin primer for
-        
-        mensaje = "Vector[ "+vector.length+" ]\n"
-                + "Escalar: "+escalar+"\n"
-                + "Escalar de las posiciones:\n"+recorrerVector(escalarV);
+
+        mensaje = "Vector[ " + vector.length + " ]\n"
+                + "Escalar: " + escalar + "\n"
+                + "Escalar de las posiciones:\n" + recorrerVector(escalarV);
     }//fin metodo caclProductoV
 }//fin clase EscalarVectorial
