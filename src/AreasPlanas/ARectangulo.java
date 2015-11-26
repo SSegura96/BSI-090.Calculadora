@@ -41,8 +41,8 @@ public class ARectangulo extends AFigura
     public void pedirDatos() 
     {
        
-        altura = fallo.doubleValidarExcepciones(altura, "Digite el valor de la altura");
-        base = fallo.doubleValidarExcepciones(base, "Digite le valor de la base");
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
+        base = fallo.doubleValidarExcepciones("Digite le valor de la base");
         
     }//fin metodo pedirDatos()
     

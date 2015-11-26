@@ -29,7 +29,7 @@ public class PCuadrado extends PFigura
     public void pedirDatos () throws NumberFormatException
     {
        
-        valorLado = fallo.doubleValidarExcepciones(valorLado, "Digite el valor del lado");
+        valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado");
         
     }//fin metodo pedirDatos()
     

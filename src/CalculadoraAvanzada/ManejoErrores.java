@@ -45,9 +45,10 @@ public class ManejoErrores
      * o no sea un numero el se encicla y vuelve a mostar el mensaje hasta que el
      * valor sea correcto
      */
-    public double doubleValidarExcepciones (double valor, String mensaje) throws NumberFormatException 
+    public double doubleValidarExcepciones (String mensaje) throws NumberFormatException 
     {
         boolean todoBien = true; 
+        double valor = 0;
         
         do
         {
@@ -80,9 +81,11 @@ public class ManejoErrores
         return valor;
     }
     
-    public double intValidarExcepciones (int valor, String mensaje) throws NumberFormatException 
+    public double intValidarExcepciones (String mensaje) throws NumberFormatException 
     {
         boolean todoBien = true; 
+        
+        double valor = 0;
         
         do
         {

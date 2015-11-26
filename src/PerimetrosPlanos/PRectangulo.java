@@ -39,61 +39,8 @@ public class PRectangulo extends PFigura
     @Override
     public void pedirDatos() throws NumberFormatException
     {
-        boolean todoBienBase = true;
-        boolean todoBienAltura = true;
-        
-        do
-        {
-            tituloError = "Advertencia";
-            tipoError = 1;
-            imgError = 2;
-            
-            try
-            {
-                base = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la base:"));
-                
-                if (base <= 0)
-                {
-                    tituloError = "error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienBase = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienBase = false;
-            }
-        }while (!todoBienBase);
-        
-        do
-        {
-            try
-            {
-                altura = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor de la altura:"));
-                
-                if (altura <= 0)
-                {
-                    tituloError = "error";
-                    tipoError = 0;
-                    imgError = 0;
-                    throw new NumberFormatException();
-                }
-                
-                todoBienAltura = true;
-                
-            }
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, figura, imgError);
-                todoBienAltura = false;
-            }
-        }while (!todoBienAltura);
-        
+        base = fallo.doubleValidarExcepciones("Digite el valor de la base");
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
     }//fin metodo pedirDatos()
     
     @Override

@@ -31,7 +31,7 @@ public class PCirculo extends PFigura
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        fallo.doubleValidarExcepciones(radio,"Digite el radio:");
+        radio = fallo.doubleValidarExcepciones("Digite el radio");
     }//fin metodo pedirDatos ()
     
     @Override
