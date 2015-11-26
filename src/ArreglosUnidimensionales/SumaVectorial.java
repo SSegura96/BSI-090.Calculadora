@@ -13,7 +13,6 @@ public class SumaVectorial extends ArregloUnidimensional
     public SumaVectorial() 
     {
         sumaV = new double[0];
-        imagenV = "SumaVectorial";
     }//fin constructor
 
     public double[] getSumaV() {
@@ -28,26 +27,169 @@ public class SumaVectorial extends ArregloUnidimensional
     @Override
     public void llenarVector() 
     {
-        JOptionPane.showMessageDialog(null, "Llenar el primer vector vector[ ]");
-        for (int i = 0; i < vector.length; i++) 
-        {
-            vector[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato de: vector[" + i + "]"));
-        }//fin primer for
+        JOptionPane.showMessageDialog(null, "Llenar el primer vector: vector[ ]",
+                "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
+        for (int i = 0; i < vector.length; i++) {
+            
+            todoBien = true;//se limpia la variable
 
-        JOptionPane.showMessageDialog(null, "Llenar el segundo vector[ ]");
-        for (int j = 0; j < vector2.length; j++) 
-        {
-            vector2[j] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese dato de: vector2[" + j + "]"));
+            //Se pide el primer vector
+            do {
+                try {
+                    String valor = JOptionPane.showInputDialog(null,
+                            "Ingrese dato de: vector[" + (i+1) + "]", "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                    if (valor.equals("") || valor.equals(" ")) {
+                        tituloError = "Error";
+                        tipoError = 1;
+                        imgError = 0;
+
+                        throw new NumberFormatException();
+                    }//fin primer if de validacion
+
+                    vector[i] = Double.parseDouble(valor);
+
+                    if (vector[i] <= 0) {
+                        tituloError = "Aviso";
+                        tipoError = 0;
+                        imgError = 2;
+
+                        throw new NumberFormatException();
+                    }//fin segundo if de validacion
+
+                    todoBien = true;
+                }//fin try
+                catch (NumberFormatException e) {
+                    fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                    todoBien = false;
+                }//fin catch
+
+            } while (!todoBien);
+        }//fin primer for
+        
+        JOptionPane.showMessageDialog(null, "Llenar el segundo vector: vector2[ ]",
+                "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
+        for (int j = 0; j < vector2.length; j++) {
+            
+            todoBien = true;//se limpia la variable
+
+            //Se pide el primer vector
+            do {
+                try {
+                    String valor2 = JOptionPane.showInputDialog(null,
+                            "Ingrese dato de: vector2[" + (j+1) + "]", "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                    if (valor2.equals("") || valor2.equals(" ")) {
+                        tituloError = "Error";
+                        tipoError = 1;
+                        imgError = 0;
+
+                        throw new NumberFormatException();
+                    }//fin primer if de validacion
+
+                    vector2[j] = Double.parseDouble(valor2);
+
+                    if (vector2[j] <= 0) 
+                    {
+                        tituloError = "Aviso";
+                        tipoError = 0;
+                        imgError = 2;
+
+                        throw new NumberFormatException();
+                    }//fin segundo if de validacion
+
+                    todoBien = true;
+                }//fin try
+                catch (NumberFormatException e) {
+                    fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                    todoBien = false;
+                }//fin catch
+
+            } while (!todoBien);
         }//fin segundo for
+        
     }//fin metodo llenarVector()
     
     @Override
     public void pedirDatos()
     {
-        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del primer vector:"));
+        todoBien = true;//se limpia la variable
+
+        //Se pide el tamanno del primer vector
+        do {
+            try {
+                String valorV1 = JOptionPane.showInputDialog(null, "Digite el "
+                        + "tamaño del primer vector:", "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                if (valorV1.equals("") || valorV1.equals(" ")) {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+
+                tamanno = Integer.parseInt(valorV1);
+
+                if (tamanno <= 0) {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+
+                todoBien = true;
+            }//fin try
+            catch (NumberFormatException e) {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+
+        } while (!todoBien);
+        
         vector = new double[tamanno];
         
-        tamanno = Integer.parseInt(JOptionPane.showInputDialog("Digite el tamaño del segundo vector:"));
+        //Se pide el tamanno del segundo vector
+        do {
+            try {
+                String valorV2 = JOptionPane.showInputDialog(null, "Digite el "
+                        + "tamaño del segundo vector:", "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
+                if (valorV2.equals("") || valorV2.equals(" ")) {
+                    tituloError = "Error";
+                    tipoError = 1;
+                    imgError = 0;
+
+                    throw new NumberFormatException();
+                }//fin primer if de validacion
+
+                tamanno = Integer.parseInt(valorV2);
+
+                if (tamanno <= 0) 
+                {
+                    tituloError = "Aviso";
+                    tipoError = 0;
+                    imgError = 2;
+
+                    throw new NumberFormatException();
+                }//fin segundo if de validacion
+                
+                
+                if (tamanno != vector.length)
+                {
+                    tituloError = "Aviso";
+                    tipoError = 4;
+                    imgError = 2;
+                    
+                    throw new NumberFormatException();
+                }//fin tercer if de validacion
+                
+                todoBien = true;
+            }//fin try
+            catch (NumberFormatException e) {
+                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
+                todoBien = false;
+            }//fin catch
+
+        } while (!todoBien);
+        
         vector2 = new double[tamanno];
         
         llenarVector();
@@ -62,6 +204,7 @@ public class SumaVectorial extends ArregloUnidimensional
             dato += ""+vector1[i]+", ";
         }//foin primer for
         
+        dato = dato.substring(0, dato.length()-2);
         return dato;
         
     }//fin metodo recorrerVector

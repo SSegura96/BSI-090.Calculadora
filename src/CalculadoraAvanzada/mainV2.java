@@ -377,6 +377,11 @@ public class mainV2 extends javax.swing.JFrame
                         break;
                     //Suma
                     case 1:
+                        SumaVectorial sumaVecotrial = new SumaVectorial();
+                        sumaVecotrial.mostrarImagen();
+                        sumaVecotrial.pedirDatos();
+                        sumaVecotrial.calcSumaV();
+                        sumaVecotrial.mostrarDatos();
                         break;
                     //Producto
                     case 2:
