@@ -33,7 +33,8 @@ public class ManejoErrores
         "El valor no puede ser 0 o un numero negativo.",
         "No se digitaron valores validos.",
         "Digite solo numeros primos.",//Solo Gilbreath
-        "Solo se pueden digitar numeros enteros en el intervalo de 2 a 10."//Solo Gilbreath
+        "Solo se pueden digitar numeros enteros en el intervalo de 2 a 10.",//Solo Gilbreath
+        "El tamaño del vector2 tiene que ser igual al tamaño del vector1."//Solo para ArreglosUnidimensionales
         };
         
         JOptionPane.showMessageDialog(null, mensajesError[indice],titulo,logo);
