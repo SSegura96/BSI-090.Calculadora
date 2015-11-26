@@ -11,6 +11,7 @@ public class ARectangulo extends AFigura
 {
     private double base;
     private double altura;
+    private boolean todoBien = true;
 
     public ARectangulo() 
     {
