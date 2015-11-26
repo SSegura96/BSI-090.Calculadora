@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
+
 public class Mediana extends abEstadistica
 {
     private double [] vectorValoresMediana;
