@@ -5,6 +5,7 @@
  */
 package Matrices;
 
+import CalculadoraAvanzada.ManejoErrores;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +14,9 @@ import javax.swing.JOptionPane;
 
 public class Matriz 
 {
+    
+    ManejoErrores fallo = new ManejoErrores();
+    
     private double escalar;
     
     public double[][] matrizA;
@@ -47,7 +51,7 @@ public class Matriz
     {
         if (tipo == 0)
         {
-            escalar = Double.parseDouble(JOptionPane.showInputDialog("Digite el valor del escalar"));
+            escalar = fallo.doubleValidarExcepciones("Digite el valor del escalar");
             
             llenarMatriz(matrizA);
             mostrarMatriz(matrizA, "Los datos son:");
@@ -68,7 +72,7 @@ public class Matriz
         {
             for (int columna = 0;columna<m[fila].length;columna++)
             {
-                m[fila][columna] = Double.parseDouble(JOptionPane.showInputDialog("digite el numero de la posicion ["+fila+"]["+columna+"]"));
+                m[fila][columna] = fallo.doubleValidarExcepciones("digite el numero de la posicion ["+fila+"]["+columna+"]");
             }
         }
     }
