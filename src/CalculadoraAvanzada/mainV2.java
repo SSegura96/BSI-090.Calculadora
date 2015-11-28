@@ -353,7 +353,7 @@ public class mainV2 extends javax.swing.JFrame
                         Factorial fac = new Factorial ();
                         fac.pedirDatos();
                         fac.calcFactorial();
-                        fac.mostrarResultado();
+                        fac.mostrarDatos();
                     break;
                         
                     //permutacion
@@ -361,7 +361,7 @@ public class mainV2 extends javax.swing.JFrame
                       Permutacion per = new Permutacion();
                       per.pedirDatos();
                       per.calcPermutacion();
-                      per.mostrarResultado();
+                      per.mostrarDatos();
                     break;
                         
                     //Combinatoria
@@ -369,7 +369,7 @@ public class mainV2 extends javax.swing.JFrame
                         Combinatoria comb = new Combinatoria();
                         comb.pedirDatos();
                         comb.calcCombinatoria();
-                        comb.mostrarResultado();
+                        comb.mostrarDatos();
                     break;
                 }
             break;
