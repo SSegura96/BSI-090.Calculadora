@@ -1,7 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
@@ -37,7 +35,7 @@ public class ACirculo extends AFigura
         area = Math.PI * Math.pow(radio, 2);
 
         mensaje = "Radio: " + radio + "\n"
-                + "Area: " + decimalFomrat.format(area);
+                + "Area: " + decimalFormat.format(area);
         return area;
     }//fin metodo calcArea ()
 

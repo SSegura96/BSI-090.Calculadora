@@ -1,7 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
@@ -54,7 +52,7 @@ public class ARomboide extends AFigura
         
         mensaje = "Base: "+base+"\n"
                 + "Altura: "+altura+"\n"
-                + "Area: "+decimalFomrat.format(area);
+                + "Area: "+decimalFormat.format(area);
     return area;
     }//fin metodo calcArea ()
     

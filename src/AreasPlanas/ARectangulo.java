@@ -48,7 +48,7 @@ public class ARectangulo extends AFigura
 
         mensaje = "Base: " + base + "\n"
                 + "Altura: " + altura + "\n"
-                + "Area: " + decimalFomrat.format(area);
+                + "Area: " + decimalFormat.format(area);
         return area;
     }//fin metodo calcArea()
 

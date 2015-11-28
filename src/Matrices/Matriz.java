@@ -18,7 +18,7 @@ public class Matriz
     ManejoErrores fallo = new ManejoErrores();
     
     private double escalar;
-    private String imagen;
+    private final String imagen;
     public double[][] matrizA;
     public double[][] matrizB;
     public double[][] matrizT;

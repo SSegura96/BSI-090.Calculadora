@@ -54,7 +54,7 @@ public class ARombo extends AFigura
         
         mensaje = "Diagonal Mayor: "+diagMayor+"\n"
                 + "Diagonal Menor: "+diagMenor+"\n"
-                + "Area: "+decimalFomrat.format(area);
+                + "Area: "+decimalFormat.format(area);
         
     return area;
     }//fin metodo calcArea ()

@@ -1,6 +1,5 @@
 package AreasPlanas;
 
-import javax.swing.JOptionPane;
 import PerimetrosPlanos.*;
 
 /**
@@ -74,7 +73,7 @@ public class APoligonoRegular extends AFigura
 
         mensaje = "Tiene: " + numeroLados + " lados \n"
                 + "Sus lados miden: " + medidaLado + "\n"
-                + "El Area es: " + decimalFomrat.format(area);
+                + "El Area es: " + decimalFormat.format(area);
         return area;
     }//fin calcularArea()
 
