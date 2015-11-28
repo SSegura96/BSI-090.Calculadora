@@ -47,9 +47,9 @@ public class VParalelepipedo extends VFigura
     @Override
     public void pedirDatos ()
     {
-        largo = fallo.doubleValidarExcepciones("Digite el valor del largo");
-        ancho = fallo.doubleValidarExcepciones("Digite el valor del ancho");
-        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
+        largo = fallo.doubleValidarExcepciones("Digite el valor del largo", figura);
+        ancho = fallo.doubleValidarExcepciones("Digite el valor del ancho", figura);
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
     }
     
     @Override

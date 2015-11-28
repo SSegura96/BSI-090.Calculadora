@@ -39,7 +39,7 @@ public class VPrisma extends VFigura
     @Override
     public void pedirDatos ()
     {
-       altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
+       altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
     }
     
     @Override

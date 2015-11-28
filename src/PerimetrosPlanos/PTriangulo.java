@@ -47,9 +47,9 @@ public class PTriangulo extends PFigura
      @Override
     public void pedirDatos() 
     {
-        lado1 = fallo.doubleValidarExcepciones("Digite el valor del lado 1");
-        lado2 = fallo.doubleValidarExcepciones("Digite el valor del lado 2");
-        lado3 = fallo.doubleValidarExcepciones("Digite el valor del lado 3");
+        lado1 = fallo.doubleValidarExcepciones("Digite el valor del lado 1", figura);
+        lado2 = fallo.doubleValidarExcepciones("Digite el valor del lado 2", figura);
+        lado3 = fallo.doubleValidarExcepciones("Digite el valor del lado 3", figura);
     }//fin metodo pedirDtos
     
     @Override

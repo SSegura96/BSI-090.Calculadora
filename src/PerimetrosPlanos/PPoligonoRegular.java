@@ -42,8 +42,8 @@ public class PPoligonoRegular extends PFigura
     @Override
     public void pedirDatos() throws NumberFormatException
     {
-       numLados = fallo.doubleValidarExcepciones("Digite el numero de lados");
-       valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado");
+       numLados = fallo.doubleValidarExcepciones("Digite el numero de lados", "Poligono Regular");
+       valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado", "Poligono Regular");
     }//fin metodo pedirDatos()
     
     @Override

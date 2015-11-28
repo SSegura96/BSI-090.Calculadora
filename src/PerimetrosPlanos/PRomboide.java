@@ -38,8 +38,8 @@ public class PRomboide extends PFigura
     @Override
     public void pedirDatos ()
     {
-        base = fallo.doubleValidarExcepciones("Digite el valor de la base");
-        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
+        base = fallo.doubleValidarExcepciones("Digite el valor de la base", figura);
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
     }//fin metodo pedirDatos()
 
     @Override

@@ -20,12 +20,11 @@ public class Sumatoria extends abEstadistica
     {
         int i = 0;
         boolean seguir = true;
-        String mensaje = "";
         
         while (seguir)
         {
             
-            double dato = fallo.doubleValidarExcepciones("Digite el valor #"+(i+1));
+            double dato = fallo.doubleValidarExcepciones("Digite el valor #"+(i+1), "Sumatoria");
             
             mensaje += dato+" + ";
             

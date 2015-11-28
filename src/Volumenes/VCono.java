@@ -37,8 +37,8 @@ public class VCono extends VFigura
     @Override
     public void pedirDatos ()
     {
-        radio = fallo.doubleValidarExcepciones("Digite el valor del radio");
-        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura");
+        radio = fallo.doubleValidarExcepciones("Digite el valor del radio", figura);
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
     }
     
     @Override

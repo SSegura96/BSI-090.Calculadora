@@ -1,8 +1,5 @@
 package ProbabilidadYCombinaciones;
 
-import CalculadoraAvanzada.ManejoErrores;
-import javax.swing.JOptionPane;
-
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
@@ -18,6 +15,7 @@ public class Combinatoria extends ProbabilidadYCombinaciones
         numElementos = 0;
         numSubgrupo = 0;
         combinatora = 0;
+        imagen = "Combinatoria";
     }
 
     public int getNumElementos() 
@@ -44,10 +42,10 @@ public class Combinatoria extends ProbabilidadYCombinaciones
     public void pedirDatos () throws NumberFormatException
     {
        numElementos = fallo.intValidarExcepciones
-        ("Digite el numero de elementos");
+        ("Digite el numero de elementos", imagen);
                 
         numSubgrupo = fallo.intValidarExcepciones
-        ("Digite el elemetos en el subgrupo");
+        ("Digite el elemetos en el subgrupo", imagen);
     }
     
     public double calcCombinatoria ()

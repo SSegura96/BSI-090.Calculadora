@@ -12,13 +12,13 @@ public class Promedio extends abEstadistica
     ArrayList <Double> valores = new ArrayList ();
     
     private double promedio = 0.0;
-    private  String mensaje;
     
     public Promedio() 
     {
         promedio = 0;
         mensaje = "Se va  calcular el promedio digite el "
                 + "\n primer numero para continuar";
+        imagen = "Promedio";
     }
 
     public ArrayList<Double> getValores() 
@@ -35,17 +35,6 @@ public class Promedio extends abEstadistica
     {
         this.promedio = promedio;
     }
-
-    public String getMensaje() 
-    {
-        return mensaje;
-    }
-
-    public void setMensaje(String mensaje) 
-    {
-        this.mensaje = mensaje;
-    }
-    
     
     public void pedirDatos ()
     {
@@ -54,7 +43,7 @@ public class Promedio extends abEstadistica
         
         while (seguir)
         {
-            valores.add(fallo.doubleValidarExcepciones(mensaje));
+            valores.add(fallo.doubleValidarExcepciones(mensaje, imagen));
             mensaje =  "Digite el "+i+"º número";
             i++;
             

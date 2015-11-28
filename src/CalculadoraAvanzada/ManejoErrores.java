@@ -45,7 +45,7 @@ public class ManejoErrores
      * o no sea un numero el se encicla y vuelve a mostar el mensaje hasta que el
      * valor sea correcto
      */
-    public double doubleValidarExcepciones (String mensaje) throws NumberFormatException 
+    public double doubleValidarExcepciones (String mensaje, String titulo) throws NumberFormatException 
     {
         boolean todoBien = true; 
         double valor = 0;
@@ -58,7 +58,8 @@ public class ManejoErrores
                 tipoError = 1;
                 imgError = 2;
                 
-                valor = Double.parseDouble(JOptionPane.showInputDialog(mensaje));
+                valor = Double.parseDouble(JOptionPane.showInputDialog(null, 
+                        mensaje, titulo, JOptionPane.INFORMATION_MESSAGE));
                 
                 if (valor <= 0)
                 {
@@ -81,7 +82,7 @@ public class ManejoErrores
         return valor;
     }
     
-    public int intValidarExcepciones (String mensaje) throws NumberFormatException 
+    public int intValidarExcepciones (String mensaje, String titulo) throws NumberFormatException 
     {
         boolean todoBien = true; 
         
@@ -95,7 +96,8 @@ public class ManejoErrores
                 tipoError = 1;
                 imgError = 2;
                 
-                valor = Integer.parseInt(JOptionPane.showInputDialog(mensaje));
+                valor = Integer.parseInt(JOptionPane.showInputDialog(null, 
+                        mensaje, titulo, JOptionPane.INFORMATION_MESSAGE));
                 
                 if (valor <= 0)
                 {
@@ -117,11 +119,6 @@ public class ManejoErrores
         
         return valor;
     }
-    
-   
-        
-        
-    
 }
 
 

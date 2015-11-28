@@ -28,7 +28,7 @@ public class PRombo extends PFigura
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado");
+        valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado", figura);
     }//fin metodo pedirDatos()
     
     @Override

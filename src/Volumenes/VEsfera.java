@@ -28,7 +28,7 @@ public class VEsfera extends VFigura
     @Override
     public void pedirDatos ()
     {
-        radio = fallo.doubleValidarExcepciones("Digite el valor del radio");
+        radio = fallo.doubleValidarExcepciones("Digite el valor del radio", figura);
     }
     
     @Override

@@ -18,7 +18,7 @@ public class Matriz
     ManejoErrores fallo = new ManejoErrores();
     
     private double escalar;
-    
+    private String imagen;
     public double[][] matrizA;
     public double[][] matrizB;
     public double[][] matrizT;
@@ -26,6 +26,7 @@ public class Matriz
     public Matriz ()
     {
         escalar = 0;
+        imagen = "Matriz";
     }
     
     public void inicializarMatrices (int tipo)
@@ -51,7 +52,7 @@ public class Matriz
     {
         if (tipo == 0)
         {
-            escalar = fallo.doubleValidarExcepciones("Digite el valor del escalar");
+            escalar = fallo.doubleValidarExcepciones("Digite el valor del escalar", imagen);
             
             llenarMatriz(matrizA);
             mostrarMatriz(matrizA, "Los datos son:");
@@ -72,7 +73,7 @@ public class Matriz
         {
             for (int columna = 0;columna<m[fila].length;columna++)
             {
-                m[fila][columna] = fallo.doubleValidarExcepciones("digite el numero de la posicion ["+fila+"]["+columna+"]");
+                m[fila][columna] = fallo.doubleValidarExcepciones("digite el numero de la posicion ["+fila+"]["+columna+"]", imagen);
             }
         }
     }

@@ -56,10 +56,10 @@ public class PTrapecio extends PFigura
     @Override
     public void pedirDatos() 
     {
-        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de la base mayor");
-        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de la base menor");
-        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de el lado 1");
-        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de el lado 2");
+        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de la base mayor", figura);
+        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de la base menor", figura);
+        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de el lado 1", figura);
+        baseMayor = fallo.doubleValidarExcepciones("Digite el valor de el lado 2", figura);
     }//fin metodo pedirDatos()
     
     @Override

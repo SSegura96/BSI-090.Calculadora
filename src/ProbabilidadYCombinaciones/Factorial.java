@@ -1,7 +1,5 @@
 package ProbabilidadYCombinaciones;
 
-import CalculadoraAvanzada.ManejoErrores;
-
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
@@ -16,6 +14,7 @@ public class Factorial extends ProbabilidadYCombinaciones
         numero = 0;
         factorial = 0;
         mensaje = "";
+        imagen = "Factorial";
     }
 
     public double getNumero() 
@@ -31,7 +30,7 @@ public class Factorial extends ProbabilidadYCombinaciones
     @Override
     public void pedirDatos () throws NumberFormatException
     {
-        numero = fallo.doubleValidarExcepciones("Digite el numero al cual le decea calcular el factorial");
+        numero = fallo.doubleValidarExcepciones("Digite el numero al cual le decea calcular el factorial", imagen);
     }
     
     public double calcFactorial ()

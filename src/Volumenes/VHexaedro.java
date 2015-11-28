@@ -27,7 +27,7 @@ public class VHexaedro extends VFigura
     @Override
     public void pedirDatos ()
     {
-        lado = fallo.doubleValidarExcepciones("Digite el valor del lado");
+        lado = fallo.doubleValidarExcepciones("Digite el valor del lado", figura);
     }
     
     @Override
