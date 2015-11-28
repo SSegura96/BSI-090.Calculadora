@@ -16,6 +16,7 @@ import java.util.Date;
 /**
  * @author Javier Fernandez & Sergio Segura
  */
+
 public class mainV2 extends javax.swing.JFrame 
 {
 
