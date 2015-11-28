@@ -9,6 +9,7 @@ import Matrices.*;
 import Conjeturas.*;
 import Volumenes.*;
 import ProbabilidadYCombinaciones.*;
+import Superficies.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -376,7 +377,65 @@ public class mainV2 extends javax.swing.JFrame
 
             //Superficies
             case 4:
-
+              switch (indiceSub)
+              {
+                    case 1:
+                        SCilindro scilindo = new SCilindro();
+                        scilindo.mostrarImagen();
+                        scilindo.pedirDatos();
+                        scilindo.calcSuperficie();
+                        scilindo.mostrarResultado();
+                    break;
+                        
+                    case 2:
+                        SCono scono = new SCono();
+                        scono.mostrarImagen();
+                        scono.pedirDatos();
+                        scono.calcSuperficie();
+                        scono.mostrarResultado();
+                    break;
+                        
+                    case 3:
+                        SEsfera sesfera = new SEsfera();
+                        sesfera.mostrarImagen();
+                        sesfera.pedirDatos();
+                        sesfera.calcSuperficie();
+                        sesfera.mostrarResultado();
+                    break;
+                        
+                    case 4:
+                        SHexaedroRegular shexaedroRegular = new SHexaedroRegular();
+                        shexaedroRegular.mostrarImagen();
+                        shexaedroRegular.pedirDatos();
+                        shexaedroRegular.calcSuperficie();
+                        shexaedroRegular.mostrarResultado();
+                    break;
+                        
+                    case 5:
+                        SParalelepipedo sparalelepipedo = new SParalelepipedo();
+                        sparalelepipedo.mostrarImagen();
+                        sparalelepipedo.pedirDatos();
+                        sparalelepipedo.calcSuperficie();
+                        sparalelepipedo.mostrarResultado();
+                    break;
+                        
+                    case 6:
+//                        //SCilindro scilindo = new SCilindro();
+//                        scilindo.mostrarImagen();
+//                        scilindo.pedirDatos();
+//                        scilindo.calcSuperficie();
+//                        scilindo.mostrarResultado();
+                    break;
+                        
+                    case 7:
+//                        //SCilindro scilindo = new SCilindro();
+//                        scilindo.mostrarImagen();
+//                        scilindo.pedirDatos();
+//                        scilindo.calcSuperficie();
+//                        scilindo.mostrarResultado();
+                    break;
+                        
+              }
             break;
 
             //volumenes

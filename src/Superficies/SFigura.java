@@ -104,7 +104,7 @@ public abstract class SFigura implements SIFigura
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + figura + ".png"));
     }//fin metodo mostrarImagen
 
-    public void resultado() 
+    public void mostrarResultado() 
     {
         JOptionPane.showMessageDialog(null, mensaje, figura, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo resultado()
