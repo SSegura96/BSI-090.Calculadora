@@ -10,17 +10,28 @@ import javax.swing.JOptionPane;
  */
 public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombinaciones
 {
-    protected ManejoErrores fallo = new ManejoErrores();
     protected String mensaje;
-    protected String nombre;
+    protected String imagen;
     protected int cantidadElementos;
+    //Variables de uso exclusivo para la validaciones en el codigo
+    boolean todoBien;
+    String tituloError;
+    int tipoError;
+    int imgError;
+    //Se utiliza esta clase generica para llamar a los errores personalizados.
+    ManejoErrores fallo = new ManejoErrores();
 
     public ProbabilidadYCombinaciones() 
     {
         mensaje = "";
+        imagen = "";
         cantidadElementos = 0;
-    }//fin constructor
-
+        todoBien = true;
+        tituloError = "";
+        tipoError = 0;
+        imgError = 0;
+    }//fin constuctor
+    
     public String getMensaje() 
     {
         return mensaje;
@@ -41,15 +52,16 @@ public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombin
         this.cantidadElementos = cantidadElementos;
     }
     
-    public void mostrarResultado()
+    
+    public void mostrarDatos()
     {
-        JOptionPane.showMessageDialog(null, mensaje);
-    }
+        JOptionPane.showMessageDialog(null, mensaje, imagen, JOptionPane.INFORMATION_MESSAGE);
+    }//fin metodo 
     
     public void mostrarImagen()
     {
-        JOptionPane.showMessageDialog(null,"", nombre,
-        JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/"+nombre+".png"));
+        JOptionPane.showMessageDialog(null,"", imagen,JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon("src/imgs/"+imagen+".png"));
     }//fin metodo mostrarImagen()
     
 }//fin clase ProbabilidadYCombinaciones

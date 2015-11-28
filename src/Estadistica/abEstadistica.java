@@ -17,8 +17,8 @@ public abstract class abEstadistica implements IEstadistica
     String tituloError;
     int tipoError;
     int imgError;
-    ManejoErrores fallo = new ManejoErrores();
     //Se utiliza esta clase generica para llamar a los errores personalizados.
+    ManejoErrores fallo = new ManejoErrores();
 
     public abEstadistica() 
     {
