@@ -6,16 +6,14 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
+public class Mediana extends abEstadistica {
 
-public class Mediana extends abEstadistica
-{
-    private double [] vectorValoresMediana;
+    private double[] vectorValoresMediana;
     private int tamanno;
     private double mediana;
     private double mediana2;
-    
-    public Mediana() 
-    {
+
+    public Mediana() {
         vectorValoresMediana = new double[0];
         tamanno = 0;
         mediana = 0.0;
@@ -54,9 +52,8 @@ public class Mediana extends abEstadistica
     public void setMediana2(double mediana2) {
         this.mediana2 = mediana2;
     }
-    
-    public void llenarVector() 
-    {
+
+    public void llenarVector() {
         for (int i = 0; i < vectorValoresMediana.length; i++) {
             todoBien = true;//se limpia la variable
 
@@ -64,7 +61,7 @@ public class Mediana extends abEstadistica
             do {
                 try {
                     String valor = JOptionPane.showInputDialog(null,
-                            "Ingrese el dato #" + (i+1) + " :", imagen, JOptionPane.INFORMATION_MESSAGE);
+                            "Ingrese el dato #" + (i + 1) + " :", imagen, JOptionPane.INFORMATION_MESSAGE);
                     if (valor.equals("") || valor.equals(" ")) {
                         tituloError = "Error";
                         tipoError = 1;
@@ -92,11 +89,10 @@ public class Mediana extends abEstadistica
 
             } while (!todoBien);
         }//fin primer for
-        
+
     }//fin metodo llenarVector()
-    
-    public void pedirDatos()
-    {
+
+    public void pedirDatos() {
         todoBien = true;//se limpia la variable
 
         //Se pide el tamanno del vector
@@ -130,97 +126,81 @@ public class Mediana extends abEstadistica
             }//fin catch
 
         } while (!todoBien);
-        
+
         vectorValoresMediana = new double[tamanno];
-        
+
         llenarVector();
         ordenarNumeros(vectorValoresMediana);
     }//fin metodo pedirDatos()
-    
-    public boolean esPar(int numero)
-    {
-        if (numero % 2 == 0)
-        {
+
+    public boolean esPar(int numero) {
+        if (numero % 2 == 0) {
             return true;
         }//fin if
-        else
-        {
+        else {
             return false;
         }//fin else
     }//fin metodo esPar(int numero)
-    
-    public String ordenarNumeros(double[] vector1)
-    {
+
+    public String ordenarNumeros(double[] vector1) {
         String dato = "";
-        for (int i = 0; i < tamanno-1; i++) 
-        {
+        for (int i = 0; i < tamanno - 1; i++) {
             int min = i;
-            for (int j = i+1; j < tamanno; j++) 
-            {
-                if(vector1[j] < vector1[min])
-                {
+            for (int j = i + 1; j < tamanno; j++) {
+                if (vector1[j] < vector1[min]) {
                     min = j;
                 }//fin if
             }//fin segundo for
-            
-            if(i != min)
-            {
+
+            if (i != min) {
                 double aux = vector1[i];
                 vector1[i] = vector1[min];
                 vector1[min] = aux;
             }//fin if
-            
+
         }//fin primer for
-        
-        for (int k = 0; k < tamanno; k++) 
-        {
-            dato += ""+vector1[k]+", ";
+
+        for (int k = 0; k < tamanno; k++) {
+            dato += "" + vector1[k] + ", ";
         }//fin tercer for
-        
+
         return dato;
     }//fin metodo ordenarNumeros()
-    
-    public void calcMediana()
-    {
-        if(esPar(tamanno))
-        {
-            
-            int indice = (vectorValoresMediana.length-1)/2;
-            
-            for (int i = 0; i < vectorValoresMediana.length; i++) 
-            {
-                if (i == indice)
-                {
+
+    public void calcMediana() {
+        if (esPar(tamanno)) {
+
+            int indice = (vectorValoresMediana.length - 1) / 2;
+
+            for (int i = 0; i < vectorValoresMediana.length; i++) {
+                if (i == indice) {
                     mediana = vectorValoresMediana[i];
-                    mediana2 = vectorValoresMediana[i+1];
-                    i = vectorValoresMediana.length +1;
-                    
+                    mediana2 = vectorValoresMediana[i + 1];
+                    i = vectorValoresMediana.length + 1;
+
                 }//fin if
             }//fin primer for
-            mediana2 = (mediana + mediana2)/2;
-            
+            mediana2 = (mediana + mediana2) / 2;
+
             mensaje = "La serie de numeros es par. \n"
-                    + "{"+ordenarNumeros(vectorValoresMediana)+"}\n"
-                    + "Mediana: "+mediana2;
+                    + "{" + ordenarNumeros(vectorValoresMediana) + "}\n"
+                    + "Mediana: " + mediana2;
         }//fin if
-        else
-        {
-            int indice = (vectorValoresMediana.length-1)/2;
-            
-            for (int i = 0; i < vectorValoresMediana.length; i++) 
-            {
-                if (i == indice)
-                {
+        else {
+            int indice = (vectorValoresMediana.length - 1) / 2;
+
+            for (int i = 0; i < vectorValoresMediana.length; i++) {
+                if (i == indice) {
                     mediana = vectorValoresMediana[i];
                     i = vectorValoresMediana.length;
                 }//fin if
-                
+
             }//fin primer for
             mensaje = "La serie de numeros es impar. \n"
-                    + "{"+ordenarNumeros(vectorValoresMediana)+"} \n"
-                    + "Mediana: "+mediana;
+                    + "{" + ordenarNumeros(vectorValoresMediana) + "} \n"
+                    + "Mediana: " + mediana;
         }//fin else
-        
+
     }//fin metodo calcMediana()
-    
+
 }//fin clase Mediana

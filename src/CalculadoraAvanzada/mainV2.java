@@ -305,14 +305,30 @@ public class mainV2 extends javax.swing.JFrame
                         this.setVisible(false);
                     break;
                     
-                    //promedio    
+                    //Moda
+                    case 1:
+                        Moda moda = new Moda();
+                        moda.mostrarImagen();
+                        moda.pedirDatos();
+                        moda.calcModa();
+                        moda.mostrarDatos();
+
+                    //promedio
                     case 2:
                         Promedio prom = new Promedio ();
                         prom.pedirDatos();
                         prom.calcPromedio();
                         prom.mostarDatos();
                     break;
-                        
+                    
+                    //Mediana
+                    case 3:
+                        Mediana mediana = new Mediana();
+                        mediana.mostrarImagen();
+                        mediana.pedirDatos();
+                        mediana.calcMediana();
+                        mediana.mostrarDatos();
+
                     //varianza
                     case 4:
                         Varianza var = new Varianza();
