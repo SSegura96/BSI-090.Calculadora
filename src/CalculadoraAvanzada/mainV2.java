@@ -379,61 +379,61 @@ public class mainV2 extends javax.swing.JFrame
             case 4:
               switch (indiceSub)
               {
-                    case 1:
-                        SCilindro scilindo = new SCilindro();
-                        scilindo.mostrarImagen();
-                        scilindo.pedirDatos();
-                        scilindo.calcSuperficie();
-                        scilindo.mostrarResultado();
-                    break;
-                        
-                    case 2:
-                        SCono scono = new SCono();
-                        scono.mostrarImagen();
-                        scono.pedirDatos();
-                        scono.calcSuperficie();
-                        scono.mostrarResultado();
-                    break;
-                        
-                    case 3:
+                case 0:
                         SEsfera sesfera = new SEsfera();
                         sesfera.mostrarImagen();
                         sesfera.pedirDatos();
                         sesfera.calcSuperficie();
                         sesfera.mostrarResultado();
-                    break;
+                break;  
+                  
+                case 1:
+                      SCilindro scilindo = new SCilindro();
+                      scilindo.mostrarImagen();
+                      scilindo.pedirDatos();
+                      scilindo.calcSuperficie();
+                      scilindo.mostrarResultado();
+                break;
                         
-                    case 4:
-                        SHexaedroRegular shexaedroRegular = new SHexaedroRegular();
-                        shexaedroRegular.mostrarImagen();
-                        shexaedroRegular.pedirDatos();
-                        shexaedroRegular.calcSuperficie();
-                        shexaedroRegular.mostrarResultado();
-                    break;
+                case 2:
+                    SCono scono = new SCono();
+                    scono.mostrarImagen();
+                    scono.pedirDatos();
+                    scono.calcSuperficie();
+                    scono.mostrarResultado();
+                break;
                         
-                    case 5:
-                        SParalelepipedo sparalelepipedo = new SParalelepipedo();
-                        sparalelepipedo.mostrarImagen();
-                        sparalelepipedo.pedirDatos();
-                        sparalelepipedo.calcSuperficie();
-                        sparalelepipedo.mostrarResultado();
-                    break;
-                        
-                    case 6:
-//                        //SCilindro scilindo = new SCilindro();
-//                        scilindo.mostrarImagen();
-//                        scilindo.pedirDatos();
-//                        scilindo.calcSuperficie();
-//                        scilindo.mostrarResultado();
-                    break;
-                        
-                    case 7:
-//                        //SCilindro scilindo = new SCilindro();
-//                        scilindo.mostrarImagen();
-//                        scilindo.pedirDatos();
-//                        scilindo.calcSuperficie();
-//                        scilindo.mostrarResultado();
-                    break;
+                case 3:
+                    SHexaedroRegular shexaedroRegular = new SHexaedroRegular();
+                    shexaedroRegular.mostrarImagen();
+                    shexaedroRegular.pedirDatos();
+                    shexaedroRegular.calcSuperficie();
+                    shexaedroRegular.mostrarResultado();
+                break;
+                   
+                case 6:
+                    SPrisma sprisma = new SPrisma();
+                    sprisma.mostrarImagen();
+                    sprisma.pedirDatos();
+                    sprisma.calcSuperficie();
+                    sprisma.mostrarResultado();
+                break;
+                    
+                case 5:
+                    SParalelepipedo sparalelepipedo = new SParalelepipedo();
+                    sparalelepipedo.mostrarImagen();
+                    sparalelepipedo.pedirDatos();
+                    sparalelepipedo.calcSuperficie();
+                    sparalelepipedo.mostrarResultado();
+                break;
+                    
+                case 7:
+                    SPiramideRegular spiramideRegular = new SPiramideRegular();
+                    spiramideRegular.mostrarImagen();
+                    spiramideRegular.pedirDatos();
+                    spiramideRegular.calcSuperficie();
+                    spiramideRegular.mostrarResultado();
+                break;
                         
               }
             break;

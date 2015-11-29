@@ -16,12 +16,13 @@ public class Ulmann extends AbCalculo
         numeroIngresado = 0;
         resultado = 0;
         mensaje = "";
+        figura = "Ulmann";
     }
     
     @Override
     public void pedirDatos ()
     {
-        numeroIngresado = Double.parseDouble(JOptionPane.showInputDialog("Digite un número"));
+        numeroIngresado = fallo.doubleValidarExcepciones("Digite un número",figura);
     }
     
     public void calcUlmann()
