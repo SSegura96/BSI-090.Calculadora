@@ -1,6 +1,7 @@
 package Conjeturas;
 
 import CalculadoraAvanzada.ManejoErrores;
+import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -84,6 +85,19 @@ public abstract class AbCalculo implements ICalculo
 
     public void setFallo(ManejoErrores fallo) {
         this.fallo = fallo;
+    }
+    
+    public double enmascararDouble(double numero)
+    {
+        String dato = "";
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
+        
+        dato = decimalFormat.format(numero);
+        
+        dato = dato.replace(',', '.');
+        
+        return Double.parseDouble(dato);
     }
     
     public void mostrarImagen() 

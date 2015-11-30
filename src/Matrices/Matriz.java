@@ -6,6 +6,7 @@
 package Matrices;
 
 import CalculadoraAvanzada.ManejoErrores;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,6 +28,19 @@ public class Matriz
     {
         escalar = 0;
         imagen = "Matriz";
+    }
+    
+    public double enmascararDouble(double numero)
+    {
+        String dato = "";
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
+        
+        dato = decimalFormat.format(numero);
+        
+        dato = dato.replace(',', '.');
+        
+        return Double.parseDouble(dato);
     }
     
     public void inicializarMatrices (int tipo)

@@ -1,6 +1,7 @@
 package Estadistica;
 
 import CalculadoraAvanzada.ManejoErrores;
+import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -85,6 +86,18 @@ public abstract class abEstadistica implements IEstadistica
         this.fallo = fallo;
     }
 
+    public double enmascararDouble(double numero)
+    {
+        String dato = "";
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
+        
+        dato = decimalFormat.format(numero);
+        
+        dato = dato.replace(',', '.');
+        
+        return Double.parseDouble(dato);
+    }
     
     @Override
     public void mostrarDatos() 

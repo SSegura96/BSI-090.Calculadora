@@ -1,6 +1,7 @@
 package ArreglosUnidimensionales;
 
 import CalculadoraAvanzada.ManejoErrores;
+import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -115,7 +116,19 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
         this.fallo = fallo;
     }
     
-            
+    public double enmascararDouble(double numero)
+    {
+        String dato = "";
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
+        
+        dato = decimalFormat.format(numero);
+        
+        dato = dato.replace(',', '.');
+        
+        return Double.parseDouble(dato);
+    }
+    
     public void mostrarImagen() {
         JOptionPane.showMessageDialog(null, "", imagenV,
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + imagenV + ".png"));

@@ -1,6 +1,7 @@
 package PerimetrosPlanos;
 
 import CalculadoraAvanzada.ManejoErrores;
+import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -56,6 +57,19 @@ public abstract class PFigura implements PIFigura
         this.mensaje = mensaje;
     }
     
+    
+    public double enmascararDouble(double numero)
+    {
+        String dato = "";
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
+        
+        dato = decimalFormat.format(numero);
+        
+        dato = dato.replace(',', '.');
+        
+        return Double.parseDouble(dato);
+    }
     
     public void mostrarImagen ()
     {

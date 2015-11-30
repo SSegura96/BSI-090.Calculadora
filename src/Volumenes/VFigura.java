@@ -1,6 +1,7 @@
 package Volumenes;
 
 import CalculadoraAvanzada.ManejoErrores;
+import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -38,6 +39,19 @@ public abstract class VFigura implements VIFigura
     public void setVolumen(double volumen) 
     {
         this.volumen = volumen;
+    }
+    
+    public double enmascararDouble(double numero)
+    {
+        String dato = "";
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
+        
+        dato = decimalFormat.format(numero);
+        
+        dato = dato.replace(',', '.');
+        
+        return Double.parseDouble(dato);
     }
     
     public void mostrarImagen ()
