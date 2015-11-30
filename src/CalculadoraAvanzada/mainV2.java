@@ -63,7 +63,7 @@ public class mainV2 extends javax.swing.JFrame {
         "Producto"};
     String[] conjeturas = {"Ulmann.", "Gillbreath."};
 
-    public void inicializarComboBox() {
+    private void inicializarComboBox() {
         jCOperaciones.setModel(new DefaultComboBoxModel(menuPrincipal));
         jCSubmenu.setModel(new DefaultComboBoxModel(areasPlanas));
     }
@@ -110,7 +110,7 @@ public class mainV2 extends javax.swing.JFrame {
         }
     }
 
-    public void inicializarHoraFecha() {
+    private void inicializarHoraFecha() {
         Date date = new Date();
 
         DateFormat hora = new SimpleDateFormat("hh:mm");

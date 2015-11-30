@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class Varianza 
 {
     
-    private ArrayList <Double> numeros = new ArrayList (); 
+    private ArrayList <Double> numeros = new ArrayList<> (); 
     
     private double varianza;
 

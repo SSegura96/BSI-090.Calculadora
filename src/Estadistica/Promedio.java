@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 public class Promedio extends abEstadistica
 {
-    ArrayList <Double> valores = new ArrayList ();
+    ArrayList <Double> valores = new ArrayList<> ();
     
     private double promedio = 0.0;
     

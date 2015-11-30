@@ -12,17 +12,17 @@ import javax.swing.JOptionPane;
 public class Gilbreath extends AbCalculo {
 
     //LinkedList para controlar los primos ingresados por el usario
-    private LinkedList<Integer> primos = new LinkedList();
+    private LinkedList<Integer> primos = new LinkedList<>();
     //Estas siguientes son para mostrar los renglones de la formula en un metodo mas abajo
-    private LinkedList<Integer> renglon2 = new LinkedList();
-    private LinkedList<Integer> renglon3 = new LinkedList();
-    private LinkedList<Integer> renglon4 = new LinkedList();
-    private LinkedList<Integer> renglon5 = new LinkedList();
-    private LinkedList<Integer> renglon6 = new LinkedList();
-    private LinkedList<Integer> renglon7 = new LinkedList();
-    private LinkedList<Integer> renglon8 = new LinkedList();
-    private LinkedList<Integer> renglon9 = new LinkedList();
-    private LinkedList<Integer> renglonFantasma = new LinkedList();
+    private LinkedList<Integer> renglon2 = new LinkedList<>();
+    private LinkedList<Integer> renglon3 = new LinkedList<>();
+    private LinkedList<Integer> renglon4 = new LinkedList<>();
+    private LinkedList<Integer> renglon5 = new LinkedList<>();
+    private LinkedList<Integer> renglon6 = new LinkedList<>();
+    private LinkedList<Integer> renglon7 = new LinkedList<>();
+    private LinkedList<Integer> renglon8 = new LinkedList<>();
+    private LinkedList<Integer> renglon9 = new LinkedList<>();
+    private LinkedList<Integer> renglonFantasma = new LinkedList<>();
     //Cantidad de numeros de la LinkedList
     private int tamannoLinkedList;
 
@@ -170,7 +170,7 @@ public class Gilbreath extends AbCalculo {
     }//fin metodo pedirDatos()
 
     public String cargarNumeros(LinkedList<Integer> lista) {
-        ArrayList lista2 = new ArrayList(lista);
+        ArrayList<Integer> lista2 = new ArrayList<>(lista);
 
         Iterator it = lista2.iterator();
 
