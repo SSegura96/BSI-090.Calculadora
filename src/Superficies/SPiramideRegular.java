@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class SPiramideRegular extends SFigura
-{
+public class SPiramideRegular extends SFigura {
+
     private double arista;
     private double altura;
     private int numLadosBase;
@@ -17,8 +17,7 @@ public class SPiramideRegular extends SFigura
     private double superficieLateral;
     private double areaBase;
 
-    public SPiramideRegular() 
-    {
+    public SPiramideRegular() {
         arista = 0.0;
         altura = 0.0;
         numLadosBase = 0;
@@ -85,150 +84,39 @@ public class SPiramideRegular extends SFigura
         this.areaBase = areaBase;
     }
 
-    
     @Override
-    public void pedirDatos() 
-    {
-        todoBien = true;//se limpia la variable.
-        
+    public void pedirDatos() {
         //Se pide el valor de la arista y se valida.
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " de la arista:", "Piramide Regular", JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                arista = Double.parseDouble(valor);
-                
-                if (arista <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
-        
+        arista = fallo.doubleValidarExcepciones("Digite el valor de la arista:",
+                "Piramide Regular");
+
         //Se pide valor de la altura y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " de la altura:", "Piramide Regular", JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                altura = Double.parseDouble(valor);
-                
-                if (altura <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
-        
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura:",
+                "Piramide Regular");
+
         //Se pide la cantidad de lados de la base y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el numero"
-                        + " de lados que posee la base:", "Piramide Regular", JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                numLadosBase = Integer.parseInt(valor);
-                
-                if (numLadosBase <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
+        numLadosBase = fallo.intValidarExcepciones("Digite el numero de lados "
+                + "que posee la base:", "Piramide Regular");
+
     }//fin metodo pedirDatos()
 
     @Override
-    public void calcSuperficie() 
-    {
-        DecimalFormat df = new DecimalFormat("0.00");
-        
+    public void calcSuperficie() {
         perimBase = numLadosBase * arista;
-        
-        apotema = Math.sqrt((Math.pow(altura, 2))+(Math.pow((arista/2), 2)));
-        
-        superficieLateral = (perimBase * apotema)/2;
-        
-        areaBase = (perimBase * apotema)/2;
-        
+
+        apotema = Math.sqrt((Math.pow(altura, 2)) + (Math.pow((arista / 2), 2)));
+
+        superficieLateral = (perimBase * apotema) / 2;
+
+        areaBase = (perimBase * apotema) / 2;
+
         superficie = superficieLateral + areaBase;
-        
-        mensaje = "Apotema: "+arista+"\n"
-                + "Perimetro de la Base: "+perimBase+"\n"
-                + "Area de la la Base:"+df.format(areaBase)+"\n"
-                + "Superficie Lateral: "+df.format(superficieLateral)+"\n"
-                + "Superficie Total: "+df.format(superficie);
+
+        mensaje = "Apotema: " + arista + "\n"
+                + "Perimetro de la Base: " + perimBase + "\n"
+                + "Area de la la Base:" + decimalFormat.format(areaBase) + "\n"
+                + "Superficie Lateral: " + decimalFormat.format(superficieLateral) + "\n"
+                + "Superficie Total: " + decimalFormat.format(superficie);
     }//fin metodo calcSuperficie
-    
+
 }//fin calse SPiramideRegular

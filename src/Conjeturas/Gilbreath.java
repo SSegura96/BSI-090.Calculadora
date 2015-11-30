@@ -9,8 +9,7 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class Gilbreath extends AbCalculo 
-{
+public class Gilbreath extends AbCalculo {
 
     //LinkedList para controlar los primos ingresados por el usario
     private LinkedList<Integer> primos = new LinkedList();
@@ -27,8 +26,7 @@ public class Gilbreath extends AbCalculo
     //Cantidad de numeros de la LinkedList
     private int tamannoLinkedList;
 
-    public Gilbreath() 
-    {
+    public Gilbreath() {
         this.tamannoLinkedList = 0;
         figura = "Gilbreath";
     }//fin constructor
@@ -121,59 +119,49 @@ public class Gilbreath extends AbCalculo
         this.tamannoLinkedList = tamannoLinkedList;
     }
 
-    
-    public boolean esPrimo(int numero) 
-    {
+    public boolean esPrimo(int numero) {
         int aux;
-        for (int cont = 2; cont < numero; cont++) 
-        {
+        for (int cont = 2; cont < numero; cont++) {
             aux = numero % cont;
-            if (aux == 0) 
-            {
+            if (aux == 0) {
                 return false;
             }//fin if
         }//fin for
         return true;
     }//fin metodo esPrimo(int numero)
- 
+
     @Override
-    public void pedirDatos() 
-    {
+    public void pedirDatos() {
         int contador = 0;//solo lleva la cuenta en el msj a pantalla
         int contadorPrimos = 0;//lleva la cuenta de los valores para unsar la variable de clase tamannoLinkedList
         int num = 0;//almacena temporalmente el numero a evaluar
 
-        do
-        {
-            tamannoLinkedList = Integer.parseInt(JOptionPane.showInputDialog(null, 
-                    "Digite la cantidad de numeros que va a ingresar:", figura, 
+        do {
+            tamannoLinkedList = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "Digite la cantidad de numeros que va a ingresar:", figura,
                     JOptionPane.INFORMATION_MESSAGE));
-        contadorPrimos = tamannoLinkedList;
-        
-        //se valida que el tamaño no sea invalido
-        if (tamannoLinkedList == 0 || tamannoLinkedList == 1 || tamannoLinkedList > 10)
-        {
-            fallo.seleccionarMensaje(3, "Aviso", 2);
-        }//fin if
-        
-        }while (tamannoLinkedList == 0 || tamannoLinkedList == 1 || tamannoLinkedList > 10);
-        
+            contadorPrimos = tamannoLinkedList;
+
+            //se valida que el tamaño no sea invalido
+            if (tamannoLinkedList == 0 || tamannoLinkedList == 1 || tamannoLinkedList > 10) {
+                fallo.seleccionarMensaje(3, "Aviso", 2);
+            }//fin if
+
+        } while (tamannoLinkedList == 0 || tamannoLinkedList == 1 || tamannoLinkedList > 10);
+
         //Se alamacenan los numeros primos en la LinkedList
-        
         do {
             num = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite un "
-                    + "numero primo:\n \t \t Valor #" + (contador + 1) + " de " 
+                    + "numero primo:\n \t \t Valor #" + (contador + 1) + " de "
                     + tamannoLinkedList, figura, JOptionPane.INFORMATION_MESSAGE));
 
             //se evalua que el numero sea primo
-            if (esPrimo(num)) 
-            {
+            if (esPrimo(num)) {
                 primos.addLast(num);
                 contadorPrimos--;
                 contador++;
             }//fin if
-            else 
-            {
+            else {
                 fallo.seleccionarMensaje(2, "Aviso", 2);
             }//fin else
 
@@ -181,16 +169,14 @@ public class Gilbreath extends AbCalculo
 
     }//fin metodo pedirDatos()
 
-    public String cargarNumeros(LinkedList<Integer> lista) 
-    {
+    public String cargarNumeros(LinkedList<Integer> lista) {
         ArrayList lista2 = new ArrayList(lista);
 
         Iterator it = lista2.iterator();
 
         String renglon = "";
 
-        while (it.hasNext()) 
-        {
+        while (it.hasNext()) {
             renglon += it.next() + " - ";
         }//fin while
 
@@ -199,14 +185,12 @@ public class Gilbreath extends AbCalculo
         return renglon;
     }//fin metodo cargarNumeros(LinkedList <Integer> lista)
 
-    public String cargarRenglones(LinkedList<Integer> lista, LinkedList<Integer> lista2) 
-    {
+    public String cargarRenglones(LinkedList<Integer> lista, LinkedList<Integer> lista2) {
 
         String renglon = "";
         int resultado;
 
-        for (int indice = 0; indice < lista.size() - 1; indice++) 
-        {
+        for (int indice = 0; indice < lista.size() - 1; indice++) {
             resultado = (lista.get(indice) - lista.get(indice + 1));
             resultado = Math.abs(resultado);
             lista2.addLast(resultado);
@@ -218,14 +202,11 @@ public class Gilbreath extends AbCalculo
         return renglon;
     }//fin metodo cargarReglon()
 
-    public void calcGilbreath() 
-    {
+    public void calcGilbreath() {
         //Depende del tamaño que se digite entra en el switch
-        switch (tamannoLinkedList) 
-        {
+        switch (tamannoLinkedList) {
             //si solo se digitan dos numeros
-            case 2: 
-            {
+            case 2: {
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
                         + "" + cargarRenglones(primos, renglon2);
@@ -233,8 +214,7 @@ public class Gilbreath extends AbCalculo
             }//fin case 2
 
             //si solo se digitan 3
-            case 3: 
-            {
+            case 3: {
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
                         + "" + cargarRenglones(primos, renglon2) + "\n"
@@ -243,8 +223,7 @@ public class Gilbreath extends AbCalculo
             }//fin case 3
 
             //si solo se digitan 4
-            case 4: 
-            {
+            case 4: {
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
                         + "" + cargarRenglones(primos, renglon2) + "\n"
@@ -254,8 +233,7 @@ public class Gilbreath extends AbCalculo
             }//fin case 4
 
             //si solo se digitan 5
-            case 5: 
-            {
+            case 5: {
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
                         + "" + cargarRenglones(primos, renglon2) + "\n"
@@ -266,8 +244,7 @@ public class Gilbreath extends AbCalculo
             }//fin case 5
 
             //si solo se digitan 6
-            case 6: 
-            {
+            case 6: {
 
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
@@ -293,8 +270,7 @@ public class Gilbreath extends AbCalculo
             }//fin case 7
 
             //si solo se digitan 8
-            case 8: 
-            {
+            case 8: {
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
                         + "" + cargarRenglones(primos, renglon2) + "\n"
@@ -308,8 +284,7 @@ public class Gilbreath extends AbCalculo
             }//fin case 8
 
             //si solo se digitan 9
-            case 9: 
-            {
+            case 9: {
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
                         + "" + cargarRenglones(primos, renglon2) + "\n"
@@ -324,8 +299,7 @@ public class Gilbreath extends AbCalculo
             }//fin case 9
 
             //si solo se digitan 10
-            case 10: 
-            {
+            case 10: {
                 mensaje = "" + cargarNumeros(primos) + "\n"
                         + "----------------------------------------------------- \n"
                         + "" + cargarRenglones(primos, renglon2) + "\n"
@@ -336,12 +310,12 @@ public class Gilbreath extends AbCalculo
                         + "" + cargarRenglones(renglon6, renglon7) + "\n"
                         + "" + cargarRenglones(renglon7, renglon8) + "\n"
                         + "" + cargarRenglones(renglon8, renglon9) + "\n"
-                       + "" + cargarRenglones(renglon9, renglonFantasma) + "\n";
+                        + "" + cargarRenglones(renglon9, renglonFantasma) + "\n";
                 break;
             }//fin case 10
 
         }//fin switch
-        
+
     }//fin metodo calcGilbreath()
 
 }//fin clase Gilbreath

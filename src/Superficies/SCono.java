@@ -7,15 +7,14 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class SCono extends SFigura
-{
+public class SCono extends SFigura {
+
     private double altura;
     private double radio;
     private double generatriz;
     private double superficieLateral;
 
-    public SCono() 
-    {
+    public SCono() {
         altura = 0.0;
         radio = 0.0;
         superficieLateral = 0.0;
@@ -54,112 +53,30 @@ public class SCono extends SFigura
     public void setSuperficieLateral(double superficieLateral) {
         this.superficieLateral = superficieLateral;
     }
-    
-    
+
     @Override
-    public void pedirDatos() 
-    {
-        todoBien = true;//se limpia la variable
-        
+    public void pedirDatos() {
         //Se pide la altura y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " de la altura:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                altura = Double.parseDouble(valor);
-                
-                if (altura <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
-        
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura:", figura);
+
         //Se pide la medida del radio y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " del radio:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                radio = Double.parseDouble(valor);
-                
-                if (radio <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
+        radio = fallo.doubleValidarExcepciones("Digite el valor del radio:", figura);
+
     }//fin metodo pedirDatos()
 
     @Override
-    public void calcSuperficie() 
-    {
-        superficieLateral = Math.PI*radio*altura;
-        
-        superficie = Math.PI*radio*(altura + radio);
-        
+    public void calcSuperficie() {
+        superficieLateral = Math.PI * radio * altura;
+
+        superficie = Math.PI * radio * (altura + radio);
+
         generatriz = Math.pow(altura, 2) + Math.pow(radio, 2);
-        
-        DecimalFormat df = new DecimalFormat("0.00");
-        
-        superficie = enmascararDouble(superficie);
-        generatriz = enmascararDouble(generatriz);
-        superficieLateral = enmascararDouble(superficieLateral);
-        
-        mensaje = "Altura: "+altura+"\n"
-                + "Radio: "+radio+"\n"
-                + "Generatriz: "+generatriz+"\n"
-                + "Superficie Lateral: "+superficieLateral+"\n"
-                + "Superficie Total: "+superficie;
+
+        mensaje = "Altura: " + altura + "\n"
+                + "Radio: " + radio + "\n"
+                + "Generatriz: " + decimalFormat.format(generatriz) + "\n"
+                + "Superficie Lateral: " + decimalFormat.format(superficieLateral) + "\n"
+                + "Superficie Total: " + decimalFormat.format(superficie);
     }//fin metodo calcSuperficie()
-    
+
 }//fin clase SCono

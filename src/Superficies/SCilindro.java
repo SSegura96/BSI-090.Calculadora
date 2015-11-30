@@ -7,13 +7,12 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class SCilindro extends SFigura
-{
+public class SCilindro extends SFigura {
+
     private double altura;
     private double radio;
 
-    public SCilindro() 
-    {
+    public SCilindro() {
         altura = 0.0;
         radio = 0.0;
         figura = "Cilindro";
@@ -36,100 +35,22 @@ public class SCilindro extends SFigura
     }
 
     @Override
-    public void pedirDatos() 
-    {
-        todoBien = true;//se limpia la variable
-        
-        //Se pide la altura y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " de la altura:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                altura = Double.parseDouble(valor);
-                
-                if (altura <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
-        
+    public void pedirDatos() {
+        //Se pide la altura
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura:", figura);
+
         //Se pide el radio y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " del radio:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                radio = Double.parseDouble(valor);
-                
-                if (radio <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
+        radio = fallo.doubleValidarExcepciones("Digite el valor del radio:", figura);
+
     }//fin metodo pedirDatos()
 
     @Override
-    public void calcSuperficie() 
-    {
-        superficie = 2*Math.PI*radio*(altura + radio);
-        DecimalFormat df = new DecimalFormat("0.00");
-        
-        superficie = enmascararDouble(superficie);
-        
-        mensaje = "Altura: "+altura+"\n"
-                + "Radio: "+radio+"\n"
-                + "Superficie: "+df.format(superficie);
+    public void calcSuperficie() {
+        superficie = 2 * Math.PI * radio * (altura + radio);
+
+        mensaje = "Altura: " + altura + "\n"
+                + "Radio: " + radio + "\n"
+                + "Superficie: " + decimalFormat.format(superficie);
     }//fin metodo calcSuperficie()
-    
+
 }//fin clase SCilindro

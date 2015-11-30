@@ -4,14 +4,12 @@ package AreasPlanas;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class ARectangulo extends AFigura 
-{
+public class ARectangulo extends AFigura {
 
     private double base;
     private double altura;
 
-    public ARectangulo() 
-    {
+    public ARectangulo() {
         base = 0.0;
         altura = 0.0;
         figura = "Rectangulo";
@@ -33,12 +31,10 @@ public class ARectangulo extends AFigura
         this.altura = altura;
     }
 
-    
     @Override
-    public void pedirDatos() 
-    {
+    public void pedirDatos() {
         altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
-        
+
         base = fallo.doubleValidarExcepciones("Digite le valor de la base", figura);
     }//fin metodo pedirDatos()
 
@@ -47,7 +43,7 @@ public class ARectangulo extends AFigura
         area = base * altura;
 
         area = enmascararDouble(area);
-        
+
         mensaje = "Base: " + base + "\n"
                 + "Altura: " + altura + "\n"
                 + "Area: " + area;

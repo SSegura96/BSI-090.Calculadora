@@ -8,17 +8,15 @@ import javax.swing.JOptionPane;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public abstract class AFigura implements AIFigura 
-{
+public abstract class AFigura implements AIFigura {
 
     protected double area;
     protected String figura;
     protected String mensaje;
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
-     
-    public AFigura() 
-    {
+
+    public AFigura() {
         area = 0;
         mensaje = "";
     }//fin constructor
@@ -55,27 +53,24 @@ public abstract class AFigura implements AIFigura
         this.fallo = fallo;
     }
 
-    public double enmascararDouble(double numero)
-    {
+    public double enmascararDouble(double numero) {
         String dato = "";
-        
+
         DecimalFormat decimalFormat = new DecimalFormat("#######.##");
-        
+
         dato = decimalFormat.format(numero);
-        
+
         dato = dato.replace(',', '.');
-        
+
         return Double.parseDouble(dato);
     }
-    
-    public void mostrarImagen() 
-    {
+
+    public void mostrarImagen() {
         JOptionPane.showMessageDialog(null, "", figura,
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + figura + ".png"));
     }//fin metodo mostrarImagen()
 
-    public void mostarDatos() 
-    {
+    public void mostarDatos() {
         JOptionPane.showMessageDialog(null, mensaje, figura, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo mostarDatos()
 

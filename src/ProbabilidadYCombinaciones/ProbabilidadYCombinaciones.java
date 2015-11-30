@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombinaciones
-{
+public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombinaciones {
+
     protected String mensaje;
     protected String imagen;
     protected int cantidadElementos;
@@ -22,8 +22,7 @@ public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombin
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     ManejoErrores fallo = new ManejoErrores();
 
-    public ProbabilidadYCombinaciones() 
-    {
+    public ProbabilidadYCombinaciones() {
         mensaje = "";
         imagen = "";
         cantidadElementos = 0;
@@ -32,49 +31,42 @@ public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombin
         tipoError = 0;
         imgError = 0;
     }//fin constuctor
-    
-    public String getMensaje() 
-    {
+
+    public String getMensaje() {
         return mensaje;
     }
 
-    public void setMensaje(String mensaje) 
-    {
+    public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
 
-    public int getCantidadElementos() 
-    {
+    public int getCantidadElementos() {
         return cantidadElementos;
     }
 
-    public void setCantidadElementos(int cantidadElementos) 
-    {
+    public void setCantidadElementos(int cantidadElementos) {
         this.cantidadElementos = cantidadElementos;
     }
-    
-    public double enmascararDouble(double numero)
-    {
+
+    public double enmascararDouble(double numero) {
         String dato = "";
-        
+
         DecimalFormat decimalFormat = new DecimalFormat("#######.##");
-        
+
         dato = decimalFormat.format(numero);
-        
+
         dato = dato.replace(',', '.');
-        
+
         return Double.parseDouble(dato);
     }
-    
-    public void mostrarDatos()
-    {
+
+    public void mostrarDatos() {
         JOptionPane.showMessageDialog(null, mensaje, imagen, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo 
-    
-    public void mostrarImagen()
-    {
-        JOptionPane.showMessageDialog(null,"", imagen,JOptionPane.INFORMATION_MESSAGE,
-                new ImageIcon("src/imgs/"+imagen+".png"));
+
+    public void mostrarImagen() {
+        JOptionPane.showMessageDialog(null, "", imagen, JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon("src/imgs/" + imagen + ".png"));
     }//fin metodo mostrarImagen()
-    
+
 }//fin clase ProbabilidadYCombinaciones

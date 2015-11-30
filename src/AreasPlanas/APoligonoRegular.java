@@ -6,14 +6,12 @@ import PerimetrosPlanos.*;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class APoligonoRegular extends AFigura 
-{
+public class APoligonoRegular extends AFigura {
 
     private int numeroLados;
     private double medidaLado;
 
-    public APoligonoRegular() 
-    {
+    public APoligonoRegular() {
         numeroLados = 0;
         medidaLado = 0.0;
         figura = "PoligonoRegular";
@@ -35,17 +33,14 @@ public class APoligonoRegular extends AFigura
         this.medidaLado = medidaLado;
     }
 
-    
     @Override
-    public void pedirDatos() 
-    {
+    public void pedirDatos() {
         numeroLados = fallo.intValidarExcepciones("Digite el numero de lados del poligono:", "Poligono Regular");
 
         medidaLado = fallo.doubleValidarExcepciones("Digite la medida del lado del poligono:", "Poligono Regular");
     }//fin metodo pedirDatos
 
-    private double calcularApotema() 
-    {
+    private double calcularApotema() {
         double angRadianes;
         double angCentral;
         double apotema;
@@ -60,8 +55,7 @@ public class APoligonoRegular extends AFigura
     }//fin calcularApotema()
 
     @Override
-    public double calcArea() 
-    {
+    public double calcArea() {
         //Se invoca la clase PPoligonoRegular para calcular el perimetro del 
         //poligono y poder usarlo en la formula del area.
         PPoligonoRegular pp = new PPoligonoRegular();
@@ -72,11 +66,11 @@ public class APoligonoRegular extends AFigura
         area = (pp.getPerimetro() * calcularApotema()) / 2;
 
         area = enmascararDouble(area);
-        
+
         mensaje = "Tiene: " + numeroLados + " lados \n"
                 + "Sus lados miden: " + medidaLado + "\n"
                 + "El Area es: " + area;
-        
+
         return area;
     }//fin calcularArea()
 

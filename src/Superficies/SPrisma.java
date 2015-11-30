@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class SPrisma extends SFigura
-{
+public class SPrisma extends SFigura {
+
     private double altura;
     private double numLadosBase;
     private double valorLado;
@@ -16,9 +16,8 @@ public class SPrisma extends SFigura
     private double apotemaBase;
     private double areaBase;
     private double superficieLateral;
-    
-    public SPrisma() 
-    {
+
+    public SPrisma() {
         altura = 0.0;
         numLadosBase = 0.0;
         valorLado = 0.0;
@@ -85,132 +84,23 @@ public class SPrisma extends SFigura
         this.superficieLateral = superficieLateral;
     }
 
-    
     @Override
-    public void pedirDatos() 
-    {
-        todoBien = true;//se limpia la variable.
-        
+    public void pedirDatos() {
         //Se pide el valor de la altura y se valida.
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " de la altura:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                altura = Double.parseDouble(valor);
-                
-                if (altura <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
-        
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura:",
+                figura);
+
         //Se pide valor del lado y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el valor"
-                        + " del lado:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                valorLado = Double.parseDouble(valor);
-                
-                if (valorLado <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
-        
+        valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado:",
+                figura);
+
         //Se pide la cantidad de lados de la base y se valida
-        do
-        {
-            try
-            {
-                String valor = JOptionPane.showInputDialog(null, "Digite el numero"
-                        + " de lados que posee la base:", figura, JOptionPane.INFORMATION_MESSAGE);
-                
-                if (valor.equals("") || valor.equals(" "))
-                {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-                    
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-                
-                numLadosBase = Integer.parseInt(valor);
-                
-                if (numLadosBase <= 0)
-                {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-                    
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-                
-                todoBien = true;
-            }//fin try
-            
-            catch (NumberFormatException e)
-            {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-            
-        }while (!todoBien);
+        numLadosBase = fallo.intValidarExcepciones("Digite el numero de lados "
+                + "que posee la base:", figura);
+
     }//fin metodo pedirDatos()
-    
-    private void calcularApotema()
-    {
+
+    private void calcularApotema() {
         double angRadianes;
         double angCentral;
         //se saca el algulo central y lo convertimos a radianes para poder sacar la tangencia.
@@ -219,25 +109,24 @@ public class SPrisma extends SFigura
         //Se saca el apotema: Lado/2*tan(angRadianes/2)
         apotemaBase = numLadosBase / (2 * Math.tan(angRadianes / 2));
     }//fin calcularApotema()
-    
+
     @Override
-    public void calcSuperficie() 
-    {
+    public void calcSuperficie() {
+        calcularApotema();
+
         perimBase = numLadosBase * valorLado;
-        
-        superficieLateral = perimBase*altura;
-        
-        areaBase = (perimBase * apotemaBase)/2;
-        
-        superficie = superficieLateral+(2*areaBase);
-        
-        DecimalFormat df = new DecimalFormat("0.00");
-        
-        mensaje = "Altura: "+altura+"\n"
-                + "Perimetro de la Base: "+perimBase+"\n"
-                + "Area de la Base: "+df.format(areaBase)+"\n"
-                + "Superficie Lateral: "+df.format(superficieLateral)+"\n"
-                + "Superficie Total: "+df.format(superficie);
+
+        superficieLateral = perimBase * altura;
+
+        areaBase = (perimBase * apotemaBase) / 2;
+
+        superficie = superficieLateral + (2 * areaBase);
+
+        mensaje = "Altura: " + altura + "\n"
+                + "Perimetro de la Base: " + perimBase + "\n"
+                + "Area de la Base: " + decimalFormat.format(areaBase) + "\n"
+                + "Superficie Lateral: " + decimalFormat.format(superficieLateral) + "\n"
+                + "Superficie Total: " + decimalFormat.format(superficie);
     }//fin metodo calcSuperficie()
-    
+
 }//fin clase SPrisma

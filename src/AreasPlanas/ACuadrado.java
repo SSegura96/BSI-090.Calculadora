@@ -3,13 +3,11 @@ package AreasPlanas;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class ACuadrado extends AFigura 
-{
+public class ACuadrado extends AFigura {
 
     private double valorLado;
 
-    public ACuadrado() 
-    {
+    public ACuadrado() {
         valorLado = 0;
         figura = "Cuadrado";
     }//fin constructor
@@ -22,23 +20,20 @@ public class ACuadrado extends AFigura
         this.valorLado = valorLado;
     }
 
-    
     @Override
-    public void pedirDatos() 
-    {
+    public void pedirDatos() {
         valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado:", figura);
     }//fin clase pedirDatos
 
     @Override
-    public double calcArea() 
-    {
+    public double calcArea() {
         area = valorLado * valorLado;
 
         area = enmascararDouble(area);
-        
+
         mensaje = "Lado: " + valorLado + "\n"
                 + "Area: " + area;
-        
+
         return area;
     }//fin calcArea ()
 
