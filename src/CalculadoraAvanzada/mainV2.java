@@ -13,6 +13,8 @@ import Superficies.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  * @author Javier Fernandez & Sergio Segura
@@ -24,6 +26,14 @@ public class mainV2 extends javax.swing.JFrame
     /**
      * Creates new form mainV2
      */
+    
+    public void mostrarImagen (String nombre)
+    {
+        JOptionPane.showMessageDialog(null, null,nombre,
+        JOptionPane.INFORMATION_MESSAGE,
+        new ImageIcon("src/imgs/"+nombre+".png"));
+    }
+    
     public mainV2() 
     {
         initComponents();
@@ -297,6 +307,9 @@ public class mainV2 extends javax.swing.JFrame
 
             //Estadistica
             case 2:
+                
+                mostrarImagen("estadistica");
+                
                 switch (indiceSub)
                 {
                     //Sumatoria
@@ -502,12 +515,14 @@ public class mainV2 extends javax.swing.JFrame
                 
             //Vectores
             case 6:
+                
+                mostrarImagen("vector");
+                
                 switch (indiceSub)
                 {
                     //Escalar
                     case 0:
                         EscalarVectorial escalarVectorial = new EscalarVectorial();
-                        escalarVectorial.mostrarImagen();
                         escalarVectorial.pedirDatos();
                         escalarVectorial.calcProductoV();
                         escalarVectorial.mostrarDatos();
@@ -515,7 +530,6 @@ public class mainV2 extends javax.swing.JFrame
                     //Suma
                     case 1:
                         SumaVectorial sumaVecotrial = new SumaVectorial();
-                        sumaVecotrial.mostrarImagen();
                         sumaVecotrial.pedirDatos();
                         sumaVecotrial.calcSumaV();
                         sumaVecotrial.mostrarDatos();
@@ -523,7 +537,6 @@ public class mainV2 extends javax.swing.JFrame
                     //Producto
                     case 2:
                         ProductoVectorial productoVectorial = new ProductoVectorial();
-                        productoVectorial.mostrarImagen();
                         productoVectorial.pedirDatos();
                         productoVectorial.calcProductoV();
                         productoVectorial.mostrarDatos();
@@ -534,6 +547,8 @@ public class mainV2 extends javax.swing.JFrame
             //Matrices
             case 7:
                 Matriz mat = new Matriz();
+                
+                mostrarImagen("matriz");
                 
                 switch (indiceSub)
                 {
