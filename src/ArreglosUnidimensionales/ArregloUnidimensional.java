@@ -1,7 +1,6 @@
 package ArreglosUnidimensionales;
 
 import CalculadoraAvanzada.ManejoErrores;
-import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -9,31 +8,21 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public abstract class ArregloUnidimensional implements IArreglosUnidimensionales{
+public abstract class ArregloUnidimensional implements IArreglosUnidimensionales {
 
     protected double[] vector;
     protected double[] vector2;
     protected int tamanno;
     protected String mensaje;
     protected String imagenV;
-    //Variables de uso exclusivo para la validaciones en el codigo
-    boolean todoBien;
-    String tituloError;
-    int tipoError;
-    int imgError;
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
-    
-    public ArregloUnidimensional() 
-    {
+
+    public ArregloUnidimensional() {
         tamanno = 0;
         vector = new double[0];
         vector2 = new double[0];
         imagenV = "Vector";
-        todoBien = true;
-        tituloError = "";
-        tipoError = 0;
-        imgError = 0;
     }//fin constructor
 
     public double[] getVector() {
@@ -76,38 +65,6 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
         this.imagenV = imagenV;
     }
 
-    public boolean isTodoBien() {
-        return todoBien;
-    }
-
-    public void setTodoBien(boolean todoBien) {
-        this.todoBien = todoBien;
-    }
-
-    public String getTituloError() {
-        return tituloError;
-    }
-
-    public void setTituloError(String tituloError) {
-        this.tituloError = tituloError;
-    }
-
-    public int getTipoError() {
-        return tipoError;
-    }
-
-    public void setTipoError(int tipoError) {
-        this.tipoError = tipoError;
-    }
-
-    public int getImgError() {
-        return imgError;
-    }
-
-    public void setImgError(int imgError) {
-        this.imgError = imgError;
-    }
-
     public ManejoErrores getFallo() {
         return fallo;
     }
@@ -115,20 +72,7 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
     public void setFallo(ManejoErrores fallo) {
         this.fallo = fallo;
     }
-    
-    public double enmascararDouble(double numero)
-    {
-        String dato = "";
-        
-        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
-        
-        dato = decimalFormat.format(numero);
-        
-        dato = dato.replace(',', '.');
-        
-        return Double.parseDouble(dato);
-    }
-    
+
     public void mostrarImagen() {
         JOptionPane.showMessageDialog(null, "", imagenV,
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + imagenV + ".png"));
