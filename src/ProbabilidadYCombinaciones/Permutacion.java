@@ -1,7 +1,5 @@
 package ProbabilidadYCombinaciones;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -35,74 +33,11 @@ public class Permutacion extends ProbabilidadYCombinaciones {
 
     @Override
     public void pedirDatos() {
-        todoBien = true;//se limpia la variable
 
-        //Se pide la cantidad de elementos y se valida
-        do {
-            try {
-                String valor = JOptionPane.showInputDialog(null, "Digite la "
-                        + "cantidad total de elementos:", imagen, JOptionPane.INFORMATION_MESSAGE);
-                if (valor.equals("") || valor.equals(" ")) {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
+        cantidadElementos = fallo.intValidarExcepciones("Digite la cantidad total de elementos:", imagen);
 
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-
-                cantidadElementos = Integer.parseInt(valor);
-
-                if (cantidadElementos <= 0) {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-
-                todoBien = true;
-            }//fin try
-            catch (NumberFormatException e) {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-
-        } while (!todoBien);
-
-        //Se piden los grupos de elementos y se valida
-        do {
-            try {
-                String valor = JOptionPane.showInputDialog(null, "Digite en "
-                        + "grupos de cuanto quiere agrupar los elementos:",
-                        imagen, JOptionPane.INFORMATION_MESSAGE);
-
-                if (valor.equals("") || valor.equals(" ")) {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-
-                grupoElementos = Integer.parseInt(valor);
-
-                if (grupoElementos <= 0) {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-
-                todoBien = true;
-            }//fin try
-            catch (NumberFormatException e) {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-
-        } while (!todoBien);
-
+        grupoElementos = fallo.intValidarExcepciones("Digite en grupos de cuanto"
+                + " quiere agrupar los elementos", imagen);
     }//fin metodo pedirDatos()
 
     public void calcPermutacion() {
@@ -118,7 +53,5 @@ public class Permutacion extends ProbabilidadYCombinaciones {
         mensaje = "Cantidad de Elementos: " + cantidadElementos + "\n"
                 + "Grupos de elementos: " + grupoElementos + "\n"
                 + "Permutacion: " + permutacion;
-
     }//fin metodo calcPermutacion()
-
 }//fin clase Permutacion

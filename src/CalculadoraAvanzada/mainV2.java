@@ -19,23 +19,18 @@ import javax.swing.JOptionPane;
 /**
  * @author Javier Fernandez & Sergio Segura
  */
-
-public class mainV2 extends javax.swing.JFrame 
-{
+public class mainV2 extends javax.swing.JFrame {
 
     /**
      * Creates new form mainV2
      */
-    
-    public void mostrarImagen (String nombre)
-    {
-        JOptionPane.showMessageDialog(null, null,nombre,
-        JOptionPane.INFORMATION_MESSAGE,
-        new ImageIcon("src/imgs/"+nombre+".png"));
+    public void mostrarImagen(String nombre) {
+        JOptionPane.showMessageDialog(null, null, nombre,
+                JOptionPane.INFORMATION_MESSAGE,
+                new ImageIcon("src/imgs/" + nombre + ".png"));
     }
-    
-    public mainV2() 
-    {
+
+    public mainV2() {
         initComponents();
         inicializarComboBox();
         setLocationRelativeTo(null);
@@ -66,20 +61,17 @@ public class mainV2 extends javax.swing.JFrame
         "Producto."};
     String[] matrices = {"Escalar.", "Suma.",
         "Producto"};
-    String[] conjeturas = {"Ulmann.","Gillbreath."};
-    
-    public void inicializarComboBox() 
-    {
+    String[] conjeturas = {"Ulmann.", "Gillbreath."};
+
+    public void inicializarComboBox() {
         jCOperaciones.setModel(new DefaultComboBoxModel(menuPrincipal));
         jCSubmenu.setModel(new DefaultComboBoxModel(areasPlanas));
     }
 
-    public void llenarComboSubmenu() 
-    {
+    public void llenarComboSubmenu() {
         int indiceOp = jCOperaciones.getSelectedIndex();
 
-        switch (indiceOp) 
-        {
+        switch (indiceOp) {
             case 0:
                 jCSubmenu.setModel(new DefaultComboBoxModel(areasPlanas));
                 break;
@@ -111,126 +103,145 @@ public class mainV2 extends javax.swing.JFrame
             case 7:
                 jCSubmenu.setModel(new DefaultComboBoxModel(matrices));
                 break;
-            
+
             case 8:
                 jCSubmenu.setModel(new DefaultComboBoxModel(conjeturas));
                 break;
         }
     }
 
-    public void inicializarHoraFecha ()
-    {   
+    public void inicializarHoraFecha() {
         Date date = new Date();
-        
+
         DateFormat hora = new SimpleDateFormat("hh:mm");
-        
+
         DateFormat fecha = new SimpleDateFormat("dd/mm/yyyy");
-        
+
         jLHora.setText(hora.format(date));
         jLFecha.setText(fecha.format(date));
     }
-    
-    public void seleccionarElemento() 
-    {
+
+    public void seleccionarElemento() {
         int indiceOp = jCOperaciones.getSelectedIndex();
         int indiceSub = jCSubmenu.getSelectedIndex();
-        
-        switch (indiceOp) 
-        {
+
+        switch (indiceOp) {
             //Áreas de figuras planas(2D)
             case 0:
 
-                switch (indiceSub) 
-                {
+                switch (indiceSub) {
                     //Circulo
                     case 0:
                         ACirculo aCirculo = new ACirculo();
-                        aCirculo.mostrarImagen();
-                            try 
-                            {
-                                aCirculo.pedirDatos();
-                                aCirculo.calcArea();
-                                aCirculo.mostarDatos();
-                                
-                            }//fin try//fin try
-                            catch (NullPointerException e) 
-                            {
-                                //Solo controla el error al cerrar la ventana por eso esta vacio
-                            }//fin primer catch
-
+                        try {
+                            aCirculo.mostrarImagen();
+                            aCirculo.pedirDatos();
+                            aCirculo.calcArea();
+                            aCirculo.mostarDatos();
+                        }//fin try
+                        catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Triangulo
                     case 1:
                         ATriangulo aTriangulo = new ATriangulo();
-                        aTriangulo.mostrarImagen();
-                        aTriangulo.pedirDatos();
-                        aTriangulo.calcArea();
-                        aTriangulo.mostarDatos();
-                    break;
+                        try {
+                            aTriangulo.mostrarImagen();
+                            aTriangulo.pedirDatos();
+                            aTriangulo.calcArea();
+                            aTriangulo.mostarDatos();
+                        }//fin try
+                        catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //Cuadrado
                     case 2:
                         ACuadrado aCuadrado = new ACuadrado();
-                        aCuadrado.mostrarImagen();
-                        aCuadrado.pedirDatos();
-                        aCuadrado.calcArea();
-                        aCuadrado.mostarDatos();
-                    break;
+                        try {
+                            aCuadrado.mostrarImagen();
+                            aCuadrado.pedirDatos();
+                            aCuadrado.calcArea();
+                            aCuadrado.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //Rectangulo
                     case 3:
                         ARectangulo aRectangulo = new ARectangulo();
-                        aRectangulo.mostrarImagen();
-                        aRectangulo.pedirDatos();
-                        aRectangulo.calcArea();
-                        aRectangulo.mostarDatos();
-                    break;
+                        try {
+                            aRectangulo.mostrarImagen();
+                            aRectangulo.pedirDatos();
+                            aRectangulo.calcArea();
+                            aRectangulo.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //Rombo
                     case 4:
-                        ARombo aRombo = new ARombo();
-                        aRombo.mostrarImagen();
-                        aRombo.pedirDatos();
-                        aRombo.calcArea();
-                        aRombo.mostarDatos();
-                    break;
+                        try {
+                            ARombo aRombo = new ARombo();
+                            aRombo.mostrarImagen();
+                            aRombo.pedirDatos();
+                            aRombo.calcArea();
+                            aRombo.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //Trapecio
                     case 5:
-                        ATrapecio trap = new ATrapecio();
-                        trap.mostrarImagen();
-                        trap.pedirDatos();
-                        trap.calcArea();
-                        trap.mostarDatos();
-                    break;
+                        ATrapecio aTrapecio = new ATrapecio();
+                        try {
+                            aTrapecio.mostrarImagen();
+                            aTrapecio.pedirDatos();
+                            aTrapecio.calcArea();
+                            aTrapecio.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //Romboide
                     case 6:
                         ARomboide aRomboide = new ARomboide();
-                        aRomboide.mostrarImagen();
-                        aRomboide.pedirDatos();
-                        aRomboide.calcArea();
-                        aRomboide.mostarDatos();
-                    break;
+                        try {
+                            aRomboide.mostrarImagen();
+                            aRomboide.pedirDatos();
+                            aRomboide.calcArea();
+                            aRomboide.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //Poigonos Regulares
                     case 7:
                         APoligonoRegular aPoligonoRegular = new APoligonoRegular();
-                        aPoligonoRegular.mostrarImagen();
-                        aPoligonoRegular.pedirDatos();
-                        aPoligonoRegular.calcArea();
-                        aPoligonoRegular.mostarDatos();
-                    break;
-                }//fin swtich de Areas
-
+                        try {
+                            aPoligonoRegular.mostrarImagen();
+                            aPoligonoRegular.pedirDatos();
+                            aPoligonoRegular.calcArea();
+                            aPoligonoRegular.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+                }//fin switch de AreasPlanas
                 break;
 
             //Perímetros de figuras planas (2D)
             case 1:
-                
-                switch (indiceSub) 
-                {
+
+                switch (indiceSub) {
                     //Circulo
                     case 0:
                         PCirculo pCirculo = new PCirculo();
@@ -238,8 +249,8 @@ public class mainV2 extends javax.swing.JFrame
                         pCirculo.pedirDatos();
                         pCirculo.calcPerimetro();
                         pCirculo.mostrarDatos();
-                    break;
-                    
+                        break;
+
                     //Triangulo
                     case 1:
                         PTriangulo pTri = new PTriangulo();
@@ -247,8 +258,8 @@ public class mainV2 extends javax.swing.JFrame
                         pTri.pedirDatos();
                         pTri.calcPerimetro();
                         pTri.mostrarDatos();
-                    break;
-                        
+                        break;
+
                     //Cuadrado    
                     case 2:
                         PCuadrado pCua = new PCuadrado();
@@ -256,8 +267,8 @@ public class mainV2 extends javax.swing.JFrame
                         pCua.pedirDatos();
                         pCua.calcPerimetro();
                         pCua.mostrarDatos();
-                    break;
-                    
+                        break;
+
                     //Rectangulo    
                     case 3:
                         PRectangulo pRec = new PRectangulo();
@@ -265,8 +276,8 @@ public class mainV2 extends javax.swing.JFrame
                         pRec.pedirDatos();
                         pRec.calcPerimetro();
                         pRec.mostrarDatos();
-                    break;
-                    
+                        break;
+
                     //Rombo    
                     case 4:
                         PRombo pRom = new PRombo();
@@ -274,17 +285,17 @@ public class mainV2 extends javax.swing.JFrame
                         pRom.pedirDatos();
                         pRom.calcPerimetro();
                         pRom.mostrarDatos();
-                    break;
-                        
+                        break;
+
                     //Trapecio    
                     case 5:
-                       PTrapecio pTra = new PTrapecio();
-                       pTra.mostrarImagen();
-                       pTra.pedirDatos();
-                       pTra.calcPerimetro();
-                       pTra.mostrarDatos();
-                    break;
-                    
+                        PTrapecio pTra = new PTrapecio();
+                        pTra.mostrarImagen();
+                        pTra.pedirDatos();
+                        pTra.calcPerimetro();
+                        pTra.mostrarDatos();
+                        break;
+
                     //Romboide    
                     case 6:
                         PRectangulo pRoi = new PRectangulo();
@@ -292,8 +303,8 @@ public class mainV2 extends javax.swing.JFrame
                         pRoi.pedirDatos();
                         pRoi.calcPerimetro();
                         pRoi.mostrarDatos();
-                    break;
-                        
+                        break;
+
                     //Poligono Regular    
                     case 7:
                         PPoligonoRegular pp = new PPoligonoRegular();
@@ -301,196 +312,254 @@ public class mainV2 extends javax.swing.JFrame
                         pp.pedirDatos();
                         pp.calcPerimetro();
                         pp.mostrarDatos();
-                    break;
-                }
-            break;
+                        break;
+                }//fin switch Perimetros Planos
+                break;
 
             //Estadistica
             case 2:
-                
+
                 mostrarImagen("estadistica");
-                
-                switch (indiceSub)
-                {
+
+                switch (indiceSub) {
                     //Sumatoria
                     case 0:
                         JFSumatoria jfSumatoria = new JFSumatoria();
                         jfSumatoria.setVisible(true);
                         this.setVisible(false);
-                    break;
-                    
+                        break;
+
                     //Moda
                     case 1:
                         Moda moda = new Moda();
-                        moda.mostrarImagen();
-                        moda.pedirDatos();
-                        moda.calcModa();
-                        moda.mostrarDatos();
+                        try {
+                            moda.mostrarImagen();
+                            moda.pedirDatos();
+                            moda.calcModa();
+                            moda.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //promedio
                     case 2:
-                        Promedio prom = new Promedio ();
+                        Promedio prom = new Promedio();
                         prom.pedirDatos();
                         prom.calcPromedio();
                         prom.mostarDatos();
-                    break;
-                    
+                        break;
+
                     //Mediana
                     case 3:
                         Mediana mediana = new Mediana();
-                        mediana.mostrarImagen();
-                        mediana.pedirDatos();
-                        mediana.calcMediana();
-                        mediana.mostrarDatos();
+                        try {
+                            mediana.mostrarImagen();
+                            mediana.pedirDatos();
+                            mediana.calcMediana();
+                            mediana.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
                     //varianza
                     case 4:
                         Varianza var = new Varianza();
                         var.calcVarianza();
                         var.mostrarDatos();
-                    break;
-                        
-                    case 5: 
+                        break;
+
+                    case 5:
                         DesviacionEstandar des = new DesviacionEstandar();
                         des.calcDesviacionEstandar();
                         des.mostarDatos();
-                    break;
-                }
-            break;
-            
+                        break;
+                }//fin switch Estadistica
+                break;
+
             //Probabilidad y Combinaciones    
             case 3:
-                switch (indiceSub)
-                {
+                switch (indiceSub) {
                     //Factorial
                     case 0:
-                        Factorial fac = new Factorial ();
+                        Factorial fac = new Factorial();
                         fac.pedirDatos();
                         fac.calcFactorial();
                         fac.mostrarDatos();
-                    break;
-                        
-                    //permutacion
+                        break;
+
+                    //Permutacion
                     case 1:
-                      Permutacion per = new Permutacion();
-                      per.pedirDatos();
-                      per.calcPermutacion();
-                      per.mostrarDatos();
-                    break;
-                        
+                        Permutacion permutacion = new Permutacion();
+                        try {
+                            permutacion.pedirDatos();
+                            permutacion.calcPermutacion();
+                            permutacion.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
                     //Combinatoria
                     case 2:
                         Combinatoria comb = new Combinatoria();
                         comb.pedirDatos();
                         comb.calcCombinatoria();
                         comb.mostrarDatos();
-                    break;
-                }
-            break;
+                        break;
+
+                    //Probabilidad Simple
+                    case 3:
+                        ProbabilidadSimple probabilidadSimple = new ProbabilidadSimple();
+                        try {
+                            probabilidadSimple.mostrarImagen();
+                            probabilidadSimple.pedirDatos();
+                            probabilidadSimple.calcProbabilidadSimple();
+                            probabilidadSimple.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+                }//fin switch Probabilidad Y Combinaciones
+                break;
 
             //Superficies
             case 4:
-              switch (indiceSub)
-              {
-                case 0:
-                        SEsfera sesfera = new SEsfera();
-                        sesfera.mostrarImagen();
-                        sesfera.pedirDatos();
-                        sesfera.calcSuperficie();
-                        sesfera.mostrarResultado();
-                break;  
-                  
-                case 1:
-                      SCilindro scilindo = new SCilindro();
-                      scilindo.mostrarImagen();
-                      scilindo.pedirDatos();
-                      scilindo.calcSuperficie();
-                      scilindo.mostrarResultado();
+                switch (indiceSub) {
+                    //Esfera
+                    case 0:
+                        SEsfera sEsfera = new SEsfera();
+                        try {
+                            sEsfera.mostrarImagen();
+                            sEsfera.pedirDatos();
+                            sEsfera.calcSuperficie();
+                            sEsfera.mostrarResultado();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
+                    //Cilindro
+                    case 1:
+                        SCilindro sCilindro = new SCilindro();
+                        try {
+                            sCilindro.mostrarImagen();
+                            sCilindro.pedirDatos();
+                            sCilindro.calcSuperficie();
+                            sCilindro.mostrarResultado();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
+                    //Cono
+                    case 2:
+                        SCono sCono = new SCono();
+                        try {
+                            sCono.mostrarImagen();
+                            sCono.pedirDatos();
+                            sCono.calcSuperficie();
+                            sCono.mostrarResultado();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
+                    //Hexaedro Regular
+                    case 3:
+                        SHexaedroRegular sHexaedroRegular = new SHexaedroRegular();
+                        try {
+                            sHexaedroRegular.mostrarImagen();
+                            sHexaedroRegular.pedirDatos();
+                            sHexaedroRegular.calcSuperficie();
+                            sHexaedroRegular.mostrarResultado();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
+                    //Prisma
+                    case 4:
+                        SPrisma sPrisma = new SPrisma();
+                        try {
+                            sPrisma.mostrarImagen();
+                            sPrisma.pedirDatos();
+                            sPrisma.calcSuperficie();
+                            sPrisma.mostrarResultado();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
+                    //Paralelepipedo
+                    case 5:
+                        SParalelepipedo sParalelepipedo = new SParalelepipedo();
+                        try {
+                            sParalelepipedo.mostrarImagen();
+                            sParalelepipedo.pedirDatos();
+                            sParalelepipedo.calcSuperficie();
+                            sParalelepipedo.mostrarResultado();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
+                    //Piramide Regular
+                    case 6:
+                        SPiramideRegular sPiramideRegular = new SPiramideRegular();
+                        try {
+                            sPiramideRegular.mostrarImagen();
+                            sPiramideRegular.pedirDatos();
+                            sPiramideRegular.calcSuperficie();
+                            sPiramideRegular.mostrarResultado();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+
+                }//fin swtich Superficies
                 break;
-                        
-                case 2:
-                    SCono scono = new SCono();
-                    scono.mostrarImagen();
-                    scono.pedirDatos();
-                    scono.calcSuperficie();
-                    scono.mostrarResultado();
-                break;
-                        
-                case 3:
-                    SHexaedroRegular shexaedroRegular = new SHexaedroRegular();
-                    shexaedroRegular.mostrarImagen();
-                    shexaedroRegular.pedirDatos();
-                    shexaedroRegular.calcSuperficie();
-                    shexaedroRegular.mostrarResultado();
-                break;
-                   
-                case 6:
-                    SPrisma sprisma = new SPrisma();
-                    sprisma.mostrarImagen();
-                    sprisma.pedirDatos();
-                    sprisma.calcSuperficie();
-                    sprisma.mostrarResultado();
-                break;
-                    
-                case 5:
-                    SParalelepipedo sparalelepipedo = new SParalelepipedo();
-                    sparalelepipedo.mostrarImagen();
-                    sparalelepipedo.pedirDatos();
-                    sparalelepipedo.calcSuperficie();
-                    sparalelepipedo.mostrarResultado();
-                break;
-                    
-                case 7:
-                    SPiramideRegular spiramideRegular = new SPiramideRegular();
-                    spiramideRegular.mostrarImagen();
-                    spiramideRegular.pedirDatos();
-                    spiramideRegular.calcSuperficie();
-                    spiramideRegular.mostrarResultado();
-                break;
-                        
-              }
-            break;
 
             //volumenes
             case 5:
-                switch (indiceSub)
-                {
+                switch (indiceSub) {
                     //Esfera
                     case 0:
-                        VEsfera vEsfera = new VEsfera ();
+                        VEsfera vEsfera = new VEsfera();
                         vEsfera.mostrarImagen();
                         vEsfera.pedirDatos();
                         vEsfera.calcVolumen();
                         vEsfera.mostarDatos();
-                    break;
-                    
+                        break;
+
                     //Cono
                     case 1:
-                        VCono vcono = new VCono ();
+                        VCono vcono = new VCono();
                         vcono.mostrarImagen();
                         vcono.pedirDatos();
                         vcono.calcVolumen();
                         vcono.mostarDatos();
-                    break;   
-                    
+                        break;
+
                     //Hexaedro
                     case 2:
-                        VHexaedro vhexaedro = new VHexaedro ();
+                        VHexaedro vhexaedro = new VHexaedro();
                         vhexaedro.mostrarImagen();
                         vhexaedro.pedirDatos();
                         vhexaedro.calcVolumen();
                         vhexaedro.mostarDatos();
-                    break;   
-                    
+                        break;
+
                     //Prisma
                     case 3:
-                        VPrisma vprisma = new VPrisma ();
+                        VPrisma vprisma = new VPrisma();
                         vprisma.mostrarImagen();
                         vprisma.pedirDatos();
                         vprisma.calcVolumen();
                         vprisma.mostarDatos();
-                    break;   
-                    
+                        break;
+
                     //Paralelepipedo
                     case 4:
                         VParalelepipedo vparalelepipedo = new VParalelepipedo();
@@ -498,97 +567,116 @@ public class mainV2 extends javax.swing.JFrame
                         vparalelepipedo.pedirDatos();
                         vparalelepipedo.calcVolumen();
                         vparalelepipedo.mostarDatos();
-                    break;   
-                    
+                        break;
+
                     //Cilindro
                     case 5:
-                        VPiramide vpiramide = new VPiramide ();
+                        VPiramide vpiramide = new VPiramide();
                         vpiramide.mostrarImagen();
                         vpiramide.pedirDatos();
                         vpiramide.calcVolumen();
                         vpiramide.mostarDatos();
-                    break;   
-                    
-                        
+                        break;
+
                 }
-            break;
-                
+                break;
+
             //Vectores
             case 6:
-                
+
                 mostrarImagen("vector");
-                
-                switch (indiceSub)
-                {
+
+                switch (indiceSub) {
                     //Escalar
                     case 0:
                         EscalarVectorial escalarVectorial = new EscalarVectorial();
-                        escalarVectorial.pedirDatos();
-                        escalarVectorial.calcProductoV();
-                        escalarVectorial.mostrarDatos();
+                        try {
+                            escalarVectorial.mostrarImagen();
+                            escalarVectorial.pedirDatos();
+                            escalarVectorial.calcProductoV();
+                            escalarVectorial.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
+
                     //Suma
                     case 1:
                         SumaVectorial sumaVecotrial = new SumaVectorial();
-                        sumaVecotrial.pedirDatos();
-                        sumaVecotrial.calcSumaV();
-                        sumaVecotrial.mostrarDatos();
+                        try {
+                            sumaVecotrial.mostrarImagen();
+                            sumaVecotrial.pedirDatos();
+                            sumaVecotrial.calcSumaV();
+                            sumaVecotrial.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
+
                     //Producto
                     case 2:
                         ProductoVectorial productoVectorial = new ProductoVectorial();
-                        productoVectorial.pedirDatos();
-                        productoVectorial.calcProductoV();
-                        productoVectorial.mostrarDatos();
+                        try {
+                            productoVectorial.mostrarImagen();
+                            productoVectorial.pedirDatos();
+                            productoVectorial.calcProductoV();
+                            productoVectorial.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
                 }//fin swicth case 6
-            break;
-                
+                break;
+
             //Matrices
             case 7:
                 Matriz mat = new Matriz();
-                
+
                 mostrarImagen("matriz");
-                
-                switch (indiceSub)
-                {
+
+                switch (indiceSub) {
                     //escalar
                     case 0:
                         mat.inicializarMatrices(0);
                         mat.pedirDatos(0);
                         mat.productoEscalar();
-                    break;
-                    
+                        break;
+
                     //Suma matrices
                     case 1:
                         mat.inicializarMatrices(1);
                         mat.pedirDatos(1);
                         mat.sumarMatrices();
-                    break;
-                    
+                        break;
+
                     //Producto Matrices
                     case 2:
                         mat.inicializarMatrices(1);
                         mat.pedirDatos(1);
                         mat.productoMatrices();
-                    break;
+                        break;
                 }
-            break;
-                
+                break;
+
+            //Conjeturas
             case 8:
-                switch (indiceSub)
-                {
+                switch (indiceSub) {
                     //Ulmann
                     case 0:
-                        Ulmann ul = new Ulmann();
-                        ul.pedirDatos();
-                        ul.calcUlmann();
-                        ul.mostarDatos();
-                    break;
-                }
-            break;
-        }
-    }
+                        Ulmann ulman = new Ulmann();
+                        try {
+                            ulman.mostrarImagen();
+                            ulman.pedirDatos();
+                            ulman.calcUlmann();
+                            ulman.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+                }//fin switch Conjeturas
+                break;
+        }//fin switch menu principal
+    }//fin metodo seleccionarElemento()
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -737,8 +825,7 @@ public class mainV2 extends javax.swing.JFrame
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) 
-    {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -763,10 +850,8 @@ public class mainV2 extends javax.swing.JFrame
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() 
-        {
-            public void run() 
-            {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
                 new mainV2().setVisible(true);
             }
         });

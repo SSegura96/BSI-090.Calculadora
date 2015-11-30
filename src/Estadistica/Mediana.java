@@ -1,7 +1,5 @@
 package Estadistica;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -54,82 +52,24 @@ public class Mediana extends abEstadistica {
     }
 
     public void llenarVector() {
+
         for (int i = 0; i < vectorValoresMediana.length; i++) {
-            todoBien = true;//se limpia la variable
 
-            //Se pide llenar el vector
-            do {
-                try {
-                    String valor = JOptionPane.showInputDialog(null,
-                            "Ingrese el dato #" + (i + 1) + " :", imagen, JOptionPane.INFORMATION_MESSAGE);
-                    if (valor.equals("") || valor.equals(" ")) {
-                        tituloError = "Error";
-                        tipoError = 1;
-                        imgError = 0;
-
-                        throw new NumberFormatException();
-                    }//fin primer if de validacion
-
-                    vectorValoresMediana[i] = Double.parseDouble(valor);
-
-                    if (vectorValoresMediana[i] <= 0) {
-                        tituloError = "Aviso";
-                        tipoError = 0;
-                        imgError = 2;
-
-                        throw new NumberFormatException();
-                    }//fin segundo if de validacion
-
-                    todoBien = true;
-                }//fin try
-                catch (NumberFormatException e) {
-                    fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                    todoBien = false;
-                }//fin catch
-
-            } while (!todoBien);
+            vectorValoresMediana[i] = fallo.doubleValidarExcepciones("Ingrese "
+                    + "el dato #" + (i + 1) + " :", imagen);
         }//fin primer for
-
     }//fin metodo llenarVector()
 
     public void pedirDatos() {
-        todoBien = true;//se limpia la variable
-
         //Se pide el tamanno del vector
-        do {
-            try {
-                String valor = JOptionPane.showInputDialog(null, "Digite la "
-                        + "cantidad de elementos que va a ingresar:", imagen, JOptionPane.INFORMATION_MESSAGE);
-                if (valor.equals("") || valor.equals(" ")) {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-
-                tamanno = Integer.parseInt(valor);
-
-                if (tamanno <= 0) {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-
-                todoBien = true;
-            }//fin try
-            catch (NumberFormatException e) {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-
-        } while (!todoBien);
+        tamanno = fallo.intValidarExcepciones("Digite la canitdad de elementos "
+                + "que va a ingresar", imagen);
 
         vectorValoresMediana = new double[tamanno];
 
         llenarVector();
+
+        //Se ordenan dn forma consecutiva
         ordenarNumeros(vectorValoresMediana);
     }//fin metodo pedirDatos()
 
@@ -168,18 +108,20 @@ public class Mediana extends abEstadistica {
     }//fin metodo ordenarNumeros()
 
     public void calcMediana() {
+
         if (esPar(tamanno)) {
 
             int indice = (vectorValoresMediana.length - 1) / 2;
 
             for (int i = 0; i < vectorValoresMediana.length; i++) {
+
                 if (i == indice) {
                     mediana = vectorValoresMediana[i];
                     mediana2 = vectorValoresMediana[i + 1];
                     i = vectorValoresMediana.length + 1;
-
                 }//fin if
             }//fin primer for
+
             mediana2 = (mediana + mediana2) / 2;
 
             mensaje = "La serie de numeros es par. \n"
@@ -190,17 +132,16 @@ public class Mediana extends abEstadistica {
             int indice = (vectorValoresMediana.length - 1) / 2;
 
             for (int i = 0; i < vectorValoresMediana.length; i++) {
+
                 if (i == indice) {
                     mediana = vectorValoresMediana[i];
                     i = vectorValoresMediana.length;
                 }//fin if
-
             }//fin primer for
+
             mensaje = "La serie de numeros es impar. \n"
                     + "{" + ordenarNumeros(vectorValoresMediana) + "} \n"
                     + "Mediana: " + mediana;
         }//fin else
-
     }//fin metodo calcMediana()
-
 }//fin clase Mediana

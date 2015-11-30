@@ -37,83 +37,21 @@ public class ProbabilidadSimple extends ProbabilidadYCombinaciones {
 
     @Override
     public void pedirDatos() {
-        todoBien = true;//se limpia la variable
+        
+        cantidadElementos = fallo.intValidarExcepciones("Digite la cantidad "
+                + "total de elementos:", imagen);
 
-        //Se pide la cantidad de elementos y se valida
-        do {
-            try {
-                String valor = JOptionPane.showInputDialog(null, "Digite la "
-                        + "cantidad total de elementos:", imagen, JOptionPane.INFORMATION_MESSAGE);
-                if (valor.equals("") || valor.equals(" ")) {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-
-                cantidadElementos = Integer.parseInt(valor);
-
-                if (cantidadElementos <= 0) {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-
-                todoBien = true;
-            }//fin try
-            catch (NumberFormatException e) {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-
-        } while (!todoBien);
-
-        //Se pide la posibilidad de escoger elementos y se valida
-        do {
-            try {
-                String valor = JOptionPane.showInputDialog(null, "Digite la "
-                        + "posibilidad de escoger un elemento diferente:",
-                        imagen, JOptionPane.INFORMATION_MESSAGE);
-
-                if (valor.equals("") || valor.equals(" ")) {
-                    tituloError = "Error";
-                    tipoError = 1;
-                    imgError = 0;
-
-                    throw new NumberFormatException();
-                }//fin primer if de validacion
-
-                posibilidadEscoger = Integer.parseInt(valor);
-
-                if (posibilidadEscoger <= 0) {
-                    tituloError = "Aviso";
-                    tipoError = 0;
-                    imgError = 2;
-
-                    throw new NumberFormatException();
-                }//fin segundo if de validacion
-
-                todoBien = true;
-            }//fin try
-            catch (NumberFormatException e) {
-                fallo.seleccionarMensaje(tipoError, tituloError, imgError);
-                todoBien = false;
-            }//fin catch
-
-        } while (!todoBien);
-
+        posibilidadEscoger = fallo.intValidarExcepciones("Digite la posibilidad"
+                + " de escoger un elemento diferente:", imagen);
     }//fin metodo pedirDatos()
 
     public void calcProbabilidadSimple() {
         probabilidad = cantidadElementos / posibilidadEscoger;
-        DecimalFormat df = new DecimalFormat("0.00");
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
         mensaje = "Cantidad total de elementos: " + cantidadElementos + "\n"
                 + "Cantidad de posibles elemntos: " + posibilidadEscoger + "\n"
-                + "Probabilidad Simple: " + df.format(probabilidad) + "%";
+                + "Probabilidad Simple: " + decimalFormat.format(probabilidad) + "%";
     }//fin metodo calcProbabilidadSimple()
 
 }//fin clase ProbabilidadSimple

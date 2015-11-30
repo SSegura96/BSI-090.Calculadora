@@ -1,8 +1,5 @@
 package Superficies;
 
-import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
@@ -36,16 +33,16 @@ public class SCilindro extends SFigura {
 
     @Override
     public void pedirDatos() {
-        //Se pide la altura
+        
         altura = fallo.doubleValidarExcepciones("Digite el valor de la altura:", figura);
 
-        //Se pide el radio y se valida
         radio = fallo.doubleValidarExcepciones("Digite el valor del radio:", figura);
 
     }//fin metodo pedirDatos()
 
     @Override
     public void calcSuperficie() {
+        
         superficie = 2 * Math.PI * radio * (altura + radio);
 
         mensaje = "Altura: " + altura + "\n"

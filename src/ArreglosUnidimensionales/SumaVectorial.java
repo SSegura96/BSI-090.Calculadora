@@ -6,12 +6,11 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public class SumaVectorial extends ArregloUnidimensional
-{
-    private double []sumaV;
+public class SumaVectorial extends ArregloUnidimensional {
 
-    public SumaVectorial() 
-    {
+    private double[] sumaV;
+
+    public SumaVectorial() {
         sumaV = new double[0];
     }//fin constructor
 
@@ -22,91 +21,79 @@ public class SumaVectorial extends ArregloUnidimensional
     public void setSumaV(double[] sumaV) {
         this.sumaV = sumaV;
     }
-    
-    
+
     @Override
     public void llenarVector() {
-        
+
         //Se llena el primer vector
         JOptionPane.showMessageDialog(null, "Llenar el primer vector: vector[ ]",
                 "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
 
         for (int i = 0; i < vector.length; i++) {
-
-            String valor = JOptionPane.showInputDialog(null,
-                    "Ingrese dato de: vector[" + (i + 1) + "]", "Suma Vectorial",
-                    JOptionPane.INFORMATION_MESSAGE);
-
-            vector[i] = fallo.doubleValidarExcepciones(valor, "Suma Vectorial");
+            vector[i] = fallo.doubleValidarExcepciones("Ingrese dato de: "
+                    + "vector[" + (i + 1) + "]", "Suma Vectorial");
         }//fin primer for
 
         //Se llena el segundo vector
         JOptionPane.showMessageDialog(null, "Llenar el segundo vector: vector2[ ]",
                 "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
+        
         for (int j = 0; j < vector2.length; j++) {
-
-            String valor2 = JOptionPane.showInputDialog(null,
-                    "Ingrese dato de: vector2[" + (j + 1) + "]", "Suma Vectorial",
-                    JOptionPane.INFORMATION_MESSAGE);
-
-            vector2[j] = fallo.doubleValidarExcepciones(valor2, "Suma Vectorial");
+            vector2[j] = fallo.doubleValidarExcepciones("Ingrese dato de: "
+                    + "vector2[" + (j + 1) + "]", "Suma Vectorial");
         }//fin segundo for
 
     }//fin metodo llenarVector()
-    
+
     @Override
     public void pedirDatos() {
-        
+
         //Se pide el tamaño del primer vector
         tamanno = fallo.intValidarExcepciones("Digite el tamaño del "
                 + "primer vector:", "Suma Vectorial");
 
         vector = new double[tamanno];
 
+        tamanno = fallo.intValidarExcepciones("Digite el tamaño del segundo vector:",
+                "Producto Vectorial");
+
         //Se pide el tamanno del segundo vector
-        do {
-            
-            tamanno = fallo.intValidarExcepciones("Digite el tamaño del vector:", 
-                    "Producto Vectorial");
-            
+        while (tamanno != vector.length) {
+
             //Exepcion creada por motivos externos y validar que ambos vectores sean del mismo tamaño
             if (tamanno != vector.length) {
                 JOptionPane.showMessageDialog(null, "Los vectores tienen que ser del "
                         + "mismo tamaño.", "Aviso", JOptionPane.WARNING_MESSAGE);
+
+                tamanno = fallo.intValidarExcepciones("Digite el tamaño del segundo vector:",
+                        "Producto Vectorial");
             }//fin if de validacion
-            
-        } while (tamanno != vector.length);
-        
+        }//fin while
         vector2 = new double[tamanno];
-        
         llenarVector();
     }//fin metodo pedirDatos()
-    
+
     @Override
-    public String recorrerVector(double[] vector1)
-    {
+    public String recorrerVector(double[] vector1) {
         String dato = "";
-        for (int i = 0; i < vector1.length; i++) 
-        {
-            dato += ""+vector1[i]+", ";
+        for (int i = 0; i < vector1.length; i++) {
+            dato += "" + vector1[i] + ", ";
         }//foin primer for
-        
-        dato = dato.substring(0, dato.length()-2);
+
+        dato = dato.substring(0, dato.length() - 2);
         return dato;
-        
+
     }//fin metodo recorrerVector
-    
-    public void calcSumaV()
-    {
+
+    public void calcSumaV() {
         sumaV = new double[vector.length];
-        
-        for (int i = 0; i < vector.length; i++) 
-        {
-            sumaV[i] = vector[i]+vector2[i];
+
+        for (int i = 0; i < vector.length; i++) {
+            sumaV[i] = vector[i] + vector2[i];
         }//fin primer for
-        
-        mensaje = "Vector[ "+vector.length+" ]\n"
-                + "Vector2[ "+vector2.length+" ]\n"
-                + "Sumas de las posiciones:\n"+recorrerVector(sumaV);
+
+        mensaje = "Vector[ " + vector.length + " ]\n"
+                + "Vector2[ " + vector2.length + " ]\n"
+                + "Sumas de las posiciones:\n" + recorrerVector(sumaV);
     }//fin metodo caclSumaV
 }//fin clase SumaVectorial
