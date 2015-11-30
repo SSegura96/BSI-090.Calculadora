@@ -16,8 +16,7 @@ public abstract class AFigura implements AIFigura
     protected String mensaje;
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
-    //Enmascarar Decimales
-    DecimalFormat decimalFormat = new DecimalFormat("0.00");
+     
     public AFigura() 
     {
         area = 0;
@@ -56,14 +55,18 @@ public abstract class AFigura implements AIFigura
         this.fallo = fallo;
     }
 
-    public DecimalFormat getDecimalFormat() {
-        return decimalFormat;
+    public double enmascararDouble(double numero)
+    {
+        String dato = "";
+        
+        DecimalFormat decimalFormat = new DecimalFormat("#######.##");
+        
+        dato = decimalFormat.format(numero);
+        
+        dato = dato.replace(',', '.');
+        
+        return Double.parseDouble(dato);
     }
-
-    public void setDecimalFormat(DecimalFormat decimalFormat) {
-        this.decimalFormat = decimalFormat;
-    }
-
     
     public void mostrarImagen() 
     {

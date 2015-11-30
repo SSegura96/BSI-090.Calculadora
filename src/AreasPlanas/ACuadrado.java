@@ -34,8 +34,11 @@ public class ACuadrado extends AFigura
     {
         area = valorLado * valorLado;
 
+        area = enmascararDouble(area);
+        
         mensaje = "Lado: " + valorLado + "\n"
-                + "Area: " + decimalFormat.format(area);
+                + "Area: " + area;
+        
         return area;
     }//fin calcArea ()
 

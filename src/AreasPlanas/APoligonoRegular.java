@@ -71,9 +71,12 @@ public class APoligonoRegular extends AFigura
 
         area = (pp.getPerimetro() * calcularApotema()) / 2;
 
+        area = enmascararDouble(area);
+        
         mensaje = "Tiene: " + numeroLados + " lados \n"
                 + "Sus lados miden: " + medidaLado + "\n"
-                + "El Area es: " + decimalFormat.format(area);
+                + "El Area es: " + area;
+        
         return area;
     }//fin calcularArea()
 

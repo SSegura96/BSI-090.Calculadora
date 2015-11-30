@@ -34,8 +34,11 @@ public class ACirculo extends AFigura
     {
         area = Math.PI * Math.pow(radio, 2);
 
+        area = enmascararDouble(area);
+        
         mensaje = "Radio: " + radio + "\n"
-                + "Area: " + decimalFormat.format(area);
+                + "Area: " + area;
+        
         return area;
     }//fin metodo calcArea ()
 

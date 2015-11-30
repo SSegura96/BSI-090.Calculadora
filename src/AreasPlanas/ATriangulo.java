@@ -37,8 +37,10 @@ public class ATriangulo extends AFigura
         //Formula utilizada: 
         area = ((Math.sqrt(3))*Math.pow(medidaLado, 2))/4;
         
+        area = enmascararDouble(area);
+        
         mensaje = "La media del lado es: "+medidaLado+"\n"
-                + "El area es: "+decimalFormat.format(area);
+                + "El area es: "+area;
     return area;
     }//fin metodo calcArea()
     

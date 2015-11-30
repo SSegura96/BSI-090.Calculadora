@@ -52,9 +52,11 @@ public class ARombo extends AFigura
     {
         area = (diagMayor*diagMenor)/2;
         
+        area = enmascararDouble(area);
+        
         mensaje = "Diagonal Mayor: "+diagMayor+"\n"
                 + "Diagonal Menor: "+diagMenor+"\n"
-                + "Area: "+decimalFormat.format(area);
+                + "Area: "+area;
         
     return area;
     }//fin metodo calcArea ()

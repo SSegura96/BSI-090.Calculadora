@@ -64,10 +64,12 @@ public class ATrapecio extends AFigura
     {
         area = ((baseMayor + baseMenor)*altura)/2;
         
+        area = enmascararDouble(area);
+        
         mensaje = "Base Mayor: "+baseMayor+"\n"
                 + "Base Menor: "+baseMenor+"\n"
                 + "Altura: "+altura+"\n"
-                + "Area: "+decimalFormat.format(area);
+                + "Area: "+area;
     return area;
     }//fin metodo calcArea()
     

@@ -50,9 +50,11 @@ public class ARomboide extends AFigura
     {
         area = base * altura;
         
+        area = enmascararDouble(area);
+        
         mensaje = "Base: "+base+"\n"
                 + "Altura: "+altura+"\n"
-                + "Area: "+decimalFormat.format(area);
+                + "Area: "+area;
     return area;
     }//fin metodo calcArea ()
     
