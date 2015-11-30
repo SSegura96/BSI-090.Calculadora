@@ -48,6 +48,8 @@ public class PRomboide extends PFigura
         perimetro = (2*base)+(2*altura);
         DecimalFormat df = new DecimalFormat("0.00");
         
+        perimetro = enmascararDouble(perimetro);
+        
         mensaje = "Base: "+base+"\n"
                 + "Altura: "+altura+"\n"
                 + "Perimetro: "+df.format(perimetro);

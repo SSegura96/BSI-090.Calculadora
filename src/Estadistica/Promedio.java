@@ -72,6 +72,9 @@ public class Promedio extends abEstadistica
         }
         
         promedio = suma/valores.size();
+        
+        promedio = enmascararDouble(promedio);
+        
         System.out.println(promedio);
     }
     

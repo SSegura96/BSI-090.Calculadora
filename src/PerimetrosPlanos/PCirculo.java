@@ -39,6 +39,8 @@ public class PCirculo extends PFigura
         perimetro = (2*Math.PI)*radio;
         DecimalFormat df = new DecimalFormat("0.00");
         
+        perimetro = enmascararDouble(perimetro);
+        
         mensaje = "Radio: "+radio+"\n"
                 + "Perimetro: "+df.format(perimetro);
     }//fin metodo calcPerimetro ()

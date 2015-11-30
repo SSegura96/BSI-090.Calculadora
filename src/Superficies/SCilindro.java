@@ -125,6 +125,8 @@ public class SCilindro extends SFigura
         superficie = 2*Math.PI*radio*(altura + radio);
         DecimalFormat df = new DecimalFormat("0.00");
         
+        superficie = enmascararDouble(superficie);
+        
         mensaje = "Altura: "+altura+"\n"
                 + "Radio: "+radio+"\n"
                 + "Superficie: "+df.format(superficie);

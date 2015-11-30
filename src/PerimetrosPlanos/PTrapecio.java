@@ -68,6 +68,8 @@ public class PTrapecio extends PFigura
         perimetro = baseMayor + baseMenor + lado1 + lado2;
         DecimalFormat df = new DecimalFormat("0.00");
         
+        perimetro = enmascararDouble(perimetro);
+        
         mensaje = "Base Mayor: "+baseMayor+"\n"
                 + "Base Menor: "+baseMenor+"\n"
                 + "Primer lado: "+lado1+"\n"

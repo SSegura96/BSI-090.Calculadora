@@ -151,11 +151,15 @@ public class SCono extends SFigura
         
         DecimalFormat df = new DecimalFormat("0.00");
         
+        superficie = enmascararDouble(superficie);
+        generatriz = enmascararDouble(generatriz);
+        superficieLateral = enmascararDouble(superficieLateral);
+        
         mensaje = "Altura: "+altura+"\n"
                 + "Radio: "+radio+"\n"
-                + "Generatriz: "+df.format(generatriz)+"\n"
-                + "Superficie Lateral: "+df.format(superficieLateral)+"\n"
-                + "Superficie Total: "+df.format(superficie);
+                + "Generatriz: "+generatriz+"\n"
+                + "Superficie Lateral: "+superficieLateral+"\n"
+                + "Superficie Total: "+superficie;
     }//fin metodo calcSuperficie()
     
 }//fin clase SCono

@@ -48,6 +48,8 @@ public class PRectangulo extends PFigura
         perimetro = (base + altura)*2;
         DecimalFormat df = new DecimalFormat("0.00");
         
+        perimetro = enmascararDouble(perimetro);
+        
         mensaje = "Base: "+base+"\n"
                 + "Altura: "+altura+"\n"
                 + "Perimetro: "+df.format(perimetro);

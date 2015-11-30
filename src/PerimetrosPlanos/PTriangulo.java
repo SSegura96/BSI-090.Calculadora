@@ -104,6 +104,8 @@ public class PTriangulo extends PFigura
         {
             perimetro = lado1 + lado2 + lado3;
             
+            perimetro = enmascararDouble(perimetro);
+            
             mensaje = "Tipo de Triangulo: Escaleno. \n"
                     + "Primer lado: "+lado1+"\n"
                     + "Segundo lado: "+lado2+"\n"

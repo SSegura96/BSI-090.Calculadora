@@ -52,6 +52,8 @@ public class PPoligonoRegular extends PFigura
         perimetro = numLados * valorLado;
         DecimalFormat df = new DecimalFormat("0.00");
         
+        perimetro = enmascararDouble(perimetro);
+        
         mensaje = "Numero de lados: "+numLados+"\n"
                 + "Medida del lado: "+valorLado+"\n"
                 + "Perimetro: "+df.format(perimetro);

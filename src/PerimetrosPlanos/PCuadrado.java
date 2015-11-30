@@ -38,6 +38,8 @@ public class PCuadrado extends PFigura
         perimetro = valorLado*4;
         DecimalFormat df = new DecimalFormat("0.00");
         
+        perimetro = enmascararDouble(perimetro);
+        
         mensaje = "Lado: "+valorLado+"\n"
                 + "Perimetro: "+df.format(perimetro);
     }//fin metodo calcPerimetro ()
