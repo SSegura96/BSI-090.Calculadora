@@ -64,8 +64,8 @@ public class mainV2 extends javax.swing.JFrame {
     String[] conjeturas = {"Ulmann.", "Gillbreath."};
 
     private void inicializarComboBox() {
-        jCOperaciones.setModel(new DefaultComboBoxModel(menuPrincipal));
-        jCSubmenu.setModel(new DefaultComboBoxModel(areasPlanas));
+        jCOperaciones.setModel(new DefaultComboBoxModel<>(menuPrincipal));
+        jCSubmenu.setModel(new DefaultComboBoxModel<>(areasPlanas));
     }
 
     public void llenarComboSubmenu() {
@@ -73,39 +73,39 @@ public class mainV2 extends javax.swing.JFrame {
 
         switch (indiceOp) {
             case 0:
-                jCSubmenu.setModel(new DefaultComboBoxModel(areasPlanas));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(areasPlanas));
                 break;
 
             case 1:
-                jCSubmenu.setModel(new DefaultComboBoxModel(perimetrosPlanos));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(perimetrosPlanos));
                 break;
 
             case 2:
-                jCSubmenu.setModel(new DefaultComboBoxModel(estadistica));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(estadistica));
                 break;
 
             case 3:
-                jCSubmenu.setModel(new DefaultComboBoxModel(probabilidad));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(probabilidad));
                 break;
 
             case 4:
-                jCSubmenu.setModel(new DefaultComboBoxModel(superficies));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(superficies));
                 break;
 
             case 5:
-                jCSubmenu.setModel(new DefaultComboBoxModel(volumenes));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(volumenes));
                 break;
 
             case 6:
-                jCSubmenu.setModel(new DefaultComboBoxModel(vectores));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(vectores));
                 break;
 
             case 7:
-                jCSubmenu.setModel(new DefaultComboBoxModel(matrices));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(matrices));
                 break;
 
             case 8:
-                jCSubmenu.setModel(new DefaultComboBoxModel(conjeturas));
+                jCSubmenu.setModel(new DefaultComboBoxModel<>(conjeturas));
                 break;
         }
     }
