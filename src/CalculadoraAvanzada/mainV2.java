@@ -41,7 +41,7 @@ public class mainV2 extends javax.swing.JFrame {
         "Perímetros de figuras planas (2D).", "Estadística.",
         "Probabilidades y combinaciones.", "Superficies.", "Volúmenes.",
         "Vectores.", "Matrices.", "Conjeturas."};
-    String[] areasPlanas = {"Circulo.", "Triangulo.",
+    String[] areasPlanas = {"Circulo.", "Triangulo Equilatero.",
         "Cuadrado.", "Rectángulo.", "Rombo.", "Trapecio.", "Romboide.",
         "Polígono Regular"};
     String[] perimetrosPlanos = {"Circulo.", "Triangulo.",
@@ -245,73 +245,105 @@ public class mainV2 extends javax.swing.JFrame {
                     //Circulo
                     case 0:
                         PCirculo pCirculo = new PCirculo();
-                        pCirculo.mostrarImagen();
-                        pCirculo.pedirDatos();
-                        pCirculo.calcPerimetro();
-                        pCirculo.mostrarDatos();
+                        try {
+                            pCirculo.mostrarImagen();
+                            pCirculo.pedirDatos();
+                            pCirculo.calcPerimetro();
+                            pCirculo.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Triangulo
                     case 1:
-                        PTriangulo pTri = new PTriangulo();
-                        pTri.mostrarImagen();
-                        pTri.pedirDatos();
-                        pTri.calcPerimetro();
-                        pTri.mostrarDatos();
+                        PTriangulo pTriangulo = new PTriangulo();
+                        try {
+                            pTriangulo.mostrarImagen();
+                            pTriangulo.pedirDatos();
+                            pTriangulo.calcPerimetro();
+                            pTriangulo.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Cuadrado    
                     case 2:
-                        PCuadrado pCua = new PCuadrado();
-                        pCua.mostrarImagen();
-                        pCua.pedirDatos();
-                        pCua.calcPerimetro();
-                        pCua.mostrarDatos();
+                        PCuadrado pCuadrado = new PCuadrado();
+                        try {
+                            pCuadrado.mostrarImagen();
+                            pCuadrado.pedirDatos();
+                            pCuadrado.calcPerimetro();
+                            pCuadrado.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Rectangulo    
                     case 3:
-                        PRectangulo pRec = new PRectangulo();
-                        pRec.mostrarImagen();
-                        pRec.pedirDatos();
-                        pRec.calcPerimetro();
-                        pRec.mostrarDatos();
+                        PRectangulo pRectangulo = new PRectangulo();
+                        try {
+                            pRectangulo.mostrarImagen();
+                            pRectangulo.pedirDatos();
+                            pRectangulo.calcPerimetro();
+                            pRectangulo.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Rombo    
                     case 4:
-                        PRombo pRom = new PRombo();
-                        pRom.mostrarImagen();
-                        pRom.pedirDatos();
-                        pRom.calcPerimetro();
-                        pRom.mostrarDatos();
+                        PRombo pRombo = new PRombo();
+                        try {
+                            pRombo.mostrarImagen();
+                            pRombo.pedirDatos();
+                            pRombo.calcPerimetro();
+                            pRombo.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Trapecio    
                     case 5:
-                        PTrapecio pTra = new PTrapecio();
-                        pTra.mostrarImagen();
-                        pTra.pedirDatos();
-                        pTra.calcPerimetro();
-                        pTra.mostrarDatos();
+                        PTrapecio pTrapecio = new PTrapecio();
+                        try {
+                            pTrapecio.mostrarImagen();
+                            pTrapecio.pedirDatos();
+                            pTrapecio.calcPerimetro();
+                            pTrapecio.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Romboide    
                     case 6:
-                        PRectangulo pRoi = new PRectangulo();
-                        pRoi.mostrarImagen();
-                        pRoi.pedirDatos();
-                        pRoi.calcPerimetro();
-                        pRoi.mostrarDatos();
+                        PRomboide pRomboide = new PRomboide();
+                        try {
+                            pRomboide.mostrarImagen();
+                            pRomboide.pedirDatos();
+                            pRomboide.calcPerimetro();
+                            pRomboide.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Poligono Regular    
                     case 7:
-                        PPoligonoRegular pp = new PPoligonoRegular();
-                        pp.mostrarImagen();
-                        pp.pedirDatos();
-                        pp.calcPerimetro();
-                        pp.mostrarDatos();
+                        PPoligonoRegular pPoligonoRegular = new PPoligonoRegular();
+                        try {
+                            pPoligonoRegular.mostrarImagen();
+                            pPoligonoRegular.pedirDatos();
+                            pPoligonoRegular.calcPerimetro();
+                            pPoligonoRegular.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
                 }//fin switch Perimetros Planos
                 break;
@@ -345,9 +377,14 @@ public class mainV2 extends javax.swing.JFrame {
                     //promedio
                     case 2:
                         Promedio prom = new Promedio();
+                        try{
+                        prom.mostrarImagen();
                         prom.pedirDatos();
                         prom.calcPromedio();
                         prom.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Mediana
@@ -366,14 +403,23 @@ public class mainV2 extends javax.swing.JFrame {
                     //varianza
                     case 4:
                         Varianza var = new Varianza();
+                        try{
+                        
                         var.calcVarianza();
                         var.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     case 5:
                         DesviacionEstandar des = new DesviacionEstandar();
+                        try{
                         des.calcDesviacionEstandar();
                         des.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
                 }//fin switch Estadistica
                 break;
@@ -384,9 +430,13 @@ public class mainV2 extends javax.swing.JFrame {
                     //Factorial
                     case 0:
                         Factorial fac = new Factorial();
+                        try{
                         fac.pedirDatos();
                         fac.calcFactorial();
                         fac.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Permutacion
@@ -404,9 +454,13 @@ public class mainV2 extends javax.swing.JFrame {
                     //Combinatoria
                     case 2:
                         Combinatoria comb = new Combinatoria();
+                        try{
                         comb.pedirDatos();
                         comb.calcCombinatoria();
                         comb.mostrarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Probabilidad Simple
@@ -527,55 +581,79 @@ public class mainV2 extends javax.swing.JFrame {
                     //Esfera
                     case 0:
                         VEsfera vEsfera = new VEsfera();
+                        try{
                         vEsfera.mostrarImagen();
                         vEsfera.pedirDatos();
                         vEsfera.calcVolumen();
                         vEsfera.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Cono
                     case 1:
                         VCono vcono = new VCono();
+                        try{
                         vcono.mostrarImagen();
                         vcono.pedirDatos();
                         vcono.calcVolumen();
                         vcono.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Hexaedro
                     case 2:
                         VHexaedro vhexaedro = new VHexaedro();
+                        try{
                         vhexaedro.mostrarImagen();
                         vhexaedro.pedirDatos();
                         vhexaedro.calcVolumen();
                         vhexaedro.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Prisma
                     case 3:
                         VPrisma vprisma = new VPrisma();
+                        try{
                         vprisma.mostrarImagen();
                         vprisma.pedirDatos();
                         vprisma.calcVolumen();
                         vprisma.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Paralelepipedo
                     case 4:
                         VParalelepipedo vparalelepipedo = new VParalelepipedo();
+                        try{
                         vparalelepipedo.mostrarImagen();
                         vparalelepipedo.pedirDatos();
                         vparalelepipedo.calcVolumen();
                         vparalelepipedo.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                     //Cilindro
                     case 5:
                         VPiramide vpiramide = new VPiramide();
+                        try{
                         vpiramide.mostrarImagen();
                         vpiramide.pedirDatos();
                         vpiramide.calcVolumen();
                         vpiramide.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                         break;
 
                 }
@@ -631,7 +709,7 @@ public class mainV2 extends javax.swing.JFrame {
             //Matrices
             case 7:
                 Matriz mat = new Matriz();
-
+                try{
                 mostrarImagen("matriz");
 
                 switch (indiceSub) {
@@ -656,6 +734,9 @@ public class mainV2 extends javax.swing.JFrame {
                         mat.productoMatrices();
                         break;
                 }
+                } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
                 break;
 
             //Conjeturas

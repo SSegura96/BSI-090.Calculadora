@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  * @author Sergio Segura Vidal
  */
 
-public class Varianza 
+public class Varianza extends abEstadistica
 {
     
     private ArrayList <Double> numeros = new ArrayList<> (); 
@@ -17,6 +17,7 @@ public class Varianza
     public Varianza() 
     {
         varianza = 0;
+        imagen = "Varianza";
     }
 
     public ArrayList<Double> getNumeros() 
@@ -39,9 +40,10 @@ public class Varianza
         this.varianza = varianza;
     }
     
-    public double obtenerPromedio ()
+    public double pedirDatos ()
     {
         Promedio prom = new Promedio ();
+        prom.setImagen("Varianza");
         prom.setMensaje("Digite el primer numero de la \n varianza para comenzar");
         prom.pedirDatos();
         prom.calcPromedio();
@@ -51,7 +53,7 @@ public class Varianza
     
     public void calcVarianza ()
     {
-        double promedio = obtenerPromedio();
+        double promedio = pedirDatos();
         
         int i = 0;
         
@@ -64,6 +66,7 @@ public class Varianza
         varianza /= numeros.size();
     }
     
+    @Override
     public void mostrarDatos ()
     {
         JOptionPane.showMessageDialog(null, "La varianza es: "+varianza);

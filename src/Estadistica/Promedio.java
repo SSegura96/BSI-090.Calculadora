@@ -80,6 +80,7 @@ public class Promedio extends abEstadistica
     
     public void mostarDatos ()
     {
-        JOptionPane.showMessageDialog(null, "El promedio es: "+promedio);
+        JOptionPane.showMessageDialog(null, "El promedio es: "+promedio, imagen, 
+                JOptionPane.INFORMATION_MESSAGE);
     }
 }
