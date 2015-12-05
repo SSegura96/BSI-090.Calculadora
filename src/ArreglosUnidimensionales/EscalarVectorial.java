@@ -48,9 +48,9 @@ public class EscalarVectorial extends ArregloUnidimensional {
     @Override
     public void pedirDatos() {
 
-        tamanno = fallo.intValidarExcepciones("Digite el tamaño del vector:", "Escalar Vectorial");
+        tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del vector:", "Escalar Vectorial");
 
-        vector = new double[tamanno];
+        vector = new double[ (int) tamanno];
 
         //Se pide el escalar
         escalar = fallo.doubleValidarExcepciones("Digite el escalar:", "Escalar Vectorial");

@@ -9,14 +9,14 @@ public class Moda extends abEstadistica {
     private int maximaVecesQueSeRepite;
     private double moda;
     private double[] vectorModa;
-    private int tamanno;
+    private double tamanno;
 
     public Moda() {
         maximaVecesQueSeRepite = 0;
         moda = 0.0;
         vectorModa = new double[0];
-        tamanno = 0;
-        imagen = "Moda";
+        tamanno = 0.0;
+        titulo = "Moda";
     }//fin constructor
 
     public int getMaximaVecesQueSeRepite() {
@@ -43,11 +43,11 @@ public class Moda extends abEstadistica {
         this.vectorModa = vectorModa;
     }
 
-    public int getTamanno() {
+    public double getTamanno() {
         return tamanno;
     }
 
-    public void setTamanno(int tamanno) {
+    public void setTamanno(double tamanno) {
         this.tamanno = tamanno;
     }
 
@@ -55,16 +55,16 @@ public class Moda extends abEstadistica {
         for (int i = 0; i < vectorModa.length; i++) {
             //Se pide llenar el vector
             vectorModa[i] = fallo.doubleValidarExcepciones("Ingrese el dato "
-                    + "#" + (i + 1) + " :", imagen);
+                    + "#" + (i + 1) + " :", titulo);
         }//fin primer for
     }//fin metodo llenarVector()
 
     public void pedirDatos() {
-
-        tamanno = fallo.intValidarExcepciones("Digite la cantidad de numeros "
-                + "que va a ingresar:", imagen);
-
-        vectorModa = new double[tamanno];
+        
+        tamanno = fallo.doubleValidarExcepciones("Digite la cantidad de numeros "
+                + "que va a ingresar:", titulo);
+        
+        vectorModa = new double[ (int) tamanno];
 
         llenarVector();
     }//fin metodo pedirDatos()

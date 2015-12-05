@@ -1,7 +1,6 @@
 package ProbabilidadYCombinaciones;
 
 import java.text.DecimalFormat;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -9,21 +8,21 @@ import javax.swing.JOptionPane;
  */
 public class ProbabilidadSimple extends ProbabilidadYCombinaciones {
 
-    protected int posibilidadEscoger;//posibilidades de escoger un elemento
+    protected double posibilidadEscoger;//posibilidades de escoger un elemento
     protected double probabilidad;//probabilidad simple
-    protected int factorial;
+    protected double factorial;
 
     public ProbabilidadSimple() {
-        posibilidadEscoger = 0;
+        posibilidadEscoger = 0.0;
         probabilidad = 0.0;
         factorial = 0;
     }//fin constructor
 
-    public int getPosibilidadEscoger() {
+    public double getPosibilidadEscoger() {
         return posibilidadEscoger;
     }
 
-    public void setPosibilidadEscoger(int posibilidadEscoger) {
+    public void setPosibilidadEscoger(double posibilidadEscoger) {
         this.posibilidadEscoger = posibilidadEscoger;
     }
 
@@ -41,12 +40,12 @@ public class ProbabilidadSimple extends ProbabilidadYCombinaciones {
         cantidadElementos = fallo.intValidarExcepciones("Digite la cantidad "
                 + "total de elementos:", imagen);
 
-        posibilidadEscoger = fallo.intValidarExcepciones("Digite la posibilidad"
+        posibilidadEscoger = fallo.doubleValidarExcepciones("Digite la posibilidad"
                 + " de escoger un elemento diferente:", imagen);
     }//fin metodo pedirDatos()
 
     public void calcProbabilidadSimple() {
-        probabilidad = cantidadElementos / posibilidadEscoger;
+        probabilidad = cantidadElementos / (int) posibilidadEscoger;
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
         mensaje = "Cantidad total de elementos: " + cantidadElementos + "\n"

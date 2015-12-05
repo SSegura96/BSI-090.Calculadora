@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public abstract class abEstadistica implements IEstadistica
 {
     String mensaje;
-    String imagen;
+    String titulo;
     //Variables de uso exclusivo para la validaciones en el codigo
     boolean todoBien;
     String tituloError;
@@ -24,6 +24,7 @@ public abstract class abEstadistica implements IEstadistica
     public abEstadistica() 
     {
         mensaje = "";
+        titulo = "";
         todoBien = true;
         tituloError = "";
         tipoError = 0;
@@ -38,12 +39,12 @@ public abstract class abEstadistica implements IEstadistica
         this.mensaje = mensaje;
     }
 
-    public String getImagen() {
-        return imagen;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public boolean isTodoBien() {
@@ -102,14 +103,7 @@ public abstract class abEstadistica implements IEstadistica
     @Override
     public void mostrarDatos() 
     {
-        JOptionPane.showMessageDialog(null, mensaje, imagen, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo mostarDatos()
-
-    @Override
-    public void mostrarImagen() 
-    {
-        JOptionPane.showMessageDialog(null, "", imagen,
-                JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + imagen + ".png"));
-    }//fin metodo mostrarImagen()
     
 }//fin clase abEstadistica

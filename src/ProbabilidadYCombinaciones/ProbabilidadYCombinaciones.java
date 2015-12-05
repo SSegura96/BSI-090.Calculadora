@@ -13,7 +13,7 @@ public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombin
 
     protected String mensaje;
     protected String imagen;
-    protected int cantidadElementos;
+    protected double cantidadElementos;
     //Variables de uso exclusivo para la validaciones en el codigo
     boolean todoBien;
     String tituloError;
@@ -40,11 +40,11 @@ public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombin
         this.mensaje = mensaje;
     }
 
-    public int getCantidadElementos() {
+    public double getCantidadElementos() {
         return cantidadElementos;
     }
 
-    public void setCantidadElementos(int cantidadElementos) {
+    public void setCantidadElementos(double cantidadElementos) {
         this.cantidadElementos = cantidadElementos;
     }
 

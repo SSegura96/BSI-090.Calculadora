@@ -49,9 +49,9 @@ public class ProductoVectorial extends ArregloUnidimensional {
     public void pedirDatos() {
 
         //Se pide el tamaño del primer vector
-        tamanno = fallo.intValidarExcepciones("Digite el tamaño del primer vector:", "Producto Vectorial");
+        tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del primer vector:", "Producto Vectorial");
 
-        vector = new double[tamanno];
+        vector = new double[ (int) tamanno];
 
         tamanno = fallo.intValidarExcepciones("Digite el tamaño del segundo vector:",
                 "Producto Vectorial");
@@ -64,11 +64,11 @@ public class ProductoVectorial extends ArregloUnidimensional {
                 JOptionPane.showMessageDialog(null, "Los vectores tienen que ser del "
                         + "mismo tamaño.", "Aviso", JOptionPane.WARNING_MESSAGE);
 
-                tamanno = fallo.intValidarExcepciones("Digite el tamaño del segundo vector:",
+                tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del segundo vector:",
                         "Producto Vectorial");
             }//fin if de validacion
         }//fin while
-        vector2 = new double[tamanno];
+        vector2 = new double[ (int) tamanno];
         llenarVector();
     }//fin metodo pedirDatos()
 

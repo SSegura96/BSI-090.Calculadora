@@ -8,7 +8,7 @@ public class SPiramideRegular extends SFigura {
 
     private double arista;
     private double altura;
-    private int numLadosBase;
+    private double numLadosBase;
     private double apotema;
     private double perimBase;
     private double superficieLateral;
@@ -17,7 +17,7 @@ public class SPiramideRegular extends SFigura {
     public SPiramideRegular() {
         arista = 0.0;
         altura = 0.0;
-        numLadosBase = 0;
+        numLadosBase = 0.0;
         apotema = 0.0;
         perimBase = 0.0;
         superficieLateral = 0.0;
@@ -41,11 +41,11 @@ public class SPiramideRegular extends SFigura {
         this.altura = altura;
     }
 
-    public int getNumLadosBase() {
+    public double getNumLadosBase() {
         return numLadosBase;
     }
 
-    public void setNumLadosBase(int numLadosBase) {
+    public void setNumLadosBase(double numLadosBase) {
         this.numLadosBase = numLadosBase;
     }
 
@@ -92,14 +92,14 @@ public class SPiramideRegular extends SFigura {
                 "Piramide Regular");
 
         //Se pide la cantidad de lados de la base y se valida
-        numLadosBase = fallo.intValidarExcepciones("Digite el numero de lados "
+        numLadosBase = fallo.doubleValidarExcepciones("Digite el numero de lados "
                 + "que posee la base:", "Piramide Regular");
 
     }//fin metodo pedirDatos()
 
     @Override
     public void calcSuperficie() {
-        perimBase = numLadosBase * arista;
+        perimBase = (int) numLadosBase * arista;
 
         apotema = Math.sqrt((Math.pow(altura, 2)) + (Math.pow((arista / 2), 2)));
 

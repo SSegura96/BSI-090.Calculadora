@@ -45,6 +45,7 @@ public class ManejoErrores
      * o no sea un numero el se encicla y vuelve a mostar el mensaje hasta que el
      * valor sea correcto
      */
+    
     public double doubleValidarExcepciones (String mensaje, String titulo) throws NumberFormatException 
     {
         boolean todoBien = true; 

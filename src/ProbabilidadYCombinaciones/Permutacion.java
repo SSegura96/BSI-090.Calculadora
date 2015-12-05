@@ -6,20 +6,20 @@ package ProbabilidadYCombinaciones;
  */
 public class Permutacion extends ProbabilidadYCombinaciones {
 
-    private int grupoElementos;
+    private double grupoElementos;
     private double permutacion;
 
     public Permutacion() {
-        grupoElementos = 0;
-        permutacion = 0;
+        grupoElementos = 0.0;
+        permutacion = 0.0;
         imagen = "Permutacion";
     }//fin constructor
 
-    public int getGrupoElementos() {
+    public double getGrupoElementos() {
         return grupoElementos;
     }
 
-    public void setGrupoElementos(int grupoElementos) {
+    public void setGrupoElementos(double grupoElementos) {
         this.grupoElementos = grupoElementos;
     }
 
@@ -27,26 +27,26 @@ public class Permutacion extends ProbabilidadYCombinaciones {
         return permutacion;
     }
 
-    public void setPermutacion(int permutacion) {
+    public void setPermutacion(double permutacion) {
         this.permutacion = permutacion;
     }
 
     @Override
     public void pedirDatos() {
 
-        cantidadElementos = fallo.intValidarExcepciones("Digite la cantidad total de elementos:", imagen);
+        cantidadElementos = fallo.doubleValidarExcepciones("Digite la cantidad total de elementos:", imagen);
 
-        grupoElementos = fallo.intValidarExcepciones("Digite en grupos de cuanto"
+        grupoElementos = fallo.doubleValidarExcepciones("Digite en grupos de cuanto"
                 + " quiere agrupar los elementos", imagen);
     }//fin metodo pedirDatos()
 
     public void calcPermutacion() {
         //Se saca el factorial de ambos elementos para generar la formula
         Factorial facNumElementos = new Factorial();
-        facNumElementos.setNumero(cantidadElementos);
+        facNumElementos.setNumero( (int) cantidadElementos);
 
         Factorial facOperacion = new Factorial();
-        facOperacion.setNumero(cantidadElementos - grupoElementos);
+        facOperacion.setNumero( (int) cantidadElementos - grupoElementos);
 
         permutacion = facNumElementos.calcFactorial() / facOperacion.calcFactorial();
 

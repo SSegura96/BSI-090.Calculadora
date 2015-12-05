@@ -16,7 +16,7 @@ public class Mediana extends abEstadistica {
         tamanno = 0;
         mediana = 0.0;
         mediana2 = 0.0;
-        imagen = "Mediana";
+        titulo = "Mediana";
     }//fin constructor
 
     public double[] getVectorValoresMediana() {
@@ -56,14 +56,14 @@ public class Mediana extends abEstadistica {
         for (int i = 0; i < vectorValoresMediana.length; i++) {
 
             vectorValoresMediana[i] = fallo.doubleValidarExcepciones("Ingrese "
-                    + "el dato #" + (i + 1) + " :", imagen);
+                    + "el dato #" + (i + 1) + " :", titulo);
         }//fin primer for
     }//fin metodo llenarVector()
 
     public void pedirDatos() {
         //Se pide el tamanno del vector
         tamanno = fallo.intValidarExcepciones("Digite la canitdad de elementos "
-                + "que va a ingresar", imagen);
+                + "que va a ingresar", titulo);
 
         vectorValoresMediana = new double[tamanno];
 

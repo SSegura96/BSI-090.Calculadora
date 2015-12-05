@@ -8,20 +8,20 @@ import PerimetrosPlanos.*;
  */
 public class APoligonoRegular extends AFigura {
 
-    private int numeroLados;
+    private double numeroLados;
     private double medidaLado;
 
     public APoligonoRegular() {
-        numeroLados = 0;
+        numeroLados = 0.0;
         medidaLado = 0.0;
         figura = "PoligonoRegular";
     }//fin constructor
 
-    public int getNumeroLados() {
+    public double getNumeroLados() {
         return numeroLados;
     }
 
-    public void setNumeroLados(int numeroLados) {
+    public void setNumeroLados(double numeroLados) {
         this.numeroLados = numeroLados;
     }
 
@@ -35,7 +35,7 @@ public class APoligonoRegular extends AFigura {
 
     @Override
     public void pedirDatos() {
-        numeroLados = fallo.intValidarExcepciones("Digite el numero de lados del poligono:", "Poligono Regular");
+        numeroLados = fallo.doubleValidarExcepciones("Digite el numero de lados del poligono:", "Poligono Regular");
 
         medidaLado = fallo.doubleValidarExcepciones("Digite la medida del lado del poligono:", "Poligono Regular");
     }//fin metodo pedirDatos

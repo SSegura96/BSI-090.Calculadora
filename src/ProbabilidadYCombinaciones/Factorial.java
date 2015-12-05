@@ -11,8 +11,8 @@ public class Factorial extends ProbabilidadYCombinaciones
 
     public Factorial()
     {
-        numero = 0;
-        factorial = 0;
+        numero = 0.0;
+        factorial = 0.0;
         mensaje = "";
         imagen = "Factorial";
     }
@@ -22,13 +22,13 @@ public class Factorial extends ProbabilidadYCombinaciones
         return numero;
     }
 
-    public void setNumero(int numero) 
+    public void setNumero(double numero) 
     {
         this.numero = numero;
     }
     
     @Override
-    public void pedirDatos () throws NumberFormatException
+    public void pedirDatos ()
     {
         numero = fallo.doubleValidarExcepciones("Digite el numero al cual le decea calcular el factorial", imagen);
     }

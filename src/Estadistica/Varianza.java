@@ -17,7 +17,7 @@ public class Varianza extends abEstadistica
     public Varianza() 
     {
         varianza = 0;
-        imagen = "Varianza";
+        titulo = "Varianza";
     }
 
     public ArrayList<Double> getNumeros() 
@@ -43,7 +43,7 @@ public class Varianza extends abEstadistica
     public double pedirDatos ()
     {
         Promedio prom = new Promedio ();
-        prom.setImagen("Varianza");
+        prom.setTitulo("Varianza");
         prom.setMensaje("Digite el primer numero de la \n varianza para comenzar");
         prom.pedirDatos();
         prom.calcPromedio();

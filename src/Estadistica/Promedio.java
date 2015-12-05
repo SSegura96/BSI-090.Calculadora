@@ -18,7 +18,7 @@ public class Promedio extends abEstadistica
         promedio = 0;
         mensaje = "Se va  calcular el promedio digite el "
                 + "\n primer numero para continuar";
-        imagen = "Promedio";
+        titulo = "Promedio";
     }
 
     public ArrayList<Double> getValores() 
@@ -43,7 +43,7 @@ public class Promedio extends abEstadistica
         
         while (seguir)
         {
-            valores.add(fallo.doubleValidarExcepciones(mensaje, imagen));
+            valores.add(fallo.doubleValidarExcepciones(mensaje, titulo));
             mensaje =  "Digite el "+i+"º número";
             i++;
             
@@ -80,7 +80,7 @@ public class Promedio extends abEstadistica
     
     public void mostarDatos ()
     {
-        JOptionPane.showMessageDialog(null, "El promedio es: "+promedio, imagen, 
+        JOptionPane.showMessageDialog(null, "El promedio es: "+promedio, titulo, 
                 JOptionPane.INFORMATION_MESSAGE);
     }
 }

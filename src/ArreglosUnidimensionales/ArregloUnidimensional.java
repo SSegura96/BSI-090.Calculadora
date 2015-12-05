@@ -12,17 +12,17 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
 
     protected double[] vector;
     protected double[] vector2;
-    protected int tamanno;
+    protected double tamanno;
     protected String mensaje;
-    protected String imagenV;
+    protected String titulo;
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
 
     public ArregloUnidimensional() {
-        tamanno = 0;
+        tamanno = 0.0;
         vector = new double[0];
         vector2 = new double[0];
-        imagenV = "Vector";
+        titulo = "Vector";
     }//fin constructor
 
     public double[] getVector() {
@@ -41,11 +41,11 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
         this.vector2 = vector2;
     }
 
-    public int getTamanno() {
+    public double getTamanno() {
         return tamanno;
     }
 
-    public void setTamanno(int tamanno) {
+    public void setTamanno(double tamanno) {
         this.tamanno = tamanno;
     }
 
@@ -57,12 +57,12 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
         this.mensaje = mensaje;
     }
 
-    public String getImagenV() {
-        return imagenV;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setImagenV(String imagenV) {
-        this.imagenV = imagenV;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public ManejoErrores getFallo() {
@@ -73,13 +73,8 @@ public abstract class ArregloUnidimensional implements IArreglosUnidimensionales
         this.fallo = fallo;
     }
 
-    public void mostrarImagen() {
-        JOptionPane.showMessageDialog(null, "", imagenV,
-                JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + imagenV + ".png"));
-    }//fin metodo mostrarImagen
-
     public void mostrarDatos() {
-        JOptionPane.showMessageDialog(null, mensaje, imagenV, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo mostrarDatos()
 
 }//fin clase ArregloUnidimensional
