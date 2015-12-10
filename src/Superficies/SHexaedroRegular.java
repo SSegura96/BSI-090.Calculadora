@@ -11,7 +11,7 @@ public class SHexaedroRegular extends SFigura {
 
     public SHexaedroRegular() {
         lado = 0.0;
-        figura = "HexaedroRegular";
+        figura = "Hexaedro";
     }//fin constructor
 
     public double getLado() {
