@@ -15,7 +15,7 @@ public class VPiramide extends VFigura
     {
         altura = 0;
         areaBase = 0;
-        figura = "Priramide";
+        figura = "Piramide";
     }
 
     public double getAltura() 

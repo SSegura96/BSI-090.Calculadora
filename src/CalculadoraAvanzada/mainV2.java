@@ -423,6 +423,9 @@ public class mainV2 extends javax.swing.JFrame {
 
             //Probabilidad y Combinaciones    
             case 3:
+                
+                mostrarImagen("Probabilidad");
+                
                 switch (indiceSub) {
                     //Factorial
                     case 0:
@@ -588,8 +591,21 @@ public class mainV2 extends javax.swing.JFrame {
                         }//fin primer catch
                         break;
 
-                    //Cono
+                       //Cilindro
                     case 1:
+                        VCilindro vcilindro = new VCilindro();
+                        try {
+                            vcilindro.mostrarImagen();
+                            vcilindro.pedirDatos();
+                            vcilindro.calcVolumen();
+                            vcilindro.mostarDatos();
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break; 
+                        
+                    //Cono
+                    case 2:
                         VCono vCono = new VCono();
                         try {
                             vCono.mostrarImagen();
@@ -602,7 +618,7 @@ public class mainV2 extends javax.swing.JFrame {
                         break;
 
                     //Hexaedro
-                    case 2:
+                    case 3:
                         VHexaedro vHexaedro = new VHexaedro();
                         try {
                             vHexaedro.mostrarImagen();
@@ -615,7 +631,7 @@ public class mainV2 extends javax.swing.JFrame {
                         break;
 
                     //Prisma
-                    case 3:
+                    case 4:
                         VPrisma vPrisma = new VPrisma();
                         try {
                             vPrisma.mostrarImagen();
@@ -628,7 +644,7 @@ public class mainV2 extends javax.swing.JFrame {
                         break;
 
                     //Paralelepipedo
-                    case 4:
+                    case 5:
                         VParalelepipedo vParalelepipedo = new VParalelepipedo();
                         try {
                             vParalelepipedo.mostrarImagen();
@@ -640,8 +656,8 @@ public class mainV2 extends javax.swing.JFrame {
                         }//fin primer catch
                         break;
 
-                    //Cilindro
-                    case 5:
+                    //Piramide
+                    case 6:
                         VPiramide vPiramide = new VPiramide();
                         try {
                             vPiramide.mostrarImagen();
@@ -735,12 +751,15 @@ public class mainV2 extends javax.swing.JFrame {
 
             //Conjeturas
             case 8:
+                
+                mostrarImagen("Conjeturas");
+                
                 switch (indiceSub) {
                     //Ulmann
                     case 0:
                         Ulmann ulman = new Ulmann();
-                        try {
-                            ulman.mostrarImagen();
+                        try 
+                        {
                             ulman.pedirDatos();
                             ulman.calcUlmann();
                             ulman.mostarDatos();
@@ -752,8 +771,8 @@ public class mainV2 extends javax.swing.JFrame {
                     //Gilbreath
                     case 1:
                         Gilbreath gilbreath = new Gilbreath();
-                        try {
-                            gilbreath.mostrarImagen();
+                        try 
+                        {
                             gilbreath.pedirDatos();
                             gilbreath.calcGilbreath();
                             gilbreath.mostarDatos();
