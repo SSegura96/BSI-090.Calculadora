@@ -45,7 +45,7 @@ public class VPiramide extends VFigura
     @Override
     public void calcVolumen ()
     {
-        Escoger e  = new Escoger ();
+        EscogerBase e  = new EscogerBase (null,true);
         
         e.setVisible(true);
         areaBase = e.areaBase;

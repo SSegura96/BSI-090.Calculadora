@@ -1,29 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Volumenes;
 
 import AreasPlanas.ACuadrado;
 import AreasPlanas.APoligonoRegular;
 import AreasPlanas.ATriangulo;
+import CalculadoraAvanzada.mainV2;
+import static Volumenes.Escoger.areaBase;
 
 /**
- * @author Javier Fernandez Alvarado & Sergio Segura Vidal
+ *
+ * @author Sergio Segura Vidal
  */
-public class Escoger extends javax.swing.JFrame {
+public class EscogerBase extends javax.swing.JDialog {
 
     /**
-     * Creates new form VEscoger
+     * Creates new form EscogerBase
      */
+     public static double areaBase; 
     
-    public static double areaBase; 
-    
-    public Escoger() 
+     mainV2 main = new mainV2(); 
+     
+    public EscogerBase(java.awt.Frame parent, boolean modal)
     {
+        super(parent, modal);
         areaBase = 0;
+        this.setResizable(false);
+        setLocationRelativeTo(main);
         initComponents();
-        setLocationRelativeTo(null);
     }
-    
-    
-    public void seleccionarBase ()
+
+     public void seleccionarBase ()
     {
         if (jRTriangulo.isSelected())
         {
@@ -72,7 +82,7 @@ public class Escoger extends javax.swing.JFrame {
         jRHexagono = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setText("Seleccione la base de su figura");
@@ -131,7 +141,7 @@ public class Escoger extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(195, 195, 195)
                         .addComponent(jButton1)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,13 +156,17 @@ public class Escoger extends javax.swing.JFrame {
                     .addComponent(jRCuadrado)
                     .addComponent(jRPentagono)
                     .addComponent(jRHexagono))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(19, 19, 19))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRTrianguloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRTrianguloActionPerformed
 
     private void jRHexagonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRHexagonoActionPerformed
         // TODO add your handling code here:
@@ -162,10 +176,6 @@ public class Escoger extends javax.swing.JFrame {
         seleccionarBase();
         setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jRTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRTrianguloActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRTrianguloActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,21 +194,27 @@ public class Escoger extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Escoger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EscogerBase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Escoger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EscogerBase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Escoger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EscogerBase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Escoger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EscogerBase.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Escoger().setVisible(true);
+                EscogerBase dialog = new EscogerBase(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
