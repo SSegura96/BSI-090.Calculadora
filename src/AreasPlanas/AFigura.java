@@ -52,7 +52,8 @@ public abstract class AFigura implements AIFigura {
     public void setFallo(ManejoErrores fallo) {
         this.fallo = fallo;
     }
-
+    
+    //metodo que cambia los puntos por comas (creado para hacer Unit Testings)
     public double enmascararDouble(double numero) {
         String dato = "";
 
@@ -63,7 +64,7 @@ public abstract class AFigura implements AIFigura {
         dato = dato.replace(',', '.');
 
         return Double.parseDouble(dato);
-    }
+    }//fin metodo enmascararDouble(double numero)
 
     public void mostrarImagen() {
         JOptionPane.showMessageDialog(null, "", figura,

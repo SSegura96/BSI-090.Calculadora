@@ -812,6 +812,7 @@ public class mainV2 extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora Avanzada");
 
         jLHora.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLHora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
