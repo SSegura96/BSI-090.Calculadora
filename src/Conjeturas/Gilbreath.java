@@ -3,7 +3,6 @@ package Conjeturas;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,10 +23,10 @@ public class Gilbreath extends AbCalculo {
     private LinkedList<Integer> renglon9 = new LinkedList<>();
     private LinkedList<Integer> renglonFantasma = new LinkedList<>();
     //Cantidad de numeros de la LinkedList
-    private int tamannoLinkedList;
+    private double tamannoLinkedList;
 
     public Gilbreath() {
-        this.tamannoLinkedList = 0;
+        this.tamannoLinkedList = 0.0;
         figura = "Gilbreath";
     }//fin constructor
 
@@ -111,11 +110,11 @@ public class Gilbreath extends AbCalculo {
         this.renglonFantasma = renglonFantasma;
     }
 
-    public int getTamannoLinkedList() {
+    public double getTamannoLinkedList() {
         return tamannoLinkedList;
     }
 
-    public void setTamannoLinkedList(int tamannoLinkedList) {
+    public void setTamannoLinkedList(double tamannoLinkedList) {
         this.tamannoLinkedList = tamannoLinkedList;
     }
 
@@ -137,10 +136,8 @@ public class Gilbreath extends AbCalculo {
         int num = 0;//almacena temporalmente el numero a evaluar
 
         do {
-            tamannoLinkedList = Integer.parseInt(JOptionPane.showInputDialog(null,
-                    "Digite la cantidad de numeros que va a ingresar:", figura,
-                    JOptionPane.INFORMATION_MESSAGE));
-            contadorPrimos = tamannoLinkedList;
+            tamannoLinkedList = fallo.doubleValidarExcepciones("Digite la cantidad de numeros que va a ingresar:", figura);
+            contadorPrimos = (int) tamannoLinkedList;
 
             //se valida que el tamaño no sea invalido
             if (tamannoLinkedList == 0 || tamannoLinkedList == 1 || tamannoLinkedList > 10) {
@@ -151,9 +148,7 @@ public class Gilbreath extends AbCalculo {
 
         //Se alamacenan los numeros primos en la LinkedList
         do {
-            num = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite un "
-                    + "numero primo:\n \t \t Valor #" + (contador + 1) + " de "
-                    + tamannoLinkedList, figura, JOptionPane.INFORMATION_MESSAGE));
+            num = (int) fallo.doubleValidarExcepciones("Digite un numero primo:\n \t \t Valor #" + (contador + 1) + " de " + tamannoLinkedList, figura);
 
             //se evalua que el numero sea primo
             if (esPrimo(num)) {
@@ -204,7 +199,7 @@ public class Gilbreath extends AbCalculo {
 
     public void calcGilbreath() {
         //Depende del tamaño que se digite entra en el switch
-        switch (tamannoLinkedList) {
+        switch ((int) tamannoLinkedList) {
             //si solo se digitan dos numeros
             case 2: {
                 mensaje = "" + cargarNumeros(primos) + "\n"

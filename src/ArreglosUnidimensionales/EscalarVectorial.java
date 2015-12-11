@@ -34,12 +34,12 @@ public class EscalarVectorial extends ArregloUnidimensional {
 
     @Override
     public void llenarVector() {
-        
+
         JOptionPane.showMessageDialog(null, "Llenar el vector: vector[ ]",
                 "Escalar Vectorial", JOptionPane.INFORMATION_MESSAGE);
 
         for (int i = 0; i < vector.length; i++) {
-            
+
             vector[i] = fallo.doubleValidarExcepciones("Ingrese dato de: "
                     + "vector[" + (i) + "]", "Escalar vectorial");
         }//fin primer for
@@ -50,7 +50,7 @@ public class EscalarVectorial extends ArregloUnidimensional {
 
         tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del vector:", "Escalar Vectorial");
 
-        vector = new double[ (int) tamanno];
+        vector = new double[(int) tamanno];
 
         //Se pide el escalar
         escalar = fallo.doubleValidarExcepciones("Digite el escalar:", "Escalar Vectorial");

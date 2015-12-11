@@ -2,15 +2,14 @@ package Estadistica;
 
 import CalculadoraAvanzada.ManejoErrores;
 import java.text.DecimalFormat;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public abstract class abEstadistica implements IEstadistica
-{
+public abstract class abEstadistica implements IEstadistica {
+
     String mensaje;
     String titulo;
     //Variables de uso exclusivo para la validaciones en el codigo
@@ -21,8 +20,7 @@ public abstract class abEstadistica implements IEstadistica
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     ManejoErrores fallo = new ManejoErrores();
 
-    public abEstadistica() 
-    {
+    public abEstadistica() {
         mensaje = "";
         titulo = "";
         todoBien = true;
@@ -87,23 +85,21 @@ public abstract class abEstadistica implements IEstadistica
         this.fallo = fallo;
     }
 
-    public double enmascararDouble(double numero)
-    {
+    public double enmascararDouble(double numero) {
         String dato = "";
-        
+
         DecimalFormat decimalFormat = new DecimalFormat("#######.##");
-        
+
         dato = decimalFormat.format(numero);
-        
+
         dato = dato.replace(',', '.');
-        
+
         return Double.parseDouble(dato);
     }
-    
+
     @Override
-    public void mostrarDatos() 
-    {
+    public void mostrarDatos() {
         JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo mostarDatos()
-    
+
 }//fin clase abEstadistica

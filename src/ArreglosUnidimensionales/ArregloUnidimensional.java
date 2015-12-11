@@ -1,7 +1,6 @@
 package ArreglosUnidimensionales;
 
 import CalculadoraAvanzada.ManejoErrores;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**

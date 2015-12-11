@@ -17,12 +17,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- * @author Javier Fernandez & Sergio Segura
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public class mainV2 extends javax.swing.JFrame {
 
     /**
      * Creates new form mainV2
+     *
+     * @param nombre
      */
     public void mostrarImagen(String nombre) {
         JOptionPane.showMessageDialog(null, null, nombre,
@@ -423,9 +425,9 @@ public class mainV2 extends javax.swing.JFrame {
 
             //Probabilidad y Combinaciones    
             case 3:
-                
+
                 mostrarImagen("Probabilidad");
-                
+
                 switch (indiceSub) {
                     //Factorial
                     case 0:
@@ -467,7 +469,6 @@ public class mainV2 extends javax.swing.JFrame {
                     case 3:
                         ProbabilidadSimple probabilidadSimple = new ProbabilidadSimple();
                         try {
-                            probabilidadSimple.mostrarImagen();
                             probabilidadSimple.pedirDatos();
                             probabilidadSimple.calcProbabilidadSimple();
                             probabilidadSimple.mostrarDatos();
@@ -591,7 +592,7 @@ public class mainV2 extends javax.swing.JFrame {
                         }//fin primer catch
                         break;
 
-                       //Cilindro
+                    //Cilindro
                     case 1:
                         VCilindro vcilindro = new VCilindro();
                         try {
@@ -602,8 +603,8 @@ public class mainV2 extends javax.swing.JFrame {
                         } catch (NullPointerException e) {
                             //Solo controla el error al cerrar la ventana por eso esta vacio
                         }//fin primer catch
-                        break; 
-                        
+                        break;
+
                     //Cono
                     case 2:
                         VCono vCono = new VCono();
@@ -719,47 +720,54 @@ public class mainV2 extends javax.swing.JFrame {
             //Matrices
             case 7:
                 Matriz mat = new Matriz();
-                try {
-                    mostrarImagen("matriz");
+                mostrarImagen("matriz");
 
-                    switch (indiceSub) {
-                        //escalar
-                        case 0:
+                switch (indiceSub) {
+                    //escalar
+                    case 0:
+                        try {
                             mat.inicializarMatrices(0);
                             mat.pedirDatos(0);
                             mat.productoEscalar();
-                            break;
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
-                        //Suma matrices
-                        case 1:
+                    //Suma matrices
+                    case 1:
+                        try {
                             mat.inicializarMatrices(1);
                             mat.pedirDatos(1);
                             mat.sumarMatrices();
-                            break;
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
 
-                        //Producto Matrices
-                        case 2:
+                    //Producto Matrices
+                    case 2:
+                        try {
                             mat.inicializarMatrices(1);
                             mat.pedirDatos(1);
                             mat.productoMatrices();
-                            break;
-                    }
-                } catch (NullPointerException e) {
-                    //Solo controla el error al cerrar la ventana por eso esta vacio
-                }//fin primer catch
+                        } catch (NullPointerException e) {
+                            //Solo controla el error al cerrar la ventana por eso esta vacio
+                        }//fin primer catch
+                        break;
+                }//fin switch matrices
                 break;
 
             //Conjeturas
             case 8:
-                
+
                 mostrarImagen("Conjeturas");
-                
+
                 switch (indiceSub) {
                     //Ulmann
                     case 0:
                         Ulmann ulman = new Ulmann();
-                        try 
-                        {
+                        try {
                             ulman.pedirDatos();
                             ulman.calcUlmann();
                             ulman.mostarDatos();
@@ -767,12 +775,11 @@ public class mainV2 extends javax.swing.JFrame {
                             //Solo controla el error al cerrar la ventana por eso esta vacio
                         }//fin primer catch
                         break;
-                    
+
                     //Gilbreath
                     case 1:
                         Gilbreath gilbreath = new Gilbreath();
-                        try 
-                        {
+                        try {
                             gilbreath.pedirDatos();
                             gilbreath.calcGilbreath();
                             gilbreath.mostarDatos();

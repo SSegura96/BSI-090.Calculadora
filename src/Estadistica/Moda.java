@@ -60,11 +60,11 @@ public class Moda extends abEstadistica {
     }//fin metodo llenarVector()
 
     public void pedirDatos() {
-        
+
         tamanno = fallo.doubleValidarExcepciones("Digite la cantidad de numeros "
                 + "que va a ingresar:", titulo);
-        
-        vectorModa = new double[ (int) tamanno];
+
+        vectorModa = new double[(int) tamanno];
 
         llenarVector();
     }//fin metodo pedirDatos()

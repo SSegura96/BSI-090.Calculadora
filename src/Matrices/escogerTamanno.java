@@ -1,47 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Matrices;
 
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public class escogerTamanno extends javax.swing.JDialog {
 
     /**
      * Creates new form escogerTamanno
      */
-    
     public static int numFilas;
     public static int numColumnas;
-    
-    public escogerTamanno(java.awt.Frame parent, boolean modal) 
-    {
+
+    public escogerTamanno(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
     }
-    
-    public void colocarTamanno(int num1,int num2)
-    {
+
+    public void colocarTamanno(int num1, int num2) {
         numFilas = num1;
         numColumnas = num2;
-        
+
         this.setVisible(false);
-        
+
         Matriz mat = new Matriz();
     }
-    
-    public void setNombreMatriz (String nombre)
-    {
-        jLabel1.setText("Seleccione el tamaño de la matriz "+nombre);
+
+    public void setNombreMatriz(String nombre) {
+        jLabel1.setText("Seleccione el tamaño de la matriz " + nombre);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -250,9 +241,9 @@ public class escogerTamanno extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         colocarTamanno(Integer.parseInt(JOptionPane.showInputDialog(null,
-            "Digite el numero de filas")),
-    Integer.parseInt(JOptionPane.showInputDialog(null,
-        "Digite el numero de Columnas")));
+                "Digite el numero de filas")),
+                Integer.parseInt(JOptionPane.showInputDialog(null,
+                                "Digite el numero de Columnas")));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

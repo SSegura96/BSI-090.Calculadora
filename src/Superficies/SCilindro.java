@@ -33,7 +33,7 @@ public class SCilindro extends SFigura {
 
     @Override
     public void pedirDatos() {
-        
+
         altura = fallo.doubleValidarExcepciones("Digite el valor de la altura:", figura);
 
         radio = fallo.doubleValidarExcepciones("Digite el valor del radio:", figura);
@@ -42,7 +42,7 @@ public class SCilindro extends SFigura {
 
     @Override
     public void calcSuperficie() {
-        
+
         superficie = 2 * Math.PI * radio * (altura + radio);
 
         mensaje = "Altura: " + altura + "\n"

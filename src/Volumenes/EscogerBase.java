@@ -1,31 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Volumenes;
 
 import AreasPlanas.ACuadrado;
 import AreasPlanas.APoligonoRegular;
 import AreasPlanas.ATriangulo;
 import CalculadoraAvanzada.mainV2;
-import static Volumenes.Escoger.areaBase;
 
 /**
  *
- * @author Sergio Segura Vidal
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
 public class EscogerBase extends javax.swing.JDialog {
 
     /**
      * Creates new form EscogerBase
      */
-     public static double areaBase; 
-    
-     mainV2 main = new mainV2(); 
-     
-    public EscogerBase(java.awt.Frame parent, boolean modal)
-    {
+    public static double areaBase;
+
+    mainV2 main = new mainV2();
+
+    public EscogerBase(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         areaBase = 0;
         this.setResizable(false);
@@ -33,28 +26,20 @@ public class EscogerBase extends javax.swing.JDialog {
         initComponents();
     }
 
-     public void seleccionarBase ()
-    {
-        if (jRTriangulo.isSelected())
-        {
+    public void seleccionarBase() {
+        if (jRTriangulo.isSelected()) {
             ATriangulo aTri = new ATriangulo();
             aTri.pedirDatos();
             aTri.calcArea();
             areaBase = aTri.getArea();
-        }
-        else
-        {
-            if (jRCuadrado.isSelected())
-            {
+        } else {
+            if (jRCuadrado.isSelected()) {
                 ACuadrado aCua = new ACuadrado();
                 aCua.pedirDatos();
                 aCua.calcArea();
                 areaBase = aCua.getArea();
-            }
-            else
-            {
-                if (jRPentagono.isSelected() || jRHexagono.isSelected())
-                {
+            } else {
+                if (jRPentagono.isSelected() || jRHexagono.isSelected()) {
                     APoligonoRegular ap = new APoligonoRegular();
                     ap.pedirDatos();
                     ap.calcArea();
@@ -63,7 +48,7 @@ public class EscogerBase extends javax.swing.JDialog {
             }
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -37,7 +37,7 @@ public class SumaVectorial extends ArregloUnidimensional {
         //Se llena el segundo vector
         JOptionPane.showMessageDialog(null, "Llenar el segundo vector: vector2[ ]",
                 "Suma Vectorial", JOptionPane.INFORMATION_MESSAGE);
-        
+
         for (int j = 0; j < vector2.length; j++) {
             vector2[j] = fallo.doubleValidarExcepciones("Ingrese dato de: "
                     + "vector2[" + (j) + "]", "Suma Vectorial");
@@ -52,7 +52,7 @@ public class SumaVectorial extends ArregloUnidimensional {
         tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del "
                 + "primer vector:", "Suma Vectorial");
 
-        vector = new double[ (int) tamanno];
+        vector = new double[(int) tamanno];
 
         tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del segundo vector:",
                 "Suma Vectorial");
@@ -69,7 +69,7 @@ public class SumaVectorial extends ArregloUnidimensional {
                         "Suma Vectorial");
             }//fin if de validacion
         }//fin while
-        vector2 = new double[ (int) tamanno];
+        vector2 = new double[(int) tamanno];
         llenarVector();
     }//fin metodo pedirDatos()
 

@@ -62,7 +62,7 @@ public class Mediana extends abEstadistica {
 
     public void pedirDatos() {
         //Se pide el tamanno del vector
-        tamanno = fallo.intValidarExcepciones("Digite la canitdad de elementos "
+        tamanno = (int) fallo.doubleValidarExcepciones("Digite la canitdad de elementos "
                 + "que va a ingresar", titulo);
 
         vectorValoresMediana = new double[tamanno];

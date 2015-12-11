@@ -1,19 +1,15 @@
 package Volumenes;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
+public class VParalelepipedo extends VFigura {
 
-public class VParalelepipedo extends VFigura
-{
     private double largo;
     private double ancho;
     private double altura;
 
-    public VParalelepipedo () 
-    {
+    public VParalelepipedo() {
         largo = 0;
         ancho = 0;
         altura = 0;
@@ -43,24 +39,22 @@ public class VParalelepipedo extends VFigura
     public void setAltura(double altura) {
         this.altura = altura;
     }
-    
+
     @Override
-    public void pedirDatos ()
-    {
+    public void pedirDatos() {
         largo = fallo.doubleValidarExcepciones("Digite el valor del largo", figura);
         ancho = fallo.doubleValidarExcepciones("Digite el valor del ancho", figura);
         altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
     }
-    
+
     @Override
-    public void calcVolumen ()
-    {
-        volumen = largo*ancho*altura;
-        
-        mensaje = "Lado: "+largo+"\n"
-                + "Ancho: "+ancho+"\n"
-                + "Altura: "+altura
-                + "Volumen "+volumen;
+    public void calcVolumen() {
+        volumen = largo * ancho * altura;
+
+        mensaje = "Lado: " + largo + "\n"
+                + "Ancho: " + ancho + "\n"
+                + "Altura: " + altura
+                + "Volumen " + volumen;
     }
 
 }

@@ -2,7 +2,6 @@ package ProbabilidadYCombinaciones;
 
 import CalculadoraAvanzada.ManejoErrores;
 import java.text.DecimalFormat;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -62,11 +61,6 @@ public abstract class ProbabilidadYCombinaciones implements IProbabilidadYCombin
 
     public void mostrarDatos() {
         JOptionPane.showMessageDialog(null, mensaje, imagen, JOptionPane.INFORMATION_MESSAGE);
-    }//fin metodo 
-
-    public void mostrarImagen() {
-        JOptionPane.showMessageDialog(null, "", imagen, JOptionPane.INFORMATION_MESSAGE,
-                new ImageIcon("src/imgs/" + imagen + ".png"));
-    }//fin metodo mostrarImagen()
+    }//fin metodo
 
 }//fin clase ProbabilidadYCombinaciones

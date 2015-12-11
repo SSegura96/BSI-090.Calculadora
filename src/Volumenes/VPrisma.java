@@ -1,30 +1,24 @@
 package Volumenes;
 
-import javax.swing.JOptionPane;
-
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
+public class VPrisma extends VFigura {
 
-public class VPrisma extends VFigura
-{
     private double altura;
     private double areaBase;
 
-    public VPrisma()
-    {
+    public VPrisma() {
         altura = 0;
         areaBase = 0;
         figura = "Prisma";
     }
 
-    public double getAltura() 
-    {
+    public double getAltura() {
         return altura;
     }
 
-    public void setAltura(double altura) 
-    {
+    public void setAltura(double altura) {
         this.altura = altura;
     }
 
@@ -35,24 +29,22 @@ public class VPrisma extends VFigura
     public void setAreaBase(double areaBase) {
         this.areaBase = areaBase;
     }
-    
+
     @Override
-    public void pedirDatos ()
-    {
-       altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
+    public void pedirDatos() {
+        altura = fallo.doubleValidarExcepciones("Digite el valor de la altura", figura);
     }
-    
+
     @Override
-    public void calcVolumen ()
-    {
-        EscogerBase e  = new EscogerBase (null,true);
-        
+    public void calcVolumen() {
+        EscogerBase e = new EscogerBase(null, true);
+
         e.setVisible(true);
         areaBase = e.areaBase;
-        volumen =  areaBase * altura;
-        
-        mensaje = "Altura: "+altura+"\n"
-                + "Area Base: "+areaBase+"\n"
-                + "Volumen: "+volumen;
+        volumen = areaBase * altura;
+
+        mensaje = "Altura: " + altura + "\n"
+                + "Area Base: " + areaBase + "\n"
+                + "Volumen: " + volumen;
     }
 }

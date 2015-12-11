@@ -6,81 +6,70 @@ import javax.swing.JOptionPane;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
+public class Promedio extends abEstadistica {
 
-public class Promedio extends abEstadistica
-{
-    ArrayList <Double> valores = new ArrayList<> ();
-    
+    ArrayList<Double> valores = new ArrayList<>();
+
     private double promedio = 0.0;
-    
-    public Promedio() 
-    {
+
+    public Promedio() {
         promedio = 0;
         mensaje = "Se va  calcular el promedio digite el "
                 + "\n primer numero para continuar";
         titulo = "Promedio";
     }
 
-    public ArrayList<Double> getValores() 
-    {
+    public ArrayList<Double> getValores() {
         return valores;
     }
-    
-    public double getPromedio() 
-    {
+
+    public double getPromedio() {
         return promedio;
     }
 
-    public void setPromedio(double promedio) 
-    {
+    public void setPromedio(double promedio) {
         this.promedio = promedio;
     }
-    
-    public void pedirDatos ()
-    {
+
+    public void pedirDatos() {
         boolean seguir = true;
         int i = 2;
-        
-        while (seguir)
-        {
+
+        while (seguir) {
             valores.add(fallo.doubleValidarExcepciones(mensaje, titulo));
-            mensaje =  "Digite el "+i+"º número";
+            mensaje = "Digite el " + i + "º número";
             i++;
-            
-            if (1==JOptionPane.showOptionDialog(null,
+
+            if (1 == JOptionPane.showOptionDialog(null,
                     "¿Desea agregar otro numero?",
                     null, JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE,
-                    null, null, null))
-            {
-               seguir = false; 
+                    null, null, null)) {
+                seguir = false;
             }
         }
     }
-    
-    public void calcPromedio ()
-    {
-        double suma = 0; 
-        
-        for (int i = 0;i<valores.size();i++)
-        {
+
+    public void calcPromedio() {
+        double suma = 0;
+
+        for (int i = 0; i < valores.size(); i++) {
             double elemento;
-            
+
             elemento = valores.get(i);
             System.out.println(elemento);
-            suma+= elemento;
+            suma += elemento;
         }
-        
-        promedio = suma/valores.size();
-        
+
+        promedio = suma / valores.size();
+
         promedio = enmascararDouble(promedio);
-        
+
         System.out.println(promedio);
     }
-    
-    public void mostarDatos ()
-    {
-        JOptionPane.showMessageDialog(null, "El promedio es: "+promedio, titulo, 
+
+    public void mostarDatos() {
+        JOptionPane.showMessageDialog(null, "El promedio es: " + promedio, titulo,
                 JOptionPane.INFORMATION_MESSAGE);
     }
 }

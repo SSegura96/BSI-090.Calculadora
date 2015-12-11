@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
  *
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public abstract class AbCalculo implements ICalculo
-{
+public abstract class AbCalculo implements ICalculo {
+
     protected String figura;
     protected String mensaje;
     //Variables de uso exclusivo para la validaciones en el codigo
@@ -21,8 +21,7 @@ public abstract class AbCalculo implements ICalculo
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
 
-    public AbCalculo() 
-    {
+    public AbCalculo() {
         figura = "";
         mensaje = "";
         todoBien = true;
@@ -86,29 +85,26 @@ public abstract class AbCalculo implements ICalculo
     public void setFallo(ManejoErrores fallo) {
         this.fallo = fallo;
     }
-    
-    public double enmascararDouble(double numero)
-    {
+
+    public double enmascararDouble(double numero) {
         String dato = "";
-        
+
         DecimalFormat decimalFormat = new DecimalFormat("#######.##");
-        
+
         dato = decimalFormat.format(numero);
-        
+
         dato = dato.replace(',', '.');
-        
+
         return Double.parseDouble(dato);
     }
-    
-    public void mostrarImagen() 
-    {
+
+    public void mostrarImagen() {
         JOptionPane.showMessageDialog(null, "", figura,
                 JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/imgs/" + figura + ".png"));
     }//fin metodo mostrarImagen()
-    
-    public void mostarDatos()
-    {
+
+    public void mostarDatos() {
         JOptionPane.showMessageDialog(null, mensaje, figura, JOptionPane.INFORMATION_MESSAGE);
     }//fin metodo mostrarDatos()
-    
+
 }//fin class  abCalculo

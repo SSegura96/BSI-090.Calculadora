@@ -5,13 +5,11 @@ import java.text.DecimalFormat;
 /**
  * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
+public class PRombo extends PFigura {
 
-public class PRombo extends PFigura
-{
     protected double valorLado;
 
-    public PRombo()
-    {
+    public PRombo() {
         valorLado = 0;
         figura = "Rombo";
     }//fin constructor
@@ -23,24 +21,21 @@ public class PRombo extends PFigura
     public void setValorLado(double valorLado) {
         this.valorLado = valorLado;
     }
-    
-    
+
     @Override
-    public void pedirDatos () throws NumberFormatException
-    {
+    public void pedirDatos() throws NumberFormatException {
         valorLado = fallo.doubleValidarExcepciones("Digite el valor del lado", figura);
     }//fin metodo pedirDatos()
-    
+
     @Override
-    public void calcPerimetro ()
-    {
-        perimetro = valorLado*4;
+    public void calcPerimetro() {
+        perimetro = valorLado * 4;
         DecimalFormat df = new DecimalFormat("0.00");
-        
+
         perimetro = enmascararDouble(perimetro);
-        
-        mensaje = "Lado: "+valorLado+"\n"
-                + "Perimetro: "+df.format(perimetro);
+
+        mensaje = "Lado: " + valorLado + "\n"
+                + "Perimetro: " + df.format(perimetro);
     }//fin metodo calcPerimetro()
-    
+
 }//fin clase PRombo

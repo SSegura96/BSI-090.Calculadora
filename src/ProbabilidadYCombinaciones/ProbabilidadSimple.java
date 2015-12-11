@@ -36,7 +36,7 @@ public class ProbabilidadSimple extends ProbabilidadYCombinaciones {
 
     @Override
     public void pedirDatos() {
-        
+
         cantidadElementos = fallo.doubleValidarExcepciones("Digite la cantidad "
                 + "total de elementos:", "Probabilidad Simple");
 

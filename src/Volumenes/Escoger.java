@@ -12,39 +12,28 @@ public class Escoger extends javax.swing.JFrame {
     /**
      * Creates new form VEscoger
      */
-    
-    public static double areaBase; 
-    
-    public Escoger() 
-    {
+    public static double areaBase;
+
+    public Escoger() {
         areaBase = 0;
         initComponents();
         setLocationRelativeTo(null);
     }
-    
-    
-    public void seleccionarBase ()
-    {
-        if (jRTriangulo.isSelected())
-        {
+
+    public void seleccionarBase() {
+        if (jRTriangulo.isSelected()) {
             ATriangulo aTri = new ATriangulo();
             aTri.pedirDatos();
             aTri.calcArea();
             areaBase = aTri.getArea();
-        }
-        else
-        {
-            if (jRCuadrado.isSelected())
-            {
+        } else {
+            if (jRCuadrado.isSelected()) {
                 ACuadrado aCua = new ACuadrado();
                 aCua.pedirDatos();
                 aCua.calcArea();
                 areaBase = aCua.getArea();
-            }
-            else
-            {
-                if (jRPentagono.isSelected() || jRHexagono.isSelected())
-                {
+            } else {
+                if (jRPentagono.isSelected() || jRHexagono.isSelected()) {
                     APoligonoRegular ap = new APoligonoRegular();
                     ap.pedirDatos();
                     ap.calcArea();
@@ -53,7 +42,7 @@ public class Escoger extends javax.swing.JFrame {
             }
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -2,9 +2,9 @@ package Estadistica;
 
 /**
  *
- * @author Javier
+ * @author Javier Fernandez Alvarado & Sergio Segura Vidal
  */
-public interface IEstadistica 
-{
+public interface IEstadistica {
+
     public void mostrarDatos();
 }//fin Interface IEstadistica

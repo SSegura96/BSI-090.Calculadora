@@ -43,10 +43,10 @@ public class Permutacion extends ProbabilidadYCombinaciones {
     public void calcPermutacion() {
         //Se saca el factorial de ambos elementos para generar la formula
         Factorial facNumElementos = new Factorial();
-        facNumElementos.setNumero( (int) cantidadElementos);
+        facNumElementos.setNumero((int) cantidadElementos);
 
         Factorial facOperacion = new Factorial();
-        facOperacion.setNumero( (int) cantidadElementos - grupoElementos);
+        facOperacion.setNumero((int) cantidadElementos - grupoElementos);
 
         permutacion = facNumElementos.calcFactorial() / facOperacion.calcFactorial();
 
