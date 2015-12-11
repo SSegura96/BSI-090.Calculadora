@@ -55,7 +55,7 @@ public class SumaVectorial extends ArregloUnidimensional {
         vector = new double[ (int) tamanno];
 
         tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del segundo vector:",
-                "Producto Vectorial");
+                "Suma Vectorial");
 
         //Se pide el tamanno del segundo vector
         while (tamanno != vector.length) {
@@ -66,7 +66,7 @@ public class SumaVectorial extends ArregloUnidimensional {
                         + "mismo tamaño.", "Aviso", JOptionPane.WARNING_MESSAGE);
 
                 tamanno = fallo.doubleValidarExcepciones("Digite el tamaño del segundo vector:",
-                        "Producto Vectorial");
+                        "Suma Vectorial");
             }//fin if de validacion
         }//fin while
         vector2 = new double[ (int) tamanno];
