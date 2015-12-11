@@ -92,7 +92,7 @@ public class SPrisma extends SFigura {
                 figura);
 
         //Se pide la cantidad de lados de la base y se valida
-        numLadosBase = fallo.intValidarExcepciones("Digite el numero de lados "
+        numLadosBase = fallo.doubleValidarExcepciones("Digite el numero de lados "
                 + "que posee la base:", figura);
 
     }//fin metodo pedirDatos()

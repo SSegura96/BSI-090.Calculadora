@@ -31,7 +31,7 @@ public class ProductoVectorial extends ArregloUnidimensional {
 
         for (int i = 0; i < vector.length; i++) {
             vector[i] = fallo.doubleValidarExcepciones("Ingrese dato de: "
-                    + "vector[" + (i + 1) + "]", "Producto Vectorial");
+                    + "vector[" + (i) + "]", "Producto Vectorial");
         }//fin primer for
 
         //Se llena el segundo vector
@@ -40,7 +40,7 @@ public class ProductoVectorial extends ArregloUnidimensional {
 
         for (int j = 0; j < vector2.length; j++) {
             vector2[j] = fallo.doubleValidarExcepciones("Ingrese dato de: "
-                    + "vector2[" + (j + 1) + "]", "Producto Vectorial");
+                    + "vector2[" + (j) + "]", "Producto Vectorial");
         }//fin segundo for
 
     }//fin metodo llenarVector()

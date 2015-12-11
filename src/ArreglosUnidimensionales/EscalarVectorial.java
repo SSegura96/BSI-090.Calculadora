@@ -41,7 +41,7 @@ public class EscalarVectorial extends ArregloUnidimensional {
         for (int i = 0; i < vector.length; i++) {
             
             vector[i] = fallo.doubleValidarExcepciones("Ingrese dato de: "
-                    + "vector[" + (i + 1) + "]", "Escalar vectorial");
+                    + "vector[" + (i) + "]", "Escalar vectorial");
         }//fin primer for
     }//fin metodo llenarVector()
 

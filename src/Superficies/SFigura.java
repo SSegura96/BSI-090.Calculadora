@@ -14,7 +14,7 @@ public abstract class SFigura implements SIFigura {
     protected double superficie;
     protected String figura;
     protected String mensaje;
-    DecimalFormat decimalFormat = new DecimalFormat();
+    DecimalFormat decimalFormat = new DecimalFormat("0.00");
     //Se utiliza esta clase generica para llamar a los errores personalizados.
     protected ManejoErrores fallo = new ManejoErrores();
 

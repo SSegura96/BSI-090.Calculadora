@@ -37,11 +37,11 @@ public class ProbabilidadSimple extends ProbabilidadYCombinaciones {
     @Override
     public void pedirDatos() {
         
-        cantidadElementos = fallo.intValidarExcepciones("Digite la cantidad "
-                + "total de elementos:", imagen);
+        cantidadElementos = fallo.doubleValidarExcepciones("Digite la cantidad "
+                + "total de elementos:", "Probabilidad Simple");
 
         posibilidadEscoger = fallo.doubleValidarExcepciones("Digite la posibilidad"
-                + " de escoger un elemento diferente:", imagen);
+                + " de escoger un elemento diferente:", "Probabilidad Simple");
     }//fin metodo pedirDatos()
 
     public void calcProbabilidadSimple() {
@@ -49,7 +49,7 @@ public class ProbabilidadSimple extends ProbabilidadYCombinaciones {
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
         mensaje = "Cantidad total de elementos: " + cantidadElementos + "\n"
-                + "Cantidad de posibles elemntos: " + posibilidadEscoger + "\n"
+                + "Cantidad de posibles elementos: " + posibilidadEscoger + "\n"
                 + "Probabilidad Simple: " + decimalFormat.format(probabilidad) + "%";
     }//fin metodo calcProbabilidadSimple()
 
